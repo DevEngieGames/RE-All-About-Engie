@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "allaboutengie:sharko_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 25,
+    "separation": 5,
+    "salt": 1900329751
+  }
+}

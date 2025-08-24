@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "engiegames",
+        "1": "boxengiesface",
+        "2": "engiegamescard2",
+        "3": "engieplayscard2",
+        "4": "angelhatandextra",
+        "5": "scarf"
+      },
+      "name": "default"
+    }
+  }
+}

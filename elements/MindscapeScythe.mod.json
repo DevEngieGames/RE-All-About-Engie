@@ -1,0 +1,67 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "mindscapescythe",
+    "customModelName": "minsdcapeengiesscythe:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Mindscape Scythe",
+    "specialInformation": {
+      "fixedValue": [
+        "Congrats!"
+      ]
+    },
+    "creativeTabs": [],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 10000.0,
+    "usageCount": 40000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieCoin"
+      },
+      {
+        "value": "CUSTOM:EnragedCoin"
+      },
+      {
+        "value": "CUSTOM:DoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:TheEndCoin"
+      },
+      {
+        "value": "CUSTOM:AngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:OutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngieEssence"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "MindscapeObtainPro"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "_fv": 77,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "All About Engie",
+    "achievementDescription": "Create a new world with the All About Engie mod installed.",
+    "achievementIcon": {
+      "value": "CUSTOM:AllAboutEngieAdvancementIcon"
+    },
+    "background": "mainallaboutengieadvancementbg.png",
+    "disableDisplay": false,
+    "showPopup": false,
+    "announceToChat": false,
+    "hideIfNotCompleted": false,
+    "rewardLoot": [],
+    "rewardRecipes": [
+      "SharkoClothCraft"
+    ],
+    "rewardXP": 0,
+    "achievementType": "task",
+    "parent": {
+      "value": "No parent: root"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
+  }
+}

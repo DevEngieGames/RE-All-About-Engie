@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/bagelcheese",
+  "textures": {
+    "0": "allaboutengie:block/bagelcheese",
+    "particle": "allaboutengie:item/bagelcheese"
+  }
+}

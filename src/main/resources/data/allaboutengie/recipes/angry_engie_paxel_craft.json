@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "angryengiepaxel",
+  "category": "misc",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:angry_engie_axe"
+    },
+    "b": {
+      "item": "allaboutengie:angry_engie_pickaxe"
+    },
+    "c": {
+      "item": "allaboutengie:angry_engie_shovel"
+    },
+    "d": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:angry_engie_paxel",
+    "count": 1
+  }
+}

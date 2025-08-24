@@ -1,0 +1,110 @@
+{
+  "byebyethere": {
+    "subtitle": "subtitles.byebyethere",
+    "sounds": [
+      {
+        "name": "allaboutengie:tctop",
+        "stream": true
+      }
+    ]
+  },
+  "doomsday_eerie": {
+    "subtitle": "subtitles.doomsday_eerie",
+    "sounds": [
+      {
+        "name": "allaboutengie:doomsdayeerie",
+        "stream": false
+      }
+    ]
+  },
+  "doomsday_start": {
+    "subtitle": "subtitles.doomsday_start",
+    "sounds": [
+      {
+        "name": "allaboutengie:doomsdayphase1",
+        "stream": true
+      }
+    ]
+  },
+  "hotlinemiami2-run": {
+    "subtitle": "subtitles.hotlinemiami2-run",
+    "sounds": [
+      {
+        "name": "allaboutengie:hotline-miami-2-run",
+        "stream": true
+      }
+    ]
+  },
+  "theend_eerie": {
+    "subtitle": "subtitles.theend_eerie",
+    "sounds": [
+      {
+        "name": "allaboutengie:theendeerie",
+        "stream": false
+      }
+    ]
+  },
+  "customlightning": {
+    "subtitle": "subtitles.customlightning",
+    "sounds": [
+      {
+        "name": "allaboutengie:lightning",
+        "stream": false
+      }
+    ]
+  },
+  "customlightning2": {
+    "subtitle": "subtitles.customlightning2",
+    "sounds": [
+      {
+        "name": "allaboutengie:lightning2",
+        "stream": false
+      }
+    ]
+  },
+  "riftopens": {
+    "subtitle": "subtitles.riftopens",
+    "sounds": [
+      {
+        "name": "allaboutengie:portalopen",
+        "stream": false
+      }
+    ]
+  },
+  "churchbells": {
+    "subtitle": "subtitles.churchbells",
+    "sounds": [
+      {
+        "name": "allaboutengie:churchbells",
+        "stream": false
+      }
+    ]
+  },
+  "churchbells2": {
+    "subtitle": "subtitles.churchbells2",
+    "sounds": [
+      {
+        "name": "allaboutengie:churchbells2",
+        "stream": false
+      }
+    ]
+  },
+  "playerstunmobs": {
+    "subtitle": "subtitles.playerstunmobs",
+    "sounds": [
+      {
+        "name": "allaboutengie:bass",
+        "stream": false
+      }
+    ]
+  },
+  "playerstunabiloffcooldown": {
+    "subtitle": "subtitles.playerstunabiloffcooldown",
+    "sounds": [
+      {
+        "name": "allaboutengie:snap",
+        "stream": false
+      }
+    ]
+  }
+}

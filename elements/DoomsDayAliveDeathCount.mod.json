@@ -1,0 +1,63 @@
+{
+  "_fv": 77,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_0",
+          "text": {
+            "fixedValue": "0",
+            "name": "DoomsDayAliveCheck"
+          },
+          "color": {
+            "value": -16711936,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoomsDayAliveOverlayCheck"
+          },
+          "anchorPoint": "CENTER",
+          "x": 0,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_01",
+          "text": {
+            "fixedValue": "0",
+            "name": "DoomsDayDeadCheck"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoomsDayDeadOverlayCheck"
+          },
+          "anchorPoint": "CENTER",
+          "x": 0,
+          "y": 0,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "DoomsDayAliveDeathCountDisplayOverlayIngame"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

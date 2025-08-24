@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "allaboutengie:block/secretadvancementbg",
+    "up": "allaboutengie:block/secretadvancementbg",
+    "north": "allaboutengie:block/secretadvancementbg",
+    "east": "allaboutengie:block/secretadvancementbg",
+    "south": "allaboutengie:block/secretadvancementbg",
+    "west": "allaboutengie:block/secretadvancementbg",
+    "particle": "allaboutengie:block/secretadvancementbg"
+  },
+  "render_type": "solid"
+}

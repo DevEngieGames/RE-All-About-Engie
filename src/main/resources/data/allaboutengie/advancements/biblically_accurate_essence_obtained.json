@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "item": "allaboutengie:biblically_accurate_engie_essence"
+    },
+    "title": {
+      "translate": "advancements.biblically_accurate_essence_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.biblically_accurate_essence_obtained.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "biblically_accurate_essence_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allaboutengie:biblically_accurate_engie_essence"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50,
+    "recipes": [
+      "allaboutengie:biblically_accurate_engie_bundle_craft",
+      "allaboutengie:biblically_accurate_engie_block_1",
+      "allaboutengie:biblically_accurate_engie_items_1",
+      "allaboutengie:biblically_ban_craft",
+      "allaboutengie:biblically_accurate_engie_axe_1",
+      "allaboutengie:biblically_accurate_engie_axe_2",
+      "allaboutengie:biblically_accurate_engie_pickaxe_1",
+      "allaboutengie:biblically_accurate_engie_shovel_1",
+      "allaboutengie:biblically_accurate_engie_hoe_1",
+      "allaboutengie:biblically_accurate_engie_hoe_2",
+      "allaboutengie:biblically_accurate_engie_chestplate_1",
+      "allaboutengie:biblically_accurate_engie_leggings_1",
+      "allaboutengie:biblically_accurate_engie_boots_1",
+      "allaboutengie:biblically_scythe_craft",
+      "allaboutengie:monstrosity_scythe_craft"
+    ]
+  },
+  "parent": "allaboutengie:outraged_engie_essence_obtained"
+}

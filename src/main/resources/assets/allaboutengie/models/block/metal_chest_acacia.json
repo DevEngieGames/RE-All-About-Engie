@@ -1,0 +1,10 @@
+{
+  "parent": "allaboutengie:custom/metal_chest_acacia",
+  "textures": {
+    "all": "allaboutengie:block/metalchest",
+    "particle": "allaboutengie:block/oldchest",
+    "0": "allaboutengie:block/metalchest",
+    "1": "allaboutengie:block/acacia"
+  },
+  "render_type": "solid"
+}

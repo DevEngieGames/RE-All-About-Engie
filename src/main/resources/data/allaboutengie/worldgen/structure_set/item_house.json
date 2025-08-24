@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "allaboutengie:item_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 100,
+    "separation": 5,
+    "salt": 166732248
+  }
+}

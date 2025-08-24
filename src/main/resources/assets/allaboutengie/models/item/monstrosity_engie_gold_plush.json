@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/monstrosity_engie_gold_plush",
+  "textures": {
+    "0": "allaboutengie:block/gold_monstrosity_plush_with_cape",
+    "particle": "allaboutengie:item/volc"
+  }
+}

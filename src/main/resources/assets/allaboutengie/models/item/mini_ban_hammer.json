@@ -1,0 +1,31 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "allaboutengie:custom/ban_hammer_mini",
+    "textures": {
+      "0": "allaboutengie:block/regular"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/banhammerpixel"
+      },
+      "gui_light": "front"
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/banhammerpixel"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/banhammerpixel"
+      }
+    }
+  }
+}

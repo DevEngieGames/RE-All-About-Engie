@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "netherite_monstrosity_plush_with_cape"
+      },
+      "name": "default"
+    }
+  }
+}

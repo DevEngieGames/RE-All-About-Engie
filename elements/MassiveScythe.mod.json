@@ -1,0 +1,38 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "regularscythe",
+    "customModelName": "massivescythe:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Massive Scythe",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.5,
+    "enchantability": 15,
+    "damageVsEntity": 1584.0,
+    "usageCount": 7920,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "MassiveBanObtainPro"
+    }
+  }
+}

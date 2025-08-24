@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/birthday_engie_bundle_for_youngest",
+  "textures": {
+    "0": "allaboutengie:block/youngestsisengiebundle",
+    "particle": "allaboutengie:item/engie_bundle"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": {
+    "item": "allaboutengie:exotic_shovel"
+  },
+  "addition": {
+    "item": "allaboutengie:unobtanium"
+  },
+  "result": {
+    "item": "allaboutengie:unobtainium_shovel"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "banhammerpixel",
+    "customModelName": "ban_hammer:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Ban Hammer",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 3.0,
+    "enchantability": 10,
+    "damageVsEntity": 144.0,
+    "usageCount": 720,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "BanObtainPro"
+    }
+  }
+}

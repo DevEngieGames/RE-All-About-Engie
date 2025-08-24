@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "crafting",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "bab",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "allaboutengie:engie_gem"
+    },
+    "c": {
+      "item": "minecraft:jungle_planks"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:metal_chest_jungle",
+    "count": 1
+  }
+}

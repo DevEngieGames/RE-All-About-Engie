@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/allaboutengieplaque",
+  "textures": {
+    "0": "allaboutengie:block/allaboutengie",
+    "particle": "allaboutengie:item/backuptext"
+  }
+}

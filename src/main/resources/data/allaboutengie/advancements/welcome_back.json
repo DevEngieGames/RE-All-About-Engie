@@ -1,0 +1,8 @@
+{
+  "criteria": {
+    "welcome_back_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "allaboutengie:new_world"
+}

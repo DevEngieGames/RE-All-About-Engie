@@ -1,0 +1,284 @@
+{
+  "_fv": 77,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "diff0icon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty0ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff1icon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty1ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff2icon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty2ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "madengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty3ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "angryengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty4ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "enragedengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty5ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "outragedengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty6ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "biblicallyaccurateengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty7ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "monstrosityengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty8ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "doomsdayengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty9ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "superdoomsdayengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty10ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "theendengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty11ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "engiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty12ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mindscapeengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty13ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "insanityengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty15ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pureinsanityengiedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty20ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "engiegamesdifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty525ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wormholedifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty690ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "sufferdifficon.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty525000ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

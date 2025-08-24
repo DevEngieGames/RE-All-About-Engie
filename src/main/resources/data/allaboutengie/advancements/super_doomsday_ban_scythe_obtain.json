@@ -1,0 +1,8 @@
+{
+  "criteria": {
+    "super_doomsday_ban_scythe_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "allaboutengie:doomsday_ban_scythe_obtain"
+}

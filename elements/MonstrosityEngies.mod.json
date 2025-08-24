@@ -1,0 +1,110 @@
+{
+  "_fv": 77,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "monstrosityengiehelmet",
+    "enableBody": true,
+    "textureBody": "monstrosityengiechestplate",
+    "enableLeggings": true,
+    "textureLeggings": "monstrosityengieleggings",
+    "enableBoots": true,
+    "textureBoots": "monstrosityengieboots",
+    "onBodyTick": {
+      "name": "MEChestplate"
+    },
+    "onBootsTick": {
+      "name": "MEBoots"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsArmor"
+      }
+    ],
+    "armorTextureFile": "monstricity_",
+    "helmetName": "Monstrosity Engie Helmet",
+    "bodyName": "Monstrosity Engie Chestplate",
+    "leggingsName": "Monstrosity Engie Leggings",
+    "bootsName": "Monstrosity Engie Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 300,
+    "damageValueHelmet": 125,
+    "damageValueBody": 300,
+    "damageValueLeggings": 300,
+    "damageValueBoots": 300,
+    "enchantability": 14,
+    "toughness": 6.0,
+    "knockbackResistance": 0.30000000000000004,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:MonstrosityEngieEssence"
+      }
+    ]
+  }
+}

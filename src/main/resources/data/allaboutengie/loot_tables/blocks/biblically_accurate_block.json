@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "allaboutengie:blocks/biblically_accurate_block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "allaboutengie:biblically_accurate_block"
+        }
+      ]
+    }
+  ]
+}

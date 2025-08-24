@@ -1,0 +1,24 @@
+{
+  "_fv": 77,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "This really could've been a toy...",
+    "achievementDescription": "Obtain a Mini Ban Hammer/Scythe",
+    "achievementIcon": {
+      "value": "CUSTOM:MiniBanHammer"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": false,
+    "rewardLoot": [],
+    "rewardRecipes": [],
+    "rewardXP": 5,
+    "achievementType": "task",
+    "parent": {
+      "value": "CUSTOM:NewWorld"
+    },
+    "triggerxml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"advancement_trigger\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\" x=\"56\" y=\"95\"/></next></block></xml>"
+  }
+}

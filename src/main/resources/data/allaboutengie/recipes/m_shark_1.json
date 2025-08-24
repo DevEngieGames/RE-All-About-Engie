@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "mythicsharko",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:mythic_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:mythic_shark_helmet",
+    "count": 1
+  }
+}

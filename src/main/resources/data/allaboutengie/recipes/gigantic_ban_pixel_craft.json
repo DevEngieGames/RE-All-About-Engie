@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "banhammerpixel",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:enraged_engie_block"
+    },
+    "b": {
+      "item": "allaboutengie:angry_engie_block"
+    },
+    "c": {
+      "item": "allaboutengie:outraged_engie_block"
+    },
+    "d": {
+      "item": "allaboutengie:enormous_ban_hammer_pixel"
+    },
+    "e": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:gigantic_ban_hammer_pixel",
+    "count": 1
+  }
+}

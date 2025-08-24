@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "crucifix",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    "eee"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:engie_gem"
+    },
+    "b": {
+      "item": "allaboutengie:angry_engie_essence"
+    },
+    "c": {
+      "item": "allaboutengie:enraged_engie_essence"
+    },
+    "d": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "e": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:crucifix",
+    "count": 1
+  }
+}

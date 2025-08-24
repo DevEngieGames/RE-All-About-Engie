@@ -1,0 +1,18 @@
+{
+  "parent": "allaboutengie:custom/challengemodetrophymultiplayer",
+  "textures": {
+    "all": "allaboutengie:block/devengie",
+    "particle": "allaboutengie:block/devengie",
+    "1": "allaboutengie:block/engiegames",
+    "2": "allaboutengie:block/boxengiesface",
+    "3": "allaboutengie:block/engiegamescard2",
+    "4": "allaboutengie:block/engieplayscard2",
+    "5": "allaboutengie:block/angelhatandextra",
+    "6": "allaboutengie:block/scarf",
+    "7": "allaboutengie:block/monstrosity",
+    "8": "allaboutengie:block/trophystand",
+    "9": "allaboutengie:block/devengie",
+    "10": "allaboutengie:block/scarfdevengie"
+  },
+  "render_type": "cutout_mipped"
+}

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "allaboutengie:block/oldengitablebottom",
+    "up": "allaboutengie:block/oldengitabletop",
+    "north": "allaboutengie:block/oldengitableside",
+    "east": "allaboutengie:block/oldengitableside",
+    "south": "allaboutengie:block/oldengitableside",
+    "west": "allaboutengie:block/oldengitableside",
+    "particle": "allaboutengie:block/oldengitablebottom"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "superdoomsdayengiepaxel",
+  "category": "misc",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:super_dooms_day_axe"
+    },
+    "b": {
+      "item": "allaboutengie:super_dooms_day_pickaxe"
+    },
+    "c": {
+      "item": "allaboutengie:super_dooms_day_shovel"
+    },
+    "d": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:super_dooms_day_paxel",
+    "count": 1
+  }
+}

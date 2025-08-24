@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "biblicallyaccurateengiepaxel",
+  "category": "misc",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:biblically_accurate_engie_axe"
+    },
+    "b": {
+      "item": "allaboutengie:biblically_accurate_engie_pickaxe"
+    },
+    "c": {
+      "item": "allaboutengie:biblically_accurate_engie_shovel"
+    },
+    "d": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:biblically_accurate_engie_paxel",
+    "count": 1
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Spade",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "engies_shovel",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Engies Shovel",
+    "specialInformation": {
+      "fixedValue": [
+        "Congrats!"
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 42.0,
+    "attackSpeed": 4.6000000000000005,
+    "enchantability": 14,
+    "damageVsEntity": 375.0,
+    "usageCount": 8000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

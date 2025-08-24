@@ -1,0 +1,62 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Pickaxe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "mindscapeengies_pickaxe",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Mindscape Engies Pickaxe",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [],
+    "efficiency": 48.0,
+    "attackSpeed": 5.3999999999999995,
+    "enchantability": 15,
+    "damageVsEntity": 475.0,
+    "usageCount": 10000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieCoin"
+      },
+      {
+        "value": "CUSTOM:EnragedCoin"
+      },
+      {
+        "value": "CUSTOM:DoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:TheEndCoin"
+      },
+      {
+        "value": "CUSTOM:AngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:OutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngieEssence"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

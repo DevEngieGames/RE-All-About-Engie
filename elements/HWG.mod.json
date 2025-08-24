@@ -1,0 +1,84 @@
+{
+  "_fv": 77,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "hwghelm",
+    "enableBody": true,
+    "textureBody": "hwgchestplate",
+    "enableLeggings": true,
+    "textureLeggings": "hwgleggings",
+    "enableBoots": true,
+    "textureBoots": "hwgboots",
+    "creativeTabs": [],
+    "armorTextureFile": "backup_",
+    "helmetName": "HWG Helmet",
+    "bodyName": "HWG Chestplate",
+    "leggingsName": "HWG Leggings",
+    "bootsName": "HWG Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": [
+        "You finally put the Spirit to rest",
+        "are you happy you finally got this?"
+      ]
+    },
+    "bodySpecialInformation": {
+      "fixedValue": [
+        "You finally put the Spirit to rest",
+        "are you happy you finally got this?"
+      ]
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": [
+        "You finally put the Spirit to rest",
+        "are you happy you finally got this?"
+      ]
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": [
+        "You finally put the Spirit to rest",
+        "are you happy you finally got this?"
+      ]
+    },
+    "helmetModelName": "Modelcustomarmorl",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "hewhogamesarmor.png",
+    "bodyModelName": "Modelcustomarmorl",
+    "bodyModelPart": "Chestplate",
+    "armsModelPartL": "ArmsL",
+    "armsModelPartR": "ArmsR",
+    "bodyModelTexture": "hewhogamesarmor.png",
+    "leggingsModelName": "Modelcustomarmorr",
+    "leggingsModelPartL": "LeggingsL",
+    "leggingsModelPartR": "LeggingsR",
+    "leggingsModelTexture": "hewhogamesarmor.png",
+    "bootsModelName": "Modelcustomarmorl",
+    "bootsModelPartL": "BootsL",
+    "bootsModelPartR": "BootsR",
+    "bootsModelTexture": "hewhogamesarmor.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": true,
+    "bodyImmuneToFire": true,
+    "leggingsImmuneToFire": true,
+    "bootsImmuneToFire": true,
+    "maxDamage": 350,
+    "damageValueHelmet": 350,
+    "damageValueBody": 350,
+    "damageValueLeggings": 350,
+    "damageValueBoots": 350,
+    "enchantability": 35,
+    "toughness": 7.0,
+    "knockbackResistance": 0.4,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": []
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/brownie",
+  "textures": {
+    "1": "allaboutengie:block/brownie",
+    "particle": "allaboutengie:item/brownie"
+  }
+}

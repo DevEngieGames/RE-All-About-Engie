@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:cyberblood_ingot"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:cyberblood_block",
+    "count": 1
+  }
+}

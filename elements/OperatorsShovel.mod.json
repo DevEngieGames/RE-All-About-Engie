@@ -1,0 +1,28 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Spade",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "operatorshovel",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Operators Shovel",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [],
+    "efficiency": 128000.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 128000.0,
+    "usageCount": 128000,
+    "repairItems": [],
+    "immuneToFire": true,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/ban_hammer_biblicallyaccurate_pixel",
+  "textures": {
+    "1": "allaboutengie:block/biblicallyaccuratepixel",
+    "particle": "allaboutengie:item/biblicallyaccuratepixel"
+  }
+}

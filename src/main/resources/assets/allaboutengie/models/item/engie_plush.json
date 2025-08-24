@@ -1,0 +1,12 @@
+{
+  "parent": "allaboutengie:custom/engieplush",
+  "textures": {
+    "0": "allaboutengie:block/engiegames",
+    "1": "allaboutengie:block/boxengiesface",
+    "2": "allaboutengie:block/engiegamescard2",
+    "3": "allaboutengie:block/engieplayscard2",
+    "4": "allaboutengie:block/angelhatandextra",
+    "5": "allaboutengie:block/scarf",
+    "particle": "allaboutengie:item/volc"
+  }
+}

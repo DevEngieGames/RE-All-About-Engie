@@ -1,0 +1,42 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Spade",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "monstrocityengieshovel",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Monstrosity Engie Shovel",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 30.0,
+    "attackSpeed": 3.0,
+    "enchantability": 10,
+    "damageVsEntity": 125.0,
+    "usageCount": 2500,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:MonstrosityEngieEssence"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "DIAMOND",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "MonstrosityToolObtain"
+    }
+  }
+}

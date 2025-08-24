@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/crucifixengie",
+  "textures": {
+    "0": "allaboutengie:block/engiescrucifix",
+    "particle": "allaboutengie:item/engiecrucifixpixel"
+  }
+}

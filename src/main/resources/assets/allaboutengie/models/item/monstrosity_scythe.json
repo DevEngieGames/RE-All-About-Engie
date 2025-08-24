@@ -1,0 +1,31 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "allaboutengie:custom/monstrosityscythe",
+    "textures": {
+      "0": "allaboutengie:block/monstrosityscythe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/monstrosityscythe"
+      },
+      "gui_light": "front"
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/monstrosityscythe"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/monstrosityscythe"
+      }
+    }
+  }
+}

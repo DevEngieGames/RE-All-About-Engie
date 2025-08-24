@@ -1,0 +1,12 @@
+{
+  "_fv": 77,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "True Hardcore Life Count",
+    "description": "You can screw around with this if you want to. Otherwise... Default: 10",
+    "category": "PLAYER",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 10
+  }
+}

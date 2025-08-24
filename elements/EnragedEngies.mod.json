@@ -1,0 +1,110 @@
+{
+  "_fv": 77,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "enragedengiehelmet",
+    "enableBody": true,
+    "textureBody": "enragedengiechestplate",
+    "enableLeggings": true,
+    "textureLeggings": "enragedengieleggings",
+    "enableBoots": true,
+    "textureBoots": "enragedengieboots",
+    "onBodyTick": {
+      "name": "EEChestplate"
+    },
+    "onBootsTick": {
+      "name": "EEBoots"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsArmor"
+      }
+    ],
+    "armorTextureFile": "enraged_",
+    "helmetName": "Enraged Engie Helmet",
+    "bodyName": "Enraged Engie Chestplate",
+    "leggingsName": "Enraged Engie Leggings",
+    "bootsName": "Enraged Engie Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 150,
+    "damageValueHelmet": 150,
+    "damageValueBody": 150,
+    "damageValueLeggings": 150,
+    "damageValueBoots": 150,
+    "enchantability": 10,
+    "toughness": 4.0,
+    "knockbackResistance": 0.1,
+    "equipSound": {
+      "value": "item.armor.equip_diamond"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_fv": 77,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "All About Engie (101%)",
+    "achievementDescription": " Get all advancements, all items at least once and all possible secret advancements. Congrats my friend.",
+    "achievementIcon": {
+      "value": "CUSTOM:AllAboutEngieAdvancementIcon"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": true,
+    "rewardLoot": [],
+    "rewardRecipes": [],
+    "rewardXP": 50000,
+    "achievementType": "challenge",
+    "parent": {
+      "value": "CUSTOM:AllDone"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
+  }
+}

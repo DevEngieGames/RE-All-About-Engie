@@ -1,0 +1,40 @@
+{
+  "_fv": 77,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "No, I... I aint talking about that freak, alright?",
+    "achievementDescription": "Obtain an Outraged Engie Essence for the first time.",
+    "achievementIcon": {
+      "value": "CUSTOM:OutragedEngieEssence"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": false,
+    "rewardLoot": [],
+    "rewardRecipes": [
+      "OutragedEngieAxe1",
+      "OutragedEngiePickaxe1",
+      "OutragedEngieShovel1",
+      "OutragedEngieHoe1",
+      "OutragedEngieHelmet1",
+      "OutragedEngieChestplate1",
+      "OutragedEngieLeggings1",
+      "OutragedEngieBoots1",
+      "EnormousBanCraft",
+      "GiganticBanCraft",
+      "MassiveBanCraft",
+      "OutragedEngieBundleCraft",
+      "EnormousScytheCraft",
+      "GiganticScytheCraft",
+      "MassiveScytheCraft"
+    ],
+    "rewardXP": 40,
+    "achievementType": "task",
+    "parent": {
+      "value": "CUSTOM:EnragedEngieEssenceObtained"
+    },
+    "triggerxml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"advancement_trigger\" x=\"40\" y=\"80\"><next><block type=\"item_in_inventory\" x=\"63\" y=\"76\"><value name=\"amount_l\"><block type=\"math_number\"><field name=\"NUM\">1</field></block></value><value name=\"amount_h\"><block type=\"math_number\"><field name=\"NUM\">1000000000</field></block></value><value name=\"item\"><block type=\"mcitem_all\"><field name=\"value\">CUSTOM:OutragedEngieEssence</field></block></value></block></next></block></xml>"
+  }
+}

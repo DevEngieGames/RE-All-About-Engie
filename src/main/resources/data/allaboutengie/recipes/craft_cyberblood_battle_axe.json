@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "cyberbloodbattleaxe",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:cyberblood_ingot"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:cyberblood_battle_axe",
+    "count": 1
+  }
+}

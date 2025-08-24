@@ -1,0 +1,42 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "monstrosityengiesword",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Monstrosity Engie Sword",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 30.0,
+    "attackSpeed": 3.0,
+    "enchantability": 10,
+    "damageVsEntity": 150.0,
+    "usageCount": 2500,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:MonstrosityEngieEssence"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "DIAMOND",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "MonstrosityToolObtain"
+    }
+  }
+}

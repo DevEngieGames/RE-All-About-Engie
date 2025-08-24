@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "allaboutengie:gigantic_ban_hammer"
+    },
+    "title": {
+      "translate": "advancements.gigantic_ban_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.gigantic_ban_obtain.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "gigantic_ban_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 35
+  },
+  "parent": "allaboutengie:enormous_ban_obtain"
+}

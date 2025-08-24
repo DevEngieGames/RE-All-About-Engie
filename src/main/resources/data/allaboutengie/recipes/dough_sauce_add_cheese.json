@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "food",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "allaboutengie:cheese"
+    },
+    {
+      "item": "allaboutengie:dough_with_sauce"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:uncooked_pizza",
+    "count": 1
+  }
+}

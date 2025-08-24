@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "allaboutengie:dooms_day_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.conqueror.title"
+    },
+    "description": {
+      "translate": "advancements.conqueror.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "conqueror_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1000
+  },
+  "parent": "allaboutengie:new_world"
+}

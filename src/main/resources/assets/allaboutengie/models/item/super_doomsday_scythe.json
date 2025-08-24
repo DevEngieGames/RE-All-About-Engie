@@ -1,0 +1,31 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "allaboutengie:custom/superdoomsdayscythe",
+    "textures": {
+      "0": "allaboutengie:block/sdoomsdayscythe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/sdoomsdayscythe"
+      },
+      "gui_light": "front"
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/sdoomsdayscythe"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/sdoomsdayscythe"
+      }
+    }
+  }
+}

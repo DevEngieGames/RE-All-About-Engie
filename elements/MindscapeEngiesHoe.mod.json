@@ -1,0 +1,62 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Hoe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "mindscapeengies_hoe",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Mindscape Engies Hoe",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [],
+    "efficiency": 42.0,
+    "attackSpeed": 4.6,
+    "enchantability": 15,
+    "damageVsEntity": 375.0,
+    "usageCount": 10000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieCoin"
+      },
+      {
+        "value": "CUSTOM:EnragedCoin"
+      },
+      {
+        "value": "CUSTOM:DoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:TheEndCoin"
+      },
+      {
+        "value": "CUSTOM:AngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:OutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngieEssence"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

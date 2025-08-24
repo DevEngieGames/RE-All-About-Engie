@@ -1,0 +1,42 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "MultiTool",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "enraged_paxel",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Enraged Engie Paxel",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 19.0,
+    "attackSpeed": 1.8,
+    "enchantability": 7,
+    "damageVsEntity": 75.0,
+    "usageCount": 1750,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "IRON",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "EnragedEngieToolObtain"
+    }
+  }
+}

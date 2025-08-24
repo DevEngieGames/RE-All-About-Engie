@@ -1,0 +1,12 @@
+{
+  "_fv": 77,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "X",
+    "keyBindingName": "Stun Mobs (All About Engie)",
+    "keyBindingCategoryKey": "gameplay",
+    "onKeyPressed": {
+      "name": "StunMobsOnKeyPressed"
+    }
+  }
+}

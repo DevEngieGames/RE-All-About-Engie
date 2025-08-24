@@ -1,0 +1,12 @@
+{
+  "_fv": 77,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "Extreme Lightning",
+    "description": "Experience Zeus REALLY smite the world down during thunderstorms. Heavy Lightning must be enabled for this to work.",
+    "category": "MISC",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

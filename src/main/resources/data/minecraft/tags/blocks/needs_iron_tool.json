@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "allaboutengie:cyber_block",
+    "allaboutengie:cyber_ore",
+    "allaboutengie:metal_chest_jungle",
+    "allaboutengie:metal_chest_crimson",
+    "allaboutengie:metal_chest_warped",
+    "allaboutengie:metal_chest_birch",
+    "allaboutengie:metal_chest_acacia",
+    "allaboutengie:metal_chest_spruce",
+    "allaboutengie:metal_chest_dark_oak",
+    "allaboutengie:metal_chest_oak",
+    "allaboutengie:metal_chest",
+    "allaboutengie:metal_table"
+  ]
+}

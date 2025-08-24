@@ -1,0 +1,12 @@
+{
+  "_fv": 77,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "Heavy Lightning",
+    "description": "Experience Zeus Strike the world down during thunderstorms.",
+    "category": "MISC",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

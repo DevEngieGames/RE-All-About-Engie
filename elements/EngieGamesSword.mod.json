@@ -1,0 +1,41 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "engiegames_sword",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "EngieGames' Sword",
+    "specialInformation": {
+      "fixedValue": [
+        "Looks like a crescendo honestly."
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 52.0,
+    "attackSpeed": 1.0,
+    "enchantability": 16,
+    "damageVsEntity": 25000.0,
+    "usageCount": 50000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

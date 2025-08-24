@@ -1,0 +1,48 @@
+{
+  "_fv": 77,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "crucifix",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": "CUSTOM:AngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      },
+      {
+        "value": "Items.TOTEM_OF_UNDYING"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      },
+      {
+        "value": "Blocks.PLANKS"
+      },
+      {
+        "value": "Blocks.PLANKS"
+      },
+      {
+        "value": "Blocks.PLANKS"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Crucifix"
+    },
+    "name": "crucifix_craft",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/theendcoin",
+  "textures": {
+    "0": "allaboutengie:block/theendcointexture",
+    "particle": "allaboutengie:item/theendbase"
+  }
+}

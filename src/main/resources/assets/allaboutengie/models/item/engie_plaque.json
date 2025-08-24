@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/engieplaque",
+  "textures": {
+    "0": "allaboutengie:block/hm",
+    "particle": "allaboutengie:item/hm"
+  }
+}

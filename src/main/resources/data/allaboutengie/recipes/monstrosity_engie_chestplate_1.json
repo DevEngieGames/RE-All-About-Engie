@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "monstrosityengiechestplate",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:monstrosity_engie_essence"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:monstrosity_engies_helmet",
+    "count": 1
+  }
+}

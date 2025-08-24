@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "allaboutengie:block/olddeepslateengi",
+    "up": "allaboutengie:block/olddeepslateengi",
+    "north": "allaboutengie:block/olddeepslateengi",
+    "east": "allaboutengie:block/olddeepslateengi",
+    "south": "allaboutengie:block/olddeepslateengi",
+    "west": "allaboutengie:block/olddeepslateengi",
+    "particle": "allaboutengie:block/olddeepslateengi"
+  },
+  "render_type": "solid"
+}

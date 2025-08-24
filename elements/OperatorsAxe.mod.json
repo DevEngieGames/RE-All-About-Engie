@@ -1,0 +1,28 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Axe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "operatoraxe",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Operators Axe",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [],
+    "efficiency": 128000.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 128000.0,
+    "usageCount": 128000,
+    "repairItems": [],
+    "immuneToFire": true,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

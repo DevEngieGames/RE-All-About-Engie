@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "allaboutengie:block/cyberblock",
+    "up": "allaboutengie:block/cyberblocktop",
+    "north": "allaboutengie:block/cyberblockside",
+    "east": "allaboutengie:block/cyberblockside",
+    "south": "allaboutengie:block/cyberblockside",
+    "west": "allaboutengie:block/cyberblockside",
+    "particle": "allaboutengie:block/cyberblock"
+  },
+  "render_type": "solid"
+}

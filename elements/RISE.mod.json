@@ -1,0 +1,24 @@
+{
+  "_fv": 77,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "Rise",
+    "achievementDescription": "Encounter SUPER DOOMSDAY - Doomsday that occurs due to the SUPER DOOMSDAY modifier being chosen.",
+    "achievementIcon": {
+      "value": "CUSTOM:SuperDoomsDayAdvancementIcon"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": true,
+    "rewardLoot": [],
+    "rewardRecipes": [],
+    "rewardXP": 500,
+    "achievementType": "goal",
+    "parent": {
+      "value": "CUSTOM:Conqueror"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
+  }
+}

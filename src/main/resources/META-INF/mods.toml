@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT License"
+
+[[mods]]
+modId="allaboutengie"
+version="8.18.25"
+displayName="All About Engie"
+updateJSONURL="https://raw.githubusercontent.com/EngieGames/All-About-Engie/refs/heads/master/ModUpdateCheck.json"
+displayURL="https://modrinth.com/user/DevEngie"
+logoFile="logo.png"
+credits="DevEngie(Games), MCreator, Family Members, and Grem."
+authors="DevEngie"
+description="A collection of all my other mods for my 5th year of making mods! If you find issues, report them on the GitHub page for the mod please."
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+[[dependencies.allaboutengie]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1]"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.allaboutengie]]
+    modId="attributefix"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration

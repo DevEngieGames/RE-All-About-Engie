@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "engiegames_sword_3d"
+      },
+      "name": "default"
+    }
+  }
+}

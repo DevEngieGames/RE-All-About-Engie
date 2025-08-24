@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "legendarysharkocloth",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "allaboutengie:epic_sharko_cloth"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:legendary_sharko_cloth",
+    "count": 1
+  }
+}

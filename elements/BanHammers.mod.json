@@ -1,0 +1,11 @@
+{
+  "_fv": 77,
+  "_type": "tab",
+  "definition": {
+    "name": "Weapons",
+    "icon": {
+      "value": "CUSTOM:BanHammer"
+    },
+    "showSearch": false
+  }
+}

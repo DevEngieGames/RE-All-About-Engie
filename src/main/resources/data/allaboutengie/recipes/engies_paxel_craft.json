@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "engiespaxel",
+  "category": "misc",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:engies_axe"
+    },
+    "b": {
+      "item": "allaboutengie:engies_pickaxe"
+    },
+    "c": {
+      "item": "allaboutengie:engies_shovel"
+    },
+    "d": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:engies_paxel",
+    "count": 1
+  }
+}

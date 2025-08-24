@@ -1,0 +1,144 @@
+
+/*
+ *    MCreator note: This file will be REGENERATED on each build.
+ */
+package net.mcreator.allaboutengie.init;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.mcreator.allaboutengie.client.model.Modeltobyzoomtired;
+import net.mcreator.allaboutengie.client.model.Modeltobyzooms;
+import net.mcreator.allaboutengie.client.model.Modeltobytired;
+import net.mcreator.allaboutengie.client.model.Modeltobysitnew;
+import net.mcreator.allaboutengie.client.model.Modeltobysit;
+import net.mcreator.allaboutengie.client.model.Modeltobylayonside;
+import net.mcreator.allaboutengie.client.model.Modeltoby;
+import net.mcreator.allaboutengie.client.model.Modeltherealengiegamesarmorl2;
+import net.mcreator.allaboutengie.client.model.Modeltherealengiegamesarmorl1;
+import net.mcreator.allaboutengie.client.model.Modelrockytired;
+import net.mcreator.allaboutengie.client.model.Modelrockylay;
+import net.mcreator.allaboutengie.client.model.Modelrocky;
+import net.mcreator.allaboutengie.client.model.Modeloutraged_new;
+import net.mcreator.allaboutengie.client.model.Modeloldboyo;
+import net.mcreator.allaboutengie.client.model.Modelmonstrosity;
+import net.mcreator.allaboutengie.client.model.Modelmissilebombs;
+import net.mcreator.allaboutengie.client.model.Modelenragedzombie;
+import net.mcreator.allaboutengie.client.model.Modelenraged_new;
+import net.mcreator.allaboutengie.client.model.Modelengiegamesarmorl2;
+import net.mcreator.allaboutengie.client.model.Modelengiegamesarmorl1;
+import net.mcreator.allaboutengie.client.model.Modelengiedaboyozoomtired;
+import net.mcreator.allaboutengie.client.model.Modelengiedaboyozoom;
+import net.mcreator.allaboutengie.client.model.Modelengiedaboyotired;
+import net.mcreator.allaboutengie.client.model.Modelengiedaboyositnew;
+import net.mcreator.allaboutengie.client.model.Modelengiedaboyosit;
+import net.mcreator.allaboutengie.client.model.Modelengiedaboyolayonside;
+import net.mcreator.allaboutengie.client.model.Modelengiedaboyo;
+import net.mcreator.allaboutengie.client.model.Modelddayrift;
+import net.mcreator.allaboutengie.client.model.Modelcustomarmorr;
+import net.mcreator.allaboutengie.client.model.Modelcustomarmorl;
+import net.mcreator.allaboutengie.client.model.Modelcosmodabigboyotired;
+import net.mcreator.allaboutengie.client.model.Modelcosmodabigboyosit;
+import net.mcreator.allaboutengie.client.model.Modelcosmodabigboyo;
+import net.mcreator.allaboutengie.client.model.Modelchampdaboyozoom;
+import net.mcreator.allaboutengie.client.model.Modelchampdaboyotired;
+import net.mcreator.allaboutengie.client.model.Modelchampdaboyositnew;
+import net.mcreator.allaboutengie.client.model.Modelchampdaboyosit;
+import net.mcreator.allaboutengie.client.model.Modelchampdaboyolayonside;
+import net.mcreator.allaboutengie.client.model.Modelchampdaboyo;
+import net.mcreator.allaboutengie.client.model.Modelboyozoomtired;
+import net.mcreator.allaboutengie.client.model.Modelboyozooms;
+import net.mcreator.allaboutengie.client.model.Modelboyotired;
+import net.mcreator.allaboutengie.client.model.Modelboyositnew;
+import net.mcreator.allaboutengie.client.model.Modelboyosit;
+import net.mcreator.allaboutengie.client.model.Modelboyoother;
+import net.mcreator.allaboutengie.client.model.Modelboyolayonside;
+import net.mcreator.allaboutengie.client.model.Modelboyoaprilfoolszoomies;
+import net.mcreator.allaboutengie.client.model.Modelboyoaprilfoolssleep;
+import net.mcreator.allaboutengie.client.model.Modelboyoaprilfoolssit;
+import net.mcreator.allaboutengie.client.model.Modelboyoaprilfools;
+import net.mcreator.allaboutengie.client.model.Modelboyo;
+import net.mcreator.allaboutengie.client.model.Modelbigboyotired;
+import net.mcreator.allaboutengie.client.model.Modelbigboyosit;
+import net.mcreator.allaboutengie.client.model.Modelbigboyo;
+import net.mcreator.allaboutengie.client.model.Modelangry_new;
+import net.mcreator.allaboutengie.client.model.Modelalienengiesharkotamed;
+import net.mcreator.allaboutengie.client.model.Modelalienengiesharkolay;
+import net.mcreator.allaboutengie.client.model.Modelalienengiesharko;
+import net.mcreator.allaboutengie.client.model.ModelMadEngie;
+import net.mcreator.allaboutengie.client.model.ModelHeWhoGames;
+import net.mcreator.allaboutengie.client.model.ModelEngieGames;
+import net.mcreator.allaboutengie.client.model.ModelEngie;
+import net.mcreator.allaboutengie.client.model.ModelBiblicallyAccurateEngie;
+
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
+public class AllaboutengieModModels {
+	@SubscribeEvent
+	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(ModelHeWhoGames.LAYER_LOCATION, ModelHeWhoGames::createBodyLayer);
+		event.registerLayerDefinition(Modelboyozoomtired.LAYER_LOCATION, Modelboyozoomtired::createBodyLayer);
+		event.registerLayerDefinition(Modelboyoaprilfoolszoomies.LAYER_LOCATION, Modelboyoaprilfoolszoomies::createBodyLayer);
+		event.registerLayerDefinition(Modelcustomarmorr.LAYER_LOCATION, Modelcustomarmorr::createBodyLayer);
+		event.registerLayerDefinition(Modelboyosit.LAYER_LOCATION, Modelboyosit::createBodyLayer);
+		event.registerLayerDefinition(Modelenragedzombie.LAYER_LOCATION, Modelenragedzombie::createBodyLayer);
+		event.registerLayerDefinition(Modelddayrift.LAYER_LOCATION, Modelddayrift::createBodyLayer);
+		event.registerLayerDefinition(Modelcosmodabigboyo.LAYER_LOCATION, Modelcosmodabigboyo::createBodyLayer);
+		event.registerLayerDefinition(Modelengiegamesarmorl1.LAYER_LOCATION, Modelengiegamesarmorl1::createBodyLayer);
+		event.registerLayerDefinition(Modeltobyzooms.LAYER_LOCATION, Modeltobyzooms::createBodyLayer);
+		event.registerLayerDefinition(Modelengiedaboyolayonside.LAYER_LOCATION, Modelengiedaboyolayonside::createBodyLayer);
+		event.registerLayerDefinition(Modelmissilebombs.LAYER_LOCATION, Modelmissilebombs::createBodyLayer);
+		event.registerLayerDefinition(Modelalienengiesharkotamed.LAYER_LOCATION, Modelalienengiesharkotamed::createBodyLayer);
+		event.registerLayerDefinition(Modelrocky.LAYER_LOCATION, Modelrocky::createBodyLayer);
+		event.registerLayerDefinition(Modelchampdaboyosit.LAYER_LOCATION, Modelchampdaboyosit::createBodyLayer);
+		event.registerLayerDefinition(Modelboyotired.LAYER_LOCATION, Modelboyotired::createBodyLayer);
+		event.registerLayerDefinition(Modelengiedaboyotired.LAYER_LOCATION, Modelengiedaboyotired::createBodyLayer);
+		event.registerLayerDefinition(Modelengiedaboyozoomtired.LAYER_LOCATION, Modelengiedaboyozoomtired::createBodyLayer);
+		event.registerLayerDefinition(Modelengiedaboyositnew.LAYER_LOCATION, Modelengiedaboyositnew::createBodyLayer);
+		event.registerLayerDefinition(Modelbigboyotired.LAYER_LOCATION, Modelbigboyotired::createBodyLayer);
+		event.registerLayerDefinition(Modelengiedaboyosit.LAYER_LOCATION, Modelengiedaboyosit::createBodyLayer);
+		event.registerLayerDefinition(Modelcosmodabigboyosit.LAYER_LOCATION, Modelcosmodabigboyosit::createBodyLayer);
+		event.registerLayerDefinition(Modeltobysitnew.LAYER_LOCATION, Modeltobysitnew::createBodyLayer);
+		event.registerLayerDefinition(Modelalienengiesharko.LAYER_LOCATION, Modelalienengiesharko::createBodyLayer);
+		event.registerLayerDefinition(ModelMadEngie.LAYER_LOCATION, ModelMadEngie::createBodyLayer);
+		event.registerLayerDefinition(Modeltobyzoomtired.LAYER_LOCATION, Modeltobyzoomtired::createBodyLayer);
+		event.registerLayerDefinition(Modeloldboyo.LAYER_LOCATION, Modeloldboyo::createBodyLayer);
+		event.registerLayerDefinition(Modeltobylayonside.LAYER_LOCATION, Modeltobylayonside::createBodyLayer);
+		event.registerLayerDefinition(Modelboyozooms.LAYER_LOCATION, Modelboyozooms::createBodyLayer);
+		event.registerLayerDefinition(Modelchampdaboyotired.LAYER_LOCATION, Modelchampdaboyotired::createBodyLayer);
+		event.registerLayerDefinition(Modelboyolayonside.LAYER_LOCATION, Modelboyolayonside::createBodyLayer);
+		event.registerLayerDefinition(Modelengiegamesarmorl2.LAYER_LOCATION, Modelengiegamesarmorl2::createBodyLayer);
+		event.registerLayerDefinition(Modeltherealengiegamesarmorl2.LAYER_LOCATION, Modeltherealengiegamesarmorl2::createBodyLayer);
+		event.registerLayerDefinition(ModelBiblicallyAccurateEngie.LAYER_LOCATION, ModelBiblicallyAccurateEngie::createBodyLayer);
+		event.registerLayerDefinition(ModelEngieGames.LAYER_LOCATION, ModelEngieGames::createBodyLayer);
+		event.registerLayerDefinition(Modelboyositnew.LAYER_LOCATION, Modelboyositnew::createBodyLayer);
+		event.registerLayerDefinition(Modelchampdaboyozoom.LAYER_LOCATION, Modelchampdaboyozoom::createBodyLayer);
+		event.registerLayerDefinition(Modelengiedaboyozoom.LAYER_LOCATION, Modelengiedaboyozoom::createBodyLayer);
+		event.registerLayerDefinition(Modelbigboyo.LAYER_LOCATION, Modelbigboyo::createBodyLayer);
+		event.registerLayerDefinition(Modelmonstrosity.LAYER_LOCATION, Modelmonstrosity::createBodyLayer);
+		event.registerLayerDefinition(Modelengiedaboyo.LAYER_LOCATION, Modelengiedaboyo::createBodyLayer);
+		event.registerLayerDefinition(Modelcustomarmorl.LAYER_LOCATION, Modelcustomarmorl::createBodyLayer);
+		event.registerLayerDefinition(Modelboyoaprilfoolssleep.LAYER_LOCATION, Modelboyoaprilfoolssleep::createBodyLayer);
+		event.registerLayerDefinition(Modeltherealengiegamesarmorl1.LAYER_LOCATION, Modeltherealengiegamesarmorl1::createBodyLayer);
+		event.registerLayerDefinition(ModelEngie.LAYER_LOCATION, ModelEngie::createBodyLayer);
+		event.registerLayerDefinition(Modelbigboyosit.LAYER_LOCATION, Modelbigboyosit::createBodyLayer);
+		event.registerLayerDefinition(Modeloutraged_new.LAYER_LOCATION, Modeloutraged_new::createBodyLayer);
+		event.registerLayerDefinition(Modelchampdaboyo.LAYER_LOCATION, Modelchampdaboyo::createBodyLayer);
+		event.registerLayerDefinition(Modelrockytired.LAYER_LOCATION, Modelrockytired::createBodyLayer);
+		event.registerLayerDefinition(Modelchampdaboyolayonside.LAYER_LOCATION, Modelchampdaboyolayonside::createBodyLayer);
+		event.registerLayerDefinition(Modelcosmodabigboyotired.LAYER_LOCATION, Modelcosmodabigboyotired::createBodyLayer);
+		event.registerLayerDefinition(Modelalienengiesharkolay.LAYER_LOCATION, Modelalienengiesharkolay::createBodyLayer);
+		event.registerLayerDefinition(Modeltobysit.LAYER_LOCATION, Modeltobysit::createBodyLayer);
+		event.registerLayerDefinition(Modelangry_new.LAYER_LOCATION, Modelangry_new::createBodyLayer);
+		event.registerLayerDefinition(Modelboyo.LAYER_LOCATION, Modelboyo::createBodyLayer);
+		event.registerLayerDefinition(Modelboyoaprilfoolssit.LAYER_LOCATION, Modelboyoaprilfoolssit::createBodyLayer);
+		event.registerLayerDefinition(Modeltoby.LAYER_LOCATION, Modeltoby::createBodyLayer);
+		event.registerLayerDefinition(Modelboyoother.LAYER_LOCATION, Modelboyoother::createBodyLayer);
+		event.registerLayerDefinition(Modeltobytired.LAYER_LOCATION, Modeltobytired::createBodyLayer);
+		event.registerLayerDefinition(Modelchampdaboyositnew.LAYER_LOCATION, Modelchampdaboyositnew::createBodyLayer);
+		event.registerLayerDefinition(Modelenraged_new.LAYER_LOCATION, Modelenraged_new::createBodyLayer);
+		event.registerLayerDefinition(Modelrockylay.LAYER_LOCATION, Modelrockylay::createBodyLayer);
+		event.registerLayerDefinition(Modelboyoaprilfools.LAYER_LOCATION, Modelboyoaprilfools::createBodyLayer);
+	}
+}

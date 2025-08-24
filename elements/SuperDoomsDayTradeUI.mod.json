@@ -1,0 +1,187 @@
+{
+  "_fv": 77,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 180,
+    "height": 140,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": -15,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:SuperDoomsDayCoin"
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 195,
+          "y": 80,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:SuperDoomsDayCoin"
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 223,
+          "y": 80,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "id": 2,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 250,
+          "y": 80,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_trade",
+          "text": "Trade",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SuperDDayTradeButtonClicked"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 133,
+          "y": 79,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -16711936,
+            "falpha": 0.0
+          },
+          "id": 3,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 277,
+          "y": 80,
+          "locked": false
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "scythetrade",
+          "text": "",
+          "x": 194,
+          "y": 56,
+          "locked": false
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "bantrade",
+          "text": "",
+          "x": 222,
+          "y": 56,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_check_this_to_trade_for_a_scythe",
+          "text": {
+            "fixedValue": "Check this to trade for a Scythe."
+          },
+          "width": 24,
+          "height": 24,
+          "x": 192,
+          "y": 54,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_check_this_to_trade_for_a_ban_ha",
+          "text": {
+            "fixedValue": "Check this to trade for a Ban Hammer"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 220,
+          "y": 54,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "checkmark.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Checkmarkdisplaycondition"
+          },
+          "x": 251,
+          "y": 58,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "denymark.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Denymarkdisplaycondition"
+          },
+          "x": 251,
+          "y": 58,
+          "locked": false
+        }
+      }
+    ],
+    "onTick": {
+      "name": "SuperDoomsDayTradeUIWhileThisGUIIsOpenTick"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

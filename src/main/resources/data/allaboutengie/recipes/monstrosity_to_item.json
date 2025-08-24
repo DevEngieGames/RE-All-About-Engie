@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "monstrositytoitems",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "allaboutengie:monstrosity_engie_block"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:monstrosity_engie_essence",
+    "count": 9
+  }
+}

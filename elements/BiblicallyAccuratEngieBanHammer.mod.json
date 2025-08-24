@@ -1,0 +1,38 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "biblicallyaccuratepixel",
+    "customModelName": "ban_hammer_biblicallyaccurate:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Biblically Accurate Ban Hammer",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 10.0,
+    "attackSpeed": 1.25,
+    "enchantability": 15,
+    "damageVsEntity": 1850.0,
+    "usageCount": 9240,
+    "glowCondition": {
+      "fixedValue": true
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "BiblicallyAccurateBanObtainPro"
+    }
+  }
+}

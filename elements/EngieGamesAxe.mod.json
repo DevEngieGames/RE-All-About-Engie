@@ -1,0 +1,41 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Axe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "engiegames_axe",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "EngieGames' Axe",
+    "specialInformation": {
+      "fixedValue": [
+        "Looks like a battle axe."
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 52.0,
+    "attackSpeed": 5.5,
+    "enchantability": 16,
+    "damageVsEntity": 500.0,
+    "usageCount": 25000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

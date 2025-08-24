@@ -1,0 +1,112 @@
+{
+  "_fv": 77,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "theendhelmetbase",
+    "enableBody": true,
+    "textureBody": "theendchestplatebase",
+    "enableLeggings": true,
+    "textureLeggings": "theendleggingsbase",
+    "enableBoots": true,
+    "textureBoots": "theendbootsbase",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsArmor"
+      }
+    ],
+    "armorTextureFile": "backup_",
+    "helmetName": "The End Helmet",
+    "bodyName": "The End Chestplate",
+    "leggingsName": "The End Leggings",
+    "bootsName": "The End Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": [
+        "Congratulations!"
+      ]
+    },
+    "bodySpecialInformation": {
+      "fixedValue": [
+        "Congratulations"
+      ]
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": [
+        "Congratulations"
+      ]
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": [
+        "Congratulations"
+      ]
+    },
+    "helmetModelName": "Modelengiegamesarmorl1",
+    "helmetModelPart": "head",
+    "helmetModelTexture": "theendlayer_1.png",
+    "bodyModelName": "Modelengiegamesarmorl1",
+    "bodyModelPart": "body",
+    "armsModelPartL": "left_arm",
+    "armsModelPartR": "right_arm",
+    "bodyModelTexture": "theendlayer_1.png",
+    "leggingsModelName": "Modelengiegamesarmorl2",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "theendlayer_2.png",
+    "bootsModelName": "Modelengiegamesarmorl1",
+    "bootsModelPartL": "left_shoe",
+    "bootsModelPartR": "right_shoe",
+    "bootsModelTexture": "theendlayer_1.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": true,
+    "bodyImmuneToFire": true,
+    "leggingsImmuneToFire": true,
+    "bootsImmuneToFire": true,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 500,
+    "damageValueHelmet": 500,
+    "damageValueBody": 500,
+    "damageValueLeggings": 500,
+    "damageValueBoots": 500,
+    "enchantability": 15,
+    "toughness": 10.0,
+    "knockbackResistance": 0.7,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:TheEndCoin"
+      }
+    ]
+  }
+}

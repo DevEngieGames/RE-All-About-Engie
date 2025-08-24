@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "allaboutengie:blocks/enraged_engie_block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "allaboutengie:enraged_engie_block"
+        }
+      ]
+    }
+  ]
+}

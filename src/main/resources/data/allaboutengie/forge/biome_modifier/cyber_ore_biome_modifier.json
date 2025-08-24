@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#is_overworld",
+  "features": "allaboutengie:cyber_ore",
+  "step": "underground_ores"
+}

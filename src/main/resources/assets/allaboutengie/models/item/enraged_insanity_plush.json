@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/insanity_enraged_plush",
+  "textures": {
+    "10": "allaboutengie:block/insanityplushenraged",
+    "particle": "allaboutengie:item/volc"
+  }
+}

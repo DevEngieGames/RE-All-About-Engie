@@ -1,0 +1,42 @@
+{
+  "_fv": 77,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Spade",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "enragedengieshovel",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Enraged Engie Shovel",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 19.0,
+    "attackSpeed": 1.8,
+    "enchantability": 7,
+    "damageVsEntity": 50.0,
+    "usageCount": 1750,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "IRON",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "EnragedEngieToolObtain"
+    }
+  }
+}

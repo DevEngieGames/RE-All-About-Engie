@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "allaboutengie:aae_dev_engie"
+    },
+    "title": {
+      "translate": "advancements.hi_dev_engie.title"
+    },
+    "description": {
+      "translate": "advancements.hi_dev_engie.descr"
+    },
+    "frame": "challenge",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "hi_dev_engie_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "allaboutengie:secret_advancements"
+}

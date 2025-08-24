@@ -1,0 +1,31 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "allaboutengie:custom/mindscapeengiesscythe",
+    "textures": {
+      "0": "allaboutengie:block/mindscapeengiesscythe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/mindscapescythe"
+      },
+      "gui_light": "front"
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/mindscapescythe"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/mindscapescythe"
+      }
+    }
+  }
+}
