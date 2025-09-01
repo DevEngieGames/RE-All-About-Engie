@@ -1,24 +1,69 @@
-![HeadsUpForDesc](https://cdn.modrinth.com/data/cached_images/7fb2213e61edffd02b9fb3001e5b618aa03679d8.png)
-- **This mod is a collection of all my other mods.**
-- **There is slight cussing. I have went in and censored parts of the cussing for your safety.**
-- **There are a lot of references to other games.**
-- **There is a reference to [REDACTED] be aware of that.**
-- **My brother was the one who gave me the idea for this mod.**
-- **There are a lot of references to real life species.**
-- **Sadly, there's not a WIKI yet.** :(
 
-![This mod adds:](https://cdn.modrinth.com/data/cached_images/dbe6b9d77f3ea4d17a4d9d53762d7b63b32feaed.png)
-- A few structures, which 2 have a low chance to spawn, the rest have a higher chance to spawn.
-- A **TON** of advancements for you to collect. Some of them relating to me [DevEngie].
-- Armor to help you stay alive longer.
-- Ban Hammers(Which are the swords FYI). They do a lot of damage the more better you find/craft.
-- My own scythe(Weaker than the biggest ban hammer availible). [Changed as of version 1.19.25]
-- Mobs. This is not a joke, I'm being serious.
-- A Katana and a Battle Axe.
-- **~~T H E M~~** *Ahem* Sorry about that, I meant to say Sharkos.
-- A scoreboard to keep track of a certain item. [Changed as of version 1.10.25] (Removed as of 6.8.25)
-- NPC's where you can get better armor and tools. (Best being Unobtainium.)
-- A gamerule which if it is enabled, a new command is able to be used. It's for lore sake, chill out people. (/startdetectivemode)[Changed as of version 12.18.24.]
+<details>
+<summary>Read me before anything else.</summary>
 
-~~I also have no care if you just dip this, I just want to show off my modding skills.~~ ← **This is a joke by the way. I really do care if you download this.** Oh and I have been working on this since **2019**. I'm only deciding to upload this now.
-Oh and I'm not porting this to CurseForge.
+I have been given permission by the original owner (AKA [DevEngie](https://modrinth.com/user/DevEngie)) due to the guy having technical issues and due to this he can no longer update [All About Engie](https://modrinth.com/mod/all-about-engie) so hence the permission for reuploading the mod being given to me([EngieGames](https://modrinth.com/user/EngieGames)). Here is a screenshot of me quote posting [DevEngie](https://modrinth.com/user/DevEngie) on X for proof of the permission being granted.
+
+![Proof that I have permission.](https://cdn.modrinth.com/data/cached_images/5a2b558a01013d0047a37e7137b0b2f3590c3342.png)
+
+</details>
+
+![Heads up!](https://cdn.modrinth.com/data/cached_images/2a66cda4e00a5c222b5cf40a9f40b7e8a75017c3.png)
+
+- **The original mod made by [DevEngie](https://modrinth.com/user/DevEngie) can be found here: https://modrinth.com/mod/all-about-engie**
+- **There is slight cussing which I([EngieGames](https://modrinth.com/user/EngieGames)) may remove in a later version of this mod.**
+- **There is references to other games.**
+- **There is references to Blood. Not like actual blood, but my brother who goes by "Blood/Hellhound_Blood" online.**
+- **There is references to real life species. (i.e. Foxes, Sharks, and Cats.)**
+- **There will be a WIKI later down the line.**
+- **This mods in game ID is the same as the original(AKA "allaboutengie" or "All About Engie").**
+
+![About the mod.](https://cdn.modrinth.com/data/cached_images/c0e86859a7baf2a5aab8e90cfd52645be7806692.png)
+## This mod adds:
+- ### 4 Structures.
+  - **The structures are named the following:**
+    - Item House, Item House XXL, Sharko House, Dimension House.
+- ### Advancements.
+  - **Most are related to obtaining a specific item. Others are for eastereggs or are for a 100% maybe a 101% as well.**
+- ### Amour and tools.
+  - **The tools can range from being tiny to extremely massive!**
+    - Mini, Regular, Big, Large, Huge, Enormous, Gigantic, Massive, Biblically, Monstrosity, Doomsday, Super Doomsday, The End, Engies.
+- ### Mobs.
+  - **Ranging from passive and helpful to extremely aggressive!**
+- ### Recipe book.
+  - **It was my idea.**
+- ### Sharkos.
+  - **Ranging from the standard Blue and White to a very rare Gray!**
+    - Sharko, Albino, Rare, Epic, Legendary, Mythic, Exotic, Engie, Rare Engie, Tiger.
+- ### A coin count to keep track of how much coins you have.
+  - **Limited to just Enraged Coins as of currently.**
+    - This will be changed later down the line.
+- ### Lore mode.
+  - **Can you find him?**
+    - Only time will tell.
+- ### Doomsday
+  - **Survive Mother Nature.**
+    - I would highly reccommend you backup your worlds when trying this. Also has a chance to break which an operator can run "/AllAboutEngie debug doomsday" twice to fix it.
+### Challenge.
+  - **Good luck.**
+    - Enable the realThrowback gamerule to get access to this!
+- ### Throwback.
+  - **Uhh...**
+    - Only 10 hearts(20 HP). Relive 2023.
+
+![Credits.](https://cdn.modrinth.com/data/cached_images/07cb9d914c60154b7ca406fdd162ee6f0e5121c4.png)
+
+- ## MCreator
+  - ### What I use to make the mod.
+- ## [DevEngie](https://modrinth.com/user/DevEngie)
+  - ### Made the base for this mod. ([All About Engie](https://modrinth.com/mod/all-about-engie))
+- ## ROBLOX
+  - ### Inspiration from Craftwars and Tornado Alley Ultimate.
+- ## [TECHNOBLADE](https://www.youtube.com/@Technoblade) NEVER DIES.
+  - ### Inspiration.
+- ## Blood
+  - ### Idea Giver, [All About Engie Dimensions](https://modrinth.com/mod/all-about-engie-dimensions).
+- ## Cocachuu
+  - ### Idea Giver, helped name Item House XXL.
+- ## My younger sister.
+  - ### Idea Giver, helped build Item House XXL.
