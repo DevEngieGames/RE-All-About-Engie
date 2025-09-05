@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class EpicSharkoTamedZoomiesRenderer extends MobRenderer<EpicSharkoTamedZ
 
 	@Override
 	public ResourceLocation getTextureLocation(EpicSharkoTamedZoomiesEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/epicsharkonewtamedzoom.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/epicsharkonewtamedzoom.png");
 	}
 
 	private static final class AnimatedModel extends Modelboyozooms<EpicSharkoTamedZoomiesEntity> {

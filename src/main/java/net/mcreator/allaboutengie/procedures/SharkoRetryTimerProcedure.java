@@ -37,6 +37,7 @@ public class SharkoRetryTimerProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				entity.getPersistentData().putDouble("SharkoRCTameRetry", 0);
 			}
 		}
 	}

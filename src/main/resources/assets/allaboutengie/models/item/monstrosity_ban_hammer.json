@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/ban_hammer_monstrosity",
     "textures": {
-      "0": "allaboutengie:block/monstrosity"
+      "0": "allaboutengie:block/monstrosity",
+      "particle": "allaboutengie:item/monstrositypixel"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/monstrositypixel"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/monstrositypixel"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/monstrositypixel"

@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "enchantment",
   "definition": {
     "name": "Engies Blessing",
@@ -51,13 +51,76 @@
         "value": "CUSTOM:Echdeath"
       },
       {
-        "value": "CUSTOM:EchdeathPixel"
+        "value": "CUSTOM:EngieAxe"
+      },
+      {
+        "value": "CUSTOM:EngiePickaxe"
+      },
+      {
+        "value": "CUSTOM:EngieShovel"
+      },
+      {
+        "value": "CUSTOM:EngieHoe"
+      },
+      {
+        "value": "CUSTOM:AngryEngieAxe"
+      },
+      {
+        "value": "CUSTOM:AngryEngiePickaxe"
+      },
+      {
+        "value": "CUSTOM:AngryEngieShovel"
+      },
+      {
+        "value": "CUSTOM:AngryEngieHoe"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieAxe"
+      },
+      {
+        "value": "CUSTOM:EnragedEngiePickaxe"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieShovel"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieHoe"
+      },
+      {
+        "value": "CUSTOM:EngiAxe"
+      },
+      {
+        "value": "CUSTOM:EngiPickaxe"
+      },
+      {
+        "value": "CUSTOM:EngiShovel"
       },
       {
         "value": "CUSTOM:EngiesScythe"
       },
       {
-        "value": "CUSTOM:EngiesScythePixel"
+        "value": "CUSTOM:OperatorsAxe"
+      },
+      {
+        "value": "CUSTOM:OperatorsPickaxe"
+      },
+      {
+        "value": "CUSTOM:OperatorsShovel"
+      },
+      {
+        "value": "CUSTOM:OperatorsHoe"
+      },
+      {
+        "value": "CUSTOM:CyberKatana"
+      },
+      {
+        "value": "CUSTOM:BloodBattleAxe"
+      },
+      {
+        "value": "CUSTOM:CyberbloodKatana"
+      },
+      {
+        "value": "CUSTOM:CyberbloodBattleAxe"
       },
       {
         "value": "CUSTOM:MiniBanHammer"
@@ -75,9 +138,6 @@
         "value": "CUSTOM:HugeBanHammer"
       },
       {
-        "value": "CUSTOM:MiniBanHammerPixel"
-      },
-      {
         "value": "CUSTOM:EnormousBanHammer"
       },
       {
@@ -87,67 +147,172 @@
         "value": "CUSTOM:MassiveBanHammer"
       },
       {
-        "value": "CUSTOM:BanHammerPixel"
-      },
-      {
-        "value": "CUSTOM:BigBanHammerPixel"
-      },
-      {
-        "value": "CUSTOM:LargeBanHammerPixel"
-      },
-      {
-        "value": "CUSTOM:HugeBanHammerPixel"
-      },
-      {
-        "value": "CUSTOM:EnormousBanHammerPixel"
-      },
-      {
-        "value": "CUSTOM:GiganticBanHammerPixel"
-      },
-      {
-        "value": "CUSTOM:MassiveBanHammerPixel"
-      },
-      {
         "value": "CUSTOM:CodeRedeemersHammer"
       },
       {
-        "value": "CUSTOM:CodeRedeemersHammerPixel"
+        "value": "CUSTOM:OutragedEngieAxe"
+      },
+      {
+        "value": "CUSTOM:OutragedEngiePickaxe"
+      },
+      {
+        "value": "CUSTOM:OutragedEngieShovel"
+      },
+      {
+        "value": "CUSTOM:OutragedEngieHoe"
       },
       {
         "value": "CUSTOM:CommonSword"
       },
       {
+        "value": "CUSTOM:CommonPickaxe"
+      },
+      {
+        "value": "CUSTOM:CommonAxe"
+      },
+      {
+        "value": "CUSTOM:CommonShovel"
+      },
+      {
+        "value": "CUSTOM:CommonHoe"
+      },
+      {
         "value": "CUSTOM:UncommonSword"
+      },
+      {
+        "value": "CUSTOM:UncommonPickaxe"
+      },
+      {
+        "value": "CUSTOM:UncommonAxe"
+      },
+      {
+        "value": "CUSTOM:UncommonShovel"
+      },
+      {
+        "value": "CUSTOM:UncommonHoe"
       },
       {
         "value": "CUSTOM:RareSword"
       },
       {
+        "value": "CUSTOM:RarePickaxe"
+      },
+      {
+        "value": "CUSTOM:RareAxe"
+      },
+      {
+        "value": "CUSTOM:RareShovel"
+      },
+      {
+        "value": "CUSTOM:RareHoe"
+      },
+      {
         "value": "CUSTOM:EpicSword"
+      },
+      {
+        "value": "CUSTOM:EpicPickaxe"
+      },
+      {
+        "value": "CUSTOM:EpicAxe"
+      },
+      {
+        "value": "CUSTOM:EpicShovel"
+      },
+      {
+        "value": "CUSTOM:EpicHoe"
       },
       {
         "value": "CUSTOM:LegendarySword"
       },
       {
+        "value": "CUSTOM:LegendaryPickaxe"
+      },
+      {
+        "value": "CUSTOM:LegendaryAxe"
+      },
+      {
+        "value": "CUSTOM:LegendaryShovel"
+      },
+      {
+        "value": "CUSTOM:LegendaryHoe"
+      },
+      {
         "value": "CUSTOM:MythicSword"
+      },
+      {
+        "value": "CUSTOM:MythicPickaxe"
+      },
+      {
+        "value": "CUSTOM:MythicAxe"
+      },
+      {
+        "value": "CUSTOM:MythicShovel"
+      },
+      {
+        "value": "CUSTOM:MythicHoe"
       },
       {
         "value": "CUSTOM:ExoticSword"
       },
       {
+        "value": "CUSTOM:ExoticPickaxe"
+      },
+      {
+        "value": "CUSTOM:ExoticAxe"
+      },
+      {
+        "value": "CUSTOM:ExoticShovel"
+      },
+      {
+        "value": "CUSTOM:ExoticHoe"
+      },
+      {
         "value": "CUSTOM:UnobtainiumSword"
+      },
+      {
+        "value": "CUSTOM:UnobtainiumPickaxe"
+      },
+      {
+        "value": "CUSTOM:UnobtainiumAxe"
+      },
+      {
+        "value": "CUSTOM:UnobtainiumShovel"
+      },
+      {
+        "value": "CUSTOM:UnobtainiumHoe"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngieAxe"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngiePickaxe"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngieShovel"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngieHoe"
       },
       {
         "value": "CUSTOM:BiblicallyAccuratEngieBanHammer"
       },
       {
-        "value": "CUSTOM:BiblicallyAccurateEngieBanHammerPixel"
+        "value": "CUSTOM:MonstrosityEngieAxe"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngiePickaxe"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngieShovel"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngieHoe"
+      },
+      {
+        "value": "CUSTOM:BahemothBanHammer"
       },
       {
         "value": "CUSTOM:MonstrosityBanHammer"
-      },
-      {
-        "value": "CUSTOM:MonstrosityBanHammerPixel"
       },
       {
         "value": "CUSTOM:HWGScythe"
@@ -159,10 +324,88 @@
         "value": "CUSTOM:SuperDoomsDayScythe"
       },
       {
+        "value": "CUSTOM:DoomsDayAxe"
+      },
+      {
+        "value": "CUSTOM:DoomsDayPickaxe"
+      },
+      {
+        "value": "CUSTOM:DoomsDayShovel"
+      },
+      {
+        "value": "CUSTOM:DoomsDayHoe"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayAxe"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayPickaxe"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayShovel"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayHoe"
+      },
+      {
         "value": "CUSTOM:TheEndScythe"
       },
       {
+        "value": "CUSTOM:TheEndPickaxe"
+      },
+      {
+        "value": "CUSTOM:TheEndAxe"
+      },
+      {
+        "value": "CUSTOM:TheEndShovel"
+      },
+      {
+        "value": "CUSTOM:TheEndHoe"
+      },
+      {
         "value": "CUSTOM:EngieScythe"
+      },
+      {
+        "value": "CUSTOM:EngiesPickaxe"
+      },
+      {
+        "value": "CUSTOM:EngiesAxe"
+      },
+      {
+        "value": "CUSTOM:EngiesShovel"
+      },
+      {
+        "value": "CUSTOM:EngiesHoe"
+      },
+      {
+        "value": "CUSTOM:EngiesPaxel"
+      },
+      {
+        "value": "CUSTOM:EngiePaxel"
+      },
+      {
+        "value": "CUSTOM:AngryEngiePaxel"
+      },
+      {
+        "value": "CUSTOM:EnragedEngiePaxel"
+      },
+      {
+        "value": "CUSTOM:OutragedEngiePaxel"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngiePaxel"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngiePaxel"
+      },
+      {
+        "value": "CUSTOM:DoomsDayPaxel"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayPaxel"
+      },
+      {
+        "value": "CUSTOM:TheEndPaxel"
       },
       {
         "value": "CUSTOM:MiniScythe"
@@ -213,19 +456,73 @@
         "value": "CUSTOM:ARealBanHammerPixel"
       },
       {
-        "value": "Items.WOODEN_SWORD"
+        "value": "CUSTOM:MindscapeBanHammer"
       },
       {
-        "value": "Items.STONE_SWORD"
+        "value": "CUSTOM:MindscapeScythe"
       },
       {
-        "value": "Items.IRON_SWORD"
+        "value": "CUSTOM:MindscapeEngiesAxe"
       },
       {
-        "value": "Items.DIAMOND_SWORD"
+        "value": "CUSTOM:MindscapeEngiesPickaxe"
       },
       {
-        "value": "Items.NETHERITE_SWORD"
+        "value": "CUSTOM:MindscapeEngiesShovel"
+      },
+      {
+        "value": "CUSTOM:MindscapeEngiesHoe"
+      },
+      {
+        "value": "CUSTOM:MindscapeEngiesPaxel"
+      },
+      {
+        "value": "CUSTOM:EngieGamesSword"
+      },
+      {
+        "value": "CUSTOM:EngieGamesPickaxe"
+      },
+      {
+        "value": "CUSTOM:EngieGamesAxe"
+      },
+      {
+        "value": "CUSTOM:EngieGamesShovel"
+      },
+      {
+        "value": "CUSTOM:EngieGamesHoe"
+      },
+      {
+        "value": "CUSTOM:EngieSword"
+      },
+      {
+        "value": "CUSTOM:AngryEngieSword"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieSword"
+      },
+      {
+        "value": "CUSTOM:OutragedEngieSword"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngieSword"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngieSword"
+      },
+      {
+        "value": "CUSTOM:DoomsDaySword"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDaySword"
+      },
+      {
+        "value": "CUSTOM:TheEndSword"
+      },
+      {
+        "value": "CUSTOM:MindscapeEngiesSword"
+      },
+      {
+        "value": "CUSTOM:EngiesSword"
       },
       {
         "value": "CUSTOM:Operators.helmet"
@@ -646,6 +943,156 @@
       },
       {
         "value": "CUSTOM:EngieGamess.boots"
+      },
+      {
+        "value": "CUSTOM:MindscapeEngies.helmet"
+      },
+      {
+        "value": "CUSTOM:MindscapeEngies.body"
+      },
+      {
+        "value": "CUSTOM:MindscapeEngies.legs"
+      },
+      {
+        "value": "CUSTOM:MindscapeEngies.boots"
+      },
+      {
+        "value": "CUSTOM:TheRealEngieGamess.helmet"
+      },
+      {
+        "value": "CUSTOM:TheRealEngieGamess.body"
+      },
+      {
+        "value": "CUSTOM:TheRealEngieGamess.legs"
+      },
+      {
+        "value": "CUSTOM:TheRealEngieGamess.boots"
+      },
+      {
+        "value": "CUSTOM:Distorteds.helmet"
+      },
+      {
+        "value": "CUSTOM:Distorteds.body"
+      },
+      {
+        "value": "CUSTOM:Distorteds.legs"
+      },
+      {
+        "value": "CUSTOM:Distorteds.boots"
+      },
+      {
+        "value": "CUSTOM:BetaTester.helmet"
+      },
+      {
+        "value": "CUSTOM:BetaTester.body"
+      },
+      {
+        "value": "CUSTOM:BetaTester.legs"
+      },
+      {
+        "value": "CUSTOM:BetaTester.boots"
+      },
+      {
+        "value": "CUSTOM:ContentCreator.helmet"
+      },
+      {
+        "value": "CUSTOM:ContentCreator.body"
+      },
+      {
+        "value": "CUSTOM:ContentCreator.legs"
+      },
+      {
+        "value": "CUSTOM:ContentCreator.boots"
+      },
+      {
+        "value": "Items.WOODEN_SWORD"
+      },
+      {
+        "value": "Items.WOODEN_SHOVEL"
+      },
+      {
+        "value": "Items.WOODEN_PICKAXE"
+      },
+      {
+        "value": "Items.WOODEN_AXE"
+      },
+      {
+        "value": "Items.WOODEN_HOE"
+      },
+      {
+        "value": "Items.STONE_SWORD"
+      },
+      {
+        "value": "Items.STONE_SHOVEL"
+      },
+      {
+        "value": "Items.STONE_PICKAXE"
+      },
+      {
+        "value": "Items.STONE_AXE"
+      },
+      {
+        "value": "Items.STONE_HOE"
+      },
+      {
+        "value": "Items.IRON_SWORD"
+      },
+      {
+        "value": "Items.IRON_SHOVEL"
+      },
+      {
+        "value": "Items.IRON_PICKAXE"
+      },
+      {
+        "value": "Items.IRON_AXE"
+      },
+      {
+        "value": "Items.IRON_HOE"
+      },
+      {
+        "value": "Items.GOLDEN_SWORD"
+      },
+      {
+        "value": "Items.GOLDEN_SHOVEL"
+      },
+      {
+        "value": "Items.GOLDEN_PICKAXE"
+      },
+      {
+        "value": "Items.GOLDEN_AXE"
+      },
+      {
+        "value": "Items.GOLDEN_HOE"
+      },
+      {
+        "value": "Items.DIAMOND_SWORD"
+      },
+      {
+        "value": "Items.DIAMOND_SHOVEL"
+      },
+      {
+        "value": "Items.DIAMOND_PICKAXE"
+      },
+      {
+        "value": "Items.DIAMOND_AXE"
+      },
+      {
+        "value": "Items.DIAMOND_HOE"
+      },
+      {
+        "value": "Items.NETHERITE_SWORD"
+      },
+      {
+        "value": "Items.NETHERITE_SHOVEL"
+      },
+      {
+        "value": "Items.NETHERITE_PICKAXE"
+      },
+      {
+        "value": "Items.NETHERITE_AXE"
+      },
+      {
+        "value": "Items.NETHERITE_HOE"
       },
       {
         "value": "Items.LEATHER_HELMET"

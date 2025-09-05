@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class LegendarySharkoLayRenderer extends MobRenderer<LegendarySharkoLayEn
 
 	@Override
 	public ResourceLocation getTextureLocation(LegendarySharkoLayEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/legendarysharkonewtamed.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/legendarysharkonewtamed.png");
 	}
 
 	private static final class AnimatedModel extends Modelboyosit<LegendarySharkoLayEntity> {

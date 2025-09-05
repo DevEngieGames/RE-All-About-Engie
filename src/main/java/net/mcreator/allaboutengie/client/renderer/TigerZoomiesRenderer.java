@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class TigerZoomiesRenderer extends MobRenderer<TigerZoomiesEntity, Modelt
 
 	@Override
 	public ResourceLocation getTextureLocation(TigerZoomiesEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/tiger.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/tiger.png");
 	}
 
 	private static final class AnimatedModel extends Modeltoby<TigerZoomiesEntity> {

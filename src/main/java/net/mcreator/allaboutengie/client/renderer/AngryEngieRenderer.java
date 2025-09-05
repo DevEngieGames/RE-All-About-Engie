@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +18,7 @@ public class AngryEngieRenderer extends MobRenderer<AngryEngieEntity, Modelangry
 	public AngryEngieRenderer(EntityRendererProvider.Context context) {
 		super(context, new Modelangry_new<AngryEngieEntity>(context.bakeLayer(Modelangry_new.LAYER_LOCATION)), 0.5f);
 		this.addLayer(new RenderLayer<AngryEngieEntity, Modelangry_new<AngryEngieEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("allaboutengie:textures/entities/angrynew_g.png");
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("allaboutengie:textures/entities/angrynew_g.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, AngryEngieEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -31,6 +30,6 @@ public class AngryEngieRenderer extends MobRenderer<AngryEngieEntity, Modelangry
 
 	@Override
 	public ResourceLocation getTextureLocation(AngryEngieEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/angrynew.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/angrynew.png");
 	}
 }

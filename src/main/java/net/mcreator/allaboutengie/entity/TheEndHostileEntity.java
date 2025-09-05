@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.entity;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,7 +22,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
@@ -47,7 +45,7 @@ import net.mcreator.allaboutengie.init.AllaboutengieModEntities;
 
 import javax.annotation.Nullable;
 
-public class TheEndHostileEntity extends PathfinderMob {
+public class TheEndHostileEntity extends Monster {
 	public TheEndHostileEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(AllaboutengieModEntities.THE_END_HOSTILE.get(), world);
 	}
@@ -102,12 +100,12 @@ public class TheEndHostileEntity extends PathfinderMob {
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.death"));
 	}
 
 	@Override
@@ -140,7 +138,7 @@ public class TheEndHostileEntity extends PathfinderMob {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.6);
 		builder = builder.add(Attributes.MAX_HEALTH, 525);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);

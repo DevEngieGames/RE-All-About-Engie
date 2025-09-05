@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.block;
 
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -11,7 +10,7 @@ import net.minecraft.core.BlockPos;
 
 public class ThanksForPlayingBlock extends Block {
 	public ThanksForPlayingBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE).strength(1.5f, 64000f));
+		super(BlockBehaviour.Properties.of().sound(SoundType.DEEPSLATE).strength(1.5f, 64000f).instrument(NoteBlockInstrument.BASEDRUM));
 	}
 
 	@Override

@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class FinneganLayOnSideRenderer extends MobRenderer<FinneganLayOnSideEnti
 
 	@Override
 	public ResourceLocation getTextureLocation(FinneganLayOnSideEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/rareengiesharkonewtamedfox.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/rareengiesharkonewtamedfox.png");
 	}
 
 	private static final class AnimatedModel extends Modelboyolayonside<FinneganLayOnSideEntity> {

@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/ban_hammer_doomsday",
     "textures": {
-      "0": "allaboutengie:block/doomsdaybanhammer"
+      "0": "allaboutengie:block/doomsdaybanhammer",
+      "particle": "allaboutengie:item/doomsdaybanpixel"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/doomsdaybanpixel"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/doomsdaybanpixel"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/doomsdaybanpixel"

@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/ban_hammer_biblicallyaccurate",
     "textures": {
-      "0": "allaboutengie:block/biblicallyaccurateyeah"
+      "0": "allaboutengie:block/biblicallyaccurateyeah",
+      "particle": "allaboutengie:item/biblicallyaccuratepixel"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/biblicallyaccuratepixel"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/biblicallyaccuratepixel"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/biblicallyaccuratepixel"

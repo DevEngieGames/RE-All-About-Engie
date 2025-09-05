@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +18,7 @@ public class HeWhoGamesRenderer extends MobRenderer<HeWhoGamesEntity, ModelHeWho
 	public HeWhoGamesRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelHeWhoGames<HeWhoGamesEntity>(context.bakeLayer(ModelHeWhoGames.LAYER_LOCATION)), 0.5f);
 		this.addLayer(new RenderLayer<HeWhoGamesEntity, ModelHeWhoGames<HeWhoGamesEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("allaboutengie:textures/entities/hewhogames_g.png");
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("allaboutengie:textures/entities/hewhogames_g.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, HeWhoGamesEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -31,6 +30,6 @@ public class HeWhoGamesRenderer extends MobRenderer<HeWhoGamesEntity, ModelHeWho
 
 	@Override
 	public ResourceLocation getTextureLocation(HeWhoGamesEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/hewhogames.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/hewhogames.png");
 	}
 }

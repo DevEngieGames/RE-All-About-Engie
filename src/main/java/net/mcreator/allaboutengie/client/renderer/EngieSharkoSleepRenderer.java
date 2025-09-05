@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class EngieSharkoSleepRenderer extends MobRenderer<EngieSharkoSleepEntity
 
 	@Override
 	public ResourceLocation getTextureLocation(EngieSharkoSleepEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/engiesharkonewtamedtired.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/engiesharkonewtamedtired.png");
 	}
 
 	private static final class AnimatedModel extends Modelboyotired<EngieSharkoSleepEntity> {

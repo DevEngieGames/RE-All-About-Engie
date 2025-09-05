@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.block;
 
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class OldEngieOreBlock extends Block {
 	public OldEngieOreBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(1.5f, 10f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(1.5f, 10f).requiresCorrectToolForDrops().instrument(NoteBlockInstrument.BASEDRUM));
 	}
 
 	@Override

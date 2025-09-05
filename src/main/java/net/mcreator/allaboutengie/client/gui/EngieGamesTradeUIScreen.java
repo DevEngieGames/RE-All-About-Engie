@@ -11,17 +11,16 @@ import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.allaboutengie.world.inventory.EngieGamesTradeUIMenu;
 import net.mcreator.allaboutengie.network.EngieGamesTradeUIButtonMessage;
+import net.mcreator.allaboutengie.init.AllaboutengieModScreens;
 import net.mcreator.allaboutengie.AllaboutengieMod;
-
-import java.util.HashMap;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
-public class EngieGamesTradeUIScreen extends AbstractContainerScreen<EngieGamesTradeUIMenu> {
-	private final static HashMap<String, Object> guistate = EngieGamesTradeUIMenu.guistate;
+public class EngieGamesTradeUIScreen extends AbstractContainerScreen<EngieGamesTradeUIMenu> implements AllaboutengieModScreens.ScreenAccessor {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	private boolean menuStateUpdateActive = false;
 	Button button_trade;
 
 	public EngieGamesTradeUIScreen(EngieGamesTradeUIMenu container, Inventory inventory, Component text) {
@@ -35,7 +34,13 @@ public class EngieGamesTradeUIScreen extends AbstractContainerScreen<EngieGamesT
 		this.imageHeight = 140;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("allaboutengie:textures/screens/engie_games_trade_ui.png");
+	@Override
+	public void updateMenuState(int elementType, String name, Object elementState) {
+		menuStateUpdateActive = true;
+		menuStateUpdateActive = false;
+	}
+
+	private static final ResourceLocation texture = ResourceLocation.parse("allaboutengie:textures/screens/engie_games_trade_ui.png");
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
@@ -45,7 +50,7 @@ public class EngieGamesTradeUIScreen extends AbstractContainerScreen<EngieGamesT
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -70,12 +75,13 @@ public class EngieGamesTradeUIScreen extends AbstractContainerScreen<EngieGamesT
 	public void init() {
 		super.init();
 		button_trade = Button.builder(Component.translatable("gui.allaboutengie.engie_games_trade_ui.button_trade"), e -> {
+			int x = EngieGamesTradeUIScreen.this.x;
+			int y = EngieGamesTradeUIScreen.this.y;
 			if (true) {
 				AllaboutengieMod.PACKET_HANDLER.sendToServer(new EngieGamesTradeUIButtonMessage(0, x, y, z));
 				EngieGamesTradeUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 8, this.topPos + 29, 51, 20).build();
-		guistate.put("button:button_trade", button_trade);
 		this.addRenderableWidget(button_trade);
 	}
 }

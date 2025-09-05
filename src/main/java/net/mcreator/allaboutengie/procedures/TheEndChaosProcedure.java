@@ -57,9 +57,9 @@ public class TheEndChaosProcedure {
 						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:doomsday_start")), SoundSource.MUSIC, (float) 1.5, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC, (float) 1.5, 1);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:doomsday_start")), SoundSource.MUSIC, (float) 1.5, 1, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC, (float) 1.5, 1, false);
 							}
 						}
 					}
@@ -176,9 +176,9 @@ public class TheEndChaosProcedure {
 					}
 					if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).DoomsdayAlive == true) {
 						if (!(entity instanceof ServerPlayer _plr24 && _plr24.level() instanceof ServerLevel
-								&& _plr24.getAdvancements().getOrStartProgress(_plr24.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:the_one"))).isDone())) {
+								&& _plr24.getAdvancements().getOrStartProgress(_plr24.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:the_one"))).isDone())) {
 							if (entity instanceof ServerPlayer _player) {
-								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:the_one"));
+								Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:the_one"));
 								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 								if (!_ap.isDone()) {
 									for (String criteria : _ap.getRemainingCriteria())
@@ -187,9 +187,9 @@ public class TheEndChaosProcedure {
 							}
 						}
 						if (!(entity instanceof ServerPlayer _plr26 && _plr26.level() instanceof ServerLevel
-								&& _plr26.getAdvancements().getOrStartProgress(_plr26.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:conqueror"))).isDone())) {
+								&& _plr26.getAdvancements().getOrStartProgress(_plr26.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:conqueror"))).isDone())) {
 							if (entity instanceof ServerPlayer _player) {
-								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:conqueror"));
+								Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:conqueror"));
 								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 								if (!_ap.isDone()) {
 									for (String criteria : _ap.getRemainingCriteria())

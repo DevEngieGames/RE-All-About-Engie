@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class EpicSharkoLayOnSideRenderer extends MobRenderer<EpicSharkoLayOnSide
 
 	@Override
 	public ResourceLocation getTextureLocation(EpicSharkoLayOnSideEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/epicsharkonewtamed.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/epicsharkonewtamed.png");
 	}
 
 	private static final class AnimatedModel extends Modelboyolayonside<EpicSharkoLayOnSideEntity> {

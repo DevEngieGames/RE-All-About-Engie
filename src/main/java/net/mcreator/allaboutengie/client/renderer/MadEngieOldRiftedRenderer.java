@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class MadEngieOldRiftedRenderer extends HumanoidMobRenderer<MadEngieOldRi
 
 	@Override
 	public ResourceLocation getTextureLocation(MadEngieOldRiftedEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/madengieoldrifted.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/madengieoldrifted.png");
 	}
 }

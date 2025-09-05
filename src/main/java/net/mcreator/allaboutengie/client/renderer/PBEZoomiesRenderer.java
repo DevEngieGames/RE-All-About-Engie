@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class PBEZoomiesRenderer extends MobRenderer<PBEZoomiesEntity, Modelengie
 
 	@Override
 	public ResourceLocation getTextureLocation(PBEZoomiesEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/engiedasharko2zoom.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/engiedasharko2zoom.png");
 	}
 
 	private static final class AnimatedModel extends Modelengiedaboyozoom<PBEZoomiesEntity> {

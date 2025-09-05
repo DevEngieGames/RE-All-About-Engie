@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class AngryCreatorRiftedRenderer extends HumanoidMobRenderer<AngryCreator
 
 	@Override
 	public ResourceLocation getTextureLocation(AngryCreatorRiftedEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/angrycreatorrifted.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/angrycreatorrifted.png");
 	}
 }

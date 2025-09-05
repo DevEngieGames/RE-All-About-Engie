@@ -48,9 +48,9 @@ public class TheEndDialogueProcedure {
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1, false);
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1, false);
 						}
 					}
 				}
@@ -246,10 +246,10 @@ public class TheEndDialogueProcedure {
 																		}
 																		if (world instanceof Level _level) {
 																			if (!_level.isClientSide()) {
-																				_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:doomsday_start")), SoundSource.MUSIC,
+																				_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC,
 																						(float) 1.5, 1);
 																			} else {
-																				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:doomsday_start")), SoundSource.MUSIC, (float) 1.5, 1, false);
+																				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC, (float) 1.5, 1, false);
 																			}
 																		}
 																		AllaboutengieModVariables.MapVariables.get(world).theendmainsongstart = true;

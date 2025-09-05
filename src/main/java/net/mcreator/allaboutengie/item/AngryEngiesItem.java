@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -40,7 +39,7 @@ public abstract class AngryEngiesItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_iron"));
+				return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("item.armor.equip_iron"));
 			}
 
 			@Override

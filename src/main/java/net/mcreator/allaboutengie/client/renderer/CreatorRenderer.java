@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class CreatorRenderer extends HumanoidMobRenderer<CreatorEntity, Humanoid
 
 	@Override
 	public ResourceLocation getTextureLocation(CreatorEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/creator.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/creator.png");
 	}
 }

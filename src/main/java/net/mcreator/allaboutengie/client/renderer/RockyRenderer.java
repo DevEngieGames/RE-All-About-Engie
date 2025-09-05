@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class RockyRenderer extends MobRenderer<RockyEntity, Modelrocky<RockyEnti
 
 	@Override
 	public ResourceLocation getTextureLocation(RockyEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/rocky.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/rocky.png");
 	}
 
 	private static final class AnimatedModel extends Modelrocky<RockyEntity> {

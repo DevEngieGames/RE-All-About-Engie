@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class ByeByeThereItem extends RecordItem {
 	public ByeByeThereItem() {
-		super(15, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:byebyethere")), new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 7560);
+		super(15, () -> ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:byebyethere")), new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 7560);
 	}
 
 	@Override

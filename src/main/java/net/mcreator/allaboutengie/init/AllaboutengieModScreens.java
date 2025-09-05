@@ -1,4 +1,3 @@
-
 /*
  *	MCreator note: This file will be REGENERATED on each build.
  */
@@ -13,6 +12,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.mcreator.allaboutengie.client.gui.TheEndTradeUIScreen;
 import net.mcreator.allaboutengie.client.gui.SuperDoomsDayTradeUIScreen;
+import net.mcreator.allaboutengie.client.gui.RegularMetalBundleUIScreen;
 import net.mcreator.allaboutengie.client.gui.OutragedEngieBundleUIScreen;
 import net.mcreator.allaboutengie.client.gui.MonstrosityEngieBundleUIScreen;
 import net.mcreator.allaboutengie.client.gui.MetalChestUIScreen;
@@ -53,6 +53,11 @@ public class AllaboutengieModScreens {
 			MenuScreens.register(AllaboutengieModMenus.BIRTHDAY_BUNDLE_FOR_YOUNGEST_UI.get(), BirthdayBundleForYoungestUIScreen::new);
 			MenuScreens.register(AllaboutengieModMenus.CUSTOM_RECIPE_BOOK.get(), CustomRecipeBookScreen::new);
 			MenuScreens.register(AllaboutengieModMenus.ENGIE_GAMES_TRADE_UI.get(), EngieGamesTradeUIScreen::new);
+			MenuScreens.register(AllaboutengieModMenus.REGULAR_METAL_BUNDLE_UI.get(), RegularMetalBundleUIScreen::new);
 		});
+	}
+
+	public interface ScreenAccessor {
+		void updateMenuState(int elementType, String name, Object elementState);
 	}
 }

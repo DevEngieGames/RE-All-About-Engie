@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
@@ -8,6 +8,7 @@
     "texture": "biblicallyaccuratescythe",
     "customModelName": "biblicallyaccuratescythe:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "biblicallyaccuratescythe",
     "name": "Biblically Accurate Scythe",
     "specialInformation": {
       "fixedValue": []

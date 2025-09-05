@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class HotlineMiami2RunItem extends RecordItem {
 	public HotlineMiami2RunItem() {
-		super(15, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:hotlinemiami2-run")), new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 6960);
+		super(15, () -> ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:hotlinemiami2-run")), new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 6960);
 	}
 
 	@Override

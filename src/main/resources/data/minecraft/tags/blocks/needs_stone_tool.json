@@ -1,7 +1,10 @@
 {
   "replace": false,
   "values": [
-    "allaboutengie:old_engie_ore",
-    "allaboutengie:engie_ore"
+    "allaboutengie:angry_engie_block",
+    "allaboutengie:engie_block",
+    "allaboutengie:engie_ore",
+    "allaboutengie:antimatter_engie_ore",
+    "allaboutengie:old_engie_ore"
   ]
 }

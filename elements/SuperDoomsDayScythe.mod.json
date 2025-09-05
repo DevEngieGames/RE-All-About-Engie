@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
@@ -8,6 +8,7 @@
     "texture": "sdoomsdayscythe",
     "customModelName": "superdoomsdayscythe:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "sdoomsdayscythe",
     "name": "Super Doomsday Scythe",
     "specialInformation": {
       "fixedValue": [

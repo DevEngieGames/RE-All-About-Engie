@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +18,7 @@ public class InsanityRenderer extends MobRenderer<InsanityEntity, ModelEngieGame
 	public InsanityRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelEngieGames<InsanityEntity>(context.bakeLayer(ModelEngieGames.LAYER_LOCATION)), 0.5f);
 		this.addLayer(new RenderLayer<InsanityEntity, ModelEngieGames<InsanityEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("allaboutengie:textures/entities/insanity_e.png");
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("allaboutengie:textures/entities/insanity_e.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, InsanityEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -31,6 +30,6 @@ public class InsanityRenderer extends MobRenderer<InsanityEntity, ModelEngieGame
 
 	@Override
 	public ResourceLocation getTextureLocation(InsanityEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/insanity.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/insanity.png");
 	}
 }

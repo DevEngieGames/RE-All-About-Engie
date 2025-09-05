@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class DistortedRenderer extends HumanoidMobRenderer<DistortedEntity, Huma
 
 	@Override
 	public ResourceLocation getTextureLocation(DistortedEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/distortedentity.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/distortedentity.png");
 	}
 }

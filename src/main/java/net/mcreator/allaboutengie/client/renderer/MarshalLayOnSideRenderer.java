@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class MarshalLayOnSideRenderer extends MobRenderer<MarshalLayOnSideEntity
 
 	@Override
 	public ResourceLocation getTextureLocation(MarshalLayOnSideEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/marshal.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/marshal.png");
 	}
 
 	private static final class AnimatedModel extends Modeltobylayonside<MarshalLayOnSideEntity> {

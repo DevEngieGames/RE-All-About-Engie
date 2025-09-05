@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class AlbinoSharkoTamedZoomiesTiredRenderer extends MobRenderer<AlbinoSha
 
 	@Override
 	public ResourceLocation getTextureLocation(AlbinoSharkoTamedZoomiesTiredEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/albinosharkonewtamedzoomtired.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/albinosharkonewtamedzoomtired.png");
 	}
 }

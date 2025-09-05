@@ -32,7 +32,7 @@ public class TobyRCProcedure {
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			} else {
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 1));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 1);
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.HEART, x, y, z, 1, 1, 1, 1, 1);
 			}
@@ -43,7 +43,7 @@ public class TobyRCProcedure {
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			} else {
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 2));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 2);
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.HEART, x, y, z, 2, 1, 1, 1, 1);
 			}
@@ -54,7 +54,7 @@ public class TobyRCProcedure {
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			} else {
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 3));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 3);
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.HEART, x, y, z, 5, 1, 1, 1, 1);
 			}
@@ -65,7 +65,7 @@ public class TobyRCProcedure {
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			} else {
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 5));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 5);
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.HEART, x, y, z, 5, 1, 1, 1, 1);
 			}
@@ -73,36 +73,36 @@ public class TobyRCProcedure {
 			if (Math.random() <= 0.25) {
 				if (Math.random() == 0.05) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it's slowley healing itself..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "he" + "'s slowly healing...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 2, false, true));
 				} else if (Math.random() == 0.04) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it's resistant to mobs and fire..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "he" + "'s much more resiliant...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1, false, true));
+						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 3, false, true));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 1, false, true));
+						_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 3, false, true));
 				} else if (Math.random() == 0.03) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it's much stronger than before..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "he" + "'s much more stronger...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 3, false, true));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 3, false, true));
 				} else if (Math.random() == 0.02) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it's much faster than before..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "he" + "'s a little bit faster now...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 1, false, true));
 				} else if (Math.random() == 0.01) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it has extra hit points now..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "he" + "'s gotten a little more health...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 5, false, true));
 				} else if (Math.random() == 0.001) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it has gotten extremely stronger now..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "he" + "'s a little too strong...")), true);
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.TOTEM_OF_UNDYING, x, y, z, 5, 1, 1, 1, 1);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -121,14 +121,14 @@ public class TobyRCProcedure {
 						_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 5, false, true));
 				} else {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("The sharko smiles at you as you pet it."), true);
+						_player.displayClientMessage(Component.literal((entity.getDisplayName().getString() + " gives you a big smile as you pet " + "him" + ".")), true);
 				}
 			} else if (Math.random() <= 0.005) {
 				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("Star begged and I responded with this change."), true);
 			} else {
 				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("Anything to make the sharko happy."), true);
+					_player.displayClientMessage(Component.literal(("Anything to make " + entity.getDisplayName().getString() + " happy.")), true);
 			}
 		} else {
 			if (!entity.level().isClientSide())

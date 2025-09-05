@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class LouisZoomiesRenderer extends MobRenderer<LouisZoomiesEntity, Modelt
 
 	@Override
 	public ResourceLocation getTextureLocation(LouisZoomiesEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/louis.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/louis.png");
 	}
 
 	private static final class AnimatedModel extends Modeltoby<LouisZoomiesEntity> {

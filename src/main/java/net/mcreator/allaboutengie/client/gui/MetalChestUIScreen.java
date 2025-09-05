@@ -9,16 +9,15 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.allaboutengie.world.inventory.MetalChestUIMenu;
-
-import java.util.HashMap;
+import net.mcreator.allaboutengie.init.AllaboutengieModScreens;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
-public class MetalChestUIScreen extends AbstractContainerScreen<MetalChestUIMenu> {
-	private final static HashMap<String, Object> guistate = MetalChestUIMenu.guistate;
+public class MetalChestUIScreen extends AbstractContainerScreen<MetalChestUIMenu> implements AllaboutengieModScreens.ScreenAccessor {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	private boolean menuStateUpdateActive = false;
 
 	public MetalChestUIScreen(MetalChestUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -31,7 +30,13 @@ public class MetalChestUIScreen extends AbstractContainerScreen<MetalChestUIMenu
 		this.imageHeight = 220;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("allaboutengie:textures/screens/metal_chest_ui.png");
+	@Override
+	public void updateMenuState(int elementType, String name, Object elementState) {
+		menuStateUpdateActive = true;
+		menuStateUpdateActive = false;
+	}
+
+	private static final ResourceLocation texture = ResourceLocation.parse("allaboutengie:textures/screens/metal_chest_ui.png");
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
@@ -41,7 +46,7 @@ public class MetalChestUIScreen extends AbstractContainerScreen<MetalChestUIMenu
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();

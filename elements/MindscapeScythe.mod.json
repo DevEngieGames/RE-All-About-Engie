@@ -1,13 +1,14 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "mindscapescythe",
-    "customModelName": "minsdcapeengiesscythe:default",
+    "customModelName": "mindscapeengiesscythe:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "mindscapescythe",
     "name": "Mindscape Scythe",
     "specialInformation": {
       "fixedValue": [

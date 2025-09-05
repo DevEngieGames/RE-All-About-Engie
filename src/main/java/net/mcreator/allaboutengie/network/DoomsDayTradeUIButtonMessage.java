@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.network;
 
 import net.minecraftforge.network.NetworkEvent;
@@ -11,12 +10,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.allaboutengie.world.inventory.DoomsDayTradeUIMenu;
 import net.mcreator.allaboutengie.procedures.TradeButtonClickedProcedure;
 import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import java.util.function.Supplier;
-import java.util.HashMap;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DoomsDayTradeUIButtonMessage {
@@ -58,13 +55,12 @@ public class DoomsDayTradeUIButtonMessage {
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
 		Level world = entity.level();
-		HashMap guistate = DoomsDayTradeUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			TradeButtonClickedProcedure.execute(world, entity, guistate);
+			TradeButtonClickedProcedure.execute(world, entity);
 		}
 	}
 

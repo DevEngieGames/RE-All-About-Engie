@@ -14,17 +14,16 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.allaboutengie.world.inventory.BirthdayBundleForYoungestUIMenu;
 import net.mcreator.allaboutengie.procedures.BirthdayBundleForYoungestNameCheckProcedure;
 import net.mcreator.allaboutengie.network.BirthdayBundleForYoungestUIButtonMessage;
+import net.mcreator.allaboutengie.init.AllaboutengieModScreens;
 import net.mcreator.allaboutengie.AllaboutengieMod;
-
-import java.util.HashMap;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
-public class BirthdayBundleForYoungestUIScreen extends AbstractContainerScreen<BirthdayBundleForYoungestUIMenu> {
-	private final static HashMap<String, Object> guistate = BirthdayBundleForYoungestUIMenu.guistate;
+public class BirthdayBundleForYoungestUIScreen extends AbstractContainerScreen<BirthdayBundleForYoungestUIMenu> implements AllaboutengieModScreens.ScreenAccessor {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	private boolean menuStateUpdateActive = false;
 	EditBox ChangeBundleName;
 	Button button_set_name;
 
@@ -39,7 +38,13 @@ public class BirthdayBundleForYoungestUIScreen extends AbstractContainerScreen<B
 		this.imageHeight = 220;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("allaboutengie:textures/screens/birthday_bundle_for_youngest_ui.png");
+	@Override
+	public void updateMenuState(int elementType, String name, Object elementState) {
+		menuStateUpdateActive = true;
+		menuStateUpdateActive = false;
+	}
+
+	private static final ResourceLocation texture = ResourceLocation.parse("allaboutengie:textures/screens/birthday_bundle_for_youngest_ui.png");
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
@@ -50,7 +55,7 @@ public class BirthdayBundleForYoungestUIScreen extends AbstractContainerScreen<B
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -70,7 +75,7 @@ public class BirthdayBundleForYoungestUIScreen extends AbstractContainerScreen<B
 	}
 
 	@Override
-	public void containerTick() {
+	protected void containerTick() {
 		super.containerTick();
 		ChangeBundleName.tick();
 	}
@@ -84,44 +89,28 @@ public class BirthdayBundleForYoungestUIScreen extends AbstractContainerScreen<B
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font,
-
-				BirthdayBundleForYoungestNameCheckProcedure.execute(entity), 5, 27, -12829636, false);
+		guiGraphics.drawString(this.font, BirthdayBundleForYoungestNameCheckProcedure.execute(entity), 5, 27, -12829636, false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		ChangeBundleName = new EditBox(this.font, this.leftPos + 6, this.topPos + 6, 118, 18, Component.translatable("gui.allaboutengie.birthday_bundle_for_youngest_ui.ChangeBundleName")) {
-			@Override
-			public void insertText(String text) {
-				super.insertText(text);
-				if (getValue().isEmpty())
-					setSuggestion(Component.translatable("gui.allaboutengie.birthday_bundle_for_youngest_ui.ChangeBundleName").getString());
-				else
-					setSuggestion(null);
-			}
-
-			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
-				if (getValue().isEmpty())
-					setSuggestion(Component.translatable("gui.allaboutengie.birthday_bundle_for_youngest_ui.ChangeBundleName").getString());
-				else
-					setSuggestion(null);
-			}
-		};
-		ChangeBundleName.setSuggestion(Component.translatable("gui.allaboutengie.birthday_bundle_for_youngest_ui.ChangeBundleName").getString());
-		ChangeBundleName.setMaxLength(32767);
-		guistate.put("text:ChangeBundleName", ChangeBundleName);
+		ChangeBundleName = new EditBox(this.font, this.leftPos + 6, this.topPos + 6, 118, 18, Component.translatable("gui.allaboutengie.birthday_bundle_for_youngest_ui.ChangeBundleName"));
+		ChangeBundleName.setHint(Component.translatable("gui.allaboutengie.birthday_bundle_for_youngest_ui.ChangeBundleName"));
+		ChangeBundleName.setMaxLength(8192);
+		ChangeBundleName.setResponder(content -> {
+			if (!menuStateUpdateActive)
+				menu.sendMenuStateUpdate(entity, 0, "ChangeBundleName", content, false);
+		});
 		this.addWidget(this.ChangeBundleName);
 		button_set_name = Button.builder(Component.translatable("gui.allaboutengie.birthday_bundle_for_youngest_ui.button_set_name"), e -> {
+			int x = BirthdayBundleForYoungestUIScreen.this.x;
+			int y = BirthdayBundleForYoungestUIScreen.this.y;
 			if (true) {
 				AllaboutengieMod.PACKET_HANDLER.sendToServer(new BirthdayBundleForYoungestUIButtonMessage(0, x, y, z));
 				BirthdayBundleForYoungestUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 131, this.topPos + 5, 66, 20).build();
-		guistate.put("button:button_set_name", button_set_name);
 		this.addRenderableWidget(button_set_name);
 	}
 }

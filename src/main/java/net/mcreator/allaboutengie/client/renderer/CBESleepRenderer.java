@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class CBESleepRenderer extends MobRenderer<CBESleepEntity, Modelengiedabo
 
 	@Override
 	public ResourceLocation getTextureLocation(CBESleepEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/engiedasharkotired.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/engiedasharkotired.png");
 	}
 
 	private static final class AnimatedModel extends Modelengiedaboyotired<CBESleepEntity> {

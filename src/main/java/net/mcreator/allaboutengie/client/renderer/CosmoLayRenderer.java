@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class CosmoLayRenderer extends MobRenderer<CosmoLayEntity, Modelcosmodabi
 
 	@Override
 	public ResourceLocation getTextureLocation(CosmoLayEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/cosmo.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/cosmo.png");
 	}
 
 	private static final class AnimatedModel extends Modelcosmodabigboyosit<CosmoLayEntity> {

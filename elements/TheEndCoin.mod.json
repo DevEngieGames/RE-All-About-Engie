@@ -1,10 +1,11 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "item",
   "definition": {
     "renderType": 1,
     "texture": "theendbase",
     "customModelName": "theendcoin:default",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "The End Coin",
@@ -60,6 +61,7 @@
     },
     "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
-    "musicDiscAnalogOutput": 0
+    "musicDiscAnalogOutput": 0,
+    "providedBannerPatterns": []
   }
 }

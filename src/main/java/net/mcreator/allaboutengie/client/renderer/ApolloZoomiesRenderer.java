@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class ApolloZoomiesRenderer extends MobRenderer<ApolloZoomiesEntity, Mode
 
 	@Override
 	public ResourceLocation getTextureLocation(ApolloZoomiesEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/apollozoom.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/apollozoom.png");
 	}
 
 	private static final class AnimatedModel extends Modeltobyzooms<ApolloZoomiesEntity> {

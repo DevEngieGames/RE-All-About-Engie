@@ -16,9 +16,9 @@ public class BanObtainProProcedure {
 			return;
 		if (AllaboutengieModVariables.MapVariables.get(world).ChallengeToggle == true) {
 			if ((entity instanceof ServerPlayer _plr0 && _plr0.level() instanceof ServerLevel
-					&& _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:ban_challenge_obtain"))).isDone()) == false) {
+					&& _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:ban_challenge_obtain"))).isDone()) == false) {
 				if (entity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:ban_challenge_obtain"));
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:ban_challenge_obtain"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 					if (!_ap.isDone()) {
 						for (String criteria : _ap.getRemainingCriteria())
@@ -28,9 +28,9 @@ public class BanObtainProProcedure {
 			}
 		} else {
 			if ((entity instanceof ServerPlayer _plr2 && _plr2.level() instanceof ServerLevel
-					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:ban_obtain"))).isDone()) == false) {
+					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:ban_obtain"))).isDone()) == false) {
 				if (entity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:ban_obtain"));
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:ban_obtain"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 					if (!_ap.isDone()) {
 						for (String criteria : _ap.getRemainingCriteria())

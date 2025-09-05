@@ -70,9 +70,9 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr6 && _plr6.level() instanceof ServerLevel
-							&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"));
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
 							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 							if (!_ap.isDone()) {
 								for (String criteria : _ap.getRemainingCriteria())
@@ -226,9 +226,9 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr29 && _plr29.level() instanceof ServerLevel
-							&& _plr29.getAdvancements().getOrStartProgress(_plr29.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr29.getAdvancements().getOrStartProgress(_plr29.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"));
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
 							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 							if (!_ap.isDone()) {
 								for (String criteria : _ap.getRemainingCriteria())
@@ -392,9 +392,9 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr53 && _plr53.level() instanceof ServerLevel
-							&& _plr53.getAdvancements().getOrStartProgress(_plr53.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr53.getAdvancements().getOrStartProgress(_plr53.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"));
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
 							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 							if (!_ap.isDone()) {
 								for (String criteria : _ap.getRemainingCriteria())
@@ -558,9 +558,9 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr77 && _plr77.level() instanceof ServerLevel
-							&& _plr77.getAdvancements().getOrStartProgress(_plr77.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr77.getAdvancements().getOrStartProgress(_plr77.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"));
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
 							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 							if (!_ap.isDone()) {
 								for (String criteria : _ap.getRemainingCriteria())
@@ -724,9 +724,9 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr101 && _plr101.level() instanceof ServerLevel
-							&& _plr101.getAdvancements().getOrStartProgress(_plr101.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr101.getAdvancements().getOrStartProgress(_plr101.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"));
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
 							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 							if (!_ap.isDone()) {
 								for (String criteria : _ap.getRemainingCriteria())
@@ -890,9 +890,9 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr125 && _plr125.level() instanceof ServerLevel
-							&& _plr125.getAdvancements().getOrStartProgress(_plr125.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr125.getAdvancements().getOrStartProgress(_plr125.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"));
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
 							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 							if (!_ap.isDone()) {
 								for (String criteria : _ap.getRemainingCriteria())
@@ -1056,9 +1056,9 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr149 && _plr149.level() instanceof ServerLevel
-							&& _plr149.getAdvancements().getOrStartProgress(_plr149.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr149.getAdvancements().getOrStartProgress(_plr149.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"));
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
 							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 							if (!_ap.isDone()) {
 								for (String criteria : _ap.getRemainingCriteria())
@@ -1222,9 +1222,9 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr173 && _plr173.level() instanceof ServerLevel
-							&& _plr173.getAdvancements().getOrStartProgress(_plr173.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr173.getAdvancements().getOrStartProgress(_plr173.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:something_is_not_right"));
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
 							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 							if (!_ap.isDone()) {
 								for (String criteria : _ap.getRemainingCriteria())

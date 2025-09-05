@@ -35,7 +35,7 @@ public class ChallengeModeAdvancementCheckProcedure {
 		if (entity == null)
 			return;
 		if ((entity instanceof ServerPlayer _plr0 && _plr0.level() instanceof ServerLevel
-				&& _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:challenge_destroyed"))).isDone()) == true) {
+				&& _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:challenge_destroyed"))).isDone()) == true) {
 			if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).solotrophyobtained == false) {
 				{
 					boolean _setval = true;
@@ -55,7 +55,7 @@ public class ChallengeModeAdvancementCheckProcedure {
 				});
 			}
 		} else if ((entity instanceof ServerPlayer _plr3 && _plr3.level() instanceof ServerLevel
-				&& _plr3.getAdvancements().getOrStartProgress(_plr3.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:challenge_destroyed_2"))).isDone()) == true) {
+				&& _plr3.getAdvancements().getOrStartProgress(_plr3.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:challenge_destroyed_2"))).isDone()) == true) {
 			if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).multiplayertrophyobtained == false) {
 				{
 					boolean _setval = true;
@@ -76,7 +76,7 @@ public class ChallengeModeAdvancementCheckProcedure {
 			}
 		}
 		if ((entity instanceof ServerPlayer _plr6 && _plr6.level() instanceof ServerLevel
-				&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:all_fully_done"))).isDone()) == true) {
+				&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:all_fully_done"))).isDone()) == true) {
 			if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).MaxPercentGiveOptionToDoHardestMobDiff == false) {
 				{
 					boolean _setval = true;

@@ -1,13 +1,14 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Special",
-    "renderType": 0,
+    "renderType": 1,
     "blockingRenderType": 0,
     "texture": "theendbanpixel",
-    "customModelName": "Normal",
+    "customModelName": "ban_hammer_theend:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "theendbanpixel",
     "name": "The End Ban Hammer",
     "specialInformation": {
       "fixedValue": [

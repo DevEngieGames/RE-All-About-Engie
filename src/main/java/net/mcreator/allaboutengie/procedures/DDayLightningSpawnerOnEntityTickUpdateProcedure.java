@@ -42,9 +42,9 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				if (world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75);
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75, false);
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75, false);
 						}
 					}
 					if (world instanceof ServerLevel _level) {
@@ -80,16 +80,16 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				} else if (world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.5);
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.5);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.5, false);
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.5, false);
 						}
 					}
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75);
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75, false);
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75, false);
 						}
 					}
 					if (world instanceof ServerLevel _level) {
@@ -158,17 +158,17 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					if (Math.random() < 0.5) {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1, false);
 							}
 						}
 					} else if (Math.random() >= 0.5) {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1, false);
 							}
 						}
 					}
@@ -206,17 +206,17 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					if (Math.random() < 0.5) {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1, false);
 							}
 						}
 					} else if (Math.random() >= 0.5) {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1, false);
 							}
 						}
 					}
@@ -284,17 +284,17 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					if (Math.random() < 0.5) {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1, false);
 							}
 						}
 					} else if (Math.random() >= 0.5) {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1, false);
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1, false);
 							}
 						}
 					}

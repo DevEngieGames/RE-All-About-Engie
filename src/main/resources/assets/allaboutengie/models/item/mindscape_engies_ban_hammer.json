@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/ban_hammer_mindscapeengie",
     "textures": {
-      "0": "allaboutengie:block/mindscapeengiebanhammer"
+      "0": "allaboutengie:block/mindscapeengiebanhammer",
+      "particle": "allaboutengie:item/mindscapebanpixel"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/mindscapebanpixel"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/mindscapebanpixel"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/mindscapebanpixel"

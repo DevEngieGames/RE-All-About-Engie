@@ -1,13 +1,25 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "livingentity",
   "definition": {
     "mobName": "The End",
     "mobLabel": "",
     "mobModelName": "Biped",
     "mobModelTexture": "theendentity.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
     },
     "modelLayers": [],
     "animations": [],
@@ -63,6 +75,9 @@
     "health": 525,
     "xpAmount": 0,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
     "pushedByFluids": {
       "fixedValue": true
     },
@@ -101,6 +116,9 @@
     "stepSound": {
       "value": ""
     },
+    "raidCelebrationSound": {
+      "value": ""
+    },
     "entityDataEntries": [],
     "onRightClickedOn": {
       "name": "TheEndRightClickedOnEntity"
@@ -137,6 +155,8 @@
       4,
       4,
       2
-    ]
+    ],
+    "sensitiveToVibration": false,
+    "vibrationalEvents": []
   }
 }

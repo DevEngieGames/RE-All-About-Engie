@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -38,7 +37,7 @@ public abstract class CodeRedeemersItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
+				return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("item.armor.equip_netherite"));
 			}
 
 			@Override

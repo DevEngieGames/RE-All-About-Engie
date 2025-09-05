@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item;
 
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -32,12 +31,12 @@ public abstract class TheRealEngieGamessItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 750;
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 600;
 			}
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{750, 750, 750, 750}[type.getSlot().getIndex()];
+				return new int[]{600, 600, 600, 600}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -81,6 +80,7 @@ public abstract class TheRealEngieGamessItem extends ArmorItem {
 		public void initializeClient(Consumer<IClientItemExtensions> consumer) {
 			consumer.accept(new IClientItemExtensions() {
 				@Override
+				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
 							Map.of("head", new Modeltherealengiegamesarmorl1(Minecraft.getInstance().getEntityModels().bakeLayer(Modeltherealengiegamesarmorl1.LAYER_LOCATION)).head, "hat",
@@ -174,10 +174,10 @@ public abstract class TheRealEngieGamessItem extends ArmorItem {
 				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
-							Map.of("left_leg", new Modeltherealengiegamesarmorl2(Minecraft.getInstance().getEntityModels().bakeLayer(Modeltherealengiegamesarmorl2.LAYER_LOCATION)).LeftLeg, "right_leg",
-									new Modeltherealengiegamesarmorl2(Minecraft.getInstance().getEntityModels().bakeLayer(Modeltherealengiegamesarmorl2.LAYER_LOCATION)).RightLeg, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
-									"hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm",
-									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
+							Map.of("left_leg", new Modeltherealengiegamesarmorl1(Minecraft.getInstance().getEntityModels().bakeLayer(Modeltherealengiegamesarmorl1.LAYER_LOCATION)).left_shoe, "right_leg",
+									new Modeltherealengiegamesarmorl1(Minecraft.getInstance().getEntityModels().bakeLayer(Modeltherealengiegamesarmorl1.LAYER_LOCATION)).right_shoe, "head",
+									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
+									"right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
 					armorModel.crouching = living.isShiftKeyDown();
 					armorModel.riding = defaultModel.riding;
 					armorModel.young = living.isBaby();

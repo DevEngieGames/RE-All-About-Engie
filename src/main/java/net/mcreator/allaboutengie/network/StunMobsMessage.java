@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.network;
 
 import net.minecraftforge.network.NetworkEvent;

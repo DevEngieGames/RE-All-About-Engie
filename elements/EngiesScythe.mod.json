@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
@@ -8,6 +8,7 @@
     "texture": "image",
     "customModelName": "engi_scythe:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "image",
     "name": "\"Engie's\" Scythe",
     "specialInformation": {
       "fixedValue": [

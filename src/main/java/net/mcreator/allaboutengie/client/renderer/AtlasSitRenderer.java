@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class AtlasSitRenderer extends MobRenderer<AtlasSitEntity, Modeltobysitne
 
 	@Override
 	public ResourceLocation getTextureLocation(AtlasSitEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/atlas.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/atlas.png");
 	}
 
 	private static final class AnimatedModel extends Modeltobysitnew<AtlasSitEntity> {

@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Special",
@@ -8,6 +8,7 @@
     "texture": "engiebanpixel",
     "customModelName": "ban_hammer_engie:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "engiebanpixel",
     "name": "Engies own Ban Hammer",
     "specialInformation": {
       "fixedValue": [

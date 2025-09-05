@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/ban_hammer_mini",
     "textures": {
-      "0": "allaboutengie:block/regular"
+      "0": "allaboutengie:block/regular",
+      "particle": "allaboutengie:item/banhammerpixel"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/banhammerpixel"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/banhammerpixel"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/banhammerpixel"

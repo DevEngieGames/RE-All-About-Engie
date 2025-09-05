@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.entity;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -93,17 +92,17 @@ public class FinneganEntity extends PathfinderMob {
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.ambient"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.fox.ambient"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.fox.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.fox.death"));
 	}
 
 	@Override

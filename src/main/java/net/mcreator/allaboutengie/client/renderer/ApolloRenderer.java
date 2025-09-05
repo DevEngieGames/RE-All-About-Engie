@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class ApolloRenderer extends MobRenderer<ApolloEntity, Modeltoby<ApolloEn
 
 	@Override
 	public ResourceLocation getTextureLocation(ApolloEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/apollo.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/apollo.png");
 	}
 
 	private static final class AnimatedModel extends Modeltoby<ApolloEntity> {

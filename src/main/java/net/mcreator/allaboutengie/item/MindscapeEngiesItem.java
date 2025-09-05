@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item;
 
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -36,12 +35,12 @@ public abstract class MindscapeEngiesItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 600;
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 550;
 			}
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{600, 600, 600, 600}[type.getSlot().getIndex()];
+				return new int[]{550, 550, 550, 550}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -74,7 +73,7 @@ public abstract class MindscapeEngiesItem extends ArmorItem {
 
 			@Override
 			public float getKnockbackResistance() {
-				return 1.1f;
+				return 0.9f;
 			}
 		}, type, properties);
 	}
@@ -88,6 +87,7 @@ public abstract class MindscapeEngiesItem extends ArmorItem {
 		public void initializeClient(Consumer<IClientItemExtensions> consumer) {
 			consumer.accept(new IClientItemExtensions() {
 				@Override
+				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
 							Map.of("head", new Modelengiegamesarmorl1(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiegamesarmorl1.LAYER_LOCATION)).head, "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body",

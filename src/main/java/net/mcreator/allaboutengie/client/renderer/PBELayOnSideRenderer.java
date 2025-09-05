@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class PBELayOnSideRenderer extends MobRenderer<PBELayOnSideEntity, Modele
 
 	@Override
 	public ResourceLocation getTextureLocation(PBELayOnSideEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/engiedasharko2.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/engiedasharko2.png");
 	}
 
 	private static final class AnimatedModel extends Modelengiedaboyolayonside<PBELayOnSideEntity> {

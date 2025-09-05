@@ -1,4 +1,3 @@
-
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
@@ -25,6 +24,9 @@ import net.mcreator.allaboutengie.client.renderer.TigerSitRenderer;
 import net.mcreator.allaboutengie.client.renderer.TigerRenderer;
 import net.mcreator.allaboutengie.client.renderer.TigerLayRenderer;
 import net.mcreator.allaboutengie.client.renderer.TigerLayOnSideRenderer;
+import net.mcreator.allaboutengie.client.renderer.ThrowbackMadEngieRenderer;
+import net.mcreator.allaboutengie.client.renderer.ThrowbackEnragedEngieRenderer;
+import net.mcreator.allaboutengie.client.renderer.ThrowbackAngryEngieRenderer;
 import net.mcreator.allaboutengie.client.renderer.TheRealEngieGamesRenderer;
 import net.mcreator.allaboutengie.client.renderer.TheEndRenderer;
 import net.mcreator.allaboutengie.client.renderer.TheEndHostileRenderer;
@@ -42,6 +44,7 @@ import net.mcreator.allaboutengie.client.renderer.SharkoLayOnSideRenderer;
 import net.mcreator.allaboutengie.client.renderer.SharkoLayAprilFoolsRenderer;
 import net.mcreator.allaboutengie.client.renderer.SharkoAprilFoolsRenderer;
 import net.mcreator.allaboutengie.client.renderer.SharkTamedRenderer;
+import net.mcreator.allaboutengie.client.renderer.ScorchedRenderer;
 import net.mcreator.allaboutengie.client.renderer.RockySleepRenderer;
 import net.mcreator.allaboutengie.client.renderer.RockyRenderer;
 import net.mcreator.allaboutengie.client.renderer.RockyLayRenderer;
@@ -680,5 +683,9 @@ public class AllaboutengieModEntityRenderers {
 		event.registerEntityRenderer(AllaboutengieModEntities.ROCKY_LAY.get(), RockyLayRenderer::new);
 		event.registerEntityRenderer(AllaboutengieModEntities.ROCKY_SLEEP.get(), RockySleepRenderer::new);
 		event.registerEntityRenderer(AllaboutengieModEntities.ALIEN_ENGIE_SHARKO_LAY.get(), AlienEngieSharkoLayRenderer::new);
+		event.registerEntityRenderer(AllaboutengieModEntities.SCORCHED.get(), ScorchedRenderer::new);
+		event.registerEntityRenderer(AllaboutengieModEntities.THROWBACK_MAD_ENGIE.get(), ThrowbackMadEngieRenderer::new);
+		event.registerEntityRenderer(AllaboutengieModEntities.THROWBACK_ANGRY_ENGIE.get(), ThrowbackAngryEngieRenderer::new);
+		event.registerEntityRenderer(AllaboutengieModEntities.THROWBACK_ENRAGED_ENGIE.get(), ThrowbackEnragedEngieRenderer::new);
 	}
 }

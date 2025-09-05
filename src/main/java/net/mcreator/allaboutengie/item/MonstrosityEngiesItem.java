@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item;
 
 import net.minecraft.world.level.Level;
@@ -29,7 +28,7 @@ public abstract class MonstrosityEngiesItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{300, 300, 300, 125}[type.getSlot().getIndex()];
+				return new int[]{300, 300, 300, 300}[type.getSlot().getIndex()];
 			}
 
 			@Override

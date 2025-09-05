@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class AtlasSleepRenderer extends MobRenderer<AtlasSleepEntity, Modeltobyt
 
 	@Override
 	public ResourceLocation getTextureLocation(AtlasSleepEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/atlastired.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/atlastired.png");
 	}
 
 	private static final class AnimatedModel extends Modeltobytired<AtlasSleepEntity> {

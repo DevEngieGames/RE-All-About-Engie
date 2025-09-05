@@ -22,7 +22,7 @@ public class EntitySpawnsProcedure {
 				_livingEntity5.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity4 && _livingEntity4.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity4.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 5));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 5);
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 3) {
 			if (entity instanceof LivingEntity _livingEntity9 && _livingEntity9.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 				_livingEntity9.getAttribute(Attributes.MAX_HEALTH)
@@ -34,7 +34,7 @@ public class EntitySpawnsProcedure {
 				_livingEntity13.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity12.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 10));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 10));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 10);
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 5) {
 			if (entity instanceof LivingEntity _livingEntity17 && _livingEntity17.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 				_livingEntity17.getAttribute(Attributes.MAX_HEALTH)
@@ -46,7 +46,7 @@ public class EntitySpawnsProcedure {
 				_livingEntity21.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity20 && _livingEntity20.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity20.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 15));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 15));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 15);
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 7) {
 			if (entity instanceof LivingEntity _livingEntity25 && _livingEntity25.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 				_livingEntity25.getAttribute(Attributes.MAX_HEALTH)
@@ -58,7 +58,7 @@ public class EntitySpawnsProcedure {
 				_livingEntity29.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity28 && _livingEntity28.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity28.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 20));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 20));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 20);
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 9) {
 			if (entity instanceof LivingEntity _livingEntity33 && _livingEntity33.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 				_livingEntity33.getAttribute(Attributes.MAX_HEALTH)
@@ -70,7 +70,7 @@ public class EntitySpawnsProcedure {
 				_livingEntity37.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity36 && _livingEntity36.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity36.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 25));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 25));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 25);
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 11) {
 			if (entity instanceof LivingEntity _livingEntity41 && _livingEntity41.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 				_livingEntity41.getAttribute(Attributes.MAX_HEALTH)
@@ -82,7 +82,7 @@ public class EntitySpawnsProcedure {
 				_livingEntity45.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity44 && _livingEntity44.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity44.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 30));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 30));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 30);
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 13) {
 			if (entity instanceof LivingEntity _livingEntity49 && _livingEntity49.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 				_livingEntity49.getAttribute(Attributes.MAX_HEALTH)
@@ -94,19 +94,19 @@ public class EntitySpawnsProcedure {
 				_livingEntity53.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity52 && _livingEntity52.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity52.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 45));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 45));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 45);
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 20) {
 			if (entity instanceof LivingEntity _livingEntity57 && _livingEntity57.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 				_livingEntity57.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity56 && _livingEntity56.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity56.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 50));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 50));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 50);
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 525) {
 			if (entity instanceof LivingEntity _livingEntity61 && _livingEntity61.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 				_livingEntity61.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity60 && _livingEntity60.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity60.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 525));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 525));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 525);
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 690) {
 			if (Math.random() <= 0.05882352941) {
 				if (entity instanceof LivingEntity _livingEntity65 && _livingEntity65.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
@@ -119,7 +119,7 @@ public class EntitySpawnsProcedure {
 					_livingEntity69.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity68 && _livingEntity68.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity68.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 5));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 5));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 5);
 			} else if (Math.random() <= 0.17647058823 && Math.random() > 0.11764705882) {
 				if (entity instanceof LivingEntity _livingEntity73 && _livingEntity73.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 					_livingEntity73.getAttribute(Attributes.MAX_HEALTH)
@@ -131,7 +131,7 @@ public class EntitySpawnsProcedure {
 					_livingEntity77.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity76 && _livingEntity76.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity76.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 10));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 10));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 10);
 			} else if (Math.random() <= 0.29411764705 && Math.random() > 0.23529411764) {
 				if (entity instanceof LivingEntity _livingEntity81 && _livingEntity81.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 					_livingEntity81.getAttribute(Attributes.MAX_HEALTH)
@@ -143,7 +143,7 @@ public class EntitySpawnsProcedure {
 					_livingEntity85.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity84 && _livingEntity84.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity84.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 15));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 15));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 15);
 			} else if (Math.random() <= 0.41176470587 && Math.random() > 0.35294117646) {
 				if (entity instanceof LivingEntity _livingEntity89 && _livingEntity89.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 					_livingEntity89.getAttribute(Attributes.MAX_HEALTH)
@@ -155,7 +155,7 @@ public class EntitySpawnsProcedure {
 					_livingEntity93.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity92 && _livingEntity92.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity92.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 20));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 20));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 20);
 			} else if (Math.random() <= 0.52941176469 && Math.random() > 0.47058823528) {
 				if (entity instanceof LivingEntity _livingEntity97 && _livingEntity97.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 					_livingEntity97.getAttribute(Attributes.MAX_HEALTH)
@@ -167,7 +167,7 @@ public class EntitySpawnsProcedure {
 					_livingEntity101.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity100 && _livingEntity100.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity100.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 25));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 25));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 25);
 			} else if (Math.random() <= 0.64705882351 && Math.random() > 0.5882352941) {
 				if (entity instanceof LivingEntity _livingEntity105 && _livingEntity105.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 					_livingEntity105.getAttribute(Attributes.MAX_HEALTH)
@@ -179,7 +179,7 @@ public class EntitySpawnsProcedure {
 					_livingEntity109.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity108 && _livingEntity108.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity108.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 30));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 30));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 30);
 			} else if (Math.random() <= 0.70588235292 && Math.random() > 0.64705882351) {
 				if (entity instanceof LivingEntity _livingEntity113 && _livingEntity113.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 					_livingEntity113.getAttribute(Attributes.MAX_HEALTH)
@@ -191,32 +191,32 @@ public class EntitySpawnsProcedure {
 					_livingEntity117.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity116 && _livingEntity116.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity116.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 45));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 45));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 45);
 			} else if (Math.random() <= 0.82352941174 && Math.random() > 0.76470588233) {
 				if (entity instanceof LivingEntity _livingEntity121 && _livingEntity121.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 					_livingEntity121.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity120 && _livingEntity120.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity120.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 50));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 50));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 50);
 			} else if (Math.random() <= 0.88235294115 && Math.random() > 0.82352941174) {
 				if (entity instanceof LivingEntity _livingEntity125 && _livingEntity125.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 					_livingEntity125.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity124 && _livingEntity124.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity124.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 525));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 525));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 525);
 			} else if (Math.random() > 0.88235294115) {
 				if (entity instanceof LivingEntity _livingEntity129 && _livingEntity129.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 					_livingEntity129.getAttribute(Attributes.MAX_HEALTH)
 							.setBaseValue(((entity instanceof LivingEntity _livingEntity128 && _livingEntity128.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity128.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 690));
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 690));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 690);
 			}
 		} else if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty == 525000) {
 			if (entity instanceof LivingEntity _livingEntity133 && _livingEntity133.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 				_livingEntity133.getAttribute(Attributes.MAX_HEALTH)
 						.setBaseValue(((entity instanceof LivingEntity _livingEntity132 && _livingEntity132.getAttributes().hasAttribute(Attributes.MAX_HEALTH) ? _livingEntity132.getAttribute(Attributes.MAX_HEALTH).getBaseValue() : 0) * 525000));
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 525000));
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 525000);
 		}
 	}
 }

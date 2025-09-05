@@ -45,9 +45,10 @@ public class DetectiveGameruleProcedure {
 				AllaboutengieModVariables.MapVariables.get(world).riskcheckedstart = true;
 				AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 			}
-			if (!(entity instanceof ServerPlayer _plr2 && _plr2.level() instanceof ServerLevel && _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:new_world"))).isDone())) {
+			if (!(entity instanceof ServerPlayer _plr2 && _plr2.level() instanceof ServerLevel
+					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world"))).isDone())) {
 				if (entity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:new_world"));
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 					if (!_ap.isDone()) {
 						for (String criteria : _ap.getRemainingCriteria())
@@ -72,9 +73,9 @@ public class DetectiveGameruleProcedure {
 			}
 			if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).detecstart == false) {
 				if (!(entity instanceof ServerPlayer _plr6 && _plr6.level() instanceof ServerLevel
-						&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:new_world_new_problem"))).isDone())) {
+						&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world_new_problem"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:new_world_new_problem"));
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world_new_problem"));
 						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 						if (!_ap.isDone()) {
 							for (String criteria : _ap.getRemainingCriteria())
@@ -115,9 +116,9 @@ public class DetectiveGameruleProcedure {
 				AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 			}
 			if (!(entity instanceof ServerPlayer _plr12 && _plr12.level() instanceof ServerLevel
-					&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:new_world"))).isDone())) {
+					&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world"))).isDone())) {
 				if (entity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:new_world"));
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 					if (!_ap.isDone()) {
 						for (String criteria : _ap.getRemainingCriteria())
@@ -142,9 +143,9 @@ public class DetectiveGameruleProcedure {
 			}
 			if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).detecstart == false) {
 				if (!(entity instanceof ServerPlayer _plr16 && _plr16.level() instanceof ServerLevel
-						&& _plr16.getAdvancements().getOrStartProgress(_plr16.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:new_world_new_problem"))).isDone())) {
+						&& _plr16.getAdvancements().getOrStartProgress(_plr16.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world_new_problem"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("allaboutengie:new_world_new_problem"));
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world_new_problem"));
 						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 						if (!_ap.isDone()) {
 							for (String criteria : _ap.getRemainingCriteria())

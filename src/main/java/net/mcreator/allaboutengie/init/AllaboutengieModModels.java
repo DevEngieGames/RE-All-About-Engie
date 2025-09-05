@@ -1,4 +1,3 @@
-
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
@@ -18,6 +17,7 @@ import net.mcreator.allaboutengie.client.model.Modeltobylayonside;
 import net.mcreator.allaboutengie.client.model.Modeltoby;
 import net.mcreator.allaboutengie.client.model.Modeltherealengiegamesarmorl2;
 import net.mcreator.allaboutengie.client.model.Modeltherealengiegamesarmorl1;
+import net.mcreator.allaboutengie.client.model.Modelscorched;
 import net.mcreator.allaboutengie.client.model.Modelrockytired;
 import net.mcreator.allaboutengie.client.model.Modelrockylay;
 import net.mcreator.allaboutengie.client.model.Modelrocky;
@@ -126,6 +126,7 @@ public class AllaboutengieModModels {
 		event.registerLayerDefinition(Modeloutraged_new.LAYER_LOCATION, Modeloutraged_new::createBodyLayer);
 		event.registerLayerDefinition(Modelchampdaboyo.LAYER_LOCATION, Modelchampdaboyo::createBodyLayer);
 		event.registerLayerDefinition(Modelrockytired.LAYER_LOCATION, Modelrockytired::createBodyLayer);
+		event.registerLayerDefinition(Modelscorched.LAYER_LOCATION, Modelscorched::createBodyLayer);
 		event.registerLayerDefinition(Modelchampdaboyolayonside.LAYER_LOCATION, Modelchampdaboyolayonside::createBodyLayer);
 		event.registerLayerDefinition(Modelcosmodabigboyotired.LAYER_LOCATION, Modelcosmodabigboyotired::createBodyLayer);
 		event.registerLayerDefinition(Modelalienengiesharkolay.LAYER_LOCATION, Modelalienengiesharkolay::createBodyLayer);

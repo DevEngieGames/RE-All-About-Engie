@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class BigMythicSharkoRenderer extends MobRenderer<BigMythicSharkoEntity, 
 
 	@Override
 	public ResourceLocation getTextureLocation(BigMythicSharkoEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/mythicsharkonew.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/mythicsharkonew.png");
 	}
 
 	private static final class AnimatedModel extends Modelbigboyo<BigMythicSharkoEntity> {

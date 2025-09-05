@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class MythicEngieRenderer extends HumanoidMobRenderer<MythicEngieEntity, 
 
 	@Override
 	public ResourceLocation getTextureLocation(MythicEngieEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/mythicengie.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/mythicengie.png");
 	}
 }

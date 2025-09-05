@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class SuperDoomsDayRenderer extends HumanoidMobRenderer<SuperDoomsDayEnti
 
 	@Override
 	public ResourceLocation getTextureLocation(SuperDoomsDayEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/superdoomsdayentity.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/superdoomsdayentity.png");
 	}
 }

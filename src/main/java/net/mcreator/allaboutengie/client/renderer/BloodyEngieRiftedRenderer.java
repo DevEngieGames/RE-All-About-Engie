@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class BloodyEngieRiftedRenderer extends HumanoidMobRenderer<BloodyEngieRi
 
 	@Override
 	public ResourceLocation getTextureLocation(BloodyEngieRiftedEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/thisthing.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/thisthing.png");
 	}
 }

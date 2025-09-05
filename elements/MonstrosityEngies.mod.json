@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
@@ -91,7 +91,7 @@
       "fixedValue": false
     },
     "maxDamage": 300,
-    "damageValueHelmet": 125,
+    "damageValueHelmet": 300,
     "damageValueBody": 300,
     "damageValueLeggings": 300,
     "damageValueBoots": 300,

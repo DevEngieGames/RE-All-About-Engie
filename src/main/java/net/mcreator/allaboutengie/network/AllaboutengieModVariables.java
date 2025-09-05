@@ -148,6 +148,8 @@ public class AllaboutengieModVariables {
 			clone.gainedinsanityengieplush4 = original.gainedinsanityengieplush4;
 			clone.gainedinsanityengieplush5 = original.gainedinsanityengieplush5;
 			clone.gainedpureinsanityengieplush = original.gainedpureinsanityengieplush;
+			clone.DoomsdayTrackToggle = original.DoomsdayTrackToggle;
+			clone.DoomsdayRiskTrackToggle = original.DoomsdayRiskTrackToggle;
 			if (!event.isWasDeath()) {
 				clone.DoomsdayAlive = original.DoomsdayAlive;
 				clone.firstplay = original.firstplay;
@@ -301,6 +303,8 @@ public class AllaboutengieModVariables {
 		public double playerobtainedmindscapecount = 0;
 		public boolean SharkoLayOnSideCD = true;
 		public boolean SharkoSitCD = true;
+		public boolean antimatterdropcheck = false;
+		public double getdamage2 = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -391,6 +395,8 @@ public class AllaboutengieModVariables {
 			playerobtainedmindscapecount = nbt.getDouble("playerobtainedmindscapecount");
 			SharkoLayOnSideCD = nbt.getBoolean("SharkoLayOnSideCD");
 			SharkoSitCD = nbt.getBoolean("SharkoSitCD");
+			antimatterdropcheck = nbt.getBoolean("antimatterdropcheck");
+			getdamage2 = nbt.getDouble("getdamage2");
 		}
 
 		@Override
@@ -477,6 +483,8 @@ public class AllaboutengieModVariables {
 			nbt.putDouble("playerobtainedmindscapecount", playerobtainedmindscapecount);
 			nbt.putBoolean("SharkoLayOnSideCD", SharkoLayOnSideCD);
 			nbt.putBoolean("SharkoSitCD", SharkoSitCD);
+			nbt.putBoolean("antimatterdropcheck", antimatterdropcheck);
+			nbt.putDouble("getdamage2", getdamage2);
 			return nbt;
 		}
 
@@ -546,7 +554,7 @@ public class AllaboutengieModVariables {
 		@SubscribeEvent
 		public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
 			if (event.getObject() instanceof Player && !(event.getObject() instanceof FakePlayer))
-				event.addCapability(new ResourceLocation("allaboutengie", "player_variables"), new PlayerVariablesProvider());
+				event.addCapability(ResourceLocation.fromNamespaceAndPath("allaboutengie", "player_variables"), new PlayerVariablesProvider());
 		}
 
 		private final PlayerVariables playerVariables = new PlayerVariables();
@@ -645,6 +653,8 @@ public class AllaboutengieModVariables {
 		public boolean gainedinsanityengieplush4 = false;
 		public boolean gainedinsanityengieplush5 = false;
 		public boolean gainedpureinsanityengieplush = false;
+		public boolean DoomsdayTrackToggle = false;
+		public boolean DoomsdayRiskTrackToggle = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -729,6 +739,8 @@ public class AllaboutengieModVariables {
 			nbt.putBoolean("gainedinsanityengieplush4", gainedinsanityengieplush4);
 			nbt.putBoolean("gainedinsanityengieplush5", gainedinsanityengieplush5);
 			nbt.putBoolean("gainedpureinsanityengieplush", gainedpureinsanityengieplush);
+			nbt.putBoolean("DoomsdayTrackToggle", DoomsdayTrackToggle);
+			nbt.putBoolean("DoomsdayRiskTrackToggle", DoomsdayRiskTrackToggle);
 			return nbt;
 		}
 
@@ -810,6 +822,8 @@ public class AllaboutengieModVariables {
 			gainedinsanityengieplush4 = nbt.getBoolean("gainedinsanityengieplush4");
 			gainedinsanityengieplush5 = nbt.getBoolean("gainedinsanityengieplush5");
 			gainedpureinsanityengieplush = nbt.getBoolean("gainedpureinsanityengieplush");
+			DoomsdayTrackToggle = nbt.getBoolean("DoomsdayTrackToggle");
+			DoomsdayRiskTrackToggle = nbt.getBoolean("DoomsdayRiskTrackToggle");
 		}
 	}
 
@@ -910,6 +924,8 @@ public class AllaboutengieModVariables {
 					variables.gainedinsanityengieplush4 = message.data.gainedinsanityengieplush4;
 					variables.gainedinsanityengieplush5 = message.data.gainedinsanityengieplush5;
 					variables.gainedpureinsanityengieplush = message.data.gainedpureinsanityengieplush;
+					variables.DoomsdayTrackToggle = message.data.DoomsdayTrackToggle;
+					variables.DoomsdayRiskTrackToggle = message.data.DoomsdayRiskTrackToggle;
 				}
 			});
 			context.setPacketHandled(true);

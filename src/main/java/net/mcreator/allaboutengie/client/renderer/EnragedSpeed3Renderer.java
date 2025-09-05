@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class EnragedSpeed3Renderer extends MobRenderer<EnragedSpeed3Entity, Mode
 
 	@Override
 	public ResourceLocation getTextureLocation(EnragedSpeed3Entity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/enragedspeed3.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/enragedspeed3.png");
 	}
 }

@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class SharkoTamedZoomiesRenderer extends MobRenderer<SharkoTamedZoomiesEn
 
 	@Override
 	public ResourceLocation getTextureLocation(SharkoTamedZoomiesEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/sharkonewtamedzoom.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/sharkonewtamedzoom.png");
 	}
 
 	private static final class AnimatedModel extends Modelboyozooms<SharkoTamedZoomiesEntity> {

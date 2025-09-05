@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/mindscapeengiesscythe",
     "textures": {
-      "0": "allaboutengie:block/mindscapeengiesscythe"
+      "0": "allaboutengie:block/mindscapeengiesscythe",
+      "particle": "allaboutengie:item/mindscapescythe"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/mindscapescythe"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/mindscapescythe"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/mindscapescythe"

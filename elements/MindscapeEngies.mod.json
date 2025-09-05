@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
@@ -88,14 +88,14 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 600,
-    "damageValueHelmet": 600,
-    "damageValueBody": 600,
-    "damageValueLeggings": 600,
-    "damageValueBoots": 600,
+    "maxDamage": 550,
+    "damageValueHelmet": 550,
+    "damageValueBody": 550,
+    "damageValueLeggings": 550,
+    "damageValueBoots": 550,
     "enchantability": 22,
     "toughness": 10.0,
-    "knockbackResistance": 1.1,
+    "knockbackResistance": 0.9,
     "equipSound": {
       "value": ""
     },

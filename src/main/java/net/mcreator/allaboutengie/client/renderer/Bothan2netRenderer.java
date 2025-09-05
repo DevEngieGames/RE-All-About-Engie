@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class Bothan2netRenderer extends MobRenderer<Bothan2netEntity, Modeltoby<
 
 	@Override
 	public ResourceLocation getTextureLocation(Bothan2netEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/bothan2net.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/bothan2net.png");
 	}
 
 	private static final class AnimatedModel extends Modeltoby<Bothan2netEntity> {

@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class BiblicallyAccurateEngieRenderer extends MobRenderer<BiblicallyAccur
 
 	@Override
 	public ResourceLocation getTextureLocation(BiblicallyAccurateEngieEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/biblicallyaccurateengie.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/biblicallyaccurateengie.png");
 	}
 }

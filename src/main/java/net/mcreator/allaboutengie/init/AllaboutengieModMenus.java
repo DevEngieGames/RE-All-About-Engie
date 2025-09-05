@@ -1,4 +1,3 @@
-
 /*
  *	MCreator note: This file will be REGENERATED on each build.
  */
@@ -7,12 +6,18 @@ package net.mcreator.allaboutengie.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.client.Minecraft;
 
 import net.mcreator.allaboutengie.world.inventory.TheEndTradeUIMenu;
 import net.mcreator.allaboutengie.world.inventory.SuperDoomsDayTradeUIMenu;
+import net.mcreator.allaboutengie.world.inventory.RegularMetalBundleUIMenu;
 import net.mcreator.allaboutengie.world.inventory.OutragedEngieBundleUIMenu;
 import net.mcreator.allaboutengie.world.inventory.MonstrosityEngieBundleUIMenu;
 import net.mcreator.allaboutengie.world.inventory.MetalChestUIMenu;
@@ -29,7 +34,10 @@ import net.mcreator.allaboutengie.world.inventory.CreativeEngieBundleUIMenu;
 import net.mcreator.allaboutengie.world.inventory.BirthdayBundleForYoungestUIMenu;
 import net.mcreator.allaboutengie.world.inventory.BiblicallyAccurateEngieBundleUIMenu;
 import net.mcreator.allaboutengie.world.inventory.AngryEngieBundleUIMenu;
+import net.mcreator.allaboutengie.network.MenuStateUpdateMessage;
 import net.mcreator.allaboutengie.AllaboutengieMod;
+
+import java.util.Map;
 
 public class AllaboutengieModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, AllaboutengieMod.MODID);
@@ -52,4 +60,30 @@ public class AllaboutengieModMenus {
 	public static final RegistryObject<MenuType<BirthdayBundleForYoungestUIMenu>> BIRTHDAY_BUNDLE_FOR_YOUNGEST_UI = REGISTRY.register("birthday_bundle_for_youngest_ui", () -> IForgeMenuType.create(BirthdayBundleForYoungestUIMenu::new));
 	public static final RegistryObject<MenuType<CustomRecipeBookMenu>> CUSTOM_RECIPE_BOOK = REGISTRY.register("custom_recipe_book", () -> IForgeMenuType.create(CustomRecipeBookMenu::new));
 	public static final RegistryObject<MenuType<EngieGamesTradeUIMenu>> ENGIE_GAMES_TRADE_UI = REGISTRY.register("engie_games_trade_ui", () -> IForgeMenuType.create(EngieGamesTradeUIMenu::new));
+	public static final RegistryObject<MenuType<RegularMetalBundleUIMenu>> REGULAR_METAL_BUNDLE_UI = REGISTRY.register("regular_metal_bundle_ui", () -> IForgeMenuType.create(RegularMetalBundleUIMenu::new));
+
+	public interface MenuAccessor {
+		Map<String, Object> getMenuState();
+
+		Map<Integer, Slot> getSlots();
+
+		default void sendMenuStateUpdate(Player player, int elementType, String name, Object elementState, boolean needClientUpdate) {
+			getMenuState().put(elementType + ":" + name, elementState);
+			if (player instanceof ServerPlayer serverPlayer) {
+				AllaboutengieMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> serverPlayer), new MenuStateUpdateMessage(elementType, name, elementState));
+			} else if (player.level().isClientSide) {
+				if (Minecraft.getInstance().screen instanceof AllaboutengieModScreens.ScreenAccessor accessor && needClientUpdate)
+					accessor.updateMenuState(elementType, name, elementState);
+				AllaboutengieMod.PACKET_HANDLER.sendToServer(new MenuStateUpdateMessage(elementType, name, elementState));
+			}
+		}
+
+		default <T> T getMenuState(int elementType, String name, T defaultValue) {
+			try {
+				return (T) getMenuState().getOrDefault(elementType + ":" + name, defaultValue);
+			} catch (ClassCastException e) {
+				return defaultValue;
+			}
+		}
+	}
 }

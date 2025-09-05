@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class QuizzetRenderer extends HumanoidMobRenderer<QuizzetEntity, Humanoid
 
 	@Override
 	public ResourceLocation getTextureLocation(QuizzetEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/58c08408b5d07cfff8a93c8d8ca58a94693fe7bb.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/58c08408b5d07cfff8a93c8d8ca58a94693fe7bb.png");
 	}
 }

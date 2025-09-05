@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.block;
 
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -11,7 +10,7 @@ import net.minecraft.core.BlockPos;
 
 public class BloodOreBlock extends Block {
 	public BloodOreBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERRACK).strength(3f));
+		super(BlockBehaviour.Properties.of().sound(SoundType.NETHERRACK).strength(3f).instrument(NoteBlockInstrument.BASEDRUM));
 	}
 
 	@Override

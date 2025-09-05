@@ -32,7 +32,7 @@ public class ExoticSharkoAprilFoolsLayRCProcedure {
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			} else {
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 1));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 1);
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.HEART, x, y, z, 1, 1, 1, 1, 1);
 			}
@@ -43,7 +43,7 @@ public class ExoticSharkoAprilFoolsLayRCProcedure {
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			} else {
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 3));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 3);
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.HEART, x, y, z, 3, 1, 1, 1, 1);
 			}
@@ -54,7 +54,7 @@ public class ExoticSharkoAprilFoolsLayRCProcedure {
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			} else {
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 5));
+					_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 5);
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.HEART, x, y, z, 5, 1, 1, 1, 1);
 			}

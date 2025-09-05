@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Special",
@@ -8,6 +8,7 @@
     "texture": "biblicallyaccuratepixel",
     "customModelName": "ban_hammer_biblicallyaccurate:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "biblicallyaccuratepixel",
     "name": "Biblically Accurate Ban Hammer",
     "specialInformation": {
       "fixedValue": []

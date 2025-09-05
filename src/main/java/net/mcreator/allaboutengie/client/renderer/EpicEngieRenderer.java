@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class EpicEngieRenderer extends HumanoidMobRenderer<EpicEngieEntity, Huma
 
 	@Override
 	public ResourceLocation getTextureLocation(EpicEngieEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/epicengie.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/epicengie.png");
 	}
 }

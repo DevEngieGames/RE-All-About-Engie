@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/scythe",
     "textures": {
-      "0": "allaboutengie:block/normscythe"
+      "0": "allaboutengie:block/normscythe",
+      "particle": "allaboutengie:item/regularscythe"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/regularscythe"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/regularscythe"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/regularscythe"

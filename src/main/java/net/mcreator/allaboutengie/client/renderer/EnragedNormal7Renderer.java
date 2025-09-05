@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class EnragedNormal7Renderer extends MobRenderer<EnragedNormal7Entity, Mo
 
 	@Override
 	public ResourceLocation getTextureLocation(EnragedNormal7Entity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/enragednormal7.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/enragednormal7.png");
 	}
 }

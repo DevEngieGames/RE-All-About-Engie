@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class EngiRenderer extends MobRenderer<EngiEntity, ModelEngie<EngiEntity>
 
 	@Override
 	public ResourceLocation getTextureLocation(EngiEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/engienew.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/engienew.png");
 	}
 }

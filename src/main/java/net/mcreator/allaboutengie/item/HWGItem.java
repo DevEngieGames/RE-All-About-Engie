@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item;
 
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -35,12 +34,12 @@ public abstract class HWGItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 350;
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 300;
 			}
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{350, 350, 350, 350}[type.getSlot().getIndex()];
+				return new int[]{300, 300, 300, 300}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -84,6 +83,7 @@ public abstract class HWGItem extends ArmorItem {
 		public void initializeClient(Consumer<IClientItemExtensions> consumer) {
 			consumer.accept(new IClientItemExtensions() {
 				@Override
+				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
 							Map.of("head", new Modelcustomarmorl(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcustomarmorl.LAYER_LOCATION)).Helmet, "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body",

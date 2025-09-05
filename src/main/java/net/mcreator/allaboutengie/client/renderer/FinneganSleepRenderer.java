@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class FinneganSleepRenderer extends MobRenderer<FinneganSleepEntity, Mode
 
 	@Override
 	public ResourceLocation getTextureLocation(FinneganSleepEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/rareengiesharkonewtamedfoxtired.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/rareengiesharkonewtamedfoxtired.png");
 	}
 
 	private static final class AnimatedModel extends Modelboyotired<FinneganSleepEntity> {

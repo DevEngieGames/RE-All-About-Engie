@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
@@ -8,6 +8,7 @@
     "texture": "regularscythe",
     "customModelName": "scythe:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "regularscythe",
     "name": "Scythe",
     "specialInformation": {
       "fixedValue": []

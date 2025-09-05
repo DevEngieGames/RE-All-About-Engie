@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +18,7 @@ public class MonstrosityEngieSharkoRenderer extends MobRenderer<MonstrosityEngie
 	public MonstrosityEngieSharkoRenderer(EntityRendererProvider.Context context) {
 		super(context, new Modelboyoother<MonstrosityEngieSharkoEntity>(context.bakeLayer(Modelboyoother.LAYER_LOCATION)), 0.5f);
 		this.addLayer(new RenderLayer<MonstrosityEngieSharkoEntity, Modelboyoother<MonstrosityEngieSharkoEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("allaboutengie:textures/entities/monstrosityboyo.png");
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("allaboutengie:textures/entities/monstrosityboyo.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -31,6 +30,6 @@ public class MonstrosityEngieSharkoRenderer extends MobRenderer<MonstrosityEngie
 
 	@Override
 	public ResourceLocation getTextureLocation(MonstrosityEngieSharkoEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/monstrosityboyo.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/monstrosityboyo.png");
 	}
 }

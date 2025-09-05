@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class YellowLightningRenderer extends MobRenderer<YellowLightningEntity, 
 
 	@Override
 	public ResourceLocation getTextureLocation(YellowLightningEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/yellowlightning.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/yellowlightning.png");
 	}
 }

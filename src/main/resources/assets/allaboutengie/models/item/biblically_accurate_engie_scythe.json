@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/biblicallyaccuratescythe",
     "textures": {
-      "0": "allaboutengie:block/biblicallyscythe"
+      "0": "allaboutengie:block/biblicallyscythe",
+      "particle": "allaboutengie:item/biblicallyaccuratescythe"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/biblicallyaccuratescythe"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/biblicallyaccuratescythe"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/biblicallyaccuratescythe"

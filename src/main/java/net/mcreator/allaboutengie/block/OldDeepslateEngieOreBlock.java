@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.block;
 
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class OldDeepslateEngieOreBlock extends Block {
 	public OldDeepslateEngieOreBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE).strength(3f, 10f));
+		super(BlockBehaviour.Properties.of().sound(SoundType.DEEPSLATE).strength(3f, 10f).instrument(NoteBlockInstrument.BASEDRUM));
 	}
 
 	@Override

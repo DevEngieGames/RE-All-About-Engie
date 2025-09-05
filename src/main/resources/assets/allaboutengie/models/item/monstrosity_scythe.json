@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/monstrosityscythe",
     "textures": {
-      "0": "allaboutengie:block/monstrosityscythe"
+      "0": "allaboutengie:block/monstrosityscythe",
+      "particle": "allaboutengie:item/monstrosityscythe"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/monstrosityscythe"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/monstrosityscythe"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/monstrosityscythe"

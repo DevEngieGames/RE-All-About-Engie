@@ -106,5 +106,14 @@
         "stream": false
       }
     ]
+  },
+  "missile_explosion": {
+    "subtitle": "subtitles.missile_explosion",
+    "sounds": [
+      {
+        "name": "allaboutengie:explosionmissile",
+        "stream": false
+      }
+    ]
   }
 }

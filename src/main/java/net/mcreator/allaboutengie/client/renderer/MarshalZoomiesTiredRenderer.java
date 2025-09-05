@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class MarshalZoomiesTiredRenderer extends MobRenderer<MarshalZoomiesTired
 
 	@Override
 	public ResourceLocation getTextureLocation(MarshalZoomiesTiredEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/marshalzoomtired.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/marshalzoomtired.png");
 	}
 
 	private static final class AnimatedModel extends Modeltobyzoomtired<MarshalZoomiesTiredEntity> {

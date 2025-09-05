@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Special",
@@ -8,6 +8,7 @@
     "texture": "banhammerpixel",
     "customModelName": "ban_hammer_gigantic:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "banhammerpixel",
     "name": "Gigantic Ban Hammer",
     "specialInformation": {
       "fixedValue": []

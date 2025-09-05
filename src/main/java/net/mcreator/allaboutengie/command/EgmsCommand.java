@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.command;
 
 import net.minecraftforge.fml.common.Mod;
@@ -36,4 +35,5 @@ public class EgmsCommand {
 					return 0;
 				}));
 	}
+
 }

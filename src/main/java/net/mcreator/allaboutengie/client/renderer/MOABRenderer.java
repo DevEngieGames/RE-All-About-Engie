@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class MOABRenderer extends MobRenderer<MOABEntity, Modelmissilebombs<MOAB
 
 	@Override
 	public ResourceLocation getTextureLocation(MOABEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/moab.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/moab.png");
 	}
 }

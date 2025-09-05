@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class NormalRenderer extends MobRenderer<NormalEntity, Modelmissilebombs<
 
 	@Override
 	public ResourceLocation getTextureLocation(NormalEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/normal.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/normal.png");
 	}
 }

@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class Bothan2netZoomiesTiredRenderer extends MobRenderer<Bothan2netZoomie
 
 	@Override
 	public ResourceLocation getTextureLocation(Bothan2netZoomiesTiredEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/bothan2netzoomtired.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/bothan2netzoomtired.png");
 	}
 
 	private static final class AnimatedModel extends Modeltobyzoomtired<Bothan2netZoomiesTiredEntity> {

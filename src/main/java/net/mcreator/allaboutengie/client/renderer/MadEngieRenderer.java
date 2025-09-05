@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class MadEngieRenderer extends MobRenderer<MadEngieEntity, ModelMadEngie<
 
 	@Override
 	public ResourceLocation getTextureLocation(MadEngieEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/madengienew.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/madengienew.png");
 	}
 }

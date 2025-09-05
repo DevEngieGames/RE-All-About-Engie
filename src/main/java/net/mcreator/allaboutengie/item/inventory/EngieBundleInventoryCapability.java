@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item.inventory;
 
 import net.minecraftforge.items.ItemStackHandler;
@@ -9,29 +8,26 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.Direction;
-import net.minecraft.client.Minecraft;
 
+import net.mcreator.allaboutengie.world.inventory.MetalBundleUIMenu;
 import net.mcreator.allaboutengie.init.AllaboutengieModItems;
-import net.mcreator.allaboutengie.client.gui.MetalBundleUIScreen;
 
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
-@Mod.EventBusSubscriber(Dist.CLIENT)
+@Mod.EventBusSubscriber
 public class EngieBundleInventoryCapability implements ICapabilitySerializable<CompoundTag> {
 	@SubscribeEvent
-	@OnlyIn(Dist.CLIENT)
 	public static void onItemDropped(ItemTossEvent event) {
 		if (event.getEntity().getItem().getItem() == AllaboutengieModItems.ENGIE_BUNDLE.get()) {
-			if (Minecraft.getInstance().screen instanceof MetalBundleUIScreen) {
-				Minecraft.getInstance().player.closeContainer();
-			}
+			Player player = event.getPlayer();
+			if (player.containerMenu instanceof MetalBundleUIMenu)
+				player.closeContainer();
 		}
 	}
 

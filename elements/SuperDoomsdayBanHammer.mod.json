@@ -1,13 +1,14 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "tool",
   "definition": {
     "toolType": "Special",
-    "renderType": 0,
+    "renderType": 1,
     "blockingRenderType": 0,
     "texture": "superdoomsdaybanpixel",
-    "customModelName": "Normal",
+    "customModelName": "ban_hammer_superdoomsday:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "superdoomsdaybanpixel",
     "name": "Super Doomsday Ban Hammer",
     "specialInformation": {
       "fixedValue": [

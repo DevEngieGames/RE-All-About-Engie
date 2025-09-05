@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "item",
   "definition": {
     "renderType": 0,
@@ -47,6 +47,7 @@
     },
     "musicDiscDescription": "iamthekidyouknowwhatimean - Run",
     "musicDiscLengthInTicks": 6960,
-    "musicDiscAnalogOutput": 15
+    "musicDiscAnalogOutput": 15,
+    "providedBannerPatterns": []
   }
 }

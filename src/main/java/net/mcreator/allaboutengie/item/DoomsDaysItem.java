@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.item;
 
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -36,12 +35,12 @@ public abstract class DoomsDaysItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 400;
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 350;
 			}
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{400, 400, 400, 400}[type.getSlot().getIndex()];
+				return new int[]{350, 350, 350, 350}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -85,6 +84,7 @@ public abstract class DoomsDaysItem extends ArmorItem {
 		public void initializeClient(Consumer<IClientItemExtensions> consumer) {
 			consumer.accept(new IClientItemExtensions() {
 				@Override
+				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
 							Map.of("head", new Modelengiegamesarmorl1(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiegamesarmorl1.LAYER_LOCATION)).head, "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body",

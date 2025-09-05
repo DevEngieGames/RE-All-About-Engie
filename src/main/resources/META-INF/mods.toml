@@ -4,13 +4,13 @@ license="MIT License"
 
 [[mods]]
 modId="allaboutengie"
-version="8.18.25"
-displayName="All About Engie"
+version="9.1.25"
+displayName="RE:All About Engie"
 updateJSONURL="https://raw.githubusercontent.com/EngieGames/All-About-Engie/refs/heads/master/ModUpdateCheck.json"
-displayURL="https://modrinth.com/user/DevEngie"
+displayURL="https://modrinth.com/project/re-all-about-engie"
 logoFile="logo.png"
-credits="DevEngie(Games), MCreator, Family Members, and Grem."
-authors="DevEngie"
+credits="DevEngie (Original Mod Creator)"
+authors="EngieGames"
 description="A collection of all my other mods for my 5th year of making mods! If you find issues, report them on the GitHub page for the mod please."
 
 # Start of user code block mod configuration
@@ -23,12 +23,6 @@ description="A collection of all my other mods for my 5th year of making mods! I
     ordering="AFTER"
     side="BOTH"
 
-[[dependencies.allaboutengie]]
-    modId="attributefix"
-    mandatory=true
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 
 
 

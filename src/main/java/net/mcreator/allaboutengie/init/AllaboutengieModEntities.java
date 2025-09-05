@@ -1,4 +1,3 @@
-
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
@@ -32,6 +31,9 @@ import net.mcreator.allaboutengie.entity.TigerSitEntity;
 import net.mcreator.allaboutengie.entity.TigerLayOnSideEntity;
 import net.mcreator.allaboutengie.entity.TigerLayEntity;
 import net.mcreator.allaboutengie.entity.TigerEntity;
+import net.mcreator.allaboutengie.entity.ThrowbackMadEngieEntity;
+import net.mcreator.allaboutengie.entity.ThrowbackEnragedEngieEntity;
+import net.mcreator.allaboutengie.entity.ThrowbackAngryEngieEntity;
 import net.mcreator.allaboutengie.entity.TheRealEngieGamesEntity;
 import net.mcreator.allaboutengie.entity.TheEndHostileEntity;
 import net.mcreator.allaboutengie.entity.TheEndEntity;
@@ -49,6 +51,7 @@ import net.mcreator.allaboutengie.entity.SharkoLayAprilFoolsEntity;
 import net.mcreator.allaboutengie.entity.SharkoEntity;
 import net.mcreator.allaboutengie.entity.SharkoAprilFoolsEntity;
 import net.mcreator.allaboutengie.entity.SharkTamedEntity;
+import net.mcreator.allaboutengie.entity.ScorchedEntity;
 import net.mcreator.allaboutengie.entity.RockySleepEntity;
 import net.mcreator.allaboutengie.entity.RockyLayEntity;
 import net.mcreator.allaboutengie.entity.RockyEntity;
@@ -1753,6 +1756,23 @@ public class AllaboutengieModEntities {
 			EntityType.Builder.<AlienEngieSharkoLayEntity>of(AlienEngieSharkoLayEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AlienEngieSharkoLayEntity::new)
 
 					.sized(0.7f, 0.6f));
+	public static final RegistryObject<EntityType<ScorchedEntity>> SCORCHED = register("scorched",
+			EntityType.Builder.<ScorchedEntity>of(ScorchedEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ScorchedEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ThrowbackMadEngieEntity>> THROWBACK_MAD_ENGIE = register("throwback_mad_engie",
+			EntityType.Builder.<ThrowbackMadEngieEntity>of(ThrowbackMadEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ThrowbackMadEngieEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ThrowbackAngryEngieEntity>> THROWBACK_ANGRY_ENGIE = register("throwback_angry_engie",
+			EntityType.Builder.<ThrowbackAngryEngieEntity>of(ThrowbackAngryEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ThrowbackAngryEngieEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ThrowbackEnragedEngieEntity>> THROWBACK_ENRAGED_ENGIE = register("throwback_enraged_engie",
+			EntityType.Builder.<ThrowbackEnragedEngieEntity>of(ThrowbackEnragedEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+					.setCustomClientFactory(ThrowbackEnragedEngieEntity::new)
+
+					.sized(0.6f, 1.95f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -2096,6 +2116,10 @@ public class AllaboutengieModEntities {
 			RockyLayEntity.init();
 			RockySleepEntity.init();
 			AlienEngieSharkoLayEntity.init();
+			ScorchedEntity.init();
+			ThrowbackMadEngieEntity.init();
+			ThrowbackAngryEngieEntity.init();
+			ThrowbackEnragedEngieEntity.init();
 		});
 	}
 
@@ -2434,5 +2458,9 @@ public class AllaboutengieModEntities {
 		event.put(ROCKY_LAY.get(), RockyLayEntity.createAttributes().build());
 		event.put(ROCKY_SLEEP.get(), RockySleepEntity.createAttributes().build());
 		event.put(ALIEN_ENGIE_SHARKO_LAY.get(), AlienEngieSharkoLayEntity.createAttributes().build());
+		event.put(SCORCHED.get(), ScorchedEntity.createAttributes().build());
+		event.put(THROWBACK_MAD_ENGIE.get(), ThrowbackMadEngieEntity.createAttributes().build());
+		event.put(THROWBACK_ANGRY_ENGIE.get(), ThrowbackAngryEngieEntity.createAttributes().build());
+		event.put(THROWBACK_ENRAGED_ENGIE.get(), ThrowbackEnragedEngieEntity.createAttributes().build());
 	}
 }

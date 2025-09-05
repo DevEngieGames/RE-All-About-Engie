@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class TobySitRenderer extends MobRenderer<TobySitEntity, Modeltobysitnew<
 
 	@Override
 	public ResourceLocation getTextureLocation(TobySitEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/toby.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/toby.png");
 	}
 
 	private static final class AnimatedModel extends Modeltobysitnew<TobySitEntity> {

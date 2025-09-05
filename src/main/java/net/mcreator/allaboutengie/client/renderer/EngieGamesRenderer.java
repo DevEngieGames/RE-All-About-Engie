@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class EngieGamesRenderer extends HumanoidMobRenderer<EngieGamesEntity, Hu
 
 	@Override
 	public ResourceLocation getTextureLocation(EngieGamesEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/c414fe22c887a913.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/c414fe22c887a913.png");
 	}
 }

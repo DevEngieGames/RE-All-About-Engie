@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.world.level.Level;
@@ -24,7 +23,7 @@ public class AlienEngieSharkoTamedRenderer extends MobRenderer<AlienEngieSharkoT
 	public AlienEngieSharkoTamedRenderer(EntityRendererProvider.Context context) {
 		super(context, new AnimatedModel(context.bakeLayer(Modelalienengiesharkotamed.LAYER_LOCATION)), 0.5f);
 		this.addLayer(new RenderLayer<AlienEngieSharkoTamedEntity, Modelalienengiesharkotamed<AlienEngieSharkoTamedEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("allaboutengie:textures/entities/alienengiesharko_glow.png");
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("allaboutengie:textures/entities/alienengiesharko_glow.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, AlienEngieSharkoTamedEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -42,7 +41,7 @@ public class AlienEngieSharkoTamedRenderer extends MobRenderer<AlienEngieSharkoT
 
 	@Override
 	public ResourceLocation getTextureLocation(AlienEngieSharkoTamedEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/alienengiesharko.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/alienengiesharko.png");
 	}
 
 	private static final class AnimatedModel extends Modelalienengiesharkotamed<AlienEngieSharkoTamedEntity> {

@@ -1,4 +1,3 @@
-
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
@@ -18,4 +17,5 @@ public class AllaboutengieModGameRules {
 	public static final GameRules.Key<GameRules.IntegerValue> TRUE_HARDCORE_LIFE_COUNT = GameRules.register("trueHardcoreLifeCount", GameRules.Category.PLAYER, GameRules.IntegerValue.create(10));
 	public static final GameRules.Key<GameRules.BooleanValue> HEAVY_LIGHTNING = GameRules.register("heavyLightning", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> EXTREME_LIGHTNING = GameRules.register("extremeLightning", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
+	public static final GameRules.Key<GameRules.BooleanValue> TRUE_THROWBACK = GameRules.register("trueThrowback", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 }

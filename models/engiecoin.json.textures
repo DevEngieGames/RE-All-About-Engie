@@ -5,6 +5,12 @@
         "0": "engiecointexture"
       },
       "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimatterengiecointexture"
+      },
+      "name": "antimatter"
     }
   }
 }

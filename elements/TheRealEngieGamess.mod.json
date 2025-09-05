@@ -1,5 +1,5 @@
 {
-  "_fv": 77,
+  "_fv": 79,
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
@@ -44,9 +44,9 @@
     "leggingsModelPartL": "LeftLeg",
     "leggingsModelPartR": "RightLeg",
     "leggingsModelTexture": "therealengiegamesarmorlayer2.png",
-    "bootsModelName": "Modeltherealengiegamesarmorl2",
-    "bootsModelPartL": "LeftLeg",
-    "bootsModelPartR": "RightLeg",
+    "bootsModelName": "Modeltherealengiegamesarmorl1",
+    "bootsModelPartL": "left_shoe",
+    "bootsModelPartR": "right_shoe",
     "bootsModelTexture": "therealengiegamesarmorlayer1.png",
     "helmetItemRenderType": 0,
     "helmetItemCustomModelName": "Normal",
@@ -84,11 +84,11 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 750,
-    "damageValueHelmet": 750,
-    "damageValueBody": 750,
-    "damageValueLeggings": 750,
-    "damageValueBoots": 750,
+    "maxDamage": 600,
+    "damageValueHelmet": 600,
+    "damageValueBody": 600,
+    "damageValueLeggings": 600,
+    "damageValueBoots": 600,
     "enchantability": 15,
     "toughness": 15.0,
     "knockbackResistance": 1.0,

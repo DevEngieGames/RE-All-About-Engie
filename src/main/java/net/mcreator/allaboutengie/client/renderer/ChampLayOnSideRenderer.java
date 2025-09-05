@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class ChampLayOnSideRenderer extends MobRenderer<ChampLayOnSideEntity, Mo
 
 	@Override
 	public ResourceLocation getTextureLocation(ChampLayOnSideEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/champ.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/champ.png");
 	}
 
 	private static final class AnimatedModel extends Modelchampdaboyolayonside<ChampLayOnSideEntity> {

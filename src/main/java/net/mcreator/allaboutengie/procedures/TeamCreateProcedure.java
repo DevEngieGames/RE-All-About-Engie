@@ -36,6 +36,15 @@ public class TeamCreateProcedure {
 			return;
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+					"team add REAAE_Dev \"REAAE Developer\"");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+					"team modify AAE_Dev color dark_red");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+					"team modify AAE_Dev prefix [{\"text\":\"[RE:\",\"color\":\"red\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"All \",\"color\":\"green\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"About \",\"color\":\"yellow\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"Engie \",\"color\":\"red\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"Developer\",\"color\":\"dark_red\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"] \",\"color\":\"red\"}]");
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 					"team add AAE_Dev \"AAE Developer\"");
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
@@ -97,6 +106,11 @@ public class TeamCreateProcedure {
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 					"team modify Normal color red");
 		AllaboutengieMod.queueServerWork(2, () -> {
+			if ((entity.getDisplayName().getString()).equals("playedbyengie")) {
+				if (world instanceof ServerLevel _level)
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							"team join REAAE_Dev playedbyengie");
+			}
 			if ((entity.getDisplayName().getString()).equals("Dev")) {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),

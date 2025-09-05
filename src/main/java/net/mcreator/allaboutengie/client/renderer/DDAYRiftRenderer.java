@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class DDAYRiftRenderer extends MobRenderer<DDAYRiftEntity, Modelddayrift<
 
 	@Override
 	public ResourceLocation getTextureLocation(DDAYRiftEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/rifttexture.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/rifttexture.png");
 	}
 }

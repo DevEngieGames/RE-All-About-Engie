@@ -1,4 +1,3 @@
-
 /*
  *    MCreator note: This file will be REGENERATED on each build.
  */
@@ -41,6 +40,13 @@ import net.mcreator.allaboutengie.block.BloodOreBlock;
 import net.mcreator.allaboutengie.block.BloodBlockBlock;
 import net.mcreator.allaboutengie.block.BiblicallyAccurateBlockBlock;
 import net.mcreator.allaboutengie.block.AnyTypeOfWoodHelpBlock;
+import net.mcreator.allaboutengie.block.AntimatterOutragedEngieBlockBlock;
+import net.mcreator.allaboutengie.block.AntimatterMonstrosityEngieBlockBlock;
+import net.mcreator.allaboutengie.block.AntimatterEnragedEngieBlockBlock;
+import net.mcreator.allaboutengie.block.AntimatterEngieOreBlock;
+import net.mcreator.allaboutengie.block.AntimatterEngieBlockBlock;
+import net.mcreator.allaboutengie.block.AntimatterBiblicallyAccurateBlockBlock;
+import net.mcreator.allaboutengie.block.AntimatterAngryEngieBlockBlock;
 import net.mcreator.allaboutengie.block.AngryEngieBlockBlock;
 import net.mcreator.allaboutengie.block.AngelHattedPresentBlock;
 import net.mcreator.allaboutengie.AllaboutengieMod;
@@ -80,6 +86,13 @@ public class AllaboutengieModBlocks {
 	public static final RegistryObject<Block> CHALLENGE_MODE_TROPHY_SOLO = REGISTRY.register("challenge_mode_trophy_solo", () -> new ChallengeModeTrophySoloBlock());
 	public static final RegistryObject<Block> CHALLENGE_MODE_TROPHY_MULTIPLAYER = REGISTRY.register("challenge_mode_trophy_multiplayer", () -> new ChallengeModeTrophyMultiplayerBlock());
 	public static final RegistryObject<Block> ANY_TYPE_OF_WOOD_HELP = REGISTRY.register("any_type_of_wood_help", () -> new AnyTypeOfWoodHelpBlock());
+	public static final RegistryObject<Block> ANTIMATTER_ENGIE_BLOCK = REGISTRY.register("antimatter_engie_block", () -> new AntimatterEngieBlockBlock());
+	public static final RegistryObject<Block> ANTIMATTER_ANGRY_ENGIE_BLOCK = REGISTRY.register("antimatter_angry_engie_block", () -> new AntimatterAngryEngieBlockBlock());
+	public static final RegistryObject<Block> ANTIMATTER_ENRAGED_ENGIE_BLOCK = REGISTRY.register("antimatter_enraged_engie_block", () -> new AntimatterEnragedEngieBlockBlock());
+	public static final RegistryObject<Block> ANTIMATTER_OUTRAGED_ENGIE_BLOCK = REGISTRY.register("antimatter_outraged_engie_block", () -> new AntimatterOutragedEngieBlockBlock());
+	public static final RegistryObject<Block> ANTIMATTER_BIBLICALLY_ACCURATE_BLOCK = REGISTRY.register("antimatter_biblically_accurate_block", () -> new AntimatterBiblicallyAccurateBlockBlock());
+	public static final RegistryObject<Block> ANTIMATTER_MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("antimatter_monstrosity_engie_block", () -> new AntimatterMonstrosityEngieBlockBlock());
+	public static final RegistryObject<Block> ANTIMATTER_ENGIE_ORE = REGISTRY.register("antimatter_engie_ore", () -> new AntimatterEngieOreBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

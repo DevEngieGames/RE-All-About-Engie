@@ -1,7 +1,31 @@
 {
-  "parent": "allaboutengie:custom/engi_scythe",
-  "textures": {
-    "0": "allaboutengie:block/scythe",
-    "particle": "allaboutengie:item/image"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "allaboutengie:custom/engi_scythe",
+    "textures": {
+      "0": "allaboutengie:block/scythe",
+      "particle": "allaboutengie:item/image"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/image"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/image"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/image"
+      }
+    }
   }
 }

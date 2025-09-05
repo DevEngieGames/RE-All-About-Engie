@@ -4,7 +4,8 @@
   "base": {
     "parent": "allaboutengie:custom/engiegames_sword_3d",
     "textures": {
-      "0": "allaboutengie:block/engiegames_sword_3d"
+      "0": "allaboutengie:block/engiegames_sword_3d",
+      "particle": "allaboutengie:item/engiegames_sword"
     }
   },
   "perspectives": {
@@ -12,16 +13,15 @@
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/engiegames_sword"
-      },
-      "gui_light": "front"
+      }
     },
-    "ground": {
+    "fixed": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/engiegames_sword"
       }
     },
-    "fixed": {
+    "ground": {
       "parent": "item/generated",
       "textures": {
         "layer0": "allaboutengie:item/engiegames_sword"

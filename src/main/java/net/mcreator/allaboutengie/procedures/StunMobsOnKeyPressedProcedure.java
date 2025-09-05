@@ -46,12 +46,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -451,12 +451,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -856,12 +856,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -1261,12 +1261,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -1666,12 +1666,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -2071,12 +2071,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -2476,12 +2476,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -2881,12 +2881,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -3286,12 +3286,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -3691,12 +3691,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -4096,12 +4096,12 @@ public class StunMobsOnKeyPressedProcedure {
 								BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
 										(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1);
 					} else {
 						_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
 								((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
+								ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunmobs")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{

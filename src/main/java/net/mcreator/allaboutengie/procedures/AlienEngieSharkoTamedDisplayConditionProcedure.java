@@ -12,6 +12,8 @@ public class AlienEngieSharkoTamedDisplayConditionProcedure {
 			return true;
 		} else if ((entity.getDisplayName().getString()).equals("Glorp")) {
 			return true;
+		} else if ((entity.getDisplayName().getString()).equals("Gleep")) {
+			return true;
 		}
 		return false;
 	}

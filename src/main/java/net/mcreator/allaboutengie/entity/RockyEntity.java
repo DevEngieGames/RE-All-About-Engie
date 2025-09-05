@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.entity;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -93,17 +92,17 @@ public class RockyEntity extends PathfinderMob {
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.cat.ambient"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.cat.ambient"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.cat.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.cat.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.cat.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.cat.death"));
 	}
 
 	@Override

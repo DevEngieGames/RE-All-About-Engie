@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,6 @@ public class SharkoAprilFoolsRenderer extends MobRenderer<SharkoAprilFoolsEntity
 
 	@Override
 	public ResourceLocation getTextureLocation(SharkoAprilFoolsEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/boyoaprilfirst.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/boyoaprilfirst.png");
 	}
 }

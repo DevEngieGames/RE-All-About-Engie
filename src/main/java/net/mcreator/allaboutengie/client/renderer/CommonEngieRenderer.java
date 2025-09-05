@@ -1,4 +1,3 @@
-
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +17,6 @@ public class CommonEngieRenderer extends HumanoidMobRenderer<CommonEngieEntity, 
 
 	@Override
 	public ResourceLocation getTextureLocation(CommonEngieEntity entity) {
-		return new ResourceLocation("allaboutengie:textures/entities/commonengie.png");
+		return ResourceLocation.parse("allaboutengie:textures/entities/commonengie.png");
 	}
 }
