@@ -7,7 +7,6 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -41,7 +40,6 @@ import net.mcreator.allaboutengie.procedures.EntitySpawnsProcedure;
 import net.mcreator.allaboutengie.procedures.EntityNameDisplayUpdateTickProcedure;
 import net.mcreator.allaboutengie.procedures.DoomsDayMobsFightEachotherToggleProcedure;
 import net.mcreator.allaboutengie.procedures.AnyEngieDiesAddCountProcedure;
-import net.mcreator.allaboutengie.init.AllaboutengieModItems;
 import net.mcreator.allaboutengie.init.AllaboutengieModEntities;
 
 import javax.annotation.Nullable;
@@ -108,11 +106,6 @@ public class EnragedEngieEntity extends Monster {
 		return MobType.UNDEFINED;
 	}
 
-	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
-		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
-		this.spawnAtLocation(new ItemStack(AllaboutengieModItems.ENRAGED_ENGIE_ESSENCE.get()));
-	}
-
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.hurt"));
@@ -126,7 +119,7 @@ public class EnragedEngieEntity extends Monster {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		AnyEngieDiesAddCountProcedure.execute(this, source.getEntity());
+		AnyEngieDiesAddCountProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this, source.getEntity());
 	}
 
 	@Override

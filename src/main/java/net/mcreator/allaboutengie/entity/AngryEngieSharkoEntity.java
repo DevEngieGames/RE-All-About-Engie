@@ -7,7 +7,6 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -38,7 +37,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.allaboutengie.procedures.EntitySpawnsProcedure;
 import net.mcreator.allaboutengie.procedures.EntityNameDisplayUpdateTickProcedure;
 import net.mcreator.allaboutengie.procedures.AprilFoolsMobSpawningProcedure;
-import net.mcreator.allaboutengie.init.AllaboutengieModItems;
 import net.mcreator.allaboutengie.init.AllaboutengieModEntities;
 
 import javax.annotation.Nullable;
@@ -82,11 +80,6 @@ public class AngryEngieSharkoEntity extends Monster {
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEFINED;
-	}
-
-	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
-		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
-		this.spawnAtLocation(new ItemStack(AllaboutengieModItems.ANGRY_ENGIE_ESSENCE.get()));
 	}
 
 	@Override

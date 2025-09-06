@@ -60,6 +60,7 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModBlocks.ENGIE_ORE.get().asItem());
 				tabData.accept(AllaboutengieModBlocks.DEEPSLATE_ENGIE_ORE.get().asItem());
 				tabData.accept(AllaboutengieModBlocks.ANTIMATTER_ENGIE_ORE.get().asItem());
+				tabData.accept(AllaboutengieModBlocks.ANTIMATTER_DEEPSLATE_ENGIE_ORE.get().asItem());
 				tabData.accept(AllaboutengieModBlocks.UNOBTAINIUM_ORE.get().asItem());
 				tabData.accept(AllaboutengieModBlocks.DEEPSLATE_UNOBTAINIUM_ORE.get().asItem());
 				tabData.accept(AllaboutengieModBlocks.CYBER_ORE.get().asItem());
@@ -305,6 +306,7 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.DEV_ENGIE_PLUSH.get());
 				tabData.accept(AllaboutengieModBlocks.CHALLENGE_MODE_TROPHY_SOLO.get().asItem());
 				tabData.accept(AllaboutengieModBlocks.CHALLENGE_MODE_TROPHY_MULTIPLAYER.get().asItem());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_DOOMSDAY_CRUCIFIX.get());
 			}).build());
 	public static final RegistryObject<CreativeModeTab> AAE_ITEMS_FOOD = REGISTRY.register("aae_items_food",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.aae_items_food")).icon(() -> new ItemStack(AllaboutengieModItems.COOKED_PIZZA.get())).displayItems((parameters, tabData) -> {
@@ -593,14 +595,11 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.THROWBACK_MAD_ENGIE_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.THROWBACK_ANGRY_ENGIE_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.THROWBACK_ENRAGED_ENGIE_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.THROWBACK_ANGRY_CREATOR_SPAWN_EGG.get());
 			}).withTabsBefore(BAN_HAMMERS.getId()).build());
 	public static final RegistryObject<CreativeModeTab> PIXEL_ITEMS = REGISTRY.register("pixel_items",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.pixel_items")).icon(() -> new ItemStack(AllaboutengieModItems.CRUCIFIX_PIXEL.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(AllaboutengieModItems.CRUCIFIX_PIXEL.get());
-				tabData.accept(AllaboutengieModItems.DOOMS_DAY_CRUCIFIX_PIXEL.get());
-				tabData.accept(AllaboutengieModItems.SUPER_DOOMS_DAY_CRUCIFIX_PIXEL.get());
-				tabData.accept(AllaboutengieModItems.THE_END_CRUCIFIX_PIXEL.get());
-				tabData.accept(AllaboutengieModItems.ENGIE_CRUCIFIX_PIXEL.get());
 			}).withTabsBefore(MOBS.getId()).build());
 	public static final RegistryObject<CreativeModeTab> ZOMBIES = REGISTRY.register("zombies",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.zombies")).icon(() -> new ItemStack(AllaboutengieModItems.ENRAGED_ZOMBIES_PLAQUE.get())).displayItems((parameters, tabData) -> {

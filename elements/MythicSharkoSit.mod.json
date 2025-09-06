@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "[Tamed] Mythic Sharko (Sitting)",
+    "mobName": "Mythic Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyositnew",
     "mobModelTexture": "mythicsharkonewtamed.png",
@@ -169,6 +169,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

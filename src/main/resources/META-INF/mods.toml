@@ -4,7 +4,7 @@ license="MIT License"
 
 [[mods]]
 modId="allaboutengie"
-version="9.1.25"
+version="9.6.25"
 displayName="RE:All About Engie"
 updateJSONURL="https://raw.githubusercontent.com/EngieGames/All-About-Engie/refs/heads/master/ModUpdateCheck.json"
 displayURL="https://modrinth.com/project/re-all-about-engie"

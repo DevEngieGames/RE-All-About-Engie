@@ -18,4 +18,6 @@ public class AllaboutengieModGameRules {
 	public static final GameRules.Key<GameRules.BooleanValue> HEAVY_LIGHTNING = GameRules.register("heavyLightning", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> EXTREME_LIGHTNING = GameRules.register("extremeLightning", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> TRUE_THROWBACK = GameRules.register("trueThrowback", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
+	public static final GameRules.Key<GameRules.BooleanValue> ENRAGED_ZOMBIES = GameRules.register("enragedZombies", GameRules.Category.MISC, GameRules.BooleanValue.create(true));
+	public static final GameRules.Key<GameRules.BooleanValue> ALL_ABOUT_ENGIE_TOGGLE = GameRules.register("allAboutEngieToggle", GameRules.Category.MISC, GameRules.BooleanValue.create(true));
 }

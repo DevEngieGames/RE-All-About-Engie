@@ -418,20 +418,6 @@
       "path": "~/All Items/Exclusive/Ban Hammers"
     },
     {
-      "name": "EchdeathPixel",
-      "type": "tool",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "echdeath_pixel",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/allaboutengie/models/item/echdeath_pixel.json",
-          "src/main/java/net/mcreator/allaboutengie/item/EchdeathPixelItem.java"
-        ]
-      },
-      "path": "~/All Items/Exclusive/Ban Hammers"
-    },
-    {
       "name": "EngieAxe",
       "type": "tool",
       "compiles": true,
@@ -6225,20 +6211,6 @@
         "files": [
           "src/main/java/net/mcreator/allaboutengie/item/CodeRedeemersHammerItem.java",
           "src/main/resources/assets/allaboutengie/models/item/code_redeemers_hammer.json"
-        ]
-      },
-      "path": "~/All Items/Exclusive/Ban Hammers"
-    },
-    {
-      "name": "CodeRedeemersHammerPixel",
-      "type": "tool",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "code_redeemers_hammer_pixel",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/allaboutengie/item/CodeRedeemersHammerPixelItem.java",
-          "src/main/resources/assets/allaboutengie/models/item/code_redeemers_hammer_pixel.json"
         ]
       },
       "path": "~/All Items/Exclusive/Ban Hammers"
@@ -12097,20 +12069,6 @@
         "files": [
           "src/main/resources/assets/allaboutengie/models/item/comically_massive_ban_hammer.json",
           "src/main/java/net/mcreator/allaboutengie/item/BahemothBanHammerItem.java"
-        ]
-      },
-      "path": "~/All Items/Exclusive/Ban Hammers"
-    },
-    {
-      "name": "BahemothBanHammerPixel",
-      "type": "tool",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "comically_massive_ban_hammer_pixel",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/allaboutengie/item/BahemothBanHammerPixelItem.java",
-          "src/main/resources/assets/allaboutengie/models/item/comically_massive_ban_hammer_pixel.json"
         ]
       },
       "path": "~/All Items/Exclusive/Ban Hammers"
@@ -19701,20 +19659,6 @@
       "path": "~/All Items/Regular/Items"
     },
     {
-      "name": "DoomsDayCrucifixPixel",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "dooms_day_crucifix_pixel",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/allaboutengie/models/item/dooms_day_crucifix_pixel.json",
-          "src/main/java/net/mcreator/allaboutengie/item/DoomsDayCrucifixPixelItem.java"
-        ]
-      },
-      "path": "~/All Items/Regular/Items"
-    },
-    {
       "name": "SuperDoomsDayCrucifix",
       "type": "item",
       "compiles": true,
@@ -19724,20 +19668,6 @@
         "files": [
           "src/main/java/net/mcreator/allaboutengie/item/SuperDoomsDayCrucifixItem.java",
           "src/main/resources/assets/allaboutengie/models/item/super_dooms_day_crucifix.json"
-        ]
-      },
-      "path": "~/All Items/Regular/Items"
-    },
-    {
-      "name": "SuperDoomsDayCrucifixPixel",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "super_dooms_day_crucifix_pixel",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/allaboutengie/item/SuperDoomsDayCrucifixPixelItem.java",
-          "src/main/resources/assets/allaboutengie/models/item/super_dooms_day_crucifix_pixel.json"
         ]
       },
       "path": "~/All Items/Regular/Items"
@@ -20546,20 +20476,6 @@
       "path": "~/All Items/Regular/Items"
     },
     {
-      "name": "TheEndCrucifixPixel",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "the_end_crucifix_pixel",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/allaboutengie/item/TheEndCrucifixPixelItem.java",
-          "src/main/resources/assets/allaboutengie/models/item/the_end_crucifix_pixel.json"
-        ]
-      },
-      "path": "~/All Items/Regular/Items"
-    },
-    {
       "name": "TheEndScythe",
       "type": "tool",
       "compiles": true,
@@ -20882,20 +20798,6 @@
         "files": [
           "src/main/resources/assets/allaboutengie/models/item/engie_crucifix.json",
           "src/main/java/net/mcreator/allaboutengie/item/EngieCrucifixItem.java"
-        ]
-      },
-      "path": "~/All Items/Regular/Items"
-    },
-    {
-      "name": "EngieCrucifixPixel",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "engie_crucifix_pixel",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/allaboutengie/item/EngieCrucifixPixelItem.java",
-          "src/main/resources/assets/allaboutengie/models/item/engie_crucifix_pixel.json"
         ]
       },
       "path": "~/All Items/Regular/Items"
@@ -22324,20 +22226,6 @@
       "path": "~/All Items/Exclusive/Ban Hammers"
     },
     {
-      "name": "ARealBanHammerPixel",
-      "type": "tool",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "a_real_ban_hammer_pixel",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/allaboutengie/models/item/a_real_ban_hammer_pixel.json",
-          "src/main/java/net/mcreator/allaboutengie/item/ARealBanHammerPixelItem.java"
-        ]
-      },
-      "path": "~/All Items/Exclusive/Ban Hammers"
-    },
-    {
       "name": "RareEngieSharkoNameCheck",
       "type": "procedure",
       "compiles": true,
@@ -23057,20 +22945,6 @@
       "path": "~/All Items/Regular/Items"
     },
     {
-      "name": "MindscapeCrucifixPixel",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mindscape_crucifix_pixel",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/allaboutengie/item/MindscapeCrucifixPixelItem.java",
-          "src/main/resources/assets/allaboutengie/models/item/mindscape_crucifix_pixel.json"
-        ]
-      },
-      "path": "~/All Items/Regular/Items"
-    },
-    {
       "name": "MindscapeBanHammer",
       "type": "tool",
       "compiles": true,
@@ -23302,18 +23176,6 @@
           },
           {
             "name": "amount",
-            "type": "number"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
             "type": "number"
           },
           {
@@ -24052,6 +23914,22 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -28901,7 +28779,7 @@
           "src/main/java/net/mcreator/allaboutengie/procedures/EngieOreOnTickUpdateProcedure.java"
         ]
       },
-      "path": "~/All Items/Regular/Blocks"
+      "path": "~/Procedures"
     },
     {
       "name": "Damage",
@@ -29034,7 +28912,7 @@
           "src/main/java/net/mcreator/allaboutengie/procedures/EngieOreBlockDestroyedByPlayerProcedure.java"
         ]
       },
-      "path": "~/All Items/Regular/Blocks"
+      "path": "~/Procedures"
     },
     {
       "name": "AntimatterEngies",
@@ -30769,6 +30647,788 @@
         ]
       },
       "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterDeepslateEngieOre",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_deepslate_engie_ore",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/worldgen/configured_feature/antimatter_deepslate_engie_ore.json",
+          "src/main/resources/assets/allaboutengie/models/block/antimatter_deepslate_engie_ore.json",
+          "src/main/resources/data/allaboutengie/forge/biome_modifier/antimatter_deepslate_engie_ore_biome_modifier.json",
+          "src/main/resources/assets/allaboutengie/models/item/antimatter_deepslate_engie_ore.json",
+          "src/main/resources/assets/allaboutengie/blockstates/antimatter_deepslate_engie_ore.json",
+          "src/main/resources/data/allaboutengie/worldgen/placed_feature/antimatter_deepslate_engie_ore.json",
+          "src/main/java/net/mcreator/allaboutengie/block/AntimatterDeepslateEngieOreBlock.java",
+          "src/main/resources/data/allaboutengie/loot_tables/blocks/antimatter_deepslate_engie_ore.json"
+        ]
+      },
+      "path": "~/All Items/Regular/Blocks"
+    },
+    {
+      "name": "DeepslateEngieOreBlockDestroyedByPlayer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deepslate_engie_ore_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/allaboutengie/procedures/DeepslateEngieOreBlockDestroyedByPlayerProcedure.java"
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "AntimatterOutragedEngieSword1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_sword_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_sword_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngiePickaxe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_pickaxe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_pickaxe_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngieAxe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_axe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_axe_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngieAxe2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_axe_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_axe_2.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngieShovel1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_shovel_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_shovel_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngieHoe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_hoe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_hoe_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngieHoe2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_hoe_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_hoe_2.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngiePaxelCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_paxel_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_paxel_craft.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieSword1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_sword_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_sword_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngiePickaxe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_pickaxe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_pickaxe_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieAxe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_axe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_axe_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieAxe2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_axe_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_axe_2.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieShovel1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_shovel_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_shovel_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieHoe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_hoe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_hoe_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieHoe2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_hoe_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_hoe_2.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngiePaxelCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_paxel_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_paxel_craft.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieSword1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_sword_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_sword_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngiePickaxe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_pickaxe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_pickaxe_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieAxe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_axe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_axe_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieAxe2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_axe_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_axe_2.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieShovel1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_shovel_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_shovel_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieHoe1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_hoe_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_hoe_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieHoe2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_hoe_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_hoe_2.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterEngieHelmet1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_engie_helmet_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_engie_helmet_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterEngieChestplate1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_engie_chestplate_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_engie_chestplate_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterEngieLeggings1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_engie_leggings_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_engie_leggings_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterEngieBoots1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_engie_boots_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_engie_boots_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterAngryEngieHelmet1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_angry_engie_helmet_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_angry_engie_helmet_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterAngryEngieChestplate1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_angry_engie_chestplate_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_angry_engie_chestplate_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterAngryEngieLeggings1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_angry_engie_leggings_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_angry_engie_leggings_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterAngryEngieBoots1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_angry_engie_boots_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_angry_engie_boots_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterEnragredEngieHelmet1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_enragred_engie_helmet_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_enragred_engie_helmet_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterEnragedEngieChestplate1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_enraged_engie_chestplate_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_enraged_engie_chestplate_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterEnragedEngieLeggings1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_enraged_engie_leggings_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_enraged_engie_leggings_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterEnragedEngieBoots1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_enraged_engie_boots_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_enraged_engie_boots_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngieHelmet1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_helmet_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_helmet_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngieChestplate1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_chestplate_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_chestplate_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngieLeggings1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_leggings_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_leggings_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterOutragedEngieBoots1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_outraged_engie_boots_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_outraged_engie_boots_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieHelmet1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_helmet_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_helmet_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieChestplate1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_chestplate_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_chestplate_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieLeggings1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_leggings_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_leggings_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterBiblicallyAccurateEngieBoots1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_biblically_accurate_engie_boots_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_biblically_accurate_engie_boots_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieHelmet1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_helmet_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_helmet_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieChestplate1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_chestplate_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_chestplate_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieLeggings1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_leggings_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_leggings_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "AntimatterMonstrosityEngieBoots1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_monstrosity_engie_boots_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipes/antimatter_monstrosity_engie_boots_1.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "EnragedZombies",
+      "type": "gamerule",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enraged_zombies",
+      "metadata": {
+        "type": "logic",
+        "files": []
+      },
+      "path": "~/Gamerule"
+    },
+    {
+      "name": "AllAboutEngieToggle",
+      "type": "gamerule",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "all_about_engie_toggle",
+      "metadata": {
+        "type": "logic",
+        "files": []
+      },
+      "path": "~/Gamerule"
+    },
+    {
+      "name": "AntimatterEngieOreOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_engie_ore_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/allaboutengie/procedures/AntimatterEngieOreOnTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "AntimatterDeepslateEngieOreOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_deepslate_engie_ore_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/allaboutengie/procedures/AntimatterDeepslateEngieOreOnTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "ThrowbackAngryCreator",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwback_angry_creator",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/allaboutengie/client/renderer/ThrowbackAngryCreatorRenderer.java",
+          "src/main/resources/data/allaboutengie/forge/biome_modifier/throwback_angry_creator_biome_modifier.json",
+          "src/main/resources/assets/allaboutengie/models/item/throwback_angry_creator_spawn_egg.json",
+          "src/main/java/net/mcreator/allaboutengie/entity/ThrowbackAngryCreatorEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Hostile"
+    },
+    {
+      "name": "AntimatterDoomsdayCrucifix",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antimatter_doomsday_crucifix",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/allaboutengie/item/AntimatterDoomsdayCrucifixItem.java",
+          "src/main/resources/assets/allaboutengie/models/item/antimatter_doomsday_crucifix.json"
+        ]
+      },
+      "path": "~/All Items/Regular/Items"
     }
   ],
   "variable_elements": [
@@ -32091,6 +32751,7 @@
       "~CUSTOM:ByeByeThere"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:AntimatterDeepslateEngieOre",
       "~CUSTOM:AntimatterEngieOre",
       "~CUSTOM:AntimatterMonstrosityEngieBlock",
       "~CUSTOM:AntimatterBiblicallyAccurateBlock",
@@ -32239,7 +32900,6 @@
       "~CUSTOM:EngieSword",
       "~CUSTOM:EngieGamesSword",
       "~CUSTOM:MindscapeEngiesPaxel",
-      "~CUSTOM:ARealBanHammerPixel",
       "~CUSTOM:ARealBanHammer",
       "~CUSTOM:TheEndPaxel",
       "~CUSTOM:SuperDoomsDayPaxel",
@@ -32252,7 +32912,6 @@
       "~CUSTOM:EngiePaxel",
       "~CUSTOM:EngiesPaxel",
       "~CUSTOM:HWGScythe",
-      "~CUSTOM:BahemothBanHammerPixel",
       "~CUSTOM:BahemothBanHammer",
       "~CUSTOM:UnobtainiumSword",
       "~CUSTOM:ExoticSword",
@@ -32262,12 +32921,10 @@
       "~CUSTOM:RareSword",
       "~CUSTOM:UncommonSword",
       "~CUSTOM:CommonSword",
-      "~CUSTOM:CodeRedeemersHammerPixel",
       "~CUSTOM:CodeRedeemersHammer",
       "~CUSTOM:CyberbloodKatana",
       "~CUSTOM:CyberKatana",
       "~CUSTOM:EngiesScythe",
-      "~CUSTOM:EchdeathPixel",
       "~CUSTOM:Echdeath"
     ],
     "ITEMS:minecraft:shovels": [
@@ -32372,6 +33029,7 @@
       "EngieOre",
       "DeepslateEngieOre",
       "AntimatterEngieOre",
+      "AntimatterDeepslateEngieOre",
       "UnobtainiumOre",
       "DeepslateUnobtainiumOre",
       "CyberOre",
@@ -32616,7 +33274,8 @@
       "EngiePlush",
       "DevEngiePlush",
       "ChallengeModeTrophySolo",
-      "ChallengeModeTrophyMultiplayer"
+      "ChallengeModeTrophyMultiplayer",
+      "AntimatterDoomsdayCrucifix"
     ],
     "CUSTOM:AAEItemsFood": [
       "GoldenCookie",
@@ -32973,7 +33632,8 @@
       "Scorched",
       "ThrowbackMadEngie",
       "ThrowbackAngryEngie",
-      "ThrowbackEnragedEngie"
+      "ThrowbackEnragedEngie",
+      "ThrowbackAngryCreator"
     ]
   },
   "language_map": {
@@ -33225,7 +33885,6 @@
       "advancements.ban_obtain.title": "Normal size? I want bigger.",
       "item.allaboutengie.engies_birthday_bundle25.description_0": "Thanks for the \"Happy Birthday\"! -Engie",
       "advancements.found_engie.title": "That took quite long.",
-      "item.allaboutengie.echdeath_pixel": "PIXEL ECHDEATH",
       "item.allaboutengie.operators_boots": "Operators Boots",
       "painting.allaboutengie.ez.title": "Enraged Zombies Logo",
       "item.allaboutengie.engi_shovel": "Engi Shovel",
@@ -33277,7 +33936,6 @@
       "subtitles.doomsday_eerie": "Doomsday is here.",
       "gui.allaboutengie.all_about_engie_wiki_weapons.button_enraged_engie": "Enraged Engie",
       "entity.allaboutengie.sharko": "Sharko",
-      "item.allaboutengie.a_real_ban_hammer_pixel": "A \"Real\" Ban Hammer",
       "item.allaboutengie.ideagiver_engie_bundle.description_0": "Use this for Inventory Management!",
       "item.allaboutengie.ideagiver_engie_bundle.description_1": "You can thank me for the free renaming!",
       "advancements.mini_ban_challenge_obtain.descr": "+Insanity",
@@ -33291,7 +33949,6 @@
       "item.allaboutengie.legendary_shark_boots": "Legendary Sharko Boots",
       "item.allaboutengie.the_end_sword": "The End Sword",
       "advancements.enormous_ban_challenge_obtain.descr": "You\u0027re still going to need ALL OF THE LUCK.",
-      "item.allaboutengie.comically_massive_ban_hammer_pixel": "Pixelized Comically Massive Ban Hammer",
       "item.allaboutengie.operators_hoe": "Operators Hoe",
       "entity.allaboutengie.atlas_lay": "Atlas [Laying]",
       "entity.allaboutengie.engie_sharko_sit": "[Tamed] Engie Sharko (Sitting)",
@@ -33362,7 +34019,7 @@
       "painting.allaboutengie.broken_code.author": "[Dev]Engie(Games)",
       "item.allaboutengie.engie_games_advancement_icon": "EngieGames Advancement Icon",
       "item.allaboutengie.monstrosity_engies_boots": "Monstrosity Engie Boots",
-      "entity.allaboutengie.legendary_sharko_sit": "[Tamed] Legendary Sharko (Sitting)",
+      "entity.allaboutengie.legendary_sharko_sit": "Legendary Sharko",
       "item.allaboutengie.monstrosity_engie_sharko_spawn_egg": "Monstrosity Engie Spawn Egg",
       "item.allaboutengie.distorteds_boots.description_0": "Lucky.",
       "gui.allaboutengie.all_about_engie_wiki_armor.label_challenge_modesuper_doomsday": "--Challenge Mode/Super Doomsday Exclusive--",
@@ -33432,7 +34089,7 @@
       "entity.allaboutengie.rare_sharko_sleep": "[Tamed] Rare Sharko (Sleeping)",
       "item.allaboutengie.monstrosity_engie_essence": "Monstrosity Engie Essence",
       "item.allaboutengie.epic_shovel": "Epic Shovel",
-      "entity.allaboutengie.sharko_sit": "[Tamed] Sharko (Sitting)",
+      "entity.allaboutengie.sharko_sit": "Sharko",
       "subtitles.riftopens": "Rift opens nearby.",
       "advancements.netherite_enraged_engie_plush_obtained.descr": "Nice.",
       "entity.allaboutengie.buddy_lay": "Buddy [Laying]",
@@ -33454,7 +34111,7 @@
       "entity.allaboutengie.exotic_sharko_sit": "[Tamed] Exotic Sharko (Sitting)",
       "item.aae_items.engie_games_gui_spawn_egg": "EngieGames Spawn Egg",
       "item.allaboutengie.mythic_hoe": "Mythic Hoe",
-      "entity.allaboutengie.albino_sharko_sit": "[Tamed] Albino Sharko (Sitting)",
+      "entity.allaboutengie.albino_sharko_sit": "Albino Sharko",
       "entity.allaboutengie.rocky_lay": "Rocky [Laying]",
       "item.aae_items.ideagiver_leggings": "\"I\u0027m a idea giver and I\u0027m proud.\"",
       "item.allaboutengie.engie_games_shovel.description_0": "Hm.",
@@ -33644,7 +34301,6 @@
       "item.aae_items.engie_pickaxe": "Engie Pickaxe",
       "item.aae_items.crackers_in_bowl": "Crackers In Bowl",
       "item.allaboutengie.mindscape_crucifix": "Mindscape Crucifix",
-      "item.allaboutengie.echdeath_pixel.description_0": ":pixel_echdeath: :pixel_echdeath: :pixel_echdeath: :pixel_echdeath: :pixel_echdeath: :pixel_echdeath:",
       "item.allaboutengie.sharko_cloth.description_0": "my pain is unmeasureable",
       "gui.allaboutengie.engie_games_trade_ui.button_trade": "Trade",
       "entity.allaboutengie.creator": "Creator",
@@ -33738,10 +34394,8 @@
       "item.allaboutengie.mindscape_engies_pickaxe": "Mindscape Engies Pickaxe",
       "item.allaboutengie.angry_engie_bundle": "Angry Engie Bundle",
       "entity.allaboutengie.apollo_sleep": "Apollo (Sleeping)",
-      "item.allaboutengie.engie_crucifix_pixel": "Pixelized Engies own Crucifix",
       "gui.allaboutengie.engies_birthday_bundle_ui.ChangeBundleName": "Thanks!",
       "item.allaboutengie.rare_shark_leggings": "Rare Sharko Leggings",
-      "item.allaboutengie.the_end_crucifix_pixel": "Pixel The End Crucifix",
       "item.allaboutengie.the_end_coin.description_0": "Trade with him.",
       "advancements.diamond_angry_engie_plush_obtained.title": "Diamond Angry Engie Plush",
       "item.allaboutengie.super_doomsday_scythe.description_0": "Congrats!",
@@ -33786,7 +34440,6 @@
       "item.allaboutengie.diamond_insanity_plush": "Diamond Insanity Plush",
       "block.aae_items.enraged_engie_block": "Enraged Engie Block",
       "painting.allaboutengie.tiger_shark.title": "Tiger Shark",
-      "item.allaboutengie.code_redeemers_hammer_pixel": "Pixelized Code Redeemers Hammer",
       "entity.allaboutengie.engie_games": "EngieGames",
       "item.allaboutengie.legendary_sharko_cloth": "Legendary Sharko Cloth",
       "item.allaboutengie.ideagiver_leggings": "\"I\u0027m a idea giver and I\u0027m proud.\"",
@@ -33845,7 +34498,6 @@
       "item.allaboutengie.enraged_engie_paxel": "Enraged Engie Paxel",
       "block.allaboutengie.metal_chest_spruce": "Spruce Metal Chest",
       "item.allaboutengie.the_real_engie_gamess_boots": "EngieGames\u0027 Boots",
-      "item.allaboutengie.dooms_day_crucifix_pixel": "Pixel DoomsDay Crucifix",
       "entity.allaboutengie.champ_lay_on_side": "Champ [Laying On Side]",
       "item.allaboutengie.mindscape_advancement_icon": "Mindscape Advancement Icon",
       "item.allaboutengie.the_end_paxel": "The End Paxel",
@@ -33892,7 +34544,7 @@
       "advancements.enraged_engie_plush_obtained.title": "Enraged Engie Plush",
       "gui.allaboutengie.all_about_engie_wiki_armor.button_monstrosity_engie": "Monstrosity Engie",
       "entity.allaboutengie.sharko_tamed_zoomies_tired": "[Tamed] Sharko (Worn Out)",
-      "entity.allaboutengie.mythic_sharko_sit": "[Tamed] Mythic Sharko (Sitting)",
+      "entity.allaboutengie.mythic_sharko_sit": "Mythic Sharko",
       "advancements.biblically_accurate_ban_obtain.title": "Take a break dude. You\u0027re gonna need it.",
       "gui.allaboutengie.all_about_engie_wiki_hostile_mobs.button_hostile_mobs": "Hostile Mobs",
       "entity.allaboutengie.moab": "M.O.A.B",
@@ -33975,7 +34627,6 @@
       "entity.allaboutengie.buddy_sleep": "Buddy (Sleeping)",
       "item.allaboutengie.the_end_hoe": "The End Hoe",
       "advancements.gigantic_ban_obtain.descr": "Obtain a Gigantic Ban Hammer/Scythe",
-      "item.allaboutengie.super_dooms_day_crucifix_pixel": "Pixel Super DoomsDay Crucifix",
       "item.allaboutengie.dooms_day_coin.description_0": "Trade with him.",
       "item.allaboutengie.dooms_day_spawn_egg": "DoomsDay Spawn Egg",
       "item.allaboutengie.super_dooms_day_sword.description_0": "Congrats!",
@@ -34041,8 +34692,6 @@
       "block.aae_items.metal_chest": "Metal Chest",
       "advancements.diamond_insanity_engie_plush_obtained.title": "Diamond Insanity Plush",
       "item.allaboutengie.mindscape_engies_shovel": "Mindscape Engies Shovel",
-      "item.allaboutengie.a_real_ban_hammer_pixel.description_1": "However I was forced to change it to this due to MASSIVE issues I couldn\u0027t fix. :(",
-      "item.allaboutengie.a_real_ban_hammer_pixel.description_0": "This used to be the True Ban Hammer.",
       "item.allaboutengie.enraged_engie_bundle": "Enraged Engie Bundle",
       "item.allaboutengie.angry_engies_boots": "Angry Engie Boots",
       "item.aae_items.enraged_engie_essence": "Enraged Engie Essence",
@@ -34364,7 +35013,6 @@
       "entity.allaboutengie.engie_sharko_rare_2_sleep_april_fools": "[Tamed] Rare Engie Sharko (Sleeping)",
       "item.allaboutengie.pizza_slice": "Pizza Slice",
       "item.allaboutengie.super_dooms_day_shovel": "Super Doomsday Shovel",
-      "item.allaboutengie.mindscape_crucifix_pixel": "Pixelized Mindscape Crucifix?",
       "item.allaboutengie.echdeath.description_0": ":echdeath:",
       "block.allaboutengie.engie_ore": "Engie Ore",
       "item.allaboutengie.mythic_shark_helmet": "Mythic Sharko Helmet",
@@ -34407,7 +35055,7 @@
       "item.allaboutengie.beta_tester_boots": "\"I\u0027m a beta tester and I\u0027m proud.\"",
       "advancements.who_was_that.title": "That was strange...",
       "entity.allaboutengie.mythic_sharko": "Mythic Sharko",
-      "entity.allaboutengie.rare_sharko_sit": "[Tamed] Rare Sharko (Sitting)",
+      "entity.allaboutengie.rare_sharko_sit": "Rare Sharko",
       "item.aae_items.engie_hoe": "Engie Hoe",
       "advancements.welcome_back.descr": "welcome back.",
       "item.allaboutengie.pure_insanity_plush.description_0": "How I look at my friends when I make them say \"What\u0027s ligma?\"",
@@ -34450,7 +35098,6 @@
       "item.allaboutengie.cyberblood_leggings": "Cyberblood Leggings",
       "item.allaboutengie.biblically_accurate_engie_pickaxe": "Biblically Accurate Engie Pickaxe",
       "item.allaboutengie.mad_engie_spawn_egg": "Mad Engie Spawn Egg",
-      "item.allaboutengie.comically_massive_ban_hammer_pixel.description_0": "What do I get in return? Some funny moments or what?",
       "painting.allaboutengie.tiger_shark.author": "EngieGames",
       "advancements.diamond_monstrosity_engie_plush_obtained.descr": "Nice.",
       "entity.allaboutengie.enraged_tnt": "Enraged TNT",
@@ -34520,7 +35167,7 @@
       "gui.allaboutengie.dooms_day_trade_ui.bantrade": "",
       "item.allaboutengie.distorteds_leggings.description_0": "Lucky.",
       "gamerule.trueThrowback.description": "Relive 2023. Come on, I know you guys want to relive 2023 again!",
-      "gamerule.trueThrowback": "True Throwback",
+      "gamerule.trueThrowback": "True Throwback (Currently does a little bit of what it should be doing.)",
       "entity.allaboutengie.throwback_mad_engie": "Mad Engie",
       "item.allaboutengie.throwback_mad_engie_spawn_egg": "Mad Engie Spawn Egg",
       "item.allaboutengie.throwback_angry_engie_spawn_egg": "Angry Engie Spawn Egg",
@@ -34706,7 +35353,16 @@
       "item.allaboutengie.antimatter_engie_games_shovel": "Antimatter EngieGames\u0027 Shovel",
       "item.allaboutengie.antimatter_engie_games_hoe": "Antimatter EngieGames\u0027 Hoe",
       "advancements.obtained_full_set_of_real_engie_games.descr": "Obtain the full set of The Real EngieGames\u0027",
-      "advancements.obtained_full_set_of_real_engie_games.title": "Ok bro, you can chill out. Good god."
+      "advancements.obtained_full_set_of_real_engie_games.title": "Ok bro, you can chill out. Good god.",
+      "block.allaboutengie.antimatter_deepslate_engie_ore": "Antimatter Deepslate Engie Ore",
+      "gamerule.enragedZombies.description": "Enabling this will spawn the mobs and ores from Enraged Zombies.",
+      "gamerule.enragedZombies": "Enraged Zombies (Currently does nothing.)",
+      "gamerule.allAboutEngieToggle": "All About Engie Toggle (Currently does nothing.)",
+      "gamerule.allAboutEngieToggle.description": "This allows you to toggle on/off all the stuff in the base mod apart from Enraged Zombies and Throwback.",
+      "entity.allaboutengie.throwback_angry_creator": "Angry Creator",
+      "item.allaboutengie.throwback_angry_creator_spawn_egg": "Angry Creator Spawn Egg",
+      "item.allaboutengie.antimatter_doomsday_crucifix.description_0": "75 uses.",
+      "item.allaboutengie.antimatter_doomsday_crucifix": "DoomsDay Crucifix"
     }
   },
   "metadata": {
@@ -35011,7 +35667,7 @@
   "workspaceSettings": {
     "modid": "allaboutengie",
     "modName": "RE:All About Engie",
-    "version": "9.1.25",
+    "version": "9.6.25",
     "description": "A collection of all my other mods for my 5th year of making mods! If you find issues, report them on the GitHub page for the mod please.",
     "author": "EngieGames",
     "websiteURL": "https://modrinth.com/project/re-all-about-engie",

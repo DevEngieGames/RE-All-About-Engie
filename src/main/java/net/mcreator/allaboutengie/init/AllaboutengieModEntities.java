@@ -34,6 +34,7 @@ import net.mcreator.allaboutengie.entity.TigerEntity;
 import net.mcreator.allaboutengie.entity.ThrowbackMadEngieEntity;
 import net.mcreator.allaboutengie.entity.ThrowbackEnragedEngieEntity;
 import net.mcreator.allaboutengie.entity.ThrowbackAngryEngieEntity;
+import net.mcreator.allaboutengie.entity.ThrowbackAngryCreatorEntity;
 import net.mcreator.allaboutengie.entity.TheRealEngieGamesEntity;
 import net.mcreator.allaboutengie.entity.TheEndHostileEntity;
 import net.mcreator.allaboutengie.entity.TheEndEntity;
@@ -1585,7 +1586,7 @@ public class AllaboutengieModEntities {
 	public static final RegistryObject<EntityType<MarshalSitEntity>> MARSHAL_SIT = register("marshal_sit",
 			EntityType.Builder.<MarshalSitEntity>of(MarshalSitEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MarshalSitEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.7f, 0.9f));
 	public static final RegistryObject<EntityType<TigerSitEntity>> TIGER_SIT = register("tiger_sit",
 			EntityType.Builder.<TigerSitEntity>of(TigerSitEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TigerSitEntity::new)
 
@@ -1772,7 +1773,12 @@ public class AllaboutengieModEntities {
 			EntityType.Builder.<ThrowbackEnragedEngieEntity>of(ThrowbackEnragedEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 					.setCustomClientFactory(ThrowbackEnragedEngieEntity::new)
 
-					.sized(0.6f, 1.95f));
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ThrowbackAngryCreatorEntity>> THROWBACK_ANGRY_CREATOR = register("throwback_angry_creator",
+			EntityType.Builder.<ThrowbackAngryCreatorEntity>of(ThrowbackAngryCreatorEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+					.setCustomClientFactory(ThrowbackAngryCreatorEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -2120,6 +2126,7 @@ public class AllaboutengieModEntities {
 			ThrowbackMadEngieEntity.init();
 			ThrowbackAngryEngieEntity.init();
 			ThrowbackEnragedEngieEntity.init();
+			ThrowbackAngryCreatorEntity.init();
 		});
 	}
 
@@ -2462,5 +2469,6 @@ public class AllaboutengieModEntities {
 		event.put(THROWBACK_MAD_ENGIE.get(), ThrowbackMadEngieEntity.createAttributes().build());
 		event.put(THROWBACK_ANGRY_ENGIE.get(), ThrowbackAngryEngieEntity.createAttributes().build());
 		event.put(THROWBACK_ENRAGED_ENGIE.get(), ThrowbackEnragedEngieEntity.createAttributes().build());
+		event.put(THROWBACK_ANGRY_CREATOR.get(), ThrowbackAngryCreatorEntity.createAttributes().build());
 	}
 }

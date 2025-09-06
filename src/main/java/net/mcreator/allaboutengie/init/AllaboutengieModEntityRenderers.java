@@ -27,6 +27,7 @@ import net.mcreator.allaboutengie.client.renderer.TigerLayOnSideRenderer;
 import net.mcreator.allaboutengie.client.renderer.ThrowbackMadEngieRenderer;
 import net.mcreator.allaboutengie.client.renderer.ThrowbackEnragedEngieRenderer;
 import net.mcreator.allaboutengie.client.renderer.ThrowbackAngryEngieRenderer;
+import net.mcreator.allaboutengie.client.renderer.ThrowbackAngryCreatorRenderer;
 import net.mcreator.allaboutengie.client.renderer.TheRealEngieGamesRenderer;
 import net.mcreator.allaboutengie.client.renderer.TheEndRenderer;
 import net.mcreator.allaboutengie.client.renderer.TheEndHostileRenderer;
@@ -687,5 +688,6 @@ public class AllaboutengieModEntityRenderers {
 		event.registerEntityRenderer(AllaboutengieModEntities.THROWBACK_MAD_ENGIE.get(), ThrowbackMadEngieRenderer::new);
 		event.registerEntityRenderer(AllaboutengieModEntities.THROWBACK_ANGRY_ENGIE.get(), ThrowbackAngryEngieRenderer::new);
 		event.registerEntityRenderer(AllaboutengieModEntities.THROWBACK_ENRAGED_ENGIE.get(), ThrowbackEnragedEngieRenderer::new);
+		event.registerEntityRenderer(AllaboutengieModEntities.THROWBACK_ANGRY_CREATOR.get(), ThrowbackAngryCreatorRenderer::new);
 	}
 }

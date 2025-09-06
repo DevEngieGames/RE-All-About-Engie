@@ -45,6 +45,7 @@ import net.mcreator.allaboutengie.block.AntimatterMonstrosityEngieBlockBlock;
 import net.mcreator.allaboutengie.block.AntimatterEnragedEngieBlockBlock;
 import net.mcreator.allaboutengie.block.AntimatterEngieOreBlock;
 import net.mcreator.allaboutengie.block.AntimatterEngieBlockBlock;
+import net.mcreator.allaboutengie.block.AntimatterDeepslateEngieOreBlock;
 import net.mcreator.allaboutengie.block.AntimatterBiblicallyAccurateBlockBlock;
 import net.mcreator.allaboutengie.block.AntimatterAngryEngieBlockBlock;
 import net.mcreator.allaboutengie.block.AngryEngieBlockBlock;
@@ -93,6 +94,7 @@ public class AllaboutengieModBlocks {
 	public static final RegistryObject<Block> ANTIMATTER_BIBLICALLY_ACCURATE_BLOCK = REGISTRY.register("antimatter_biblically_accurate_block", () -> new AntimatterBiblicallyAccurateBlockBlock());
 	public static final RegistryObject<Block> ANTIMATTER_MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("antimatter_monstrosity_engie_block", () -> new AntimatterMonstrosityEngieBlockBlock());
 	public static final RegistryObject<Block> ANTIMATTER_ENGIE_ORE = REGISTRY.register("antimatter_engie_ore", () -> new AntimatterEngieOreBlock());
+	public static final RegistryObject<Block> ANTIMATTER_DEEPSLATE_ENGIE_ORE = REGISTRY.register("antimatter_deepslate_engie_ore", () -> new AntimatterDeepslateEngieOreBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

@@ -32,8 +32,8 @@
         "amplitude": 1.0
       }
     ],
-    "modelWidth": 0.6,
-    "modelHeight": 1.8,
+    "modelWidth": 0.7,
+    "modelHeight": 0.9,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": false,
@@ -169,6 +169,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

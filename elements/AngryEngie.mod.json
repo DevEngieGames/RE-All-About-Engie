@@ -109,7 +109,7 @@
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "CUSTOM:AngryEngieEssence"
+      "value": ""
     },
     "livingSound": {
       "value": ""
@@ -170,6 +170,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

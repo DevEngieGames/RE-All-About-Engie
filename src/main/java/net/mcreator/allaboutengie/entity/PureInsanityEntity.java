@@ -122,7 +122,7 @@ public class PureInsanityEntity extends Monster {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		AnyEngieDiesAddCountProcedure.execute(this, source.getEntity());
+		AnyEngieDiesAddCountProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this, source.getEntity());
 	}
 
 	@Override

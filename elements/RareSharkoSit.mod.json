@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "[Tamed] Rare Sharko (Sitting)",
+    "mobName": "Rare Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyositnew",
     "mobModelTexture": "raresharkonewtamed.png",
@@ -169,6 +169,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

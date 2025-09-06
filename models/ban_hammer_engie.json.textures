@@ -5,6 +5,12 @@
         "0": "engiebanhammer"
       },
       "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimatterengiebanhammer"
+      },
+      "name": "antimatter"
     }
   }
 }
