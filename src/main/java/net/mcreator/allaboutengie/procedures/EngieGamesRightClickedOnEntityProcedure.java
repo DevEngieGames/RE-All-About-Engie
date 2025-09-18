@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
 
 import net.mcreator.allaboutengie.init.AllaboutengieModGameRules;
 import net.mcreator.allaboutengie.AllaboutengieMod;
@@ -17,15 +17,16 @@ public class EngieGamesRightClickedOnEntityProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE) == true) {
-			if ((entity instanceof ServerPlayer _plr1 && _plr1.level() instanceof ServerLevel
-					&& _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:found_engie"))).isDone()) == false) {
+		if ((world instanceof ServerLevel _serverLevelGR0 && _serverLevelGR0.getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE)) == true) {
+			if ((entity instanceof ServerPlayer _plr1 && _plr1.level() instanceof ServerLevel && _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:found_engie"))).isDone()) == false) {
 				if (entity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:found_engie"));
-					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-					if (!_ap.isDone()) {
-						for (String criteria : _ap.getRemainingCriteria())
-							_player.getAdvancements().award(_adv, criteria);
+					AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:found_engie"));
+					if (_adv != null) {
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
+						}
 					}
 				}
 				{
@@ -96,7 +97,8 @@ public class EngieGamesRightClickedOnEntityProcedure {
 														"advancement grant @a only allaboutengie:found_engie");
 											}
 										}
-										world.getLevelData().getGameRules().getRule(AllaboutengieModGameRules.DETECTIVE_MODE).set(false, world.getServer());
+										if (world instanceof ServerLevel _serverLevel)
+											_serverLevel.getGameRules().getRule(AllaboutengieModGameRules.DETECTIVE_MODE).set(false, world.getServer());
 										{
 											Entity _ent = entity;
 											if (!_ent.level().isClientSide() && _ent.getServer() != null) {

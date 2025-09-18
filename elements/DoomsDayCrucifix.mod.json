@@ -5,6 +5,7 @@
     "renderType": 1,
     "texture": "crucifixdoomsdaypixel",
     "customModelName": "crucifixdoomsday:default",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "DoomsDay Crucifix",
@@ -15,7 +16,7 @@
       }
     ],
     "stackSize": 1,
-    "enchantability": 0,
+    "enchantability": 22,
     "useDuration": 0,
     "toolType": 1.0,
     "damageCount": 75,
@@ -33,11 +34,17 @@
         "75 uses."
       ]
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": false,
     "nutritionalValue": 4,
@@ -49,6 +56,10 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []

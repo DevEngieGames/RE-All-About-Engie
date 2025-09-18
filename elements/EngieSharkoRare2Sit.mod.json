@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "[Tamed] Tiger Sharko (Sitting)",
+    "mobName": "Tiger Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyositnew",
     "mobModelTexture": "rareengiesharko2newtamed.png",
@@ -133,7 +133,7 @@
       "name": "SharkoKilledByPlayersCountUp"
     },
     "onRightClickedOn": {
-      "name": "EngieRare2LayRC"
+      "name": "EngieRare2TameRC2"
     },
     "onMobTickUpdate": {
       "name": "SharkoChanceForLay"
@@ -169,6 +169,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

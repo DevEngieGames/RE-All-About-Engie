@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Eh, could be a bit bigger. I don't mind it.",
-    "achievementDescription": "Obtain a Big Ban Hammer/Scythe",
+    "achievementName": "This reminds me of 2023 All About Engie.",
+    "achievementDescription": "Obtain a Big Ban HammerScythe.",
     "achievementIcon": {
       "value": "CUSTOM:BigBanHammer"
     },
@@ -19,6 +19,6 @@
     "parent": {
       "value": "CUSTOM:BanObtain"
     },
-    "triggerxml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"advancement_trigger\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\" x=\"56\" y=\"95\"/></next></block></xml>"
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
   }
 }

@@ -138,6 +138,9 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
+    "spawningCondition": {
+      "name": "EnragedNormalNaturalEntitySpawningCondition"
+    },
     "spawningProbability": 5,
     "mobSpawningType": "creature",
     "minNumberOfMobsPerGroup": 1,
@@ -154,6 +157,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

@@ -2,20 +2,20 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "The End Ban Scythe Obtain",
-    "achievementDescription": "Placeholder for Mob Difficulty",
+    "achievementName": "The red makes this look cool to be honest.",
+    "achievementDescription": "Obtain a The End Ban Hammer/Scythe",
     "achievementIcon": {
       "value": "CUSTOM:TheEndAdvancementIcon"
     },
     "background": "Default",
-    "disableDisplay": true,
-    "showPopup": false,
-    "announceToChat": false,
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
     "hideIfNotCompleted": false,
     "rewardLoot": [],
     "rewardRecipes": [],
-    "rewardXP": 0,
-    "achievementType": "task",
+    "rewardXP": 65,
+    "achievementType": "challenge",
     "parent": {
       "value": "CUSTOM:SuperDoomsdayBanScytheObtain"
     },

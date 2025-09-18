@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "That was strange...",
+    "achievementName": "The Engie from the Mindscape.",
     "achievementDescription": "Encounter Mindscape Engie for the first time.",
     "achievementIcon": {
       "value": "CUSTOM:MindscapeAdvancementIcon"

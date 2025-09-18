@@ -8,14 +8,12 @@ public class RecipeBookDownFivePagesProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).pageNumber > 1) {
-			if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).pageNumber >= 5) {
+		if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).pageNumber > 1) {
+			if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).pageNumber >= 5) {
 				{
-					double _setval = (entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).pageNumber - 5;
-					entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.pageNumber = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+					_vars.pageNumber = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).pageNumber - 5;
+					_vars.syncPlayerVariables(entity);
 				}
 			}
 		}

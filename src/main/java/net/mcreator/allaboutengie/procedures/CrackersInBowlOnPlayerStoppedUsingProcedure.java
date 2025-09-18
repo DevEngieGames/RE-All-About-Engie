@@ -4,7 +4,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 
 import net.mcreator.allaboutengie.init.AllaboutengieModItems;
 
@@ -13,20 +13,14 @@ public class CrackersInBowlOnPlayerStoppedUsingProcedure {
 		if (entity == null)
 			return;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == AllaboutengieModItems.CRACKERS_IN_BOWL.get()) {
-			{
-				ItemStack _ist = itemstack;
-				if (_ist.hurt(1, RandomSource.create(), null)) {
-					_ist.shrink(1);
-					_ist.setDamageValue(0);
-				}
+			if (world instanceof ServerLevel _level) {
+				itemstack.hurtAndBreak(1, _level, null, _stkprov -> {
+				});
 			}
 		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == AllaboutengieModItems.CRACKERS_IN_BOWL.get()) {
-			{
-				ItemStack _ist = itemstack;
-				if (_ist.hurt(1, RandomSource.create(), null)) {
-					_ist.shrink(1);
-					_ist.setDamageValue(0);
-				}
+			if (world instanceof ServerLevel _level) {
+				itemstack.hurtAndBreak(1, _level, null, _stkprov -> {
+				});
 			}
 		}
 	}

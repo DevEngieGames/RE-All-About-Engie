@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "[Tamed] Legendary Sharko",
+    "mobName": "Legendary Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyo",
     "mobModelTexture": "legendarysharkonewtamed.png",
@@ -165,6 +165,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

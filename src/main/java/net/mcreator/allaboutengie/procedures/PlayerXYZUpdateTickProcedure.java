@@ -1,9 +1,9 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.entity.Entity;
 
@@ -11,13 +11,11 @@ import net.mcreator.allaboutengie.network.AllaboutengieModVariables;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class PlayerXYZUpdateTickProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player);
-		}
+	public static void onPlayerTick(PlayerTickEvent.Post event) {
+		execute(event, event.getEntity());
 	}
 
 	public static void execute(Entity entity) {
@@ -28,46 +26,34 @@ public class PlayerXYZUpdateTickProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = entity.getX();
-			entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.PlayerX = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+			_vars.PlayerX = entity.getX();
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			double _setval = entity.getX();
-			entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.HHGLookX = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+			_vars.HHGLookX = entity.getX();
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			double _setval = entity.getY();
-			entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.PlayerY = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+			_vars.PlayerY = entity.getY();
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			double _setval = entity.getY() + 1.5;
-			entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.HHGLookY = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+			_vars.HHGLookY = entity.getY() + 1.5;
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			double _setval = entity.getZ();
-			entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.PlayerZ = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+			_vars.PlayerZ = entity.getZ();
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			double _setval = entity.getZ();
-			entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.HHGLookZ = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+			_vars.HHGLookZ = entity.getZ();
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

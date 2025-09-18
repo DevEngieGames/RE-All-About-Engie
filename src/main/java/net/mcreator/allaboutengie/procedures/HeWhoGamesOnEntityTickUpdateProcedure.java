@@ -14,14 +14,13 @@ import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.mcreator.allaboutengie.network.AllaboutengieModVariables;
 import net.mcreator.allaboutengie.AllaboutengieMod;
 
-import java.util.List;
 import java.util.Comparator;
 
 public class HeWhoGamesOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 10, 10, 10), e -> true).isEmpty()) {
+		if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(10 / 2d), e -> true).isEmpty()) {
 			if (!entity.level().isClientSide())
 				entity.discard();
 			AllaboutengieMod.queueServerWork(1, () -> {
@@ -29,16 +28,13 @@ public class HeWhoGamesOnEntityTickUpdateProcedure {
 				AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 			});
 		}
-		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
+		if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(50 / 2d), e -> true).isEmpty()) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-				for (Entity entityiterator : _entfound) {
+				for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 					if (entityiterator instanceof Player) {
-						entity.lookAt(EntityAnchorArgument.Anchor.EYES,
-								new Vec3(((entityiterator.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).HHGLookX),
-										((entityiterator.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).HHGLookY),
-										((entityiterator.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).HHGLookZ)));
+						entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(entityiterator.getData(AllaboutengieModVariables.PLAYER_VARIABLES).HHGLookX, entityiterator.getData(AllaboutengieModVariables.PLAYER_VARIABLES).HHGLookY,
+								entityiterator.getData(AllaboutengieModVariables.PLAYER_VARIABLES).HHGLookZ));
 					}
 				}
 			}

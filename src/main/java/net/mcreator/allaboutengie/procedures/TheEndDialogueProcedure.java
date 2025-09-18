@@ -1,10 +1,9 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -13,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
@@ -23,13 +23,11 @@ import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class TheEndDialogueProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level(), event.player.getX(), event.player.getY(), event.player.getZ(), event.player);
-		}
+	public static void onPlayerTick(PlayerTickEvent.Post event) {
+		execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -48,9 +46,9 @@ public class TheEndDialogueProcedure {
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1, false);
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1, false);
 						}
 					}
 				}
@@ -58,20 +56,18 @@ public class TheEndDialogueProcedure {
 					entity.getPersistentData().putDouble("TimeUntilNightTHEEND", (entity.getPersistentData().getDouble("TimeUntilNightTHEEND") + 0.05));
 					if (entity.getPersistentData().getDouble("TimeUntilNightTHEEND") >= 43) {
 						{
-							boolean _setval = true;
-							entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.DoomsdayAlive = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+							AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+							_vars.DoomsdayAlive = true;
+							_vars.syncPlayerVariables(entity);
 						}
-						world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
-						world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(false, world.getServer());
+						if (world instanceof ServerLevel _serverLevel)
+							_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+						if (world instanceof ServerLevel _serverLevel)
+							_serverLevel.getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(false, world.getServer());
 						{
-							boolean _setval = false;
-							entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.BlockDeathAliveCOunt = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+							AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+							_vars.BlockDeathAliveCOunt = false;
+							_vars.syncPlayerVariables(entity);
 						}
 						AllaboutengieModVariables.MapVariables.get(world).theendtimenighttimerblock = true;
 						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
@@ -84,13 +80,11 @@ public class TheEndDialogueProcedure {
 								}
 							}
 						}
-						if (world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE) == true) {
+						if ((world instanceof ServerLevel _serverLevelGR8 && _serverLevelGR8.getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE)) == true) {
 							{
-								boolean _setval = true;
-								entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.healthreductiondday = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+								_vars.healthreductiondday = true;
+								_vars.syncPlayerVariables(entity);
 							}
 							{
 								Entity _ent = entity;
@@ -109,19 +103,15 @@ public class TheEndDialogueProcedure {
 							AllaboutengieModVariables.MapVariables.get(world).theenddialoguetimeblock = true;
 							AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 							{
-								boolean _setval = true;
-								entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.ShowObjectiveOverlay = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+								_vars.ShowObjectiveOverlay = true;
+								_vars.syncPlayerVariables(entity);
 							}
 							AllaboutengieMod.queueServerWork(200, () -> {
 								{
-									boolean _setval = false;
-									entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.ShowObjectiveOverlay = _setval;
-										capability.syncPlayerVariables(entity);
-									});
+									AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+									_vars.ShowObjectiveOverlay = false;
+									_vars.syncPlayerVariables(entity);
 								}
 							});
 							AllaboutengieMod.queueServerWork(102, () -> {
@@ -246,10 +236,10 @@ public class TheEndDialogueProcedure {
 																		}
 																		if (world instanceof Level _level) {
 																			if (!_level.isClientSide()) {
-																				_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC,
+																				_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC,
 																						(float) 1.5, 1);
 																			} else {
-																				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC, (float) 1.5, 1, false);
+																				_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC, (float) 1.5, 1, false);
 																			}
 																		}
 																		AllaboutengieModVariables.MapVariables.get(world).theendmainsongstart = true;
@@ -260,7 +250,8 @@ public class TheEndDialogueProcedure {
 																			AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 																			AllaboutengieModVariables.MapVariables.get(world).BYEBYE = true;
 																			AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-																			world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
+																			if (world instanceof ServerLevel _serverLevel)
+																				_serverLevel.getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
 																		});
 																	});
 																});

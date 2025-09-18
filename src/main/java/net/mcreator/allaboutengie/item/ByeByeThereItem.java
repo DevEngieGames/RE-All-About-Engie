@@ -1,26 +1,30 @@
 package net.mcreator.allaboutengie.item;
 
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
 
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.Registries;
+
+import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import java.util.List;
 
-public class ByeByeThereItem extends RecordItem {
-	public ByeByeThereItem() {
-		super(15, () -> ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:byebyethere")), new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 7560);
+public class ByeByeThereItem extends Item {
+	public ByeByeThereItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.RARE).stacksTo(1).jukeboxPlayable(ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(AllaboutengieMod.MODID, "bye_bye_there"))));
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, level, list, flag);
+	@OnlyIn(Dist.CLIENT)
+	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, context, list, flag);
 		list.add(Component.translatable("item.allaboutengie.bye_bye_there.description_0"));
 	}
 }

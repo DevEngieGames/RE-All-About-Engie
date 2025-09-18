@@ -1,19 +1,33 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import net.mcreator.allaboutengie.entity.NormalEntity;
 import net.mcreator.allaboutengie.client.model.Modelmissilebombs;
 
-public class NormalRenderer extends MobRenderer<NormalEntity, Modelmissilebombs<NormalEntity>> {
+public class NormalRenderer extends MobRenderer<NormalEntity, LivingEntityRenderState, Modelmissilebombs> {
+	private NormalEntity entity = null;
+
 	public NormalRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelmissilebombs<NormalEntity>(context.bakeLayer(Modelmissilebombs.LAYER_LOCATION)), 0f);
+		super(context, new Modelmissilebombs(context.bakeLayer(Modelmissilebombs.LAYER_LOCATION)), 0f);
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(NormalEntity entity) {
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(NormalEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/normal.png");
 	}
 }

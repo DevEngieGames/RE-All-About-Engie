@@ -1,10 +1,9 @@
 package net.mcreator.allaboutengie.item;
 
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
 public class TheEndAdvancementIconItem extends Item {
-	public TheEndAdvancementIconItem() {
-		super(new Item.Properties().stacksTo(64).fireResistant().rarity(Rarity.COMMON));
+	public TheEndAdvancementIconItem(Item.Properties properties) {
+		super(properties.fireResistant());
 	}
 }

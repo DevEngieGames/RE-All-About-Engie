@@ -1,50 +1,32 @@
 package net.mcreator.allaboutengie.item;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.tags.TagKey;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-
-import net.mcreator.allaboutengie.init.AllaboutengieModItems;
+import net.minecraft.core.registries.Registries;
 
 import java.util.List;
 
 public class EngieGamesPickaxeItem extends PickaxeItem {
-	public EngieGamesPickaxeItem() {
-		super(new Tier() {
-			public int getUses() {
-				return 25000;
-			}
+	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 25000, 52f, 0, 16, TagKey.create(Registries.ITEM, ResourceLocation.parse("allaboutengie:engie_games_pickaxe_repair_items")));
 
-			public float getSpeed() {
-				return 52f;
-			}
-
-			public float getAttackDamageBonus() {
-				return 498f;
-			}
-
-			public int getLevel() {
-				return 4;
-			}
-
-			public int getEnchantmentValue() {
-				return 16;
-			}
-
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(AllaboutengieModItems.ENGIE_COIN.get()));
-			}
-		}, 1, 1.5f, new Item.Properties());
+	public EngieGamesPickaxeItem(Item.Properties properties) {
+		super(TOOL_MATERIAL, 499f, 1.5f, properties);
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, level, list, flag);
+	@OnlyIn(Dist.CLIENT)
+	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, context, list, flag);
 		list.add(Component.translatable("item.allaboutengie.engie_games_pickaxe.description_0"));
 	}
 }

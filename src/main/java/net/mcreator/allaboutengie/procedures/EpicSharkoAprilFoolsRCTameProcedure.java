@@ -5,8 +5,8 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
@@ -25,7 +25,7 @@ public class EpicSharkoAprilFoolsRCTameProcedure {
 				if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.COOKIE) {
 					if (Math.random() >= 0.8) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = AllaboutengieModEntities.EPIC_SHARKO_TAMED_APRIL_FOOLS.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+							Entity entityToSpawn = AllaboutengieModEntities.EPIC_SHARKO_TAMED_APRIL_FOOLS.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(entity.getYRot());
 								entityToSpawn.setYBodyRot(entity.getYRot());
@@ -46,15 +46,15 @@ public class EpicSharkoAprilFoolsRCTameProcedure {
 						}
 					}
 				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
-					if ((sourceentity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).SharkoRetryState == true) {
+					if (sourceentity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).SharkoRetryState == true) {
 						if (sourceentity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(Component.literal("You're currently on cooldown for the sharkos."), true);
-					} else if ((sourceentity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).SharkoRetryState == false) {
+					} else if (sourceentity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).SharkoRetryState == false) {
 						if (Math.random() < 0.05) {
 							if (world instanceof ServerLevel _level)
 								_level.sendParticles(ParticleTypes.HEART, x, y, z, 15, 1, 1, 1, 1);
 							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = AllaboutengieModEntities.EPIC_SHARKO_TAMED_APRIL_FOOLS.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+								Entity entityToSpawn = AllaboutengieModEntities.EPIC_SHARKO_TAMED_APRIL_FOOLS.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
 								if (entityToSpawn != null) {
 									entityToSpawn.setYRot(entity.getYRot());
 									entityToSpawn.setYBodyRot(entity.getYRot());
@@ -66,11 +66,9 @@ public class EpicSharkoAprilFoolsRCTameProcedure {
 								entity.discard();
 						} else {
 							{
-								boolean _setval = true;
-								sourceentity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.SharkoRetryState = _setval;
-									capability.syncPlayerVariables(sourceentity);
-								});
+								AllaboutengieModVariables.PlayerVariables _vars = sourceentity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+								_vars.SharkoRetryState = true;
+								_vars.syncPlayerVariables(sourceentity);
 							}
 						}
 					}

@@ -98,26 +98,18 @@ public class EngieSharkoAprilFoolsLayRCProcedure {
 				}
 			}
 			AllaboutengieMod.queueServerWork(1, () -> {
-				if (((Entity) world.getEntitiesOfClass(EngieSharkoTamedAprilFoolsEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof EngieSharkoTamedAprilFoolsEntity) {
+				if ((findEntityInWorldRange(world, EngieSharkoTamedAprilFoolsEntity.class, x, y, z, 1)) instanceof EngieSharkoTamedAprilFoolsEntity) {
 					if (!(entity.getDisplayName().getString()).equals("[Tamed] Engie Sharko (Laying)")) {
-						((Entity) world.getEntitiesOfClass(EngieSharkoTamedAprilFoolsEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+						(findEntityInWorldRange(world, EngieSharkoTamedAprilFoolsEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 					}
-					if (((Entity) world.getEntitiesOfClass(EngieSharkoTamedAprilFoolsEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, EngieSharkoTamedAprilFoolsEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 						_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 				}
 			});
 		}
+	}
+
+	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
+		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

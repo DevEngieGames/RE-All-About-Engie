@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "[Tamed] Epic Sharko",
+    "mobName": "Epic Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyo",
     "mobModelTexture": "epicsharkonewtamed.png",
@@ -156,6 +156,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

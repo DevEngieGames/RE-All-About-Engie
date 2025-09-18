@@ -1,7 +1,5 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
@@ -17,6 +15,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
@@ -43,9 +42,9 @@ public class EngieRareTameRCProcedure {
 					_level.sendParticles(ParticleTypes.HEART, (entity.getX()), (entity.getY()), (entity.getZ()), 1, 1, 1, 1, 1);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				if (sourceentity instanceof Player _player) {
@@ -64,9 +63,9 @@ public class EngieRareTameRCProcedure {
 					_level.sendParticles(ParticleTypes.HEART, (entity.getX()), (entity.getY()), (entity.getZ()), 2, 1, 1, 1, 1);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				if (sourceentity instanceof Player _player) {
@@ -85,9 +84,9 @@ public class EngieRareTameRCProcedure {
 					_level.sendParticles(ParticleTypes.HEART, (entity.getX()), (entity.getY()), (entity.getZ()), 3, 1, 1, 1, 1);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				if (sourceentity instanceof Player _player) {
@@ -106,9 +105,9 @@ public class EngieRareTameRCProcedure {
 					_level.sendParticles(ParticleTypes.HEART, (entity.getX()), (entity.getY()), (entity.getZ()), 5, 1, 1, 1, 1);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				if (sourceentity instanceof Player _player) {
@@ -120,36 +119,36 @@ public class EngieRareTameRCProcedure {
 			if (Math.random() <= 0.25) {
 				if (Math.random() == 0.05) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it's slowley healing itself..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "they" + " are slowly healing...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 2, false, true));
 				} else if (Math.random() == 0.04) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it's resistant to mobs and fire..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "they" + " are much more resiliant...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1, false, true));
+						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 3, false, true));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 1, false, true));
+						_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 3, false, true));
 				} else if (Math.random() == 0.03) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it's much stronger than before..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "they" + " are much more stronger...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 3, false, true));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600, 3, false, true));
 				} else if (Math.random() == 0.02) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it's much faster than before..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "they" + " are a little bit faster now...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 1, false, true));
 				} else if (Math.random() == 0.01) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it has extra hit points now..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "they" + " are gotten a little more health...")), true);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 5, false, true));
 				} else if (Math.random() == 0.001) {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("As you pet the sharko, you realise that it has gotten extremely stronger now..."), true);
+						_player.displayClientMessage(Component.literal(("As you pet " + entity.getDisplayName().getString() + ", you realise that " + "they" + " are a little too strong...")), true);
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.TOTEM_OF_UNDYING, x, y, z, 5, 1, 1, 1, 1);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -168,14 +167,14 @@ public class EngieRareTameRCProcedure {
 						_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600, 5, false, true));
 				} else {
 					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("The sharko smiles at you as you pet it."), true);
+						_player.displayClientMessage(Component.literal((entity.getDisplayName().getString() + " gives you a big smile as you pet " + "them" + ".")), true);
 				}
 			} else if (Math.random() <= 0.005) {
 				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("Star begged and I responded with this change."), true);
 			} else {
 				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("Anything to make the sharko happy."), true);
+					_player.displayClientMessage(Component.literal(("Anything to make " + entity.getDisplayName().getString() + " happy.")), true);
 			}
 		} else {
 			if (!entity.level().isClientSide())
@@ -188,26 +187,18 @@ public class EngieRareTameRCProcedure {
 				}
 			}
 			AllaboutengieMod.queueServerWork(1, () -> {
-				if (((Entity) world.getEntitiesOfClass(EngieSharkoRareSitEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+				if ((findEntityInWorldRange(world, EngieSharkoRareSitEntity.class, x, y, z, 1)) instanceof EngieSharkoRareSitEntity) {
+					if (!(entity.getDisplayName().getString()).equals("Rare Engie Sharko")) {
+						(findEntityInWorldRange(world, EngieSharkoRareSitEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof EngieSharkoRareSitEntity) {
-					if (!(entity.getDisplayName().getString()).equals("[Tamed] Rare Engie Sharko")) {
-						((Entity) world.getEntitiesOfClass(EngieSharkoRareSitEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
-					}
-					if (((Entity) world.getEntitiesOfClass(EngieSharkoRareSitEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, EngieSharkoRareSitEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 						_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 				}
 			});
 		}
+	}
+
+	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
+		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

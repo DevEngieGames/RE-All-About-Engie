@@ -4,7 +4,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
 public class CrucifixPixelItem extends Item {
-	public CrucifixPixelItem() {
-		super(new Item.Properties().durability(50).rarity(Rarity.RARE));
+	public CrucifixPixelItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.RARE).durability(50));
 	}
 }

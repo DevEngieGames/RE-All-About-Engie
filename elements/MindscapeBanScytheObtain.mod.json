@@ -2,19 +2,19 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Mindscape Ban Scythe Obtain",
-    "achievementDescription": "Placeholder for Mob Difficulty",
+    "achievementName": "Didn't know this guy was pretty chill.",
+    "achievementDescription": "Obtain a Mindscape Ban Hammer/Scythe.",
     "achievementIcon": {
       "value": "CUSTOM:MindscapeAdvancementIcon"
     },
     "background": "Default",
-    "disableDisplay": true,
-    "showPopup": false,
-    "announceToChat": false,
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
     "hideIfNotCompleted": false,
     "rewardLoot": [],
     "rewardRecipes": [],
-    "rewardXP": 0,
+    "rewardXP": 75,
     "achievementType": "task",
     "parent": {
       "value": "CUSTOM:EngiesBanScytheObtain"

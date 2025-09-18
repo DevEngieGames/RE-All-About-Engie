@@ -1,48 +1,28 @@
 package net.mcreator.allaboutengie.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.TagKey;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 
 import net.mcreator.allaboutengie.procedures.MonstrosityToolObtainProcedure;
-import net.mcreator.allaboutengie.init.AllaboutengieModItems;
 
 public class MonstrosityEngiePickaxeItem extends PickaxeItem {
-	public MonstrosityEngiePickaxeItem() {
-		super(new Tier() {
-			public int getUses() {
-				return 2500;
-			}
+	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 2500, 30f, 0, 10, TagKey.create(Registries.ITEM, ResourceLocation.parse("allaboutengie:monstrosity_engie_pickaxe_repair_items")));
 
-			public float getSpeed() {
-				return 30f;
-			}
-
-			public float getAttackDamageBonus() {
-				return 123f;
-			}
-
-			public int getLevel() {
-				return 3;
-			}
-
-			public int getEnchantmentValue() {
-				return 10;
-			}
-
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(AllaboutengieModItems.MONSTROSITY_ENGIE_ESSENCE.get()));
-			}
-		}, 1, -1f, new Item.Properties());
+	public MonstrosityEngiePickaxeItem(Item.Properties properties) {
+		super(TOOL_MATERIAL, 124f, -1f, properties);
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		MonstrosityToolObtainProcedure.execute(entity);
+		MonstrosityToolObtainProcedure.execute(entity, itemstack);
 	}
 }

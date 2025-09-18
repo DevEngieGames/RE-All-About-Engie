@@ -13,7 +13,7 @@ public class RiskCheckProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.DOOMSDAY_TOGGLE) == true) {
+		if ((world instanceof ServerLevel _serverLevelGR0 && _serverLevelGR0.getGameRules().getBoolean(AllaboutengieModGameRules.DOOMSDAY_TOGGLE)) == true) {
 			if (AllaboutengieModVariables.MapVariables.get(world).Risk == 1) {
 				{
 					Entity _ent = entity;

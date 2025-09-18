@@ -9,7 +9,7 @@ import net.mcreator.allaboutengie.entity.HeWhoGamesHostileEntity;
 
 public class HeWhoGamesHostileNaturalEntitySpawningConditionProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z) {
-		if (!(!world.getEntitiesOfClass(HeWhoGamesHostileEntity.class, AABB.ofSize(new Vec3(x, y, z), 100000, 100000, 100000), e -> true).isEmpty()) && AllaboutengieModVariables.MapVariables.get(world).nightmare >= 25
+		if (!(!world.getEntitiesOfClass(HeWhoGamesHostileEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(100000 / 2d), e -> true).isEmpty()) && AllaboutengieModVariables.MapVariables.get(world).nightmare >= 25
 				&& AllaboutengieModVariables.MapVariables.get(world).hewhowatches == true) {
 			return true;
 		} else if (!(AllaboutengieModVariables.MapVariables.get(world).nightmare >= 25 && AllaboutengieModVariables.MapVariables.get(world).hewhowatches == true)) {

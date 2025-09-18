@@ -1,132 +1,119 @@
 package net.mcreator.allaboutengie.item;
 
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.equipment.EquipmentAssets;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.TagKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.client.resources.model.EquipmentClientInfo;
 
+import net.mcreator.allaboutengie.init.AllaboutengieModItems;
+
+import java.util.Map;
 import java.util.List;
 
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public abstract class CodeRedeemersItem extends ArmorItem {
-	public CodeRedeemersItem(ArmorItem.Type type, Item.Properties properties) {
-		super(new ArmorMaterial() {
-			@Override
-			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 50;
-			}
+	public static ArmorMaterial ARMOR_MATERIAL = new ArmorMaterial(50, Map.of(ArmorType.BOOTS, 50, ArmorType.LEGGINGS, 50, ArmorType.CHESTPLATE, 50, ArmorType.HELMET, 50, ArmorType.BODY, 50), 12,
+			DeferredHolder.create(Registries.SOUND_EVENT, ResourceLocation.parse("item.armor.equip_netherite")), 2.5f, 0.2f, TagKey.create(Registries.ITEM, ResourceLocation.parse("allaboutengie:code_redeemers_repair_items")),
+			ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.parse("allaboutengie:code_redeemers")));
 
+	@SubscribeEvent
+	public static void registerItemExtensions(RegisterClientExtensionsEvent event) {
+		event.registerItem(new IClientItemExtensions() {
 			@Override
-			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{50, 50, 50, 50}[type.getSlot().getIndex()];
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/coderedeemer__layer_1.png");
 			}
+		}, AllaboutengieModItems.CODE_REDEEMERS_HELMET.get());
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/coderedeemer__layer_1.png");
+			}
+		}, AllaboutengieModItems.CODE_REDEEMERS_CHESTPLATE.get());
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/coderedeemer__layer_2.png");
+			}
+		}, AllaboutengieModItems.CODE_REDEEMERS_LEGGINGS.get());
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/coderedeemer__layer_1.png");
+			}
+		}, AllaboutengieModItems.CODE_REDEEMERS_BOOTS.get());
+	}
 
-			@Override
-			public int getEnchantmentValue() {
-				return 12;
-			}
-
-			@Override
-			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("item.armor.equip_netherite"));
-			}
-
-			@Override
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
-			}
-
-			@Override
-			public String getName() {
-				return "code_redeemers";
-			}
-
-			@Override
-			public float getToughness() {
-				return 2.5f;
-			}
-
-			@Override
-			public float getKnockbackResistance() {
-				return 0.2f;
-			}
-		}, type, properties);
+	private CodeRedeemersItem(ArmorType type, Item.Properties properties) {
+		super(ARMOR_MATERIAL, type, properties);
 	}
 
 	public static class Helmet extends CodeRedeemersItem {
-		public Helmet() {
-			super(ArmorItem.Type.HELMET, new Item.Properties());
+		public Helmet(Item.Properties properties) {
+			super(ArmorType.HELMET, properties);
 		}
 
 		@Override
-		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, level, list, flag);
+		@OnlyIn(Dist.CLIENT)
+		public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, context, list, flag);
 			list.add(Component.translatable("item.allaboutengie.code_redeemers_helmet.description_0"));
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/coderedeemer__layer_1.png";
 		}
 	}
 
 	public static class Chestplate extends CodeRedeemersItem {
-		public Chestplate() {
-			super(ArmorItem.Type.CHESTPLATE, new Item.Properties());
+		public Chestplate(Item.Properties properties) {
+			super(ArmorType.CHESTPLATE, properties);
 		}
 
 		@Override
-		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, level, list, flag);
+		@OnlyIn(Dist.CLIENT)
+		public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, context, list, flag);
 			list.add(Component.translatable("item.allaboutengie.code_redeemers_chestplate.description_0"));
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/coderedeemer__layer_1.png";
 		}
 	}
 
 	public static class Leggings extends CodeRedeemersItem {
-		public Leggings() {
-			super(ArmorItem.Type.LEGGINGS, new Item.Properties());
+		public Leggings(Item.Properties properties) {
+			super(ArmorType.LEGGINGS, properties);
 		}
 
 		@Override
-		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, level, list, flag);
+		@OnlyIn(Dist.CLIENT)
+		public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, context, list, flag);
 			list.add(Component.translatable("item.allaboutengie.code_redeemers_leggings.description_0"));
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/coderedeemer__layer_2.png";
 		}
 	}
 
 	public static class Boots extends CodeRedeemersItem {
-		public Boots() {
-			super(ArmorItem.Type.BOOTS, new Item.Properties());
+		public Boots(Item.Properties properties) {
+			super(ArmorType.BOOTS, properties);
 		}
 
 		@Override
-		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, level, list, flag);
+		@OnlyIn(Dist.CLIENT)
+		public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, context, list, flag);
 			list.add(Component.translatable("item.allaboutengie.code_redeemers_boots.description_0"));
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/coderedeemer__layer_1.png";
 		}
 	}
 }

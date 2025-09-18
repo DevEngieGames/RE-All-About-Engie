@@ -147,7 +147,7 @@
     "spawningCondition": {
       "name": "DoomsDayNaturalEntitySpawningCondition"
     },
-    "spawningProbability": 5,
+    "spawningProbability": 15,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 1,
     "maxNumberOfMobsPerGroup": 1,
@@ -163,6 +163,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

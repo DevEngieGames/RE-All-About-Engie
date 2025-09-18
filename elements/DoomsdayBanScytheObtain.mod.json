@@ -2,20 +2,20 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Doomsday Ban Scythe Obtain",
-    "achievementDescription": "Placeholder for Mob Difficulty",
+    "achievementName": "At least he's not the only one to carry a Scythe.",
+    "achievementDescription": "Obtain a Doomsday Ban Hammer/Scythe",
     "achievementIcon": {
       "value": "CUSTOM:DoomsDayAdvancementIcon"
     },
     "background": "Default",
-    "disableDisplay": true,
-    "showPopup": false,
-    "announceToChat": false,
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
     "hideIfNotCompleted": false,
     "rewardLoot": [],
     "rewardRecipes": [],
-    "rewardXP": 0,
-    "achievementType": "task",
+    "rewardXP": 55,
+    "achievementType": "challenge",
     "parent": {
       "value": "CUSTOM:MonstrosityBanObtain"
     },

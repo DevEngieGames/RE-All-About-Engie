@@ -1,24 +1,24 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
 
 import net.mcreator.allaboutengie.network.AllaboutengieModVariables;
-import net.mcreator.allaboutengie.init.AllaboutengieModEnchantments;
 import net.mcreator.allaboutengie.entity.TheEndHostileEntity;
 import net.mcreator.allaboutengie.entity.SuperDoomsDayHostileEntity;
 import net.mcreator.allaboutengie.entity.DoomsDayHostileEntity;
@@ -26,11 +26,11 @@ import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class EngiesBlessingDamagesProcedure {
 	@SubscribeEvent
-	public static void onEntityAttacked(LivingAttackEvent event) {
-		if (event != null && event.getEntity() != null) {
+	public static void onEntityAttacked(LivingIncomingDamageEvent event) {
+		if (event.getEntity() != null) {
 			execute(event, event.getEntity().level(), event.getSource(), event.getEntity(), event.getSource().getEntity(), event.getAmount());
 		}
 	}
@@ -44,11 +44,11 @@ public class EngiesBlessingDamagesProcedure {
 			return;
 		AllaboutengieModVariables.MapVariables.get(world).getdamage = amount;
 		AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-		AllaboutengieModVariables.MapVariables.get(world).getdamage2 = amount;
-		AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-		if (EnchantmentHelper.getItemEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
+		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+				.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) != 0) {
 			AllaboutengieMod.queueServerWork(1, () -> {
-				if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 1) {
+				if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 1) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 2.5;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -82,7 +82,8 @@ public class EngiesBlessingDamagesProcedure {
 							entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 						});
 					}
-				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 2) {
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 2) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 5;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -116,7 +117,8 @@ public class EngiesBlessingDamagesProcedure {
 							entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 						});
 					}
-				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 3) {
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 3) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 7.5;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -150,7 +152,8 @@ public class EngiesBlessingDamagesProcedure {
 							entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 						});
 					}
-				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 4) {
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 4) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 10;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -184,7 +187,8 @@ public class EngiesBlessingDamagesProcedure {
 							entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 						});
 					}
-				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 5) {
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 5) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 12.5;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -218,7 +222,8 @@ public class EngiesBlessingDamagesProcedure {
 							entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 						});
 					}
-				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 6) {
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 6) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 15;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -252,7 +257,8 @@ public class EngiesBlessingDamagesProcedure {
 							entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 						});
 					}
-				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 7) {
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 7) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 17.5;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -286,7 +292,8 @@ public class EngiesBlessingDamagesProcedure {
 							entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 						});
 					}
-				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 8) {
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 8) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 20;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -320,7 +327,8 @@ public class EngiesBlessingDamagesProcedure {
 							entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 						});
 					}
-				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 9) {
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 9) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 22.5;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -354,7 +362,8 @@ public class EngiesBlessingDamagesProcedure {
 							entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 						});
 					}
-				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 10) {
+				} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing")))) == 10) {
 					AllaboutengieModVariables.MapVariables.get(world).getdamage = AllaboutengieModVariables.MapVariables.get(world).getdamage * 25;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player) {
@@ -389,174 +398,6 @@ public class EngiesBlessingDamagesProcedure {
 						});
 					}
 				}
-			});
-		}
-		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).isEnchanted()
-				|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).isEnchanted()
-				|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).isEnchanted()
-				|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).isEnchanted()) {
-			if (EnchantmentHelper.getItemEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)) != 0) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
-				}
-				AllaboutengieMod.queueServerWork(1, () -> {
-					if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 1) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 2.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 2) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 3) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 7.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 4) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 10;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 5) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 12.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 6) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 15;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 7) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 17.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 8) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 20;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 9) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 22.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 10) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 25;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					}
-				});
-			}
-			if (EnchantmentHelper.getItemEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)) != 0) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
-				}
-				AllaboutengieMod.queueServerWork(2, () -> {
-					if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 1) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 2.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 2) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 3) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 7.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 4) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 10;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 5) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 12.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 6) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 15;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 7) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 17.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 8) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 20;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 9) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 22.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 10) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 25;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					}
-				});
-			}
-			if (EnchantmentHelper.getItemEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)) != 0) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
-				}
-				AllaboutengieMod.queueServerWork(3, () -> {
-					if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 1) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 2.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 2) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 3) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 7.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 4) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 10;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 5) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 12.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 6) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 15;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 7) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 17.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 8) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 20;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 9) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 22.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 10) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 25;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					}
-				});
-			}
-			if (EnchantmentHelper.getItemEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get(), (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)) != 0) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
-				}
-				AllaboutengieMod.queueServerWork(4, () -> {
-					if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 1) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 2.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 2) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 3) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 7.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 4) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 10;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 5) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 12.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 6) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 15;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 7) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 17.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 8) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 20;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 9) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 22.5;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(AllaboutengieModEnchantments.ENGIES_BLESSING.get()) == 10) {
-						AllaboutengieModVariables.MapVariables.get(world).getdamage2 = AllaboutengieModVariables.MapVariables.get(world).getdamage2 / 25;
-						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-					}
-				});
-			}
-			AllaboutengieMod.queueServerWork(5, () -> {
-				entity.hurt(damagesource, (float) AllaboutengieModVariables.MapVariables.get(world).getdamage);
 			});
 		}
 	}

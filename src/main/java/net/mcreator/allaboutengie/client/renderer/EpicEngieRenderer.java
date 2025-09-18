@@ -1,6 +1,7 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -9,14 +10,27 @@ import net.minecraft.client.model.HumanoidModel;
 
 import net.mcreator.allaboutengie.entity.EpicEngieEntity;
 
-public class EpicEngieRenderer extends HumanoidMobRenderer<EpicEngieEntity, HumanoidModel<EpicEngieEntity>> {
+public class EpicEngieRenderer extends HumanoidMobRenderer<EpicEngieEntity, HumanoidRenderState, HumanoidModel<HumanoidRenderState>> {
+	private EpicEngieEntity entity = null;
+
 	public EpicEngieRenderer(EntityRendererProvider.Context context) {
-		super(context, new HumanoidModel<EpicEngieEntity>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
-		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR)), context.getModelManager()));
+		super(context, new HumanoidModel<HumanoidRenderState>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
+		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR)), context.getEquipmentRenderer()));
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(EpicEngieEntity entity) {
+	public HumanoidRenderState createRenderState() {
+		return new HumanoidRenderState();
+	}
+
+	@Override
+	public void extractRenderState(EpicEngieEntity entity, HumanoidRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(HumanoidRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/epicengie.png");
 	}
 }

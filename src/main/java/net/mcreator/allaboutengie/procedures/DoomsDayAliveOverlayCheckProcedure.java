@@ -8,7 +8,7 @@ public class DoomsDayAliveOverlayCheckProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).DoomsdayAlive == true) {
+		if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).DoomsdayAlive == true) {
 			return true;
 		}
 		return false;

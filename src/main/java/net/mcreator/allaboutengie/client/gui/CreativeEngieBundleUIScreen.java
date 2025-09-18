@@ -1,10 +1,13 @@
 package net.mcreator.allaboutengie.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Button;
@@ -15,7 +18,6 @@ import net.mcreator.allaboutengie.world.inventory.CreativeEngieBundleUIMenu;
 import net.mcreator.allaboutengie.procedures.CreativeEngieBundleDisplayNameCheckProcedure;
 import net.mcreator.allaboutengie.network.CreativeEngieBundleUIButtonMessage;
 import net.mcreator.allaboutengie.init.AllaboutengieModScreens;
-import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -41,6 +43,10 @@ public class CreativeEngieBundleUIScreen extends AbstractContainerScreen<Creativ
 	@Override
 	public void updateMenuState(int elementType, String name, Object elementState) {
 		menuStateUpdateActive = true;
+		if (elementType == 0 && elementState instanceof String stringState) {
+			if (name.equals("ChangeBundleName"))
+				ChangeBundleName.setValue(stringState);
+		}
 		menuStateUpdateActive = false;
 	}
 
@@ -48,7 +54,6 @@ public class CreativeEngieBundleUIScreen extends AbstractContainerScreen<Creativ
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		ChangeBundleName.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
@@ -59,7 +64,7 @@ public class CreativeEngieBundleUIScreen extends AbstractContainerScreen<Creativ
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(RenderType::guiTextured, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -72,12 +77,6 @@ public class CreativeEngieBundleUIScreen extends AbstractContainerScreen<Creativ
 		if (ChangeBundleName.isFocused())
 			return ChangeBundleName.keyPressed(key, b, c);
 		return super.keyPressed(key, b, c);
-	}
-
-	@Override
-	protected void containerTick() {
-		super.containerTick();
-		ChangeBundleName.tick();
 	}
 
 	@Override
@@ -96,18 +95,18 @@ public class CreativeEngieBundleUIScreen extends AbstractContainerScreen<Creativ
 	public void init() {
 		super.init();
 		ChangeBundleName = new EditBox(this.font, this.leftPos + 287, this.topPos + 134, 118, 18, Component.translatable("gui.allaboutengie.creative_engie_bundle_ui.ChangeBundleName"));
-		ChangeBundleName.setHint(Component.translatable("gui.allaboutengie.creative_engie_bundle_ui.ChangeBundleName"));
 		ChangeBundleName.setMaxLength(8192);
 		ChangeBundleName.setResponder(content -> {
 			if (!menuStateUpdateActive)
 				menu.sendMenuStateUpdate(entity, 0, "ChangeBundleName", content, false);
 		});
+		ChangeBundleName.setHint(Component.translatable("gui.allaboutengie.creative_engie_bundle_ui.ChangeBundleName"));
 		this.addWidget(this.ChangeBundleName);
 		button_set_name = Button.builder(Component.translatable("gui.allaboutengie.creative_engie_bundle_ui.button_set_name"), e -> {
 			int x = CreativeEngieBundleUIScreen.this.x;
 			int y = CreativeEngieBundleUIScreen.this.y;
 			if (true) {
-				AllaboutengieMod.PACKET_HANDLER.sendToServer(new CreativeEngieBundleUIButtonMessage(0, x, y, z));
+				PacketDistributor.sendToServer(new CreativeEngieBundleUIButtonMessage(0, x, y, z));
 				CreativeEngieBundleUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 312, this.topPos + 154, 66, 20).build();

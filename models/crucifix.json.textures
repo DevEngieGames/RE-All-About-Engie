@@ -5,6 +5,12 @@
         "0": "crucifix"
       },
       "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimattercrucifix"
+      },
+      "name": "antimatter"
     }
   }
 }

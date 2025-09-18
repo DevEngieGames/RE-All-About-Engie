@@ -2,20 +2,20 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Engies Ban Scythe Obtain",
-    "achievementDescription": "Placeholder for Mob Difficulty",
+    "achievementName": "Why do I feel like this guy isn't Engie.",
+    "achievementDescription": "Obtain a Engies Ban Hammer/Scythe.",
     "achievementIcon": {
       "value": "CUSTOM:EngieGamesAdvancementIcon"
     },
     "background": "Default",
-    "disableDisplay": true,
-    "showPopup": false,
-    "announceToChat": false,
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
     "hideIfNotCompleted": false,
     "rewardLoot": [],
     "rewardRecipes": [],
-    "rewardXP": 0,
-    "achievementType": "task",
+    "rewardXP": 70,
+    "achievementType": "challenge",
     "parent": {
       "value": "CUSTOM:SuperDoomsdayBanScytheObtain"
     },

@@ -1,49 +1,57 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.HierarchicalModel;
 
 import net.mcreator.allaboutengie.entity.EngieSharkoLayOnSideEntity;
 import net.mcreator.allaboutengie.client.model.animations.boyositAnimation;
 import net.mcreator.allaboutengie.client.model.Modelboyolayonside;
 
-public class EngieSharkoLayOnSideRenderer extends MobRenderer<EngieSharkoLayOnSideEntity, Modelboyolayonside<EngieSharkoLayOnSideEntity>> {
+public class EngieSharkoLayOnSideRenderer extends MobRenderer<EngieSharkoLayOnSideEntity, LivingEntityRenderState, Modelboyolayonside> {
+	private EngieSharkoLayOnSideEntity entity = null;
+
 	public EngieSharkoLayOnSideRenderer(EntityRendererProvider.Context context) {
 		super(context, new AnimatedModel(context.bakeLayer(Modelboyolayonside.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(EngieSharkoLayOnSideEntity entity) {
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(EngieSharkoLayOnSideEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+		if (this.model instanceof AnimatedModel) {
+			((AnimatedModel) this.model).setEntity(entity);
+		}
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/engiesharkonewtamed.png");
 	}
 
-	private static final class AnimatedModel extends Modelboyolayonside<EngieSharkoLayOnSideEntity> {
-		private final ModelPart root;
-		private final HierarchicalModel animator = new HierarchicalModel<EngieSharkoLayOnSideEntity>() {
-			@Override
-			public ModelPart root() {
-				return root;
-			}
-
-			@Override
-			public void setupAnim(EngieSharkoLayOnSideEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-				this.root().getAllParts().forEach(ModelPart::resetPose);
-				this.animate(entity.animationState0, boyositAnimation.SharkoLayIdle, ageInTicks, 1f);
-			}
-		};
+	private static final class AnimatedModel extends Modelboyolayonside {
+		private EngieSharkoLayOnSideEntity entity = null;
 
 		public AnimatedModel(ModelPart root) {
 			super(root);
-			this.root = root;
+		}
+
+		public void setEntity(EngieSharkoLayOnSideEntity entity) {
+			this.entity = entity;
 		}
 
 		@Override
-		public void setupAnim(EngieSharkoLayOnSideEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-			animator.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+		public void setupAnim(LivingEntityRenderState state) {
+			this.root().getAllParts().forEach(ModelPart::resetPose);
+			this.animate(entity.animationState0, boyositAnimation.SharkoLayIdle, state.ageInTicks, 1f);
+			super.setupAnim(state);
 		}
 	}
 }

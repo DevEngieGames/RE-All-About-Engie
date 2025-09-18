@@ -3,10 +3,10 @@
  */
 package net.mcreator.allaboutengie.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
 
 import net.mcreator.allaboutengie.block.UnobtainiumOreBlock;
@@ -52,49 +52,55 @@ import net.mcreator.allaboutengie.block.AngryEngieBlockBlock;
 import net.mcreator.allaboutengie.block.AngelHattedPresentBlock;
 import net.mcreator.allaboutengie.AllaboutengieMod;
 
+import java.util.function.Function;
+
 public class AllaboutengieModBlocks {
-	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, AllaboutengieMod.MODID);
-	public static final RegistryObject<Block> ENGIE_BLOCK = REGISTRY.register("engie_block", () -> new EngieBlockBlock());
-	public static final RegistryObject<Block> ANGRY_ENGIE_BLOCK = REGISTRY.register("angry_engie_block", () -> new AngryEngieBlockBlock());
-	public static final RegistryObject<Block> ENRAGED_ENGIE_BLOCK = REGISTRY.register("enraged_engie_block", () -> new EnragedEngieBlockBlock());
-	public static final RegistryObject<Block> ENGIE_ORE = REGISTRY.register("engie_ore", () -> new EngieOreBlock());
-	public static final RegistryObject<Block> DEEPSLATE_ENGIE_ORE = REGISTRY.register("deepslate_engie_ore", () -> new DeepslateEngieOreBlock());
-	public static final RegistryObject<Block> METAL_TABLE = REGISTRY.register("metal_table", () -> new MetalTableBlock());
-	public static final RegistryObject<Block> OLD_ENGIE_ORE = REGISTRY.register("old_engie_ore", () -> new OldEngieOreBlock());
-	public static final RegistryObject<Block> OLD_DEEPSLATE_ENGIE_ORE = REGISTRY.register("old_deepslate_engie_ore", () -> new OldDeepslateEngieOreBlock());
-	public static final RegistryObject<Block> THANKS_FOR_PLAYING = REGISTRY.register("thanks_for_playing", () -> new ThanksForPlayingBlock());
-	public static final RegistryObject<Block> METAL_CHEST = REGISTRY.register("metal_chest", () -> new MetalChestBlock());
-	public static final RegistryObject<Block> METAL_CHEST_OAK = REGISTRY.register("metal_chest_oak", () -> new MetalChestOakBlock());
-	public static final RegistryObject<Block> METAL_CHEST_DARK_OAK = REGISTRY.register("metal_chest_dark_oak", () -> new MetalChestDarkOakBlock());
-	public static final RegistryObject<Block> METAL_CHEST_SPRUCE = REGISTRY.register("metal_chest_spruce", () -> new MetalChestSpruceBlock());
-	public static final RegistryObject<Block> METAL_CHEST_ACACIA = REGISTRY.register("metal_chest_acacia", () -> new MetalChestAcaciaBlock());
-	public static final RegistryObject<Block> METAL_CHEST_BIRCH = REGISTRY.register("metal_chest_birch", () -> new MetalChestBirchBlock());
-	public static final RegistryObject<Block> METAL_CHEST_WARPED = REGISTRY.register("metal_chest_warped", () -> new MetalChestWarpedBlock());
-	public static final RegistryObject<Block> METAL_CHEST_CRIMSON = REGISTRY.register("metal_chest_crimson", () -> new MetalChestCrimsonBlock());
-	public static final RegistryObject<Block> METAL_CHEST_JUNGLE = REGISTRY.register("metal_chest_jungle", () -> new MetalChestJungleBlock());
-	public static final RegistryObject<Block> OUTRAGED_ENGIE_BLOCK = REGISTRY.register("outraged_engie_block", () -> new OutragedEngieBlockBlock());
-	public static final RegistryObject<Block> ANGEL_HATTED_PRESENT = REGISTRY.register("angel_hatted_present", () -> new AngelHattedPresentBlock());
-	public static final RegistryObject<Block> CYBER_ORE = REGISTRY.register("cyber_ore", () -> new CyberOreBlock());
-	public static final RegistryObject<Block> BLOOD_ORE = REGISTRY.register("blood_ore", () -> new BloodOreBlock());
-	public static final RegistryObject<Block> UNOBTAINIUM_ORE = REGISTRY.register("unobtainium_ore", () -> new UnobtainiumOreBlock());
-	public static final RegistryObject<Block> DEEPSLATE_UNOBTAINIUM_ORE = REGISTRY.register("deepslate_unobtainium_ore", () -> new DeepslateUnobtainiumOreBlock());
-	public static final RegistryObject<Block> CYBER_BLOCK = REGISTRY.register("cyber_block", () -> new CyberBlockBlock());
-	public static final RegistryObject<Block> BLOOD_BLOCK = REGISTRY.register("blood_block", () -> new BloodBlockBlock());
-	public static final RegistryObject<Block> CYBERBLOOD_BLOCK = REGISTRY.register("cyberblood_block", () -> new CyberbloodBlockBlock());
-	public static final RegistryObject<Block> TEXTBOXYEAH = REGISTRY.register("textboxyeah", () -> new TextboxyeahBlock());
-	public static final RegistryObject<Block> BIBLICALLY_ACCURATE_BLOCK = REGISTRY.register("biblically_accurate_block", () -> new BiblicallyAccurateBlockBlock());
-	public static final RegistryObject<Block> MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("monstrosity_engie_block", () -> new MonstrosityEngieBlockBlock());
-	public static final RegistryObject<Block> CHALLENGE_MODE_TROPHY_SOLO = REGISTRY.register("challenge_mode_trophy_solo", () -> new ChallengeModeTrophySoloBlock());
-	public static final RegistryObject<Block> CHALLENGE_MODE_TROPHY_MULTIPLAYER = REGISTRY.register("challenge_mode_trophy_multiplayer", () -> new ChallengeModeTrophyMultiplayerBlock());
-	public static final RegistryObject<Block> ANY_TYPE_OF_WOOD_HELP = REGISTRY.register("any_type_of_wood_help", () -> new AnyTypeOfWoodHelpBlock());
-	public static final RegistryObject<Block> ANTIMATTER_ENGIE_BLOCK = REGISTRY.register("antimatter_engie_block", () -> new AntimatterEngieBlockBlock());
-	public static final RegistryObject<Block> ANTIMATTER_ANGRY_ENGIE_BLOCK = REGISTRY.register("antimatter_angry_engie_block", () -> new AntimatterAngryEngieBlockBlock());
-	public static final RegistryObject<Block> ANTIMATTER_ENRAGED_ENGIE_BLOCK = REGISTRY.register("antimatter_enraged_engie_block", () -> new AntimatterEnragedEngieBlockBlock());
-	public static final RegistryObject<Block> ANTIMATTER_OUTRAGED_ENGIE_BLOCK = REGISTRY.register("antimatter_outraged_engie_block", () -> new AntimatterOutragedEngieBlockBlock());
-	public static final RegistryObject<Block> ANTIMATTER_BIBLICALLY_ACCURATE_BLOCK = REGISTRY.register("antimatter_biblically_accurate_block", () -> new AntimatterBiblicallyAccurateBlockBlock());
-	public static final RegistryObject<Block> ANTIMATTER_MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("antimatter_monstrosity_engie_block", () -> new AntimatterMonstrosityEngieBlockBlock());
-	public static final RegistryObject<Block> ANTIMATTER_ENGIE_ORE = REGISTRY.register("antimatter_engie_ore", () -> new AntimatterEngieOreBlock());
-	public static final RegistryObject<Block> ANTIMATTER_DEEPSLATE_ENGIE_ORE = REGISTRY.register("antimatter_deepslate_engie_ore", () -> new AntimatterDeepslateEngieOreBlock());
+	public static final DeferredRegister.Blocks REGISTRY = DeferredRegister.createBlocks(AllaboutengieMod.MODID);
+	public static final DeferredBlock<Block> ENGIE_BLOCK = register("engie_block", EngieBlockBlock::new);
+	public static final DeferredBlock<Block> ANGRY_ENGIE_BLOCK = register("angry_engie_block", AngryEngieBlockBlock::new);
+	public static final DeferredBlock<Block> ENRAGED_ENGIE_BLOCK = register("enraged_engie_block", EnragedEngieBlockBlock::new);
+	public static final DeferredBlock<Block> ENGIE_ORE = register("engie_ore", EngieOreBlock::new);
+	public static final DeferredBlock<Block> DEEPSLATE_ENGIE_ORE = register("deepslate_engie_ore", DeepslateEngieOreBlock::new);
+	public static final DeferredBlock<Block> METAL_TABLE = register("metal_table", MetalTableBlock::new);
+	public static final DeferredBlock<Block> OLD_ENGIE_ORE = register("old_engie_ore", OldEngieOreBlock::new);
+	public static final DeferredBlock<Block> OLD_DEEPSLATE_ENGIE_ORE = register("old_deepslate_engie_ore", OldDeepslateEngieOreBlock::new);
+	public static final DeferredBlock<Block> THANKS_FOR_PLAYING = register("thanks_for_playing", ThanksForPlayingBlock::new);
+	public static final DeferredBlock<Block> METAL_CHEST = register("metal_chest", MetalChestBlock::new);
+	public static final DeferredBlock<Block> METAL_CHEST_OAK = register("metal_chest_oak", MetalChestOakBlock::new);
+	public static final DeferredBlock<Block> METAL_CHEST_DARK_OAK = register("metal_chest_dark_oak", MetalChestDarkOakBlock::new);
+	public static final DeferredBlock<Block> METAL_CHEST_SPRUCE = register("metal_chest_spruce", MetalChestSpruceBlock::new);
+	public static final DeferredBlock<Block> METAL_CHEST_ACACIA = register("metal_chest_acacia", MetalChestAcaciaBlock::new);
+	public static final DeferredBlock<Block> METAL_CHEST_BIRCH = register("metal_chest_birch", MetalChestBirchBlock::new);
+	public static final DeferredBlock<Block> METAL_CHEST_WARPED = register("metal_chest_warped", MetalChestWarpedBlock::new);
+	public static final DeferredBlock<Block> METAL_CHEST_CRIMSON = register("metal_chest_crimson", MetalChestCrimsonBlock::new);
+	public static final DeferredBlock<Block> METAL_CHEST_JUNGLE = register("metal_chest_jungle", MetalChestJungleBlock::new);
+	public static final DeferredBlock<Block> OUTRAGED_ENGIE_BLOCK = register("outraged_engie_block", OutragedEngieBlockBlock::new);
+	public static final DeferredBlock<Block> ANGEL_HATTED_PRESENT = register("angel_hatted_present", AngelHattedPresentBlock::new);
+	public static final DeferredBlock<Block> CYBER_ORE = register("cyber_ore", CyberOreBlock::new);
+	public static final DeferredBlock<Block> BLOOD_ORE = register("blood_ore", BloodOreBlock::new);
+	public static final DeferredBlock<Block> UNOBTAINIUM_ORE = register("unobtainium_ore", UnobtainiumOreBlock::new);
+	public static final DeferredBlock<Block> DEEPSLATE_UNOBTAINIUM_ORE = register("deepslate_unobtainium_ore", DeepslateUnobtainiumOreBlock::new);
+	public static final DeferredBlock<Block> CYBER_BLOCK = register("cyber_block", CyberBlockBlock::new);
+	public static final DeferredBlock<Block> BLOOD_BLOCK = register("blood_block", BloodBlockBlock::new);
+	public static final DeferredBlock<Block> CYBERBLOOD_BLOCK = register("cyberblood_block", CyberbloodBlockBlock::new);
+	public static final DeferredBlock<Block> TEXTBOXYEAH = register("textboxyeah", TextboxyeahBlock::new);
+	public static final DeferredBlock<Block> BIBLICALLY_ACCURATE_BLOCK = register("biblically_accurate_block", BiblicallyAccurateBlockBlock::new);
+	public static final DeferredBlock<Block> MONSTROSITY_ENGIE_BLOCK = register("monstrosity_engie_block", MonstrosityEngieBlockBlock::new);
+	public static final DeferredBlock<Block> CHALLENGE_MODE_TROPHY_SOLO = register("challenge_mode_trophy_solo", ChallengeModeTrophySoloBlock::new);
+	public static final DeferredBlock<Block> CHALLENGE_MODE_TROPHY_MULTIPLAYER = register("challenge_mode_trophy_multiplayer", ChallengeModeTrophyMultiplayerBlock::new);
+	public static final DeferredBlock<Block> ANY_TYPE_OF_WOOD_HELP = register("any_type_of_wood_help", AnyTypeOfWoodHelpBlock::new);
+	public static final DeferredBlock<Block> ANTIMATTER_ENGIE_BLOCK = register("antimatter_engie_block", AntimatterEngieBlockBlock::new);
+	public static final DeferredBlock<Block> ANTIMATTER_ANGRY_ENGIE_BLOCK = register("antimatter_angry_engie_block", AntimatterAngryEngieBlockBlock::new);
+	public static final DeferredBlock<Block> ANTIMATTER_ENRAGED_ENGIE_BLOCK = register("antimatter_enraged_engie_block", AntimatterEnragedEngieBlockBlock::new);
+	public static final DeferredBlock<Block> ANTIMATTER_OUTRAGED_ENGIE_BLOCK = register("antimatter_outraged_engie_block", AntimatterOutragedEngieBlockBlock::new);
+	public static final DeferredBlock<Block> ANTIMATTER_BIBLICALLY_ACCURATE_BLOCK = register("antimatter_biblically_accurate_block", AntimatterBiblicallyAccurateBlockBlock::new);
+	public static final DeferredBlock<Block> ANTIMATTER_MONSTROSITY_ENGIE_BLOCK = register("antimatter_monstrosity_engie_block", AntimatterMonstrosityEngieBlockBlock::new);
+	public static final DeferredBlock<Block> ANTIMATTER_ENGIE_ORE = register("antimatter_engie_ore", AntimatterEngieOreBlock::new);
+	public static final DeferredBlock<Block> ANTIMATTER_DEEPSLATE_ENGIE_ORE = register("antimatter_deepslate_engie_ore", AntimatterDeepslateEngieOreBlock::new);
+
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
+	private static <B extends Block> DeferredBlock<B> register(String name, Function<BlockBehaviour.Properties, ? extends B> supplier) {
+		return REGISTRY.registerBlock(name, supplier, BlockBehaviour.Properties.of());
+	}
 }

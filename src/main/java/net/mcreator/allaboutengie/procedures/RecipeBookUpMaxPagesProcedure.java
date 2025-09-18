@@ -9,11 +9,9 @@ public class RecipeBookUpMaxPagesProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = 106;
-			entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.pageNumber = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+			_vars.pageNumber = 106;
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

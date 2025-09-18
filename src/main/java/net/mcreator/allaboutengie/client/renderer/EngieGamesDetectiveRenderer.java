@@ -1,19 +1,33 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import net.mcreator.allaboutengie.entity.EngieGamesDetectiveEntity;
 import net.mcreator.allaboutengie.client.model.ModelEngieGames;
 
-public class EngieGamesDetectiveRenderer extends MobRenderer<EngieGamesDetectiveEntity, ModelEngieGames<EngieGamesDetectiveEntity>> {
+public class EngieGamesDetectiveRenderer extends MobRenderer<EngieGamesDetectiveEntity, LivingEntityRenderState, ModelEngieGames> {
+	private EngieGamesDetectiveEntity entity = null;
+
 	public EngieGamesDetectiveRenderer(EntityRendererProvider.Context context) {
-		super(context, new ModelEngieGames<EngieGamesDetectiveEntity>(context.bakeLayer(ModelEngieGames.LAYER_LOCATION)), 0.5f);
+		super(context, new ModelEngieGames(context.bakeLayer(ModelEngieGames.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(EngieGamesDetectiveEntity entity) {
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(EngieGamesDetectiveEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/engiegamesentity.png");
 	}
 }

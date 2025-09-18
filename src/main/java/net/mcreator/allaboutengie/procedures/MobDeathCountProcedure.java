@@ -16,43 +16,33 @@ public class MobDeathCountProcedure {
 			return;
 		if (entity instanceof MadEngieEntity && sourceentity instanceof Player) {
 			{
-				double _setval = (entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).AngryEngieKillCount + 1;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.AngryEngieKillCount = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.AngryEngieKillCount = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).AngryEngieKillCount + 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		} else if (entity instanceof AngryEngieEntity && sourceentity instanceof Player) {
 			{
-				double _setval = (entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).AngryEngieKillCount + 1;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.AngryEngieKillCount = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.AngryEngieKillCount = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).AngryEngieKillCount + 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		} else if (entity instanceof EnragedEngieEntity && sourceentity instanceof Player) {
 			{
-				double _setval = (entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).AngryEngieKillCount + 1;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.EnragedEngieKillCount = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.EnragedEngieKillCount = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).AngryEngieKillCount + 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		} else if (entity instanceof AngryCreatorEntity && sourceentity instanceof Player) {
 			{
-				double _setval = (entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).AngryEngieKillCount + 1;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.OutragedEngieKillCount = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.OutragedEngieKillCount = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).AngryEngieKillCount + 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		} else if (entity instanceof InsanityEntity && sourceentity instanceof Player) {
 			{
-				double _setval = (entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).AngryEngieKillCount + 1;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.InsanityKillCount = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.InsanityKillCount = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).AngryEngieKillCount + 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
 	}

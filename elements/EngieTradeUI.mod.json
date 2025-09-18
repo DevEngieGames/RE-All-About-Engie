@@ -154,7 +154,7 @@
           "displayCondition": {
             "name": "Checkmarkdisplaycondition"
           },
-          "x": 251,
+          "x": 278,
           "y": 58,
           "locked": false
         }
@@ -169,6 +169,38 @@
           },
           "x": 251,
           "y": 58,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_trade_ui_state_normal",
+          "text": {
+            "fixedValue": "Trade UI State: Normal"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 129,
+          "y": 39,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_swap",
+          "text": "Swap!",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "EngieGamesSwapToAntimatter"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 133,
+          "y": 56,
           "locked": false
         }
       }

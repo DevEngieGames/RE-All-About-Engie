@@ -1,47 +1,28 @@
 package net.mcreator.allaboutengie.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.TagKey;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 
 import net.mcreator.allaboutengie.procedures.MiniBanObtainProProcedure;
 
 public class MiniScytheItem extends SwordItem {
-	public MiniScytheItem() {
-		super(new Tier() {
-			public int getUses() {
-				return 360;
-			}
+	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_STONE_TOOL, 288, 4f, 0, 10, TagKey.create(Registries.ITEM, ResourceLocation.parse("allaboutengie:mini_scythe_repair_items")));
 
-			public float getSpeed() {
-				return 4f;
-			}
-
-			public float getAttackDamageBonus() {
-				return 68f;
-			}
-
-			public int getLevel() {
-				return 1;
-			}
-
-			public int getEnchantmentValue() {
-				return 10;
-			}
-
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
-			}
-		}, 3, -0.75f, new Item.Properties());
+	public MiniScytheItem(Item.Properties properties) {
+		super(TOOL_MATERIAL, 71f, -0.75f, properties);
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		MiniBanObtainProProcedure.execute(world, entity);
+		MiniBanObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

@@ -1,29 +1,27 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.allaboutengie.network.AllaboutengieModVariables;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class StunCDProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level(), event.player);
-		}
+	public static void onPlayerTick(PlayerTickEvent.Post event) {
+		execute(event, event.getEntity().level(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -33,37 +31,28 @@ public class StunCDProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).playerstunnedmobs == true) {
+		if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).playerstunnedmobs == true) {
 			entity.getPersistentData().putDouble("stuncooldown", (entity.getPersistentData().getDouble("stuncooldown") + 0.05));
 			if (entity.getPersistentData().getDouble("stuncooldown") >= 20) {
 				entity.getPersistentData().putDouble("stuncooldown", 0);
-				if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).playerstunoffcooldown == false) {
+				if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).playerstunoffcooldown == false) {
 					{
-						boolean _setval = true;
-						entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.playerstunoffcooldown = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+						_vars.playerstunoffcooldown = true;
+						_vars.syncPlayerVariables(entity);
 					}
 					{
-						boolean _setval = false;
-						entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.playerstunnedmobs = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+						_vars.playerstunnedmobs = false;
+						_vars.syncPlayerVariables(entity);
 					}
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null,
-									BlockPos.containing((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX,
-											(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY,
-											(entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-									ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunabiloffcooldown")), SoundSource.NEUTRAL, 1, 1);
+							_level.playSound(null, BlockPos.containing(entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).PlayerX, entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).PlayerY,
+									entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).PlayerZ), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:playerstunabiloffcooldown")), SoundSource.NEUTRAL, 1, 1);
 						} else {
-							_level.playLocalSound(((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerX),
-									((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerY),
-									((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).PlayerZ),
-									ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:playerstunabiloffcooldown")), SoundSource.NEUTRAL, 1, 1, false);
+							_level.playLocalSound(entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).PlayerX, entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).PlayerY,
+									entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).PlayerZ, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:playerstunabiloffcooldown")), SoundSource.NEUTRAL, 1, 1, false);
 						}
 					}
 				}

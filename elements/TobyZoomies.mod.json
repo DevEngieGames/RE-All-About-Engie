@@ -5,7 +5,7 @@
     "mobName": "Toby",
     "mobLabel": "Toby",
     "mobModelName": "Modeltobyzooms",
-    "mobModelTexture": "toby.png",
+    "mobModelTexture": "tobyzoom.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -166,6 +166,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

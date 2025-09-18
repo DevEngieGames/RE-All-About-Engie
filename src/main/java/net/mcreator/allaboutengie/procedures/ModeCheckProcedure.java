@@ -1,9 +1,9 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
@@ -17,13 +17,11 @@ import net.mcreator.allaboutengie.init.AllaboutengieModGameRules;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class ModeCheckProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level(), event.player);
-		}
+	public static void onPlayerTick(PlayerTickEvent.Post event) {
+		execute(event, event.getEntity().level(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -33,8 +31,7 @@ public class ModeCheckProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE) == false
-				&& (entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).healthreductiondday == false) {
+		if ((world instanceof ServerLevel _serverLevelGR0 && _serverLevelGR0.getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE)) == false && entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).healthreductiondday == false) {
 			if ((entity.getDisplayName().getString()).equals("EngieGamesOnTTV")) {
 				{
 					Entity _ent = entity;
@@ -116,7 +113,7 @@ public class ModeCheckProcedure {
 					}
 				}
 			}
-		} else if (world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE) == true) {
+		} else if ((world instanceof ServerLevel _serverLevelGR21 && _serverLevelGR21.getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE)) == true) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -124,8 +121,8 @@ public class ModeCheckProcedure {
 							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "attribute @s minecraft:generic.max_health base set 50");
 				}
 			}
-		} else if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).healthreductiondday == true
-				&& world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE) == false) {
+		} else if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).healthreductiondday == true
+				&& (world instanceof ServerLevel _serverLevelGR23 && _serverLevelGR23.getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE)) == false) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {

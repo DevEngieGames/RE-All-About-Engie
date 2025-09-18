@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Tiger",
     "mobLabel": "Tiger",
-    "mobModelName": "Modeltoby",
-    "mobModelTexture": "tiger.png",
+    "mobModelName": "Modeltobyzooms",
+    "mobModelTexture": "tigerzoom.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -16,10 +16,10 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.25
     },
     "boundingBoxScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.25
     },
     "modelLayers": [],
     "animations": [
@@ -166,6 +166,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

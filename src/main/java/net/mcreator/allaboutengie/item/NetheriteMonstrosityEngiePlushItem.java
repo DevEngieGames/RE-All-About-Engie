@@ -1,10 +1,9 @@
 package net.mcreator.allaboutengie.item;
 
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
 public class NetheriteMonstrosityEngiePlushItem extends Item {
-	public NetheriteMonstrosityEngiePlushItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
+	public NetheriteMonstrosityEngiePlushItem(Item.Properties properties) {
+		super(properties);
 	}
 }

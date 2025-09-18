@@ -1,31 +1,7 @@
 {
-  "loader": "forge:separate_transforms",
-  "gui_light": "front",
-  "base": {
-    "parent": "allaboutengie:custom/ban_hammer_biblicallyaccurate",
-    "textures": {
-      "0": "allaboutengie:block/biblicallyaccurateyeah",
-      "particle": "allaboutengie:item/biblicallyaccuratepixel"
-    }
-  },
-  "perspectives": {
-    "gui": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/biblicallyaccuratepixel"
-      }
-    },
-    "fixed": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/biblicallyaccuratepixel"
-      }
-    },
-    "ground": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/biblicallyaccuratepixel"
-      }
-    }
+  "parent": "allaboutengie:custom/ban_hammer_biblicallyaccurate",
+  "textures": {
+    "0": "allaboutengie:block/biblicallyaccurateyeah",
+    "particle": "allaboutengie:item/biblicallyaccuratepixel"
   }
 }

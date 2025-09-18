@@ -123,6 +123,9 @@
     "whenThisMobKillsAnother": {
       "name": "BiblicallyAccurateEngieThisEntityKillsAnotherOne"
     },
+    "onMobTickUpdate": {
+      "name": "BiblicallyAccurateEngieOnEntityTickUpdate"
+    },
     "onInitialSpawn": {
       "name": "BiblicallyAccurateEngieOnInitialEntitySpawn"
     },
@@ -160,6 +163,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

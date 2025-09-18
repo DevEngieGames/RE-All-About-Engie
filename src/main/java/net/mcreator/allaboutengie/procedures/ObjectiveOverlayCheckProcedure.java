@@ -8,9 +8,9 @@ public class ObjectiveOverlayCheckProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).ShowObjectiveOverlay == true) {
+		if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).ShowObjectiveOverlay == true) {
 			return true;
-		} else if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).ShowObjectiveOverlay == false) {
+		} else if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).ShowObjectiveOverlay == false) {
 			return false;
 		}
 		return false;

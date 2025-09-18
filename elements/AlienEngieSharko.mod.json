@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "Gnorp",
+    "mobName": "Alien Engie Sharko",
     "mobLabel": "",
     "mobModelName": "Modelalienengiesharko",
     "mobModelTexture": "alienengiesharko.png",
@@ -157,6 +157,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

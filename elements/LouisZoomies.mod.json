@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Louis",
     "mobLabel": "Louis",
-    "mobModelName": "Modeltoby",
-    "mobModelTexture": "louis.png",
+    "mobModelName": "Modeltobyzooms",
+    "mobModelTexture": "louiszoom.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -166,6 +166,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

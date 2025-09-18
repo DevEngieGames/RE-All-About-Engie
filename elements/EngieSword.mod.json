@@ -8,6 +8,7 @@
     "texture": "engisword",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "",
     "name": "Engie Sword",
     "specialInformation": {
       "fixedValue": []

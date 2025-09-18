@@ -8,6 +8,7 @@
     "texture": "engipickaxe",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "",
     "name": "Engie Pickaxe",
     "specialInformation": {
       "fixedValue": []

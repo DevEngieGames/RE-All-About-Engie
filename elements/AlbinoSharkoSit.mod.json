@@ -133,7 +133,7 @@
       "name": "SharkoKilledByPlayersCountUp"
     },
     "onRightClickedOn": {
-      "name": "AlbinoSitRC"
+      "name": "AlbinoTameRC2"
     },
     "onMobTickUpdate": {
       "name": "SharkoChanceForLay"

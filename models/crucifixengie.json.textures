@@ -5,6 +5,12 @@
         "0": "engiescrucifix"
       },
       "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimatterengiescrucifix"
+      },
+      "name": "antimatter"
     }
   }
 }

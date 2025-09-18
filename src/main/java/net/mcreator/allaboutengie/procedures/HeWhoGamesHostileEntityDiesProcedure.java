@@ -60,29 +60,17 @@ public class HeWhoGamesHostileEntityDiesProcedure {
 						"tellraw @p [\"\",{\"text\":\"No longer being haunted by the Spirit, you find yourself some items in return.\",\"bold\":true,\"color\":\"gray\"},{\"text\":\"\\n\",\"bold\":true},{\"text\":\"Congratulations \",\"bold\":true,\"color\":\"gold\"},{\"selector\":\"@p\",\"bold\":true,\"underlined\":true},{\"text\":\".\",\"bold\":true,\"color\":\"gold\"}]");
 			}
 		}
-		if (!((Entity) world.getEntitiesOfClass(HeWhoGamesEntity.class, AABB.ofSize(new Vec3(x, y, z), 100000, 100000, 100000), e -> true).stream().sorted(new Object() {
-			Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-				return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-			}
-		}.compareDistOf(x, y, z)).findFirst().orElse(null)).level().isClientSide())
-			((Entity) world.getEntitiesOfClass(HeWhoGamesEntity.class, AABB.ofSize(new Vec3(x, y, z), 100000, 100000, 100000), e -> true).stream().sorted(new Object() {
-				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-				}
-			}.compareDistOf(x, y, z)).findFirst().orElse(null)).discard();
-		if (!((Entity) world.getEntitiesOfClass(HeWhoGamesHostileEntity.class, AABB.ofSize(new Vec3(x, y, z), 100000, 100000, 100000), e -> true).stream().sorted(new Object() {
-			Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-				return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-			}
-		}.compareDistOf(x, y, z)).findFirst().orElse(null)).level().isClientSide())
-			((Entity) world.getEntitiesOfClass(HeWhoGamesHostileEntity.class, AABB.ofSize(new Vec3(x, y, z), 100000, 100000, 100000), e -> true).stream().sorted(new Object() {
-				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-				}
-			}.compareDistOf(x, y, z)).findFirst().orElse(null)).discard();
+		if (!(findEntityInWorldRange(world, HeWhoGamesEntity.class, x, y, z, 100000)).level().isClientSide())
+			(findEntityInWorldRange(world, HeWhoGamesEntity.class, x, y, z, 100000)).discard();
+		if (!(findEntityInWorldRange(world, HeWhoGamesHostileEntity.class, x, y, z, 100000)).level().isClientSide())
+			(findEntityInWorldRange(world, HeWhoGamesHostileEntity.class, x, y, z, 100000)).discard();
 		AllaboutengieModVariables.MapVariables.get(world).hewhowatches = false;
 		AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 		AllaboutengieModVariables.MapVariables.get(world).nightmare = 0;
 		AllaboutengieModVariables.MapVariables.get(world).syncData(world);
+	}
+
+	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
+		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

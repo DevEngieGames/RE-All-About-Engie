@@ -1,49 +1,57 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.HierarchicalModel;
 
 import net.mcreator.allaboutengie.entity.ExoticSharkoSleepEntity;
 import net.mcreator.allaboutengie.client.model.animations.boyotiredAnimation;
 import net.mcreator.allaboutengie.client.model.Modelboyotired;
 
-public class ExoticSharkoSleepRenderer extends MobRenderer<ExoticSharkoSleepEntity, Modelboyotired<ExoticSharkoSleepEntity>> {
+public class ExoticSharkoSleepRenderer extends MobRenderer<ExoticSharkoSleepEntity, LivingEntityRenderState, Modelboyotired> {
+	private ExoticSharkoSleepEntity entity = null;
+
 	public ExoticSharkoSleepRenderer(EntityRendererProvider.Context context) {
 		super(context, new AnimatedModel(context.bakeLayer(Modelboyotired.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(ExoticSharkoSleepEntity entity) {
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(ExoticSharkoSleepEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+		if (this.model instanceof AnimatedModel) {
+			((AnimatedModel) this.model).setEntity(entity);
+		}
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/exoticsharkonewtamedtired.png");
 	}
 
-	private static final class AnimatedModel extends Modelboyotired<ExoticSharkoSleepEntity> {
-		private final ModelPart root;
-		private final HierarchicalModel animator = new HierarchicalModel<ExoticSharkoSleepEntity>() {
-			@Override
-			public ModelPart root() {
-				return root;
-			}
-
-			@Override
-			public void setupAnim(ExoticSharkoSleepEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-				this.root().getAllParts().forEach(ModelPart::resetPose);
-				this.animate(entity.animationState0, boyotiredAnimation.SharkoTiredIdle, ageInTicks, 1f);
-			}
-		};
+	private static final class AnimatedModel extends Modelboyotired {
+		private ExoticSharkoSleepEntity entity = null;
 
 		public AnimatedModel(ModelPart root) {
 			super(root);
-			this.root = root;
+		}
+
+		public void setEntity(ExoticSharkoSleepEntity entity) {
+			this.entity = entity;
 		}
 
 		@Override
-		public void setupAnim(ExoticSharkoSleepEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-			animator.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+		public void setupAnim(LivingEntityRenderState state) {
+			this.root().getAllParts().forEach(ModelPart::resetPose);
+			this.animate(entity.animationState0, boyotiredAnimation.SharkoTiredIdle, state.ageInTicks, 1f);
+			super.setupAnim(state);
 		}
 	}
 }

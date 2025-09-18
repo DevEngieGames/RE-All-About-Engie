@@ -1,103 +1,86 @@
 package net.mcreator.allaboutengie.item;
 
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.equipment.EquipmentAssets;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.TagKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.client.resources.model.EquipmentClientInfo;
 
+import net.mcreator.allaboutengie.init.AllaboutengieModItems;
+
+import java.util.Map;
+
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public abstract class CyberbloodItem extends ArmorItem {
-	public CyberbloodItem(ArmorItem.Type type, Item.Properties properties) {
-		super(new ArmorMaterial() {
-			@Override
-			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 50;
-			}
+	public static ArmorMaterial ARMOR_MATERIAL = new ArmorMaterial(50, Map.of(ArmorType.BOOTS, 50, ArmorType.LEGGINGS, 50, ArmorType.CHESTPLATE, 50, ArmorType.HELMET, 50, ArmorType.BODY, 50), 15,
+			DeferredHolder.create(Registries.SOUND_EVENT, ResourceLocation.parse("item.armor.equip_diamond")), 4f, 0.4f, TagKey.create(Registries.ITEM, ResourceLocation.parse("allaboutengie:cyberblood_repair_items")),
+			ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.parse("allaboutengie:cyberblood")));
 
+	@SubscribeEvent
+	public static void registerItemExtensions(RegisterClientExtensionsEvent event) {
+		event.registerItem(new IClientItemExtensions() {
 			@Override
-			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{50, 50, 50, 50}[type.getSlot().getIndex()];
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/cyberblood__layer_1.png");
 			}
+		}, AllaboutengieModItems.CYBERBLOOD_HELMET.get());
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/cyberblood__layer_1.png");
+			}
+		}, AllaboutengieModItems.CYBERBLOOD_CHESTPLATE.get());
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/cyberblood__layer_2.png");
+			}
+		}, AllaboutengieModItems.CYBERBLOOD_LEGGINGS.get());
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/cyberblood__layer_1.png");
+			}
+		}, AllaboutengieModItems.CYBERBLOOD_BOOTS.get());
+	}
 
-			@Override
-			public int getEnchantmentValue() {
-				return 15;
-			}
-
-			@Override
-			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("item.armor.equip_diamond"));
-			}
-
-			@Override
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
-			}
-
-			@Override
-			public String getName() {
-				return "cyberblood";
-			}
-
-			@Override
-			public float getToughness() {
-				return 4f;
-			}
-
-			@Override
-			public float getKnockbackResistance() {
-				return 0.4f;
-			}
-		}, type, properties);
+	private CyberbloodItem(ArmorType type, Item.Properties properties) {
+		super(ARMOR_MATERIAL, type, properties);
 	}
 
 	public static class Helmet extends CyberbloodItem {
-		public Helmet() {
-			super(ArmorItem.Type.HELMET, new Item.Properties());
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/cyberblood__layer_1.png";
+		public Helmet(Item.Properties properties) {
+			super(ArmorType.HELMET, properties);
 		}
 	}
 
 	public static class Chestplate extends CyberbloodItem {
-		public Chestplate() {
-			super(ArmorItem.Type.CHESTPLATE, new Item.Properties());
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/cyberblood__layer_1.png";
+		public Chestplate(Item.Properties properties) {
+			super(ArmorType.CHESTPLATE, properties);
 		}
 	}
 
 	public static class Leggings extends CyberbloodItem {
-		public Leggings() {
-			super(ArmorItem.Type.LEGGINGS, new Item.Properties());
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/cyberblood__layer_2.png";
+		public Leggings(Item.Properties properties) {
+			super(ArmorType.LEGGINGS, properties);
 		}
 	}
 
 	public static class Boots extends CyberbloodItem {
-		public Boots() {
-			super(ArmorItem.Type.BOOTS, new Item.Properties());
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/cyberblood__layer_1.png";
+		public Boots(Item.Properties properties) {
+			super(ArmorType.BOOTS, properties);
 		}
 	}
 }

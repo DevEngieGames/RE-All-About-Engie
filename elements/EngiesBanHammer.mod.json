@@ -9,7 +9,7 @@
     "customModelName": "ban_hammer_engie:default",
     "blockingModelName": "Normal blocking",
     "guiTexture": "engiebanpixel",
-    "name": "Engies own Ban Hammer",
+    "name": "Engies Ban Hammer",
     "specialInformation": {
       "fixedValue": [
         "Congrats!"

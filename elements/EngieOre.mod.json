@@ -40,7 +40,7 @@
     "specialInformation": {
       "fixedValue": []
     },
-    "hardness": 1.5,
+    "hardness": 3.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
@@ -55,7 +55,7 @@
     ],
     "destroyTool": "pickaxe",
     "customDrop": {
-      "value": ""
+      "value": "Blocks.AIR"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -64,14 +64,14 @@
     "plantsGrowOn": false,
     "canRedstoneConnect": false,
     "lightOpacity": 15,
-    "tickRate": 0,
+    "tickRate": 20,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
     "emittedRedstonePower": {
       "fixedValue": 15.0
     },
-    "colorOnMap": "DEFAULT",
+    "colorOnMap": "ADOBE",
     "noteBlockInstrument": "basedrum",
     "creativePickItem": {
       "value": ""
@@ -131,6 +131,15 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onBlockAdded": {
+      "name": "EngieOreOnTickUpdate"
+    },
+    "onTickUpdate": {
+      "name": "EngieOreOnTickUpdate"
+    },
+    "onDestroyedByPlayer": {
+      "name": "EngieOreBlockDestroyedByPlayer"
+    },
     "generateFeature": true,
     "restrictionBiomes": [
       {
@@ -153,7 +162,7 @@
     ],
     "generationShape": "UNIFORM",
     "frequencyPerChunks": 10,
-    "frequencyOnChunk": 16,
+    "frequencyOnChunk": 5,
     "minGenerateHeight": 0,
     "maxGenerateHeight": 128
   }

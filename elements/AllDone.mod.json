@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "All About Engie (100%)",
-    "achievementDescription": " Get all advancements and all items at least once. Congrats my friend.",
+    "achievementDescription": "Get all advancements and all items at least once. Congrats my friend.",
     "achievementIcon": {
       "value": "CUSTOM:AllAboutEngieAdvancementIcon"
     },

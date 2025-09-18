@@ -1,47 +1,28 @@
 package net.mcreator.allaboutengie.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.TagKey;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 
 import net.mcreator.allaboutengie.procedures.LargeBanObtainProProcedure;
 
 public class LargeScytheItem extends SwordItem {
-	public LargeScytheItem() {
-		super(new Tier() {
-			public int getUses() {
-				return 2640;
-			}
+	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_STONE_TOOL, 2112, 4f, 0, 10, TagKey.create(Registries.ITEM, ResourceLocation.parse("allaboutengie:large_scythe_repair_items")));
 
-			public float getSpeed() {
-				return 4f;
-			}
-
-			public float getAttackDamageBonus() {
-				return 524f;
-			}
-
-			public int getLevel() {
-				return 1;
-			}
-
-			public int getEnchantmentValue() {
-				return 10;
-			}
-
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
-			}
-		}, 3, -1.5f, new Item.Properties());
+	public LargeScytheItem(Item.Properties properties) {
+		super(TOOL_MATERIAL, 527f, -1.5f, properties);
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		LargeBanObtainProProcedure.execute(world, entity);
+		LargeBanObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

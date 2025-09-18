@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "[Tamed] Exotic Sharko (Laying On Side)",
+    "mobName": "Exotic Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyolayonside",
     "mobModelTexture": "exoticsharkonewtamed.png",
@@ -133,7 +133,7 @@
       "name": "SharkoKilledByPlayersCountUp"
     },
     "onRightClickedOn": {
-      "name": "ExoticLayOnSideRC"
+      "name": "ExoticTamedRC2"
     },
     "onMobTickUpdate": {
       "name": "SharkoChanceForSleep"
@@ -169,6 +169,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

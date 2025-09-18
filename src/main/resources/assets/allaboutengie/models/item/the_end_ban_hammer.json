@@ -1,31 +1,7 @@
 {
-  "loader": "forge:separate_transforms",
-  "gui_light": "front",
-  "base": {
-    "parent": "allaboutengie:custom/ban_hammer_theend",
-    "textures": {
-      "0": "allaboutengie:block/theendbanhammer",
-      "particle": "allaboutengie:item/theendbanpixel"
-    }
-  },
-  "perspectives": {
-    "gui": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/theendbanpixel"
-      }
-    },
-    "fixed": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/theendbanpixel"
-      }
-    },
-    "ground": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/theendbanpixel"
-      }
-    }
+  "parent": "allaboutengie:custom/ban_hammer_theend",
+  "textures": {
+    "0": "allaboutengie:block/theendbanhammer",
+    "particle": "allaboutengie:item/theendbanpixel"
   }
 }

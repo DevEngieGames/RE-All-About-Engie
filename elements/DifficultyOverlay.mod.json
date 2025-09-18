@@ -7,7 +7,7 @@
       {
         "type": "image",
         "data": {
-          "image": "diff0icon.png",
+          "image": "difficulty0new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty0ReturnTrueCheck"
@@ -21,7 +21,7 @@
       {
         "type": "image",
         "data": {
-          "image": "diff1icon.png",
+          "image": "difficulty1new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty1ReturnTrueCheck"
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "data": {
-          "image": "diff2icon.png",
+          "image": "difficulty2new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty2ReturnTrueCheck"
@@ -49,7 +49,7 @@
       {
         "type": "image",
         "data": {
-          "image": "madengiedifficon.png",
+          "image": "difficulty3new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty3ReturnTrueCheck"
@@ -63,7 +63,7 @@
       {
         "type": "image",
         "data": {
-          "image": "angryengiedifficon.png",
+          "image": "difficulty4new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty4ReturnTrueCheck"
@@ -77,7 +77,7 @@
       {
         "type": "image",
         "data": {
-          "image": "enragedengiedifficon.png",
+          "image": "difficulty5new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty5ReturnTrueCheck"
@@ -91,7 +91,7 @@
       {
         "type": "image",
         "data": {
-          "image": "outragedengiedifficon.png",
+          "image": "difficulty6new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty6ReturnTrueCheck"
@@ -105,7 +105,7 @@
       {
         "type": "image",
         "data": {
-          "image": "biblicallyaccurateengiedifficon.png",
+          "image": "difficulty7new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty7ReturnTrueCheck"
@@ -119,7 +119,7 @@
       {
         "type": "image",
         "data": {
-          "image": "monstrosityengiedifficon.png",
+          "image": "difficulty8new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty8ReturnTrueCheck"
@@ -133,7 +133,7 @@
       {
         "type": "image",
         "data": {
-          "image": "doomsdayengiedifficon.png",
+          "image": "difficulty9new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty9ReturnTrueCheck"
@@ -147,7 +147,7 @@
       {
         "type": "image",
         "data": {
-          "image": "superdoomsdayengiedifficon.png",
+          "image": "difficulty10new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty10ReturnTrueCheck"
@@ -161,7 +161,7 @@
       {
         "type": "image",
         "data": {
-          "image": "theendengiedifficon.png",
+          "image": "difficulty11new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty11ReturnTrueCheck"
@@ -175,7 +175,7 @@
       {
         "type": "image",
         "data": {
-          "image": "engiedifficon.png",
+          "image": "difficulty12new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty12ReturnTrueCheck"
@@ -189,7 +189,7 @@
       {
         "type": "image",
         "data": {
-          "image": "mindscapeengiedifficon.png",
+          "image": "difficulty13new.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty13ReturnTrueCheck"
@@ -203,7 +203,21 @@
       {
         "type": "image",
         "data": {
-          "image": "insanityengiedifficon.png",
+          "image": "antimatterdifficulty1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty14ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty2.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty15ReturnTrueCheck"
@@ -217,7 +231,63 @@
       {
         "type": "image",
         "data": {
-          "image": "pureinsanityengiedifficon.png",
+          "image": "antimatterdifficulty3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty16ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty17ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty18ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty6.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty19ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty7.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty20ReturnTrueCheck"
@@ -231,10 +301,10 @@
       {
         "type": "image",
         "data": {
-          "image": "engiegamesdifficon.png",
+          "image": "antimatterdifficulty8.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "Difficulty525ReturnTrueCheck"
+            "name": "Difficulty21ReturnTrueCheck"
           },
           "anchorPoint": "TOP_RIGHT",
           "x": 301,
@@ -245,7 +315,105 @@
       {
         "type": "image",
         "data": {
-          "image": "wormholedifficon.png",
+          "image": "antimatterdifficulty9.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty22ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty10.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty23ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty11.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty24ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty12.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty25ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty13.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty26ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty14.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty27ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "antimatterdifficulty15.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty28ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wormholenewdifficon.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty690ReturnTrueCheck"
@@ -259,7 +427,49 @@
       {
         "type": "image",
         "data": {
-          "image": "sufferdifficon.png",
+          "image": "challenge1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty29ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "challenge2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty30ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "distorted.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty250000ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 301,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "engie.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "Difficulty525000ReturnTrueCheck"
@@ -269,10 +479,41 @@
           "y": 0,
           "locked": false
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "slayeddragondiff2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty13SlainDragonReturnTrueCheck"
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 301,
+          "y": 136,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "noslayeddragondiff2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty13NoSlainDragonReturnTrueCheck"
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 301,
+          "y": 136,
+          "locked": false
+        }
       }
     ],
     "baseTexture": "",
     "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "DifficultyOverlayDisplayOverlayIngame"
+    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,

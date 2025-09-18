@@ -1,10 +1,13 @@
 package net.mcreator.allaboutengie.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
@@ -13,7 +16,6 @@ import net.mcreator.allaboutengie.world.inventory.CustomRecipeBookMenu;
 import net.mcreator.allaboutengie.procedures.RecipepagenumbergetProcedure;
 import net.mcreator.allaboutengie.network.CustomRecipeBookButtonMessage;
 import net.mcreator.allaboutengie.init.AllaboutengieModScreens;
-import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -50,7 +52,6 @@ public class CustomRecipeBookScreen extends AbstractContainerScreen<CustomRecipe
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -60,9 +61,9 @@ public class CustomRecipeBookScreen extends AbstractContainerScreen<CustomRecipe
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-		guiGraphics.blit(ResourceLocation.parse("allaboutengie:textures/screens/custom_recipe_book_pageoverlay.png"), this.leftPos + 0, this.topPos + 0, 0, 0, 176, 166, 176, 166);
-		guiGraphics.blit(ResourceLocation.parse("allaboutengie:textures/screens/recipebook.png"), this.leftPos + 90, this.topPos + 27, 0, 0, 32, 32, 32, 32);
+		guiGraphics.blit(RenderType::guiTextured, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(RenderType::guiTextured, ResourceLocation.parse("allaboutengie:textures/screens/custom_recipe_book_pageoverlay.png"), this.leftPos + 0, this.topPos + 0, 0, 0, 176, 166, 176, 166);
+		guiGraphics.blit(RenderType::guiTextured, ResourceLocation.parse("allaboutengie:textures/screens/recipebook.png"), this.leftPos + 90, this.topPos + 27, 0, 0, 32, 32, 32, 32);
 		RenderSystem.disableBlend();
 	}
 
@@ -87,7 +88,7 @@ public class CustomRecipeBookScreen extends AbstractContainerScreen<CustomRecipe
 			int x = CustomRecipeBookScreen.this.x;
 			int y = CustomRecipeBookScreen.this.y;
 			if (true) {
-				AllaboutengieMod.PACKET_HANDLER.sendToServer(new CustomRecipeBookButtonMessage(0, x, y, z));
+				PacketDistributor.sendToServer(new CustomRecipeBookButtonMessage(0, x, y, z));
 				CustomRecipeBookButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + -25, this.topPos + 81, 25, 20).build();
@@ -96,7 +97,7 @@ public class CustomRecipeBookScreen extends AbstractContainerScreen<CustomRecipe
 			int x = CustomRecipeBookScreen.this.x;
 			int y = CustomRecipeBookScreen.this.y;
 			if (true) {
-				AllaboutengieMod.PACKET_HANDLER.sendToServer(new CustomRecipeBookButtonMessage(1, x, y, z));
+				PacketDistributor.sendToServer(new CustomRecipeBookButtonMessage(1, x, y, z));
 				CustomRecipeBookButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}).bounds(this.leftPos + -25, this.topPos + 61, 25, 20).build();
@@ -105,7 +106,7 @@ public class CustomRecipeBookScreen extends AbstractContainerScreen<CustomRecipe
 			int x = CustomRecipeBookScreen.this.x;
 			int y = CustomRecipeBookScreen.this.y;
 			if (true) {
-				AllaboutengieMod.PACKET_HANDLER.sendToServer(new CustomRecipeBookButtonMessage(2, x, y, z));
+				PacketDistributor.sendToServer(new CustomRecipeBookButtonMessage(2, x, y, z));
 				CustomRecipeBookButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		}).bounds(this.leftPos + -25, this.topPos + 101, 25, 20).build();
@@ -114,7 +115,7 @@ public class CustomRecipeBookScreen extends AbstractContainerScreen<CustomRecipe
 			int x = CustomRecipeBookScreen.this.x;
 			int y = CustomRecipeBookScreen.this.y;
 			if (true) {
-				AllaboutengieMod.PACKET_HANDLER.sendToServer(new CustomRecipeBookButtonMessage(3, x, y, z));
+				PacketDistributor.sendToServer(new CustomRecipeBookButtonMessage(3, x, y, z));
 				CustomRecipeBookButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		}).bounds(this.leftPos + -25, this.topPos + 41, 25, 20).build();
@@ -123,7 +124,7 @@ public class CustomRecipeBookScreen extends AbstractContainerScreen<CustomRecipe
 			int x = CustomRecipeBookScreen.this.x;
 			int y = CustomRecipeBookScreen.this.y;
 			if (true) {
-				AllaboutengieMod.PACKET_HANDLER.sendToServer(new CustomRecipeBookButtonMessage(4, x, y, z));
+				PacketDistributor.sendToServer(new CustomRecipeBookButtonMessage(4, x, y, z));
 				CustomRecipeBookButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
 		}).bounds(this.leftPos + -25, this.topPos + 121, 25, 20).build();
@@ -132,7 +133,7 @@ public class CustomRecipeBookScreen extends AbstractContainerScreen<CustomRecipe
 			int x = CustomRecipeBookScreen.this.x;
 			int y = CustomRecipeBookScreen.this.y;
 			if (true) {
-				AllaboutengieMod.PACKET_HANDLER.sendToServer(new CustomRecipeBookButtonMessage(5, x, y, z));
+				PacketDistributor.sendToServer(new CustomRecipeBookButtonMessage(5, x, y, z));
 				CustomRecipeBookButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
 		}).bounds(this.leftPos + -25, this.topPos + 21, 25, 20).build();

@@ -1,31 +1,7 @@
 {
-  "loader": "forge:separate_transforms",
-  "gui_light": "front",
-  "base": {
-    "parent": "allaboutengie:custom/ban_hammer_mindscapeengie",
-    "textures": {
-      "0": "allaboutengie:block/mindscapeengiebanhammer",
-      "particle": "allaboutengie:item/mindscapebanpixel"
-    }
-  },
-  "perspectives": {
-    "gui": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/mindscapebanpixel"
-      }
-    },
-    "fixed": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/mindscapebanpixel"
-      }
-    },
-    "ground": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/mindscapebanpixel"
-      }
-    }
+  "parent": "allaboutengie:custom/ban_hammer_mindscapeengie",
+  "textures": {
+    "0": "allaboutengie:block/mindscapeengiebanhammer",
+    "particle": "allaboutengie:item/mindscapebanpixel"
   }
 }

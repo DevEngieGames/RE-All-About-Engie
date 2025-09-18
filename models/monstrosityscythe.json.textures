@@ -5,6 +5,12 @@
         "0": "monstrosityscythe"
       },
       "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimattermonstrosityscythe"
+      },
+      "name": "antimatter"
     }
   }
 }

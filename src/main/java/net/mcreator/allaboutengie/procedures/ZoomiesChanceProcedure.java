@@ -1,9 +1,9 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
@@ -63,10 +63,10 @@ import javax.annotation.Nullable;
 
 import java.util.Comparator;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class ZoomiesChanceProcedure {
 	@SubscribeEvent
-	public static void onEntityTick(LivingEvent.LivingTickEvent event) {
+	public static void onEntityTick(EntityTickEvent.Pre event) {
 		execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 	}
 
@@ -89,23 +89,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(SharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof SharkoTamedZoomiesEntity) {
+					if ((findEntityInWorldRange(world, SharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof SharkoTamedZoomiesEntity) {
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Sharko")) {
-							if (((Entity) world.getEntitiesOfClass(SharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+							if ((findEntityInWorldRange(world, SharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 								_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-							((Entity) world.getEntitiesOfClass(SharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, SharkoTamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -121,23 +109,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(AlbinoSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof AlbinoSharkoTamedZoomiesEntity) {
+					if ((findEntityInWorldRange(world, AlbinoSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof AlbinoSharkoTamedZoomiesEntity) {
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Albino Sharko")) {
-							if (((Entity) world.getEntitiesOfClass(AlbinoSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+							if ((findEntityInWorldRange(world, AlbinoSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 								_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-							((Entity) world.getEntitiesOfClass(AlbinoSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, AlbinoSharkoTamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -153,23 +129,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(RareSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof RareSharkoTamedZoomiesEntity) {
+					if ((findEntityInWorldRange(world, RareSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof RareSharkoTamedZoomiesEntity) {
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Rare Sharko")) {
-							if (((Entity) world.getEntitiesOfClass(RareSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+							if ((findEntityInWorldRange(world, RareSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 								_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-							((Entity) world.getEntitiesOfClass(RareSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, RareSharkoTamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -185,23 +149,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(EpicSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof EpicSharkoTamedZoomiesEntity) {
+					if ((findEntityInWorldRange(world, EpicSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof EpicSharkoTamedZoomiesEntity) {
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Epic Sharko")) {
-							if (((Entity) world.getEntitiesOfClass(EpicSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+							if ((findEntityInWorldRange(world, EpicSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 								_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-							((Entity) world.getEntitiesOfClass(EpicSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, EpicSharkoTamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -217,23 +169,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(LegendarySharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LegendarySharkoTamedZoomiesEntity) {
+					if ((findEntityInWorldRange(world, LegendarySharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof LegendarySharkoTamedZoomiesEntity) {
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Legendary Sharko")) {
-							if (((Entity) world.getEntitiesOfClass(LegendarySharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+							if ((findEntityInWorldRange(world, LegendarySharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 								_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-							((Entity) world.getEntitiesOfClass(LegendarySharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, LegendarySharkoTamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -249,23 +189,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(MythicSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof MythicSharkoTamedZoomiesEntity) {
+					if ((findEntityInWorldRange(world, MythicSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof MythicSharkoTamedZoomiesEntity) {
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Mythic Sharko")) {
-							if (((Entity) world.getEntitiesOfClass(MythicSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+							if ((findEntityInWorldRange(world, MythicSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 								_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-							((Entity) world.getEntitiesOfClass(MythicSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, MythicSharkoTamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -281,23 +209,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(ExoticSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof ExoticSharkoTamedZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(ExoticSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, ExoticSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof ExoticSharkoTamedZoomiesEntity) {
+						if ((findEntityInWorldRange(world, ExoticSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Exotic Sharko")) {
-							((Entity) world.getEntitiesOfClass(ExoticSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, ExoticSharkoTamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -313,23 +229,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(EngieSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof EngieSharkoTamedZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(EngieSharkoRareTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, EngieSharkoTamedZoomiesEntity.class, x, y, z, 1)) instanceof EngieSharkoTamedZoomiesEntity) {
+						if ((findEntityInWorldRange(world, EngieSharkoRareTamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Engie Sharko")) {
-							((Entity) world.getEntitiesOfClass(EngieSharkoTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, EngieSharkoTamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -345,23 +249,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(EngieSharkoRareTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof EngieSharkoRareTamedZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(EngieSharkoRare2TamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, EngieSharkoRareTamedZoomiesEntity.class, x, y, z, 1)) instanceof EngieSharkoRareTamedZoomiesEntity) {
+						if ((findEntityInWorldRange(world, EngieSharkoRare2TamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Rare Engie Sharko")) {
-							((Entity) world.getEntitiesOfClass(EngieSharkoRareTamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, EngieSharkoRareTamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -377,23 +269,11 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(EngieSharkoRare2TamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof EngieSharkoRare2TamedZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(EngieSharkoRare2TamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, EngieSharkoRare2TamedZoomiesEntity.class, x, y, z, 1)) instanceof EngieSharkoRare2TamedZoomiesEntity) {
+						if ((findEntityInWorldRange(world, EngieSharkoRare2TamedZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 						if (!(entity.getDisplayName().getString()).equals("[Tamed] Tiger Sharko")) {
-							((Entity) world.getEntitiesOfClass(EngieSharkoRare2TamedZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).setCustomName(Component.literal((entity.getDisplayName().getString())));
+							(findEntityInWorldRange(world, EngieSharkoRare2TamedZoomiesEntity.class, x, y, z, 1)).setCustomName(Component.literal((entity.getDisplayName().getString())));
 						}
 					}
 				});
@@ -409,16 +289,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(TobyZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TobyZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(TobyZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, TobyZoomiesEntity.class, x, y, z, 1)) instanceof TobyZoomiesEntity) {
+						if ((findEntityInWorldRange(world, TobyZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -434,16 +306,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(MarshalZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof MarshalZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(MarshalZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, MarshalZoomiesEntity.class, x, y, z, 1)) instanceof MarshalZoomiesEntity) {
+						if ((findEntityInWorldRange(world, MarshalZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -459,16 +323,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(TigerZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TigerZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(TigerZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, TigerZoomiesEntity.class, x, y, z, 1)) instanceof TigerZoomiesEntity) {
+						if ((findEntityInWorldRange(world, TigerZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -484,16 +340,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(LouisZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LouisZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(LouisZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, LouisZoomiesEntity.class, x, y, z, 1)) instanceof LouisZoomiesEntity) {
+						if ((findEntityInWorldRange(world, LouisZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -509,16 +357,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(BuddyZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof BuddyZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(BuddyZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, BuddyZoomiesEntity.class, x, y, z, 1)) instanceof BuddyZoomiesEntity) {
+						if ((findEntityInWorldRange(world, BuddyZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -534,16 +374,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(ApolloZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof ApolloZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(ApolloZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, ApolloZoomiesEntity.class, x, y, z, 1)) instanceof ApolloZoomiesEntity) {
+						if ((findEntityInWorldRange(world, ApolloZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -559,16 +391,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(AtlasZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof AtlasZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(AtlasZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, AtlasZoomiesEntity.class, x, y, z, 1)) instanceof AtlasZoomiesEntity) {
+						if ((findEntityInWorldRange(world, AtlasZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -584,16 +408,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(CBEZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof CBEZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(CBEZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, CBEZoomiesEntity.class, x, y, z, 1)) instanceof CBEZoomiesEntity) {
+						if ((findEntityInWorldRange(world, CBEZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -609,16 +425,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(PBEZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof PBEZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(PBEZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, PBEZoomiesEntity.class, x, y, z, 1)) instanceof PBEZoomiesEntity) {
+						if ((findEntityInWorldRange(world, PBEZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -634,16 +442,8 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(Bothan2netZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof Bothan2netZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(Bothan2netZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, Bothan2netZoomiesEntity.class, x, y, z, 1)) instanceof Bothan2netZoomiesEntity) {
+						if ((findEntityInWorldRange(world, Bothan2netZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
@@ -659,20 +459,16 @@ public class ZoomiesChanceProcedure {
 					}
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
-					if (((Entity) world.getEntitiesOfClass(FinneganZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof FinneganZoomiesEntity) {
-						if (((Entity) world.getEntitiesOfClass(FinneganZoomiesEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entity)
+					if ((findEntityInWorldRange(world, FinneganZoomiesEntity.class, x, y, z, 1)) instanceof FinneganZoomiesEntity) {
+						if ((findEntityInWorldRange(world, FinneganZoomiesEntity.class, x, y, z, 1)) instanceof LivingEntity _entity)
 							_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 					}
 				});
 			}
 		}
+	}
+
+	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
+		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

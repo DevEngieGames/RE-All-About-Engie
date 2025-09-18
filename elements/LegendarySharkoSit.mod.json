@@ -133,7 +133,7 @@
       "name": "SharkoKilledByPlayersCountUp"
     },
     "onRightClickedOn": {
-      "name": "LegendarySitRC"
+      "name": "LegendaryTameRC2"
     },
     "onMobTickUpdate": {
       "name": "SharkoChanceForLay"

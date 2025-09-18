@@ -8,6 +8,7 @@
     "texture": "engipaxel",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "",
     "name": "Engie Paxel",
     "specialInformation": {
       "fixedValue": []

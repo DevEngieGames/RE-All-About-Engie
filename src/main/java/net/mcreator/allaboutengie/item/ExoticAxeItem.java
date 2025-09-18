@@ -1,36 +1,17 @@
 package net.mcreator.allaboutengie.item;
 
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.tags.TagKey;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 
 public class ExoticAxeItem extends AxeItem {
-	public ExoticAxeItem() {
-		super(new Tier() {
-			public int getUses() {
-				return 4064;
-			}
+	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 4064, 11f, 0, 25, TagKey.create(Registries.ITEM, ResourceLocation.parse("allaboutengie:exotic_axe_repair_items")));
 
-			public float getSpeed() {
-				return 11f;
-			}
-
-			public float getAttackDamageBonus() {
-				return 10f;
-			}
-
-			public int getLevel() {
-				return 4;
-			}
-
-			public int getEnchantmentValue() {
-				return 25;
-			}
-
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
-			}
-		}, 1, -3f, new Item.Properties());
+	public ExoticAxeItem(Item.Properties properties) {
+		super(TOOL_MATERIAL, 11f, -3f, properties);
 	}
 }

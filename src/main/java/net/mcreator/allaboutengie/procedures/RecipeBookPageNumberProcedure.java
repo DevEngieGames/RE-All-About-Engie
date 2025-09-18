@@ -10,33 +10,27 @@ public class RecipeBookPageNumberProcedure {
 		if (entity == null)
 			return;
 		{
-			String _setval = "Page " + new java.text.DecimalFormat("##").format((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).pageNumber) + " / 100";
-			entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.pageNumberText = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+			_vars.pageNumberText = "Page " + new java.text.DecimalFormat("##").format(entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).pageNumber) + " / 100";
+			_vars.syncPlayerVariables(entity);
 		}
 		CustomRecipeBookWeaponsProcedure.execute(entity, itemstack);
 		CustomRecipeBookArmorProcedure.execute(entity, itemstack);
 		CustomRecipeBookToolsProcedure.execute(entity, itemstack);
 		CustomRecipeBookSharkoProcedure.execute(entity, itemstack);
 		CustomRecipeBookOtherProcedure.execute(entity, itemstack);
-		if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).pageNumber < 1) {
+		if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).pageNumber < 1) {
 			{
-				double _setval = 1;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.pageNumber = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.pageNumber = 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
-		if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).pageNumber > 100) {
+		if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).pageNumber > 100) {
 			{
-				double _setval = 100;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.pageNumber = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.pageNumber = 100;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
 	}

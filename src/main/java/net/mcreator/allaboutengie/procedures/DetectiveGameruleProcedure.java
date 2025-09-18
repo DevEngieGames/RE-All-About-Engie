@@ -1,9 +1,9 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
 
 import net.mcreator.allaboutengie.network.AllaboutengieModVariables;
 import net.mcreator.allaboutengie.init.AllaboutengieModGameRules;
@@ -21,13 +21,11 @@ import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class DetectiveGameruleProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level(), event.player);
-		}
+	public static void onPlayerTick(PlayerTickEvent.Post event) {
+		execute(event, event.getEntity().level(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -37,7 +35,7 @@ public class DetectiveGameruleProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (AllaboutengieModVariables.MapVariables.get(world).Birthday == false && world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE) == false) {
+		if (AllaboutengieModVariables.MapVariables.get(world).Birthday == false && (world instanceof ServerLevel _serverLevelGR0 && _serverLevelGR0.getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE)) == false) {
 			if (AllaboutengieModVariables.MapVariables.get(world).riskcheckedstart == false) {
 				AllaboutengieMod.queueServerWork(5, () -> {
 					RiskCheckProcedure.execute(world, entity);
@@ -45,25 +43,24 @@ public class DetectiveGameruleProcedure {
 				AllaboutengieModVariables.MapVariables.get(world).riskcheckedstart = true;
 				AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 			}
-			if (!(entity instanceof ServerPlayer _plr2 && _plr2.level() instanceof ServerLevel
-					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world"))).isDone())) {
+			if (!(entity instanceof ServerPlayer _plr2 && _plr2.level() instanceof ServerLevel && _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:new_world"))).isDone())) {
 				if (entity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world"));
-					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-					if (!_ap.isDone()) {
-						for (String criteria : _ap.getRemainingCriteria())
-							_player.getAdvancements().award(_adv, criteria);
+					AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:new_world"));
+					if (_adv != null) {
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
+						}
 					}
 				}
 			}
 			{
-				boolean _setval = false;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.detecstart = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.detecstart = false;
+				_vars.syncPlayerVariables(entity);
 			}
-		} else if (AllaboutengieModVariables.MapVariables.get(world).Birthday == false && world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE) == true) {
+		} else if (AllaboutengieModVariables.MapVariables.get(world).Birthday == false && (world instanceof ServerLevel _serverLevelGR4 && _serverLevelGR4.getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE)) == true) {
 			if (AllaboutengieModVariables.MapVariables.get(world).riskcheckedstart == false) {
 				AllaboutengieMod.queueServerWork(5, () -> {
 					RiskCheckProcedure.execute(world, entity);
@@ -71,15 +68,17 @@ public class DetectiveGameruleProcedure {
 				AllaboutengieModVariables.MapVariables.get(world).riskcheckedstart = true;
 				AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 			}
-			if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).detecstart == false) {
+			if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).detecstart == false) {
 				if (!(entity instanceof ServerPlayer _plr6 && _plr6.level() instanceof ServerLevel
-						&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world_new_problem"))).isDone())) {
+						&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:new_world_new_problem"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world_new_problem"));
-						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-						if (!_ap.isDone()) {
-							for (String criteria : _ap.getRemainingCriteria())
-								_player.getAdvancements().award(_adv, criteria);
+						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:new_world_new_problem"));
+						if (_adv != null) {
+							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+							if (!_ap.isDone()) {
+								for (String criteria : _ap.getRemainingCriteria())
+									_player.getAdvancements().award(_adv, criteria);
+							}
 						}
 					}
 					{
@@ -99,15 +98,13 @@ public class DetectiveGameruleProcedure {
 						}
 					}
 					{
-						boolean _setval = true;
-						entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.detecstart = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+						_vars.detecstart = true;
+						_vars.syncPlayerVariables(entity);
 					}
 				}
 			}
-		} else if (AllaboutengieModVariables.MapVariables.get(world).Birthday == true && world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE) == false) {
+		} else if (AllaboutengieModVariables.MapVariables.get(world).Birthday == true && (world instanceof ServerLevel _serverLevelGR10 && _serverLevelGR10.getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE)) == false) {
 			if (AllaboutengieModVariables.MapVariables.get(world).riskcheckedstart == false) {
 				AllaboutengieMod.queueServerWork(5, () -> {
 					RiskCheckProcedure.execute(world, entity);
@@ -115,25 +112,24 @@ public class DetectiveGameruleProcedure {
 				AllaboutengieModVariables.MapVariables.get(world).riskcheckedstart = true;
 				AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 			}
-			if (!(entity instanceof ServerPlayer _plr12 && _plr12.level() instanceof ServerLevel
-					&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world"))).isDone())) {
+			if (!(entity instanceof ServerPlayer _plr12 && _plr12.level() instanceof ServerLevel && _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:new_world"))).isDone())) {
 				if (entity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world"));
-					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-					if (!_ap.isDone()) {
-						for (String criteria : _ap.getRemainingCriteria())
-							_player.getAdvancements().award(_adv, criteria);
+					AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:new_world"));
+					if (_adv != null) {
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
+						}
 					}
 				}
 			}
 			{
-				boolean _setval = false;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.detecstart = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.detecstart = false;
+				_vars.syncPlayerVariables(entity);
 			}
-		} else if (AllaboutengieModVariables.MapVariables.get(world).Birthday == true && world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE) == true) {
+		} else if (AllaboutengieModVariables.MapVariables.get(world).Birthday == true && (world instanceof ServerLevel _serverLevelGR14 && _serverLevelGR14.getGameRules().getBoolean(AllaboutengieModGameRules.DETECTIVE_MODE)) == true) {
 			if (AllaboutengieModVariables.MapVariables.get(world).riskcheckedstart == false) {
 				AllaboutengieMod.queueServerWork(5, () -> {
 					RiskCheckProcedure.execute(world, entity);
@@ -141,15 +137,17 @@ public class DetectiveGameruleProcedure {
 				AllaboutengieModVariables.MapVariables.get(world).riskcheckedstart = true;
 				AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 			}
-			if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).detecstart == false) {
+			if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).detecstart == false) {
 				if (!(entity instanceof ServerPlayer _plr16 && _plr16.level() instanceof ServerLevel
-						&& _plr16.getAdvancements().getOrStartProgress(_plr16.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world_new_problem"))).isDone())) {
+						&& _plr16.getAdvancements().getOrStartProgress(_plr16.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:new_world_new_problem"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:new_world_new_problem"));
-						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-						if (!_ap.isDone()) {
-							for (String criteria : _ap.getRemainingCriteria())
-								_player.getAdvancements().award(_adv, criteria);
+						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:new_world_new_problem"));
+						if (_adv != null) {
+							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+							if (!_ap.isDone()) {
+								for (String criteria : _ap.getRemainingCriteria())
+									_player.getAdvancements().award(_adv, criteria);
+							}
 						}
 					}
 					{
@@ -169,11 +167,9 @@ public class DetectiveGameruleProcedure {
 						}
 					}
 					{
-						boolean _setval = true;
-						entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.detecstart = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+						_vars.detecstart = true;
+						_vars.syncPlayerVariables(entity);
 					}
 				}
 			}

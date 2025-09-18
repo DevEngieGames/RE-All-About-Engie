@@ -1,25 +1,40 @@
 package net.mcreator.allaboutengie.procedures;
 
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.BlockPos;
 
 import net.mcreator.allaboutengie.init.AllaboutengieModItems;
+import net.mcreator.allaboutengie.init.AllaboutengieModEntities;
 import net.mcreator.allaboutengie.init.AllaboutengieModBlocks;
 
 public class MindscapeEngieOnInitialEntitySpawnProcedure {
-	public static void execute(Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (Math.random() > 0.01) {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		} else {
+			if (Math.random() < 0.01) {
+				if (!entity.level().isClientSide())
+					entity.discard();
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = AllaboutengieModEntities.WORMHOLE_ENGIE.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
+					if (entityToSpawn != null) {
+						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+					}
+				}
+			}
 			if (Mth.nextDouble(RandomSource.create(), 1, 45) == 1) {
 				if (Math.random() <= 0.5) {
 					if (entity instanceof LivingEntity _entity) {

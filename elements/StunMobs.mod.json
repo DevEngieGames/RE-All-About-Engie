@@ -6,7 +6,7 @@
     "keyBindingName": "Stun Mobs (All About Engie)",
     "keyBindingCategoryKey": "gameplay",
     "onKeyPressed": {
-      "name": "StunMobsOnKeyPressed"
+      "name": "NOASCIIMCREATOR"
     }
   }
 }

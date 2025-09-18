@@ -8,9 +8,9 @@ import net.mcreator.allaboutengie.entity.BiblicallyAccurateEngieEntity;
 
 public class BiblicallyAccurateEngieNaturalEntitySpawningConditionProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z) {
-		if (!world.getEntitiesOfClass(BiblicallyAccurateEngieEntity.class, AABB.ofSize(new Vec3(x, y, z), 500, 500, 500), e -> true).isEmpty()) {
+		if (!world.getEntitiesOfClass(BiblicallyAccurateEngieEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(500 / 2d), e -> true).isEmpty()) {
 			return false;
-		} else if (!(!world.getEntitiesOfClass(BiblicallyAccurateEngieEntity.class, AABB.ofSize(new Vec3(x, y, z), 500, 500, 500), e -> true).isEmpty())) {
+		} else if (!(!world.getEntitiesOfClass(BiblicallyAccurateEngieEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(500 / 2d), e -> true).isEmpty())) {
 			return true;
 		}
 		return false;

@@ -4,7 +4,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
 public class SuperDoomsDayCrucifixItem extends Item {
-	public SuperDoomsDayCrucifixItem() {
-		super(new Item.Properties().durability(100).rarity(Rarity.RARE));
+	public SuperDoomsDayCrucifixItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.RARE).durability(100).enchantable(22));
 	}
 }

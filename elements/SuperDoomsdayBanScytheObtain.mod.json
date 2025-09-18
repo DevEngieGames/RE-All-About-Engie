@@ -2,20 +2,20 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Super Doomsday Ban Scythe Obtain",
-    "achievementDescription": "Placeholder for Mob Difficulty",
+    "achievementName": "Ok bro this is getting ridiculous.",
+    "achievementDescription": "Obtain a Super Doomsday Ban Hammer/Scythe",
     "achievementIcon": {
       "value": "CUSTOM:SuperDoomsDayAdvancementIcon"
     },
     "background": "Default",
-    "disableDisplay": true,
-    "showPopup": false,
-    "announceToChat": false,
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
     "hideIfNotCompleted": false,
     "rewardLoot": [],
     "rewardRecipes": [],
-    "rewardXP": 0,
-    "achievementType": "task",
+    "rewardXP": 60,
+    "achievementType": "challenge",
     "parent": {
       "value": "CUSTOM:DoomsdayBanScytheObtain"
     },

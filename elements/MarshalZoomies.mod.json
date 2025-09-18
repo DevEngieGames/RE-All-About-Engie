@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Marshal",
     "mobLabel": "Marshal",
-    "mobModelName": "Modeltoby",
-    "mobModelTexture": "marshal.png",
+    "mobModelName": "Modeltobyzooms",
+    "mobModelTexture": "marshalzoom.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -166,6 +166,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

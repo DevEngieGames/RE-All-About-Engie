@@ -1,6 +1,6 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -35,11 +35,9 @@ public class BrowniesOpenedRightclickedProcedure {
 				}
 			}
 			{
-				double _setval = (entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).browniescount + 1;
-				entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.browniescount = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+				_vars.browniescount = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).browniescount + 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
 	}

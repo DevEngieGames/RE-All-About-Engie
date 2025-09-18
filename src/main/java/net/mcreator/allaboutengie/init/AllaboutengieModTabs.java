@@ -3,8 +3,8 @@
  */
 package net.mcreator.allaboutengie.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
@@ -16,7 +16,7 @@ import net.mcreator.allaboutengie.AllaboutengieMod;
 
 public class AllaboutengieModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AllaboutengieMod.MODID);
-	public static final RegistryObject<CreativeModeTab> AAE_ITEMS_ITEMS = REGISTRY.register("aae_items_items",
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AAE_ITEMS_ITEMS = REGISTRY.register("aae_items_items",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.aae_items_items")).icon(() -> new ItemStack(AllaboutengieModItems.ENGIE_GEM.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(AllaboutengieModItems.ENGIE_GEM.get());
 				tabData.accept(AllaboutengieModItems.ANGRY_ENGIE_ESSENCE.get());
@@ -39,6 +39,7 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_SUPER_DOOMSDAY_COIN.get());
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_THE_END_COIN.get());
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIE_COIN.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_ENGIE_COIN.get());
 				tabData.accept(AllaboutengieModItems.CYBER_INGOT.get());
 				tabData.accept(AllaboutengieModItems.BLOOD_INGOT.get());
 				tabData.accept(AllaboutengieModItems.CYBERBLOOD_INGOT.get());
@@ -208,6 +209,11 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIE_GAMES_AXE.get());
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIE_GAMES_SHOVEL.get());
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIE_GAMES_HOE.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_ENGIE_GAMES_SWORD.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_ENGIE_GAMES_PICKAXE.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_ENGIE_GAMES_AXE.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_ENGIE_GAMES_SHOVEL.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_ENGIE_GAMES_HOE.get());
 				tabData.accept(AllaboutengieModItems.ENGI_AXE.get());
 				tabData.accept(AllaboutengieModItems.ENGI_PICKAXE.get());
 				tabData.accept(AllaboutengieModItems.ENGI_SHOVEL.get());
@@ -260,6 +266,14 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.SUPER_DOOMS_DAY_CRUCIFIX.get());
 				tabData.accept(AllaboutengieModItems.THE_END_CRUCIFIX.get());
 				tabData.accept(AllaboutengieModItems.ENGIE_CRUCIFIX.get());
+				tabData.accept(AllaboutengieModItems.ENGIE_GAMES_CRUCIFIX.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_CRUCIFIX.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_DOOMSDAY_CRUCIFIX.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_SUPER_DOOMSDAY_CRUCIFIX.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_THE_END_CRUCIFIX.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIE_CRUCIFIX.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIE_GAMES_CRUCIFIX.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_ENGIE_GAMES_CRUCIFIX.get());
 				tabData.accept(AllaboutengieModItems.ENRAGED_COIN.get());
 				tabData.accept(AllaboutengieModItems.UNOBTAINIUM_CHUNKLET.get());
 				tabData.accept(AllaboutengieModItems.UNOBTANIUM.get());
@@ -306,35 +320,67 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.DEV_ENGIE_PLUSH.get());
 				tabData.accept(AllaboutengieModBlocks.CHALLENGE_MODE_TROPHY_SOLO.get().asItem());
 				tabData.accept(AllaboutengieModBlocks.CHALLENGE_MODE_TROPHY_MULTIPLAYER.get().asItem());
-				tabData.accept(AllaboutengieModItems.ANTIMATTER_DOOMSDAY_CRUCIFIX.get());
 			}).build());
-	public static final RegistryObject<CreativeModeTab> AAE_ITEMS_FOOD = REGISTRY.register("aae_items_food",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.aae_items_food")).icon(() -> new ItemStack(AllaboutengieModItems.COOKED_PIZZA.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(AllaboutengieModItems.GOLDEN_COOKIE.get());
-				tabData.accept(AllaboutengieModItems.ENCHANTED_GOLDEN_COOKIE.get());
-				tabData.accept(AllaboutengieModItems.EXOTIC_COOKIE.get());
-				tabData.accept(AllaboutengieModItems.ENCHANTED_EXOTIC_COOKIE.get());
-				tabData.accept(AllaboutengieModItems.ENGIE_COOKIE.get());
-				tabData.accept(AllaboutengieModItems.ENCHANTED_ENGIE_COOKIE.get());
-				tabData.accept(AllaboutengieModItems.DOUGH.get());
-				tabData.accept(AllaboutengieModItems.DOUGH_WITH_SAUCE.get());
-				tabData.accept(AllaboutengieModItems.UNCOOKED_PIZZA.get());
-				tabData.accept(AllaboutengieModItems.COOKED_PIZZA.get());
-				tabData.accept(AllaboutengieModItems.PIZZA_SLICE.get());
-				tabData.accept(AllaboutengieModItems.CHEESE.get());
-				tabData.accept(AllaboutengieModItems.CHEESE_BALLS_UNOPENED.get());
-				tabData.accept(AllaboutengieModItems.CHEESE_BALLS_OPENED.get());
-				tabData.accept(AllaboutengieModItems.CHEESE_BALL.get());
-				tabData.accept(AllaboutengieModItems.BROWNIES_UNOPENED.get());
-				tabData.accept(AllaboutengieModItems.BROWNIES_OPENED.get());
-				tabData.accept(AllaboutengieModItems.BROWNIE.get());
-				tabData.accept(AllaboutengieModItems.BAGEL.get());
-				tabData.accept(AllaboutengieModItems.BAGEL_CHEESE.get());
-				tabData.accept(AllaboutengieModItems.BAGEL_CHEESE_COOKED.get());
-				tabData.accept(AllaboutengieModItems.BAGEL_COOKED.get());
-				tabData.accept(AllaboutengieModItems.CRACKERS_IN_BOWL.get());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BAN_HAMMERS = REGISTRY.register("ban_hammers",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.ban_hammers")).icon(() -> new ItemStack(AllaboutengieModItems.BAN_HAMMER.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(AllaboutengieModItems.MINI_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.MINI_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.BIG_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.BIG_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.LARGE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.LARGE_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.HUGE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.HUGE_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ENORMOUS_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ENORMOUS_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.GIGANTIC_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.GIGANTIC_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.MASSIVE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.MASSIVE_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.BIBLICALLY_ACCURATE_ENGIE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.BIBLICALLY_ACCURATE_ENGIE_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.MONSTROSITY_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.MONSTROSITY_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.DOOMSDAY_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.DOOMSDAY_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.SUPER_DOOMSDAY_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.SUPER_DOOMSDAY_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.THE_END_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.THE_END_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ENGIE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ENGIES_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_MINI_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_MINI_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_BIG_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_BIG_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_LARGE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_LARGE_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_HUGE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_HUGE_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENORMOUS_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENORMOUS_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_GIGANTIC_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_GIGANTIC_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_MASSIVE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_MASSIVE_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_MONSTROSITY_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_MONSTROSITY_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_DOOMSDAY_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_DOOMSDAY_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_SUPER_DOOMSDAY_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_SUPER_DOOMSDAY_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_THE_END_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_THE_END_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIE_SCYTHE.get());
+				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIES_BAN_HAMMER.get());
 			}).withTabsBefore(AAE_ITEMS_ITEMS.getId()).build());
-	public static final RegistryObject<CreativeModeTab> AAE_ITEMS_ARMOR = REGISTRY.register("aae_items_armor",
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AAE_ITEMS_ARMOR = REGISTRY.register("aae_items_armor",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.aae_items_armor")).icon(() -> new ItemStack(AllaboutengieModItems.ENGIES_HELMET.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(AllaboutengieModItems.ENGIES_HELMET.get());
 				tabData.accept(AllaboutengieModItems.ENGIES_CHESTPLATE.get());
@@ -424,6 +470,10 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_THE_REAL_ENGIE_GAMESS_CHESTPLATE.get());
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_THE_REAL_ENGIE_GAMESS_LEGGINGS.get());
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_THE_REAL_ENGIE_GAMESS_BOOTS.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_THE_REAL_ENGIE_GAMESS_HELMET.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_THE_REAL_ENGIE_GAMESS_CHESTPLATE.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_THE_REAL_ENGIE_GAMESS_LEGGINGS.get());
+				tabData.accept(AllaboutengieModItems.COSMIC_THE_REAL_ENGIE_GAMESS_BOOTS.get());
 				tabData.accept(AllaboutengieModItems.SHARK_HELMET.get());
 				tabData.accept(AllaboutengieModItems.SHARK_CHESTPLATE.get());
 				tabData.accept(AllaboutengieModItems.SHARK_LEGGINGS.get());
@@ -500,8 +550,38 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.BLOOD_CHESTPLATE.get());
 				tabData.accept(AllaboutengieModItems.BLOOD_LEGGINGS.get());
 				tabData.accept(AllaboutengieModItems.BLOOD_BOOTS.get());
-			}).withTabsBefore(AAE_ITEMS_FOOD.getId()).build());
-	public static final RegistryObject<CreativeModeTab> SHARKOS = REGISTRY.register("sharkos",
+				tabData.accept(AllaboutengieModItems.STARTER_HELMET.get());
+				tabData.accept(AllaboutengieModItems.STARTER_CHESTPLATE.get());
+				tabData.accept(AllaboutengieModItems.STARTER_LEGGINGS.get());
+				tabData.accept(AllaboutengieModItems.STARTER_BOOTS.get());
+			}).withTabsBefore(BAN_HAMMERS.getId()).build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AAE_ITEMS_FOOD = REGISTRY.register("aae_items_food",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.aae_items_food")).icon(() -> new ItemStack(AllaboutengieModItems.COOKED_PIZZA.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(AllaboutengieModItems.GOLDEN_COOKIE.get());
+				tabData.accept(AllaboutengieModItems.ENCHANTED_GOLDEN_COOKIE.get());
+				tabData.accept(AllaboutengieModItems.EXOTIC_COOKIE.get());
+				tabData.accept(AllaboutengieModItems.ENCHANTED_EXOTIC_COOKIE.get());
+				tabData.accept(AllaboutengieModItems.ENGIE_COOKIE.get());
+				tabData.accept(AllaboutengieModItems.ENCHANTED_ENGIE_COOKIE.get());
+				tabData.accept(AllaboutengieModItems.DOUGH.get());
+				tabData.accept(AllaboutengieModItems.DOUGH_WITH_SAUCE.get());
+				tabData.accept(AllaboutengieModItems.UNCOOKED_PIZZA.get());
+				tabData.accept(AllaboutengieModItems.COOKED_PIZZA.get());
+				tabData.accept(AllaboutengieModItems.PIZZA_SLICE.get());
+				tabData.accept(AllaboutengieModItems.CHEESE.get());
+				tabData.accept(AllaboutengieModItems.CHEESE_BALLS_UNOPENED.get());
+				tabData.accept(AllaboutengieModItems.CHEESE_BALLS_OPENED.get());
+				tabData.accept(AllaboutengieModItems.CHEESE_BALL.get());
+				tabData.accept(AllaboutengieModItems.BROWNIES_UNOPENED.get());
+				tabData.accept(AllaboutengieModItems.BROWNIES_OPENED.get());
+				tabData.accept(AllaboutengieModItems.BROWNIE.get());
+				tabData.accept(AllaboutengieModItems.BAGEL.get());
+				tabData.accept(AllaboutengieModItems.BAGEL_CHEESE.get());
+				tabData.accept(AllaboutengieModItems.BAGEL_CHEESE_COOKED.get());
+				tabData.accept(AllaboutengieModItems.BAGEL_COOKED.get());
+				tabData.accept(AllaboutengieModItems.CRACKERS_IN_BOWL.get());
+			}).withTabsBefore(AAE_ITEMS_ARMOR.getId()).build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SHARKOS = REGISTRY.register("sharkos",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.sharkos")).icon(() -> new ItemStack(Items.COOKIE)).displayItems((parameters, tabData) -> {
 				tabData.accept(AllaboutengieModItems.SHARKO_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.ALBINO_SHARKO_SPAWN_EGG.get());
@@ -523,40 +603,10 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.ENGIE_SHARKO_APRIL_FOOLS_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.ENGIE_SHARKO_RARE_APRIL_FOOLS_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.ENGIE_SHARKO_RARE_2_APRIL_FOOLS_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.THROWBACK_SHARKO_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.ALIEN_ENGIE_SHARKO_SPAWN_EGG.get());
-			}).withTabsBefore(AAE_ITEMS_ARMOR.getId()).build());
-	public static final RegistryObject<CreativeModeTab> BAN_HAMMERS = REGISTRY.register("ban_hammers",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.ban_hammers")).icon(() -> new ItemStack(AllaboutengieModItems.BAN_HAMMER.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(AllaboutengieModItems.MINI_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.MINI_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.BIG_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.BIG_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.LARGE_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.LARGE_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.HUGE_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.HUGE_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.ENORMOUS_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.ENORMOUS_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.GIGANTIC_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.GIGANTIC_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.MASSIVE_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.MASSIVE_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.BIBLICALLY_ACCURATE_ENGIE_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.BIBLICALLY_ACCURATE_ENGIE_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.MONSTROSITY_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.MONSTROSITY_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.DOOMSDAY_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.DOOMSDAY_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.SUPER_DOOMSDAY_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.SUPER_DOOMSDAY_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.THE_END_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.THE_END_BAN_HAMMER.get());
-				tabData.accept(AllaboutengieModItems.ENGIE_SCYTHE.get());
-				tabData.accept(AllaboutengieModItems.ENGIES_BAN_HAMMER.get());
-			}).withTabsBefore(SHARKOS.getId()).build());
-	public static final RegistryObject<CreativeModeTab> MOBS = REGISTRY.register("mobs",
+			}).withTabsBefore(AAE_ITEMS_FOOD.getId()).build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MOBS = REGISTRY.register("mobs",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.mobs")).icon(() -> new ItemStack(AllaboutengieModItems.AAE_ENGIE.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(AllaboutengieModItems.ENGIE_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.ENGI_FR_SPAWN_EGG.get());
@@ -596,15 +646,21 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.THROWBACK_ANGRY_ENGIE_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.THROWBACK_ENRAGED_ENGIE_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.THROWBACK_ANGRY_CREATOR_SPAWN_EGG.get());
-			}).withTabsBefore(BAN_HAMMERS.getId()).build());
-	public static final RegistryObject<CreativeModeTab> PIXEL_ITEMS = REGISTRY.register("pixel_items",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.pixel_items")).icon(() -> new ItemStack(AllaboutengieModItems.CRUCIFIX_PIXEL.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(AllaboutengieModItems.CRUCIFIX_PIXEL.get());
-			}).withTabsBefore(MOBS.getId()).build());
-	public static final RegistryObject<CreativeModeTab> ZOMBIES = REGISTRY.register("zombies",
+				tabData.accept(AllaboutengieModItems.MAD_ENGIE_COLD_SEASON_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.ANGRY_ENGIE_COLD_SEASON_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.ENRAGED_ENGIE_COLD_SEASON_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.OUTRAGED_ENGIE_COLD_SEASON_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.MONSTROSITY_ENGIE_COLD_SEASON_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.THROWBACK_ENGI_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.THROWBACK_CREATOR_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.THROWBACK_PROTOGEN_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.THROWBACK_BLOODY_ENGIE_SPAWN_EGG.get());
+				tabData.accept(AllaboutengieModItems.BIBLICALLY_ACCURATE_ENGIE_COLD_SEASON_SPAWN_EGG.get());
+			}).withTabsBefore(SHARKOS.getId()).build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ZOMBIES = REGISTRY.register("zombies",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.zombies")).icon(() -> new ItemStack(AllaboutengieModItems.ENRAGED_ZOMBIES_PLAQUE.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(AllaboutengieModItems.ENRAGED_NORMAL_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.ENRAGED_TNT_SPAWN_EGG.get());
 				tabData.accept(AllaboutengieModItems.ENRAGED_SPEED_SPAWN_EGG.get());
-			}).withTabsBefore(PIXEL_ITEMS.getId()).build());
+			}).withTabsBefore(MOBS.getId()).build());
 }

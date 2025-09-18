@@ -1,49 +1,57 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.HierarchicalModel;
 
 import net.mcreator.allaboutengie.entity.BigLegendarySharkoLayEntity;
 import net.mcreator.allaboutengie.client.model.animations.boyositAnimation;
 import net.mcreator.allaboutengie.client.model.Modelbigboyosit;
 
-public class BigLegendarySharkoLayRenderer extends MobRenderer<BigLegendarySharkoLayEntity, Modelbigboyosit<BigLegendarySharkoLayEntity>> {
+public class BigLegendarySharkoLayRenderer extends MobRenderer<BigLegendarySharkoLayEntity, LivingEntityRenderState, Modelbigboyosit> {
+	private BigLegendarySharkoLayEntity entity = null;
+
 	public BigLegendarySharkoLayRenderer(EntityRendererProvider.Context context) {
 		super(context, new AnimatedModel(context.bakeLayer(Modelbigboyosit.LAYER_LOCATION)), 1f);
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(BigLegendarySharkoLayEntity entity) {
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(BigLegendarySharkoLayEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+		if (this.model instanceof AnimatedModel) {
+			((AnimatedModel) this.model).setEntity(entity);
+		}
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/biglegendarysharkonewtamed.png");
 	}
 
-	private static final class AnimatedModel extends Modelbigboyosit<BigLegendarySharkoLayEntity> {
-		private final ModelPart root;
-		private final HierarchicalModel animator = new HierarchicalModel<BigLegendarySharkoLayEntity>() {
-			@Override
-			public ModelPart root() {
-				return root;
-			}
-
-			@Override
-			public void setupAnim(BigLegendarySharkoLayEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-				this.root().getAllParts().forEach(ModelPart::resetPose);
-				this.animate(entity.animationState0, boyositAnimation.SharkoLayIdle, ageInTicks, 1f);
-			}
-		};
+	private static final class AnimatedModel extends Modelbigboyosit {
+		private BigLegendarySharkoLayEntity entity = null;
 
 		public AnimatedModel(ModelPart root) {
 			super(root);
-			this.root = root;
+		}
+
+		public void setEntity(BigLegendarySharkoLayEntity entity) {
+			this.entity = entity;
 		}
 
 		@Override
-		public void setupAnim(BigLegendarySharkoLayEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-			animator.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+		public void setupAnim(LivingEntityRenderState state) {
+			this.root().getAllParts().forEach(ModelPart::resetPose);
+			this.animate(entity.animationState0, boyositAnimation.SharkoLayIdle, state.ageInTicks, 1f);
+			super.setupAnim(state);
 		}
 	}
 }

@@ -8,6 +8,7 @@
     "texture": "engihoe",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "",
     "name": "Engie Hoe",
     "specialInformation": {
       "fixedValue": []

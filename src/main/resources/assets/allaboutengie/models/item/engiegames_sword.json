@@ -1,31 +1,7 @@
 {
-  "loader": "forge:separate_transforms",
-  "gui_light": "front",
-  "base": {
-    "parent": "allaboutengie:custom/engiegames_sword_3d",
-    "textures": {
-      "0": "allaboutengie:block/engiegames_sword_3d",
-      "particle": "allaboutengie:item/engiegames_sword"
-    }
-  },
-  "perspectives": {
-    "gui": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/engiegames_sword"
-      }
-    },
-    "fixed": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/engiegames_sword"
-      }
-    },
-    "ground": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/engiegames_sword"
-      }
-    }
+  "parent": "allaboutengie:custom/engiegames_sword_3d",
+  "textures": {
+    "0": "allaboutengie:block/engiegames_sword_3d",
+    "particle": "allaboutengie:item/engiegames_sword"
   }
 }

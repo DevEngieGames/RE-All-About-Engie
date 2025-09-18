@@ -4,7 +4,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
 public class DiamondOutragedEngiePlushItem extends Item {
-	public DiamondOutragedEngiePlushItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.RARE));
+	public DiamondOutragedEngiePlushItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.RARE));
 	}
 }

@@ -1,49 +1,64 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.HierarchicalModel;
 
 import net.mcreator.allaboutengie.entity.TigerEntity;
 import net.mcreator.allaboutengie.client.model.animations.boyoAnimation;
 import net.mcreator.allaboutengie.client.model.Modeltoby;
 
-public class TigerRenderer extends MobRenderer<TigerEntity, Modeltoby<TigerEntity>> {
+import com.mojang.blaze3d.vertex.PoseStack;
+
+public class TigerRenderer extends MobRenderer<TigerEntity, LivingEntityRenderState, Modeltoby> {
+	private TigerEntity entity = null;
+
 	public TigerRenderer(EntityRendererProvider.Context context) {
 		super(context, new AnimatedModel(context.bakeLayer(Modeltoby.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(TigerEntity entity) {
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(TigerEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+		if (this.model instanceof AnimatedModel) {
+			((AnimatedModel) this.model).setEntity(entity);
+		}
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/tiger.png");
 	}
 
-	private static final class AnimatedModel extends Modeltoby<TigerEntity> {
-		private final ModelPart root;
-		private final HierarchicalModel animator = new HierarchicalModel<TigerEntity>() {
-			@Override
-			public ModelPart root() {
-				return root;
-			}
+	@Override
+	protected void scale(LivingEntityRenderState state, PoseStack poseStack) {
+		poseStack.scale(1.25f, 1.25f, 1.25f);
+	}
 
-			@Override
-			public void setupAnim(TigerEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-				this.root().getAllParts().forEach(ModelPart::resetPose);
-				this.animate(entity.animationState0, boyoAnimation.SharkoIdle, ageInTicks, 1f);
-			}
-		};
+	private static final class AnimatedModel extends Modeltoby {
+		private TigerEntity entity = null;
 
 		public AnimatedModel(ModelPart root) {
 			super(root);
-			this.root = root;
+		}
+
+		public void setEntity(TigerEntity entity) {
+			this.entity = entity;
 		}
 
 		@Override
-		public void setupAnim(TigerEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-			animator.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+		public void setupAnim(LivingEntityRenderState state) {
+			this.root().getAllParts().forEach(ModelPart::resetPose);
+			this.animate(entity.animationState0, boyoAnimation.SharkoIdle, state.ageInTicks, 1f);
+			super.setupAnim(state);
 		}
 	}
 }

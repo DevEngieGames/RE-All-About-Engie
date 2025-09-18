@@ -1,49 +1,57 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.HierarchicalModel;
 
 import net.mcreator.allaboutengie.entity.CBEZoomiesEntity;
 import net.mcreator.allaboutengie.client.model.animations.engiedaboyozoomAnimation;
 import net.mcreator.allaboutengie.client.model.Modelengiedaboyozoom;
 
-public class CBEZoomiesRenderer extends MobRenderer<CBEZoomiesEntity, Modelengiedaboyozoom<CBEZoomiesEntity>> {
+public class CBEZoomiesRenderer extends MobRenderer<CBEZoomiesEntity, LivingEntityRenderState, Modelengiedaboyozoom> {
+	private CBEZoomiesEntity entity = null;
+
 	public CBEZoomiesRenderer(EntityRendererProvider.Context context) {
 		super(context, new AnimatedModel(context.bakeLayer(Modelengiedaboyozoom.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(CBEZoomiesEntity entity) {
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(CBEZoomiesEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+		if (this.model instanceof AnimatedModel) {
+			((AnimatedModel) this.model).setEntity(entity);
+		}
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/engiedasharkozooms.png");
 	}
 
-	private static final class AnimatedModel extends Modelengiedaboyozoom<CBEZoomiesEntity> {
-		private final ModelPart root;
-		private final HierarchicalModel animator = new HierarchicalModel<CBEZoomiesEntity>() {
-			@Override
-			public ModelPart root() {
-				return root;
-			}
-
-			@Override
-			public void setupAnim(CBEZoomiesEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-				this.root().getAllParts().forEach(ModelPart::resetPose);
-				this.animate(entity.animationState0, engiedaboyozoomAnimation.EngieDaSharkoZoomIdle, ageInTicks, 1f);
-			}
-		};
+	private static final class AnimatedModel extends Modelengiedaboyozoom {
+		private CBEZoomiesEntity entity = null;
 
 		public AnimatedModel(ModelPart root) {
 			super(root);
-			this.root = root;
+		}
+
+		public void setEntity(CBEZoomiesEntity entity) {
+			this.entity = entity;
 		}
 
 		@Override
-		public void setupAnim(CBEZoomiesEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-			animator.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+		public void setupAnim(LivingEntityRenderState state) {
+			this.root().getAllParts().forEach(ModelPart::resetPose);
+			this.animate(entity.animationState0, engiedaboyozoomAnimation.EngieDaSharkoZoomIdle, state.ageInTicks, 1f);
+			super.setupAnim(state);
 		}
 	}
 }

@@ -1,10 +1,9 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -14,24 +13,23 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
 
 import net.mcreator.allaboutengie.network.AllaboutengieModVariables;
 import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class SuperDoomsdayDialogueProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level(), event.player.getX(), event.player.getY(), event.player.getZ(), event.player);
-		}
+	public static void onPlayerTick(PlayerTickEvent.Post event) {
+		execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -51,9 +49,9 @@ public class SuperDoomsdayDialogueProcedure {
 						AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_eerie")), SoundSource.AMBIENT, 1, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:doomsday_eerie")), SoundSource.AMBIENT, 1, 1);
 							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_eerie")), SoundSource.AMBIENT, 1, 1, false);
+								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:doomsday_eerie")), SoundSource.AMBIENT, 1, 1, false);
 							}
 						}
 					}
@@ -61,29 +59,25 @@ public class SuperDoomsdayDialogueProcedure {
 						entity.getPersistentData().putDouble("TimeUntilNightSDDAY", (entity.getPersistentData().getDouble("TimeUntilNightSDDAY") + 0.05));
 						if (entity.getPersistentData().getDouble("TimeUntilNightSDDAY") >= 42) {
 							{
-								boolean _setval = true;
-								entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.DoomsdayAlive = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+								_vars.DoomsdayAlive = true;
+								_vars.syncPlayerVariables(entity);
 							}
-							world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
-							world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(false, world.getServer());
+							if (world instanceof ServerLevel _serverLevel)
+								_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+							if (world instanceof ServerLevel _serverLevel)
+								_serverLevel.getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(false, world.getServer());
 							{
-								boolean _setval = false;
-								entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.BlockDeathAliveCOunt = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+								_vars.BlockDeathAliveCOunt = false;
+								_vars.syncPlayerVariables(entity);
 							}
 							AllaboutengieModVariables.MapVariables.get(world).sddaytimenighttimerblock = true;
 							AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 							{
-								boolean _setval = true;
-								entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.healthreductiondday = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+								_vars.healthreductiondday = true;
+								_vars.syncPlayerVariables(entity);
 							}
 							{
 								Entity _ent = entity;
@@ -110,26 +104,22 @@ public class SuperDoomsdayDialogueProcedure {
 								AllaboutengieModVariables.MapVariables.get(world).sddaydialoguetimeblock = true;
 								AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 								{
-									boolean _setval = true;
-									entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.ShowObjectiveOverlay = _setval;
-										capability.syncPlayerVariables(entity);
-									});
+									AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+									_vars.ShowObjectiveOverlay = true;
+									_vars.syncPlayerVariables(entity);
 								}
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
-										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:churchbells2")), SoundSource.AMBIENT, (float) 0.5, 1);
+										_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:churchbells2")), SoundSource.AMBIENT, (float) 0.5, 1);
 									} else {
-										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:churchbells2")), SoundSource.AMBIENT, (float) 0.5, 1, false);
+										_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:churchbells2")), SoundSource.AMBIENT, (float) 0.5, 1, false);
 									}
 								}
 								AllaboutengieMod.queueServerWork(200, () -> {
 									{
-										boolean _setval = false;
-										entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.ShowObjectiveOverlay = _setval;
-											capability.syncPlayerVariables(entity);
-										});
+										AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+										_vars.ShowObjectiveOverlay = false;
+										_vars.syncPlayerVariables(entity);
 									}
 								});
 								AllaboutengieMod.queueServerWork(102, () -> {
@@ -204,9 +194,9 @@ public class SuperDoomsdayDialogueProcedure {
 															}
 															if (world instanceof Level _level) {
 																if (!_level.isClientSide()) {
-																	_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC, 1, 1);
+																	_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC, 1, 1);
 																} else {
-																	_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC, 1, 1, false);
+																	_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:doomsday_start")), SoundSource.MUSIC, 1, 1, false);
 																}
 															}
 															AllaboutengieModVariables.MapVariables.get(world).sdoomsdaymainsongstart = true;
@@ -217,7 +207,8 @@ public class SuperDoomsdayDialogueProcedure {
 																AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 																AllaboutengieModVariables.MapVariables.get(world).BYEBYE = true;
 																AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-																world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
+																if (world instanceof ServerLevel _serverLevel)
+																	_serverLevel.getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
 															});
 														});
 													});
@@ -227,13 +218,15 @@ public class SuperDoomsdayDialogueProcedure {
 									});
 								});
 								if (!(entity instanceof ServerPlayer _plr33 && _plr33.level() instanceof ServerLevel
-										&& _plr33.getAdvancements().getOrStartProgress(_plr33.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:rise"))).isDone())) {
+										&& _plr33.getAdvancements().getOrStartProgress(_plr33.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:rise"))).isDone())) {
 									if (entity instanceof ServerPlayer _player) {
-										Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:rise"));
-										AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-										if (!_ap.isDone()) {
-											for (String criteria : _ap.getRemainingCriteria())
-												_player.getAdvancements().award(_adv, criteria);
+										AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:rise"));
+										if (_adv != null) {
+											AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+											if (!_ap.isDone()) {
+												for (String criteria : _ap.getRemainingCriteria())
+													_player.getAdvancements().award(_adv, criteria);
+											}
 										}
 									}
 								}

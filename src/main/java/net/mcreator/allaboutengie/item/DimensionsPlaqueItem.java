@@ -4,7 +4,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
 public class DimensionsPlaqueItem extends Item {
-	public DimensionsPlaqueItem() {
-		super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC));
+	public DimensionsPlaqueItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.EPIC).fireResistant());
 	}
 }

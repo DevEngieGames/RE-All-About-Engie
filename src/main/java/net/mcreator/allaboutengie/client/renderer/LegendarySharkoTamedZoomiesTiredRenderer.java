@@ -1,19 +1,33 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import net.mcreator.allaboutengie.entity.LegendarySharkoTamedZoomiesTiredEntity;
 import net.mcreator.allaboutengie.client.model.Modelboyozoomtired;
 
-public class LegendarySharkoTamedZoomiesTiredRenderer extends MobRenderer<LegendarySharkoTamedZoomiesTiredEntity, Modelboyozoomtired<LegendarySharkoTamedZoomiesTiredEntity>> {
+public class LegendarySharkoTamedZoomiesTiredRenderer extends MobRenderer<LegendarySharkoTamedZoomiesTiredEntity, LivingEntityRenderState, Modelboyozoomtired> {
+	private LegendarySharkoTamedZoomiesTiredEntity entity = null;
+
 	public LegendarySharkoTamedZoomiesTiredRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelboyozoomtired<LegendarySharkoTamedZoomiesTiredEntity>(context.bakeLayer(Modelboyozoomtired.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelboyozoomtired(context.bakeLayer(Modelboyozoomtired.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(LegendarySharkoTamedZoomiesTiredEntity entity) {
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(LegendarySharkoTamedZoomiesTiredEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/legendarysharkonewtamedtired.png");
 	}
 }

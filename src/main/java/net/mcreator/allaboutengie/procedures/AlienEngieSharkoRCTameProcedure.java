@@ -2,7 +2,7 @@ package net.mcreator.allaboutengie.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
@@ -23,7 +23,7 @@ public class AlienEngieSharkoRCTameProcedure {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.HEART, x, y, z, 15, 1, 1, 1, 1);
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.ALIEN_ENGIE_SHARKO_TAMED.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.ALIEN_ENGIE_SHARKO_TAMED.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(entity.getYRot());
 						entityToSpawn.setYBodyRot(entity.getYRot());

@@ -15,7 +15,7 @@
       "value": "CUSTOM:OldDeepslateEngieOre"
     },
     "smeltingReturnStack": {
-      "value": "CUSTOM:EngieGem"
+      "value": "CUSTOM:ThrowbackEngieGem"
     },
     "name": "deepslate_engi_ore_to_engie_gem_ee",
     "namespace": "mod"

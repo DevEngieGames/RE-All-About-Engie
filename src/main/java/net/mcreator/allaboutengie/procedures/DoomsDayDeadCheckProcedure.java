@@ -8,7 +8,7 @@ public class DoomsDayDeadCheckProcedure {
 	public static String execute(Entity entity) {
 		if (entity == null)
 			return "";
-		if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).DoomsdayAlive == false) {
+		if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).DoomsdayAlive == false) {
 			return "Currently Dead";
 		}
 		return "dday.overlay.alivestate=false";

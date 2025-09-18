@@ -4,7 +4,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
 public class GoldenAngryEngiePlushItem extends Item {
-	public GoldenAngryEngiePlushItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON));
+	public GoldenAngryEngiePlushItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.UNCOMMON));
 	}
 }

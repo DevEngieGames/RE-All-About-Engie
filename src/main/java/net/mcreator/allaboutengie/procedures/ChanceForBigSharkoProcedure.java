@@ -1,7 +1,7 @@
 package net.mcreator.allaboutengie.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
@@ -25,7 +25,7 @@ public class ChanceForBigSharkoProcedure {
 		if (Math.random() <= 0.25) {
 			if (entity instanceof SharkoEntity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -34,7 +34,7 @@ public class ChanceForBigSharkoProcedure {
 					entity.discard();
 			} else if (entity instanceof AlbinoSharkoEntity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_ALBINO_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_ALBINO_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -43,7 +43,7 @@ public class ChanceForBigSharkoProcedure {
 					entity.discard();
 			} else if (entity instanceof RareSharkoEntity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_RARE_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_RARE_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -52,7 +52,7 @@ public class ChanceForBigSharkoProcedure {
 					entity.discard();
 			} else if (entity instanceof EpicSharkoEntity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_EPIC_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_EPIC_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -61,7 +61,7 @@ public class ChanceForBigSharkoProcedure {
 					entity.discard();
 			} else if (entity instanceof LegendarySharkoEntity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_LEGENDARY_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_LEGENDARY_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -70,7 +70,7 @@ public class ChanceForBigSharkoProcedure {
 					entity.discard();
 			} else if (entity instanceof MythicSharkoEntity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_MYTHIC_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_MYTHIC_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -79,7 +79,7 @@ public class ChanceForBigSharkoProcedure {
 					entity.discard();
 			} else if (entity instanceof ExoticSharkoEntity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_EXOTIC_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_EXOTIC_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -88,7 +88,7 @@ public class ChanceForBigSharkoProcedure {
 					entity.discard();
 			} else if (entity instanceof EngieSharkoEntity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_ENGIE_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_ENGIE_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -97,7 +97,7 @@ public class ChanceForBigSharkoProcedure {
 					entity.discard();
 			} else if (entity instanceof EngieSharkoRareEntity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_ENGIE_SHARKO_RARE.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_ENGIE_SHARKO_RARE.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
@@ -106,7 +106,7 @@ public class ChanceForBigSharkoProcedure {
 					entity.discard();
 			} else if (entity instanceof EngieSharkoRare2Entity) {
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = AllaboutengieModEntities.BIG_TIGER_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = AllaboutengieModEntities.BIG_TIGER_SHARKO.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}

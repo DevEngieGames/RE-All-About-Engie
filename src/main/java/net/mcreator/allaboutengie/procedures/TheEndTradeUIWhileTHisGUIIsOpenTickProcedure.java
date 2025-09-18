@@ -27,92 +27,21 @@ public class TheEndTradeUIWhileTHisGUIIsOpenTickProcedure {
 			AllaboutengieModVariables.MapVariables.get(world).checkboxbothmarked = true;
 			AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 		} else if (!((entity instanceof Player _entity4 && _entity4.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu4) ? _menu4.getMenuState(1, "scythetrade", false) : false)
-				&& !((entity instanceof Player _entity5 && _entity5.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu5) ? _menu5.getMenuState(1, "bantrade", false) : false) && new Object() {
-					public int getAmount(int sltid) {
-						if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-							ItemStack stack = _menu.getSlots().get(sltid).getItem();
-							if (stack != null)
-								return stack.getCount();
-						}
-						return 0;
-					}
-				}.getAmount(0) >= 64 && new Object() {
-					public int getAmount(int sltid) {
-						if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-							ItemStack stack = _menu.getSlots().get(sltid).getItem();
-							if (stack != null)
-								return stack.getCount();
-						}
-						return 0;
-					}
-				}.getAmount(1) >= 60 && new Object() {
-					public int getAmount(int sltid) {
-						if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-							ItemStack stack = _menu.getSlots().get(sltid).getItem();
-							if (stack != null)
-								return stack.getCount();
-						}
-						return 0;
-					}
-				}.getAmount(1) < 64) {
+				&& !((entity instanceof Player _entity5 && _entity5.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu5) ? _menu5.getMenuState(1, "bantrade", false) : false) && getAmountInGUISlot(entity, 0) >= 64
+				&& getAmountInGUISlot(entity, 1) >= 60 && getAmountInGUISlot(entity, 1) < 64) {
 			AllaboutengieModVariables.MapVariables.get(world).checkboxbothnomarked = false;
 			AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 			AllaboutengieModVariables.MapVariables.get(world).checkboxbothmarked = true;
 			AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 		}
-		if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 64 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) >= 64) {
+		if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 64) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_END_CRUCIFIX.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 64 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) >= 60 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) < 64) {
+		} else if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 60 && getAmountInGUISlot(entity, 1) < 64) {
 			if (((entity instanceof Player _entity15 && _entity15.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu15) ? _menu15.getMenuState(1, "scythetrade", false) : false)
 					&& !((entity instanceof Player _entity16 && _entity16.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu16) ? _menu16.getMenuState(1, "bantrade", false) : false)) {
 				if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
@@ -165,297 +94,63 @@ public class TheEndTradeUIWhileTHisGUIIsOpenTickProcedure {
 					}
 				}
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 64 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) >= 52 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) < 60) {
+		} else if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 52 && getAmountInGUISlot(entity, 1) < 60) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_ENDS_BOOTS.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 64 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) >= 48 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) < 54) {
+		} else if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 48 && getAmountInGUISlot(entity, 1) < 54) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_ENDS_LEGGINGS.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 64 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) >= 32 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) < 48) {
+		} else if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 32 && getAmountInGUISlot(entity, 1) < 48) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_ENDS_CHESTPLATE.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 64 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) >= 16 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) < 32) {
+		} else if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 16 && getAmountInGUISlot(entity, 1) < 32) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_ENDS_HELMET.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 60 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) == 0) {
+		} else if (getAmountInGUISlot(entity, 0) >= 60 && getAmountInGUISlot(entity, 1) == 0) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_END_HOE.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 48 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) < 60 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) == 0) {
+		} else if (getAmountInGUISlot(entity, 0) >= 48 && getAmountInGUISlot(entity, 0) < 60 && getAmountInGUISlot(entity, 1) == 0) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_END_SHOVEL.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 36 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) < 48 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) == 0) {
+		} else if (getAmountInGUISlot(entity, 0) >= 36 && getAmountInGUISlot(entity, 0) < 48 && getAmountInGUISlot(entity, 1) == 0) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_END_AXE.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 24 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) < 36 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) == 0) {
+		} else if (getAmountInGUISlot(entity, 0) >= 24 && getAmountInGUISlot(entity, 0) < 36 && getAmountInGUISlot(entity, 1) == 0) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_END_PICKAXE.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) >= 12 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(0) < 24 && new Object() {
-			public int getAmount(int sltid) {
-				if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack stack = _menu.getSlots().get(sltid).getItem();
-					if (stack != null)
-						return stack.getCount();
-				}
-				return 0;
-			}
-		}.getAmount(1) == 0) {
+		} else if (getAmountInGUISlot(entity, 0) >= 12 && getAmountInGUISlot(entity, 0) < 24 && getAmountInGUISlot(entity, 1) == 0) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(AllaboutengieModItems.THE_END_SWORD.get()).copy();
 				_setstack.setCount(1);
@@ -478,5 +173,14 @@ public class TheEndTradeUIWhileTHisGUIIsOpenTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 		}
+	}
+
+	private static int getAmountInGUISlot(Entity entity, int sltid) {
+		if (entity instanceof Player player && player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor menuAccessor) {
+			ItemStack stack = menuAccessor.getSlots().get(sltid).getItem();
+			if (stack != null)
+				return stack.getCount();
+		}
+		return 0;
 	}
 }

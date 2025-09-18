@@ -1,7 +1,5 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.LevelAccessor;
@@ -14,6 +12,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
@@ -47,9 +46,9 @@ public class MissileTickUpdateProcedure {
 				AllaboutengieMod.queueServerWork(1, () -> {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1, false);
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1, false);
 						}
 					}
 				});
@@ -80,9 +79,9 @@ public class MissileTickUpdateProcedure {
 				AllaboutengieMod.queueServerWork(1, () -> {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1, false);
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1, false);
 						}
 					}
 				});
@@ -113,9 +112,9 @@ public class MissileTickUpdateProcedure {
 				AllaboutengieMod.queueServerWork(1, () -> {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1, false);
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1, false);
 						}
 					}
 				});
@@ -139,9 +138,9 @@ public class MissileTickUpdateProcedure {
 				AllaboutengieMod.queueServerWork(1, () -> {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1, false);
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("allaboutengie:missile_explosion")), SoundSource.NEUTRAL, (float) 0.25, 1, false);
 						}
 					}
 				});

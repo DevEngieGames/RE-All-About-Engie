@@ -12,7 +12,7 @@ public class MaxDiffProProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).MaxPercentGiveOptionToDoHardestMobDiff == true) {
+		if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).MaxPercentGiveOptionToDoHardestMobDiff == true) {
 			if (AllaboutengieModVariables.MapVariables.get(world).MobDifficulty < 525) {
 				if (world.players().size() > 1) {
 					{
@@ -40,7 +40,7 @@ public class MaxDiffProProcedure {
 						}
 					}
 				} else if (world.players().size() == 1) {
-					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 13;
+					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 28;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				}
 			}

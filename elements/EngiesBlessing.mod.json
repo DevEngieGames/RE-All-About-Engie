@@ -7,7 +7,7 @@
     "weight": 5,
     "anvilCost": 2,
     "maxLevel": 10,
-    "damageModifier": 0,
+    "damageModifier": 5,
     "incompatibleEnchantments": [
       {
         "value": "BINDING_CURSE"
@@ -717,6 +717,120 @@
         "value": "CUSTOM:AntimatterEngieGamesHoe"
       },
       {
+        "value": "CUSTOM:AntimatterMiniBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterBigBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterLargeBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterHugeBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnormousBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterGiganticBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterMassiveBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterDoomsdayBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterSuperDoomsdayBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterTheEndBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngiesBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterMiniScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterBigScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterLargeScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterHugeScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnormousScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterGiganticScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterMassiveScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterDoomsdayScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterSuperDoomsdayScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterTheEndScythe"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieScythe"
+      },
+      {
+        "value": "CUSTOM:StartersPickaxe"
+      },
+      {
+        "value": "CUSTOM:StartersAxe"
+      },
+      {
+        "value": "CUSTOM:StartersSword"
+      },
+      {
+        "value": "CUSTOM:StartersShovel"
+      },
+      {
+        "value": "CUSTOM:StartersHoe"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieGamesSword"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieGamesPickaxe"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieGamesAxe"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieGamesShovel"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieGamesHoe"
+      },
+      {
         "value": "CUSTOM:Operators.helmet"
       },
       {
@@ -1329,6 +1443,30 @@
         "value": "CUSTOM:AntimatterTheRealEngieGamess.boots"
       },
       {
+        "value": "CUSTOM:Starter.helmet"
+      },
+      {
+        "value": "CUSTOM:Starter.body"
+      },
+      {
+        "value": "CUSTOM:Starter.legs"
+      },
+      {
+        "value": "CUSTOM:Starter.boots"
+      },
+      {
+        "value": "CUSTOM:CosmicTheRealEngieGamess.helmet"
+      },
+      {
+        "value": "CUSTOM:CosmicTheRealEngieGamess.body"
+      },
+      {
+        "value": "CUSTOM:CosmicTheRealEngieGamess.legs"
+      },
+      {
+        "value": "CUSTOM:CosmicTheRealEngieGamess.boots"
+      },
+      {
         "value": "Items.WOODEN_SWORD"
       },
       {
@@ -1372,12 +1510,6 @@
       },
       {
         "value": "Items.IRON_HOE"
-      },
-      {
-        "value": "Items.FLINT_AND_STEEL"
-      },
-      {
-        "value": "Items.SHEARS"
       },
       {
         "value": "Items.GOLDEN_SWORD"

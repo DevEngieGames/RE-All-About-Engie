@@ -1,31 +1,7 @@
 {
-  "loader": "forge:separate_transforms",
-  "gui_light": "front",
-  "base": {
-    "parent": "allaboutengie:custom/biblicallyaccuratescythe",
-    "textures": {
-      "0": "allaboutengie:block/biblicallyscythe",
-      "particle": "allaboutengie:item/biblicallyaccuratescythe"
-    }
-  },
-  "perspectives": {
-    "gui": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/biblicallyaccuratescythe"
-      }
-    },
-    "fixed": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/biblicallyaccuratescythe"
-      }
-    },
-    "ground": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "allaboutengie:item/biblicallyaccuratescythe"
-      }
-    }
+  "parent": "allaboutengie:custom/biblicallyaccuratescythe",
+  "textures": {
+    "0": "allaboutengie:block/biblicallyscythe",
+    "particle": "allaboutengie:item/biblicallyaccuratescythe"
   }
 }

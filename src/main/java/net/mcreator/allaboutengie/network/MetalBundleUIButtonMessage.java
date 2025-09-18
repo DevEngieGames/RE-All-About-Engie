@@ -1,56 +1,45 @@
 package net.mcreator.allaboutengie.network;
 
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.network.protocol.PacketFlow;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.allaboutengie.procedures.MetalBundleNameChangeProcedure;
 import net.mcreator.allaboutengie.AllaboutengieMod;
 
-import java.util.function.Supplier;
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
+public record MetalBundleUIButtonMessage(int buttonID, int x, int y, int z) implements CustomPacketPayload {
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class MetalBundleUIButtonMessage {
-	private final int buttonID, x, y, z;
-
-	public MetalBundleUIButtonMessage(FriendlyByteBuf buffer) {
-		this.buttonID = buffer.readInt();
-		this.x = buffer.readInt();
-		this.y = buffer.readInt();
-		this.z = buffer.readInt();
-	}
-
-	public MetalBundleUIButtonMessage(int buttonID, int x, int y, int z) {
-		this.buttonID = buttonID;
-		this.x = x;
-		this.y = y;
-		this.z = z;
-	}
-
-	public static void buffer(MetalBundleUIButtonMessage message, FriendlyByteBuf buffer) {
+	public static final Type<MetalBundleUIButtonMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(AllaboutengieMod.MODID, "engie_bundle_ui_buttons"));
+	public static final StreamCodec<RegistryFriendlyByteBuf, MetalBundleUIButtonMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, MetalBundleUIButtonMessage message) -> {
 		buffer.writeInt(message.buttonID);
 		buffer.writeInt(message.x);
 		buffer.writeInt(message.y);
 		buffer.writeInt(message.z);
+	}, (RegistryFriendlyByteBuf buffer) -> new MetalBundleUIButtonMessage(buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt()));
+	@Override
+	public Type<MetalBundleUIButtonMessage> type() {
+		return TYPE;
 	}
 
-	public static void handler(MetalBundleUIButtonMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
-		NetworkEvent.Context context = contextSupplier.get();
-		context.enqueueWork(() -> {
-			Player entity = context.getSender();
-			int buttonID = message.buttonID;
-			int x = message.x;
-			int y = message.y;
-			int z = message.z;
-			handleButtonAction(entity, buttonID, x, y, z);
-		});
-		context.setPacketHandled(true);
+	public static void handleData(final MetalBundleUIButtonMessage message, final IPayloadContext context) {
+		if (context.flow() == PacketFlow.SERVERBOUND) {
+			context.enqueueWork(() -> handleButtonAction(context.player(), message.buttonID, message.x, message.y, message.z)).exceptionally(e -> {
+				context.connection().disconnect(Component.literal(e.getMessage()));
+				return null;
+			});
+		}
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
@@ -66,6 +55,6 @@ public class MetalBundleUIButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		AllaboutengieMod.addNetworkMessage(MetalBundleUIButtonMessage.class, MetalBundleUIButtonMessage::buffer, MetalBundleUIButtonMessage::new, MetalBundleUIButtonMessage::handler);
+		AllaboutengieMod.addNetworkMessage(MetalBundleUIButtonMessage.TYPE, MetalBundleUIButtonMessage.STREAM_CODEC, MetalBundleUIButtonMessage::handleData);
 	}
 }

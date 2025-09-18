@@ -8,6 +8,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
 import net.mcreator.allaboutengie.network.AllaboutengieModVariables;
+import net.mcreator.allaboutengie.entity.TonyLayEntity;
 import net.mcreator.allaboutengie.entity.TobyLayOnSideEntity;
 import net.mcreator.allaboutengie.entity.TigerLayOnSideEntity;
 import net.mcreator.allaboutengie.entity.SharkoLayOnSideEntity;
@@ -416,6 +417,19 @@ public class SharkoChanceForSleepProcedure {
 							}
 						});
 					}
+					if (entity instanceof TonyLayEntity) {
+						if (!entity.level().isClientSide())
+							entity.discard();
+						AllaboutengieMod.queueServerWork(1, () -> {
+							{
+								Entity _ent = entity;
+								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null,
+											4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "summon allaboutengie:tony_sleep ~ ~ ~");
+								}
+							}
+						});
+					}
 				} else if (Math.random() <= 0.0005) {
 					if (entity instanceof SharkoLayOnSideEntity) {
 						if (!entity.level().isClientSide())
@@ -779,7 +793,7 @@ public class SharkoChanceForSleepProcedure {
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				}
 			}
-		} else if (world instanceof Level _lvl177 && _lvl177.isDay()) {
+		} else if (world instanceof Level _lvl181 && _lvl181.isDay()) {
 			if (AllaboutengieModVariables.MapVariables.get(world).SharkoLayOnSideCD == true) {
 				entity.getPersistentData().putDouble("SharkoLayOnSideCD", (entity.getPersistentData().getDouble("SharkoLayOnSideCD") + 0.05));
 				if (entity.getPersistentData().getDouble("SharkoLayOnSideCD") >= 240) {

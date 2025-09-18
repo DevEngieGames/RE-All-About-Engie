@@ -1,9 +1,9 @@
 package net.mcreator.allaboutengie.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -18,13 +18,11 @@ import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class TeamCreateProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level(), event.player.getX(), event.player.getY(), event.player.getZ(), event.player);
-		}
+	public static void onPlayerTick(PlayerTickEvent.Post event) {
+		execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -39,10 +37,10 @@ public class TeamCreateProcedure {
 					"team add REAAE_Dev \"REAAE Developer\"");
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-					"team modify AAE_Dev color dark_red");
+					"team modify REAAE_Dev color dark_red");
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-					"team modify AAE_Dev prefix [{\"text\":\"[RE:\",\"color\":\"red\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"All \",\"color\":\"green\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"About \",\"color\":\"yellow\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"Engie \",\"color\":\"red\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"Developer\",\"color\":\"dark_red\",\"hoverEvent\":{\"action\":\"show_text\",\"contents\":[{\"text\":\"\",\"color\":\"red\"}]}},{\"text\":\"] \",\"color\":\"red\"}]");
+					"team modify REAAE_Dev prefix [\"\",{\"text\":\"[RE:\",\"color\":\"red\"},{\"text\":\"All \",\"color\":\"green\"},{\"text\":\"About \",\"color\":\"yellow\"},{\"text\":\"Engie \",\"color\":\"red\"},{\"text\":\"Developer\",\"color\":\"dark_red\"},{\"text\":\"] \",\"color\":\"red\"}]");
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 					"team add AAE_Dev \"AAE Developer\"");
@@ -114,7 +112,7 @@ public class TeamCreateProcedure {
 			if ((entity.getDisplayName().getString()).equals("Dev")) {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-							"team join AAE_Dev Dev");
+							"team join REAAE_Dev Dev");
 			}
 			if ((entity.getDisplayName().getString()).equals("DevEngie")) {
 				if (world instanceof ServerLevel _level)

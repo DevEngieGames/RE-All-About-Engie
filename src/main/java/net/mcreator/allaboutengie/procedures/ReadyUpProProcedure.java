@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
 
 import net.mcreator.allaboutengie.network.AllaboutengieModVariables;
 import net.mcreator.allaboutengie.init.AllaboutengieModGameRules;
@@ -19,8 +19,8 @@ public class ReadyUpProProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE) == true) {
-			if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).playerready == false) {
+		if ((world instanceof ServerLevel _serverLevelGR0 && _serverLevelGR0.getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE)) == true) {
+			if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).playerready == false) {
 				{
 					Entity _ent = entity;
 					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -38,13 +38,11 @@ public class ReadyUpProProcedure {
 				AllaboutengieModVariables.MapVariables.get(world).challengeplayerreadyupcount = AllaboutengieModVariables.MapVariables.get(world).challengeplayerreadyupcount + 1;
 				AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				{
-					boolean _setval = true;
-					entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.playerready = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					AllaboutengieModVariables.PlayerVariables _vars = entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES);
+					_vars.playerready = true;
+					_vars.syncPlayerVariables(entity);
 				}
-			} else if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).playerready == true) {
+			} else if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).playerready == true) {
 				{
 					Entity _ent = entity;
 					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -70,13 +68,15 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr6 && _plr6.level() instanceof ServerLevel
-							&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
+							AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"));
+							if (_adv != null) {
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
 						}
 					}
@@ -116,7 +116,8 @@ public class ReadyUpProProcedure {
 									}
 									AllaboutengieModVariables.MapVariables.get(world).ChallengeToggle = true;
 									AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-									world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+									if (world instanceof ServerLevel _serverLevel)
+										_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
 									{
 										Entity _ent = entity;
 										if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -209,7 +210,7 @@ public class ReadyUpProProcedure {
 							});
 						});
 					});
-					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 15;
+					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 27;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				}
 			} else if (world.players().size() == 2) {
@@ -226,13 +227,15 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr29 && _plr29.level() instanceof ServerLevel
-							&& _plr29.getAdvancements().getOrStartProgress(_plr29.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr29.getAdvancements().getOrStartProgress(_plr29.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
+							AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"));
+							if (_adv != null) {
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
 						}
 					}
@@ -272,7 +275,8 @@ public class ReadyUpProProcedure {
 									}
 									AllaboutengieModVariables.MapVariables.get(world).ChallengeToggle = true;
 									AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-									world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+									if (world instanceof ServerLevel _serverLevel)
+										_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
 									{
 										Entity _ent = entity;
 										if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -365,7 +369,7 @@ public class ReadyUpProProcedure {
 							});
 						});
 					});
-					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 15;
+					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 27;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				} else if (AllaboutengieModVariables.MapVariables.get(world).challengeplayerreadyupcount < 2) {
 					{
@@ -392,13 +396,15 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr53 && _plr53.level() instanceof ServerLevel
-							&& _plr53.getAdvancements().getOrStartProgress(_plr53.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr53.getAdvancements().getOrStartProgress(_plr53.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
+							AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"));
+							if (_adv != null) {
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
 						}
 					}
@@ -438,7 +444,8 @@ public class ReadyUpProProcedure {
 									}
 									AllaboutengieModVariables.MapVariables.get(world).ChallengeToggle = true;
 									AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-									world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+									if (world instanceof ServerLevel _serverLevel)
+										_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
 									{
 										Entity _ent = entity;
 										if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -531,7 +538,7 @@ public class ReadyUpProProcedure {
 							});
 						});
 					});
-					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 15;
+					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 27;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				} else if (AllaboutengieModVariables.MapVariables.get(world).challengeplayerreadyupcount < 3) {
 					{
@@ -558,13 +565,15 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr77 && _plr77.level() instanceof ServerLevel
-							&& _plr77.getAdvancements().getOrStartProgress(_plr77.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr77.getAdvancements().getOrStartProgress(_plr77.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
+							AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"));
+							if (_adv != null) {
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
 						}
 					}
@@ -604,7 +613,8 @@ public class ReadyUpProProcedure {
 									}
 									AllaboutengieModVariables.MapVariables.get(world).ChallengeToggle = true;
 									AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-									world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+									if (world instanceof ServerLevel _serverLevel)
+										_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
 									{
 										Entity _ent = entity;
 										if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -697,7 +707,7 @@ public class ReadyUpProProcedure {
 							});
 						});
 					});
-					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 15;
+					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 27;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				} else if (AllaboutengieModVariables.MapVariables.get(world).challengeplayerreadyupcount < 4) {
 					{
@@ -724,13 +734,15 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr101 && _plr101.level() instanceof ServerLevel
-							&& _plr101.getAdvancements().getOrStartProgress(_plr101.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr101.getAdvancements().getOrStartProgress(_plr101.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
+							AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"));
+							if (_adv != null) {
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
 						}
 					}
@@ -770,7 +782,8 @@ public class ReadyUpProProcedure {
 									}
 									AllaboutengieModVariables.MapVariables.get(world).ChallengeToggle = true;
 									AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-									world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+									if (world instanceof ServerLevel _serverLevel)
+										_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
 									{
 										Entity _ent = entity;
 										if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -863,7 +876,7 @@ public class ReadyUpProProcedure {
 							});
 						});
 					});
-					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 15;
+					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 27;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				} else if (AllaboutengieModVariables.MapVariables.get(world).challengeplayerreadyupcount < 5) {
 					{
@@ -890,13 +903,15 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr125 && _plr125.level() instanceof ServerLevel
-							&& _plr125.getAdvancements().getOrStartProgress(_plr125.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr125.getAdvancements().getOrStartProgress(_plr125.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
+							AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"));
+							if (_adv != null) {
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
 						}
 					}
@@ -936,7 +951,8 @@ public class ReadyUpProProcedure {
 									}
 									AllaboutengieModVariables.MapVariables.get(world).ChallengeToggle = true;
 									AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-									world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+									if (world instanceof ServerLevel _serverLevel)
+										_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
 									{
 										Entity _ent = entity;
 										if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -1029,7 +1045,7 @@ public class ReadyUpProProcedure {
 							});
 						});
 					});
-					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 15;
+					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 27;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				} else if (AllaboutengieModVariables.MapVariables.get(world).challengeplayerreadyupcount < 6) {
 					{
@@ -1056,13 +1072,15 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr149 && _plr149.level() instanceof ServerLevel
-							&& _plr149.getAdvancements().getOrStartProgress(_plr149.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr149.getAdvancements().getOrStartProgress(_plr149.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
+							AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"));
+							if (_adv != null) {
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
 						}
 					}
@@ -1102,7 +1120,8 @@ public class ReadyUpProProcedure {
 									}
 									AllaboutengieModVariables.MapVariables.get(world).ChallengeToggle = true;
 									AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-									world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+									if (world instanceof ServerLevel _serverLevel)
+										_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
 									{
 										Entity _ent = entity;
 										if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -1195,7 +1214,7 @@ public class ReadyUpProProcedure {
 							});
 						});
 					});
-					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 15;
+					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 27;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				} else if (AllaboutengieModVariables.MapVariables.get(world).challengeplayerreadyupcount < 7) {
 					{
@@ -1222,13 +1241,15 @@ public class ReadyUpProProcedure {
 						}
 					}
 					if ((entity instanceof ServerPlayer _plr173 && _plr173.level() instanceof ServerLevel
-							&& _plr173.getAdvancements().getOrStartProgress(_plr173.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
+							&& _plr173.getAdvancements().getOrStartProgress(_plr173.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"))).isDone()) == false) {
 						if (entity instanceof ServerPlayer _player) {
-							Advancement _adv = _player.server.getAdvancements().getAdvancement(ResourceLocation.parse("allaboutengie:something_is_not_right"));
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
+							AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("allaboutengie:something_is_not_right"));
+							if (_adv != null) {
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
 						}
 					}
@@ -1268,7 +1289,8 @@ public class ReadyUpProProcedure {
 									}
 									AllaboutengieModVariables.MapVariables.get(world).ChallengeToggle = true;
 									AllaboutengieModVariables.MapVariables.get(world).syncData(world);
-									world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+									if (world instanceof ServerLevel _serverLevel)
+										_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
 									{
 										Entity _ent = entity;
 										if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -1361,7 +1383,7 @@ public class ReadyUpProProcedure {
 							});
 						});
 					});
-					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 15;
+					AllaboutengieModVariables.MapVariables.get(world).MobDifficulty = 27;
 					AllaboutengieModVariables.MapVariables.get(world).syncData(world);
 				} else if (AllaboutengieModVariables.MapVariables.get(world).challengeplayerreadyupcount < 8) {
 					{
@@ -1375,7 +1397,7 @@ public class ReadyUpProProcedure {
 					}
 				}
 			}
-		} else if (world.getLevelData().getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE) == false) {
+		} else if ((world instanceof ServerLevel _serverLevelGR195 && _serverLevelGR195.getGameRules().getBoolean(AllaboutengieModGameRules.TRUE_HARDCORE)) == false) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {

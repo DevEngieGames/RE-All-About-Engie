@@ -1,10 +1,13 @@
 package net.mcreator.allaboutengie.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Checkbox;
 import net.minecraft.client.gui.components.Button;
@@ -15,7 +18,6 @@ import net.mcreator.allaboutengie.procedures.DenymarkdisplayconditionProcedure;
 import net.mcreator.allaboutengie.procedures.CheckmarkdisplayconditionProcedure;
 import net.mcreator.allaboutengie.network.EngieTradeUIButtonMessage;
 import net.mcreator.allaboutengie.init.AllaboutengieModScreens;
-import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -27,6 +29,7 @@ public class EngieTradeUIScreen extends AbstractContainerScreen<EngieTradeUIMenu
 	Checkbox scythetrade;
 	Checkbox bantrade;
 	Button button_trade;
+	Button button_swap;
 
 	public EngieTradeUIScreen(EngieTradeUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -49,7 +52,6 @@ public class EngieTradeUIScreen extends AbstractContainerScreen<EngieTradeUIMenu
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		boolean customTooltipShown = false;
 		if (mouseX > leftPos + 69 && mouseX < leftPos + 93 && mouseY > topPos + 4 && mouseY < topPos + 28) {
@@ -69,12 +71,12 @@ public class EngieTradeUIScreen extends AbstractContainerScreen<EngieTradeUIMenu
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(RenderType::guiTextured, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		if (CheckmarkdisplayconditionProcedure.execute(world)) {
-			guiGraphics.blit(ResourceLocation.parse("allaboutengie:textures/screens/checkmark.png"), this.leftPos + 127, this.topPos + 8, 0, 0, 16, 16, 16, 16);
+			guiGraphics.blit(RenderType::guiTextured, ResourceLocation.parse("allaboutengie:textures/screens/checkmark.png"), this.leftPos + 154, this.topPos + 8, 0, 0, 16, 16, 16, 16);
 		}
 		if (DenymarkdisplayconditionProcedure.execute(world)) {
-			guiGraphics.blit(ResourceLocation.parse("allaboutengie:textures/screens/denymark.png"), this.leftPos + 127, this.topPos + 8, 0, 0, 16, 16, 16, 16);
+			guiGraphics.blit(RenderType::guiTextured, ResourceLocation.parse("allaboutengie:textures/screens/denymark.png"), this.leftPos + 127, this.topPos + 8, 0, 0, 16, 16, 16, 16);
 		}
 		RenderSystem.disableBlend();
 	}
@@ -90,6 +92,7 @@ public class EngieTradeUIScreen extends AbstractContainerScreen<EngieTradeUIMenu
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.allaboutengie.engie_trade_ui.label_trade_ui_state_normal"), 5, -11, -1, false);
 	}
 
 	@Override
@@ -99,28 +102,29 @@ public class EngieTradeUIScreen extends AbstractContainerScreen<EngieTradeUIMenu
 			int x = EngieTradeUIScreen.this.x;
 			int y = EngieTradeUIScreen.this.y;
 			if (true) {
-				AllaboutengieMod.PACKET_HANDLER.sendToServer(new EngieTradeUIButtonMessage(0, x, y, z));
+				PacketDistributor.sendToServer(new EngieTradeUIButtonMessage(0, x, y, z));
 				EngieTradeUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 9, this.topPos + 29, 51, 20).build();
 		this.addRenderableWidget(button_trade);
-		scythetrade = new Checkbox(this.leftPos + 71, this.topPos + 6, 20, 20, Component.translatable("gui.allaboutengie.engie_trade_ui.scythetrade"), false) {
-			@Override
-			public void onPress() {
-				super.onPress();
-				if (!menuStateUpdateActive)
-					menu.sendMenuStateUpdate(entity, 1, "scythetrade", this.selected(), false);
+		button_swap = Button.builder(Component.translatable("gui.allaboutengie.engie_trade_ui.button_swap"), e -> {
+			int x = EngieTradeUIScreen.this.x;
+			int y = EngieTradeUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new EngieTradeUIButtonMessage(1, x, y, z));
+				EngieTradeUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		};
+		}).bounds(this.leftPos + 9, this.topPos + 6, 51, 20).build();
+		this.addRenderableWidget(button_swap);
+		scythetrade = Checkbox.builder(Component.translatable("gui.allaboutengie.engie_trade_ui.scythetrade"), this.font).pos(this.leftPos + 71, this.topPos + 6).onValueChange((checkbox, value) -> {
+			if (!menuStateUpdateActive)
+				menu.sendMenuStateUpdate(entity, 1, "scythetrade", value, false);
+		}).build();
 		this.addRenderableWidget(scythetrade);
-		bantrade = new Checkbox(this.leftPos + 98, this.topPos + 6, 20, 20, Component.translatable("gui.allaboutengie.engie_trade_ui.bantrade"), false) {
-			@Override
-			public void onPress() {
-				super.onPress();
-				if (!menuStateUpdateActive)
-					menu.sendMenuStateUpdate(entity, 1, "bantrade", this.selected(), false);
-			}
-		};
+		bantrade = Checkbox.builder(Component.translatable("gui.allaboutengie.engie_trade_ui.bantrade"), this.font).pos(this.leftPos + 98, this.topPos + 6).onValueChange((checkbox, value) -> {
+			if (!menuStateUpdateActive)
+				menu.sendMenuStateUpdate(entity, 1, "bantrade", value, false);
+		}).build();
 		this.addRenderableWidget(bantrade);
 	}
 }

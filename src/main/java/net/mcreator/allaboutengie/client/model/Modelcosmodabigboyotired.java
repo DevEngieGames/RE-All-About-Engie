@@ -1,7 +1,7 @@
 package net.mcreator.allaboutengie.client.model;
 
-import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -12,13 +12,10 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.EntityModel;
 
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.blaze3d.vertex.PoseStack;
-
-// Made with Blockbench 4.12.5
+// Made with Blockbench 4.12.4
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
-public class Modelcosmodabigboyotired<T extends Entity> extends EntityModel<T> {
+public class Modelcosmodabigboyotired extends EntityModel<LivingEntityRenderState> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("allaboutengie", "modelcosmodabigboyotired"), "main");
@@ -40,6 +37,7 @@ public class Modelcosmodabigboyotired<T extends Entity> extends EntityModel<T> {
 	public final ModelPart leg4;
 
 	public Modelcosmodabigboyotired(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.Body = this.root.getChild("Body");
 		this.tail = this.Body.getChild("tail");
@@ -72,7 +70,7 @@ public class Modelcosmodabigboyotired<T extends Entity> extends EntityModel<T> {
 		PartDefinition tail = Body.addOrReplaceChild("tail", CubeListBuilder.create(), PartPose.offsetAndRotation(0.5F, 50.0F, -41.0F, -1.5708F, 0.0F, 0.0F));
 		PartDefinition base = tail.addOrReplaceChild("base", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, -39.7F, -45.9F, -0.3142F, -0.3491F, -1.5708F));
 		PartDefinition base2 = base.addOrReplaceChild("base2",
-				CubeListBuilder.create().texOffs(214, 66).addBox(-5.5F, -5.5F, 0.0F, 10.0F, 10.0F, 6.0F, new CubeDeformation(0.0F)).texOffs(224, 162).addBox(-5.375F, -5.375F, -0.125F, 10.0F, 10.0F, 6.0F, new CubeDeformation(0.25F)),
+				CubeListBuilder.create().texOffs(214, 66).addBox(-5.5F, -5.5F, 0.0F, 10.0F, 10.0F, 6.0F, new CubeDeformation(0.0F)).texOffs(224, 163).addBox(-5.375F, -5.375F, -0.125F, 10.0F, 10.0F, 6.0F, new CubeDeformation(0.25F)),
 				PartPose.offsetAndRotation(0.0F, 0.0F, 5.625F, 0.0873F, 0.0F, 0.0F));
 		PartDefinition dorsal_r1 = base2.addOrReplaceChild("dorsal_r1", CubeListBuilder.create().texOffs(184, 64).addBox(-2.0F, -5.0F, -3.0F, 4.0F, 10.0F, 6.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(-0.5F, -5.9142F, 7.5208F, -0.7854F, 0.0F, 0.0F));
@@ -102,11 +100,11 @@ public class Modelcosmodabigboyotired<T extends Entity> extends EntityModel<T> {
 				CubeListBuilder.create().texOffs(72, 78).addBox(-8.0F, -13.0F, -16.0F, 16.0F, 16.0F, 16.0F, new CubeDeformation(0.0F)).texOffs(128, 110).addBox(-8.0F, -13.0F, -16.0F, 16.0F, 16.0F, 16.0F, new CubeDeformation(0.05F)).texOffs(112, 0)
 						.addBox(-8.0F, -13.0F, -16.0F, 16.0F, 16.0F, 16.0F, new CubeDeformation(0.15F)).texOffs(64, 110).addBox(-8.0F, -13.0F, -16.0F, 16.0F, 16.0F, 16.0F, new CubeDeformation(0.2F)).texOffs(0, 104)
 						.addBox(-8.0F, -13.0F, -16.0F, 16.0F, 16.0F, 16.0F, new CubeDeformation(0.5F)).texOffs(0, 136).addBox(-8.0F, -13.0F, -16.0F, 16.0F, 16.0F, 16.0F, new CubeDeformation(0.6F)).texOffs(84, 0)
-						.addBox(-10.25F, -12.5F, -16.525F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(68, 0).addBox(6.25F, -12.5F, -16.525F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(18, 12)
-						.addBox(-3.0F, -19.0F, -8.625F, 6.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)).texOffs(15, 10).addBox(-4.0F, -18.0F, -10.15F, 8.0F, 1.0F, 8.0F, new CubeDeformation(0.0F)).texOffs(12, 8)
+						.addBox(-10.25F, -12.5F, -16.525F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(68, 0).addBox(6.25F, -12.5F, -16.525F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(17, 11)
+						.addBox(-3.0F, -19.0F, -8.625F, 6.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)).texOffs(14, 9).addBox(-4.0F, -18.0F, -10.15F, 8.0F, 1.0F, 8.0F, new CubeDeformation(0.0F)).texOffs(12, 8)
 						.addBox(-5.0F, -17.0F, -11.7F, 10.0F, 1.0F, 10.0F, new CubeDeformation(0.0F)).texOffs(9, 6).addBox(-6.0F, -16.0F, -13.275F, 12.0F, 1.0F, 12.0F, new CubeDeformation(0.0F)).texOffs(6, 4)
 						.addBox(-7.0F, -15.0F, -14.75F, 14.0F, 1.0F, 14.0F, new CubeDeformation(0.0F)).texOffs(3, 2).addBox(-8.0F, -14.0F, -16.0F, 16.0F, 1.0F, 16.0F, new CubeDeformation(0.0F)).texOffs(0, 0)
-						.addBox(-9.0F, -13.0F, -17.0F, 18.0F, 1.0F, 18.0F, new CubeDeformation(0.0F)).texOffs(0, 0).addBox(-10.0F, -12.0F, -18.0F, 20.0F, 4.0F, 20.0F, new CubeDeformation(0.0F)),
+						.addBox(-9.0F, -13.0F, -17.0F, 18.0F, 1.0F, 18.0F, new CubeDeformation(0.0F)).texOffs(-3, -2).addBox(-10.0F, -12.0F, -18.0F, 20.0F, 4.0F, 20.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -24.0F, -12.0F, 0.4363F, -0.0349F, 0.0F));
 		PartDefinition tooth_r1 = Head.addOrReplaceChild("tooth_r1",
 				CubeListBuilder.create().texOffs(102, 0).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(102, 0).addBox(16.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)),
@@ -174,8 +172,8 @@ public class Modelcosmodabigboyotired<T extends Entity> extends EntityModel<T> {
 						.addBox(2.0832F, 12.0082F, -6.9582F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0164F)),
 				PartPose.offsetAndRotation(-6.0F, -14.0F, 11.0F, -0.1298F, -0.017F, -0.4352F));
 		PartDefinition Toe_r1 = leg1.addOrReplaceChild("Toe_r1",
-				CubeListBuilder.create().texOffs(248, 66).addBox(-1.0169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 66).addBox(-3.0669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F))
-						.texOffs(248, 66).addBox(-5.1169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 66).addBox(-7.1669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)),
+				CubeListBuilder.create().texOffs(248, 65).addBox(-1.0169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 65).addBox(-3.0669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F))
+						.texOffs(248, 65).addBox(-5.1169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 65).addBox(-7.1669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)),
 				PartPose.offsetAndRotation(3.1F, 11.7544F, -5.5573F, -0.6109F, 0.0F, 0.0F));
 		PartDefinition LowerLegPants_r1 = leg1.addOrReplaceChild("LowerLegPants_r1",
 				CubeListBuilder.create().texOffs(228, 148).addBox(-4.01F, -2.9659F, -3.0341F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0682F)).texOffs(228, 38).addBox(-4.0009F, -2.9909F, -3.0091F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0091F)),
@@ -193,8 +191,8 @@ public class Modelcosmodabigboyotired<T extends Entity> extends EntityModel<T> {
 						.addBox(2.0832F, 12.0082F, -6.9582F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0164F)),
 				PartPose.offsetAndRotation(6.0F, -14.0F, 11.0F, 0.1745F, 0.0F, 0.0F));
 		PartDefinition Toe_r2 = leg2.addOrReplaceChild("Toe_r2",
-				CubeListBuilder.create().texOffs(248, 66).addBox(-1.0169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 66).addBox(-3.0669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F))
-						.texOffs(248, 66).addBox(-5.1169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 66).addBox(-7.1669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)),
+				CubeListBuilder.create().texOffs(248, 65).addBox(-1.0169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 65).addBox(-3.0669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F))
+						.texOffs(248, 65).addBox(-5.1169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 65).addBox(-7.1669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)),
 				PartPose.offsetAndRotation(3.1F, 11.7544F, -5.5573F, -0.6109F, 0.0F, 0.0F));
 		PartDefinition LowerLegPants_r2 = leg2.addOrReplaceChild("LowerLegPants_r2",
 				CubeListBuilder.create().texOffs(228, 148).addBox(-4.01F, -2.9659F, -3.0341F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0682F)).texOffs(228, 38).addBox(-4.0009F, -2.9909F, -3.0091F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0091F)),
@@ -212,8 +210,8 @@ public class Modelcosmodabigboyotired<T extends Entity> extends EntityModel<T> {
 						.addBox(2.0832F, 12.0082F, -6.5082F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0164F)),
 				PartPose.offsetAndRotation(-6.0F, -14.0F, -13.0F, 0.3442F, 0.0594F, -0.3387F));
 		PartDefinition Toe_r3 = leg3.addOrReplaceChild("Toe_r3",
-				CubeListBuilder.create().texOffs(248, 66).addBox(-1.0169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 66).addBox(-3.0669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F))
-						.texOffs(248, 66).addBox(-5.1169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 66).addBox(-7.1669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)),
+				CubeListBuilder.create().texOffs(248, 65).addBox(-1.0169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 65).addBox(-3.0669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F))
+						.texOffs(248, 65).addBox(-5.1169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 65).addBox(-7.1669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)),
 				PartPose.offsetAndRotation(3.1F, 11.7544F, -5.1073F, -0.6109F, 0.0F, 0.0F));
 		PartDefinition LowerLegPants_r3 = leg3.addOrReplaceChild("LowerLegPants_r3",
 				CubeListBuilder.create().texOffs(228, 148).addBox(-4.01F, -2.9659F, -3.0341F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0682F)).texOffs(228, 38).addBox(-4.0009F, -2.9909F, -3.0091F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0091F)),
@@ -231,8 +229,8 @@ public class Modelcosmodabigboyotired<T extends Entity> extends EntityModel<T> {
 						.addBox(2.0832F, 12.0082F, -6.5082F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0164F)),
 				PartPose.offsetAndRotation(6.0F, -14.0F, -13.0F, -0.2182F, 0.0F, 0.0F));
 		PartDefinition Toe_r4 = leg4.addOrReplaceChild("Toe_r4",
-				CubeListBuilder.create().texOffs(248, 66).addBox(-1.0169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 66).addBox(-3.0669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F))
-						.texOffs(248, 66).addBox(-5.1169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 66).addBox(-7.1669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)),
+				CubeListBuilder.create().texOffs(248, 65).addBox(-1.0169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 65).addBox(-3.0669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F))
+						.texOffs(248, 65).addBox(-5.1169F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)).texOffs(248, 65).addBox(-7.1669F, -0.9919F, -1.0081F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0162F)),
 				PartPose.offsetAndRotation(3.1F, 11.7544F, -5.1073F, -0.6109F, 0.0F, 0.0F));
 		PartDefinition LowerLegPants_r4 = leg4.addOrReplaceChild("LowerLegPants_r4",
 				CubeListBuilder.create().texOffs(228, 148).addBox(-4.01F, -2.9659F, -3.0341F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0682F)).texOffs(228, 38).addBox(-4.0009F, -2.9909F, -3.0091F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0091F)),
@@ -247,11 +245,12 @@ public class Modelcosmodabigboyotired<T extends Entity> extends EntityModel<T> {
 		return LayerDefinition.create(meshdefinition, 256, 256);
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-	}
+	public void setupAnim(LivingEntityRenderState state) {
+		float limbSwing = state.walkAnimationPos;
+		float limbSwingAmount = state.walkAnimationSpeed;
+		float ageInTicks = state.ageInTicks;
+		float netHeadYaw = state.yRot;
+		float headPitch = state.xRot;
 
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 	}
 }

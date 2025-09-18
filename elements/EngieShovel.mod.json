@@ -8,6 +8,7 @@
     "texture": "engishovel",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "",
     "name": "Engie Shovel",
     "specialInformation": {
       "fixedValue": []

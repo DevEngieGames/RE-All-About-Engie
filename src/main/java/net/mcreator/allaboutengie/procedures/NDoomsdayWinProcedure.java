@@ -1,6 +1,7 @@
 package net.mcreator.allaboutengie.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.commands.CommandSourceStack;
@@ -10,7 +11,7 @@ public class NDoomsdayWinProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (world.players().size() == 1 && entity.hasPermissions(4)) {
+		if (world.players().size() == 1 && entity instanceof Player _playerCmd1 && _playerCmd1.hasPermissions(4)) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -20,7 +21,7 @@ public class NDoomsdayWinProcedure {
 							"tellraw @p [\"\",{\"text\":\"Congratulations \",\"bold\":true,\"color\":\"gold\"},{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\"! You can run /AllAboutEngie modifier superdoomsday (true/false) to toggle Super Doomsday on or off!\",\"bold\":true,\"color\":\"gold\"}]");
 				}
 			}
-		} else if (world.players().size() > 1 && entity.hasPermissions(4)) {
+		} else if (world.players().size() > 1 && entity instanceof Player _playerCmd4 && _playerCmd4.hasPermissions(4)) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -30,7 +31,7 @@ public class NDoomsdayWinProcedure {
 							"tellraw @p [\"\",{\"text\":\"Congratulations \",\"bold\":true,\"color\":\"gold\"},{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\"! You can run /AllAboutEngie modifier superdoomsday (true/false) to toggle Super Doomsday on or off!\",\"bold\":true,\"color\":\"gold\"}]");
 				}
 			}
-		} else if (world.players().size() == 1 && !entity.hasPermissions(4)) {
+		} else if (world.players().size() == 1 && !(entity instanceof Player _playerCmd7 && _playerCmd7.hasPermissions(4))) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
@@ -40,7 +41,7 @@ public class NDoomsdayWinProcedure {
 							"tellraw @p [\"\",{\"text\":\"Congratulations \",\"bold\":true,\"color\":\"gold\"},{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\"! If you want to try Super Doomsday, you can Open To LAN with cheats and turn it on by running /AllAboutEngie modifier superdoomsday true/false and then relog into the world to stop the Open To LAN!\",\"bold\":true,\"color\":\"gold\"}]");
 				}
 			}
-		} else if (world.players().size() > 1 && !entity.hasPermissions(4)) {
+		} else if (world.players().size() > 1 && !(entity instanceof Player _playerCmd10 && _playerCmd10.hasPermissions(4))) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {

@@ -8,7 +8,7 @@ public class TimeCheckOverlayDisplayOverlayIngameProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity.getCapability(AllaboutengieModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new AllaboutengieModVariables.PlayerVariables())).timeoverlaytoggle == true) {
+		if (entity.getData(AllaboutengieModVariables.PLAYER_VARIABLES).timeoverlaytoggle == true) {
 			return true;
 		}
 		return false;

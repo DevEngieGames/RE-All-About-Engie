@@ -1,6 +1,8 @@
 package net.mcreator.allaboutengie.item;
 
-import net.minecraft.world.level.Level;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
@@ -10,13 +12,14 @@ import net.minecraft.network.chat.Component;
 import java.util.List;
 
 public class YouAreNotSupposedToHaveThisItem extends Item {
-	public YouAreNotSupposedToHaveThisItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.EPIC));
+	public YouAreNotSupposedToHaveThisItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.EPIC));
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, level, list, flag);
+	@OnlyIn(Dist.CLIENT)
+	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, context, list, flag);
 		list.add(Component.translatable("item.allaboutengie.you_are_not_supposed_to_have_this.description_0"));
 	}
 }

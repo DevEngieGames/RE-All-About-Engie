@@ -1,49 +1,57 @@
 package net.mcreator.allaboutengie.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.HierarchicalModel;
 
 import net.mcreator.allaboutengie.entity.Bothan2netZoomiesEntity;
 import net.mcreator.allaboutengie.client.model.animations.boyozoomsAnimation;
 import net.mcreator.allaboutengie.client.model.Modeltobyzooms;
 
-public class Bothan2netZoomiesRenderer extends MobRenderer<Bothan2netZoomiesEntity, Modeltobyzooms<Bothan2netZoomiesEntity>> {
+public class Bothan2netZoomiesRenderer extends MobRenderer<Bothan2netZoomiesEntity, LivingEntityRenderState, Modeltobyzooms> {
+	private Bothan2netZoomiesEntity entity = null;
+
 	public Bothan2netZoomiesRenderer(EntityRendererProvider.Context context) {
 		super(context, new AnimatedModel(context.bakeLayer(Modeltobyzooms.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(Bothan2netZoomiesEntity entity) {
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(Bothan2netZoomiesEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+		if (this.model instanceof AnimatedModel) {
+			((AnimatedModel) this.model).setEntity(entity);
+		}
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
 		return ResourceLocation.parse("allaboutengie:textures/entities/bothan2netzoom.png");
 	}
 
-	private static final class AnimatedModel extends Modeltobyzooms<Bothan2netZoomiesEntity> {
-		private final ModelPart root;
-		private final HierarchicalModel animator = new HierarchicalModel<Bothan2netZoomiesEntity>() {
-			@Override
-			public ModelPart root() {
-				return root;
-			}
-
-			@Override
-			public void setupAnim(Bothan2netZoomiesEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-				this.root().getAllParts().forEach(ModelPart::resetPose);
-				this.animate(entity.animationState0, boyozoomsAnimation.SharkoZoomIdle, ageInTicks, 1f);
-			}
-		};
+	private static final class AnimatedModel extends Modeltobyzooms {
+		private Bothan2netZoomiesEntity entity = null;
 
 		public AnimatedModel(ModelPart root) {
 			super(root);
-			this.root = root;
+		}
+
+		public void setEntity(Bothan2netZoomiesEntity entity) {
+			this.entity = entity;
 		}
 
 		@Override
-		public void setupAnim(Bothan2netZoomiesEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-			animator.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+		public void setupAnim(LivingEntityRenderState state) {
+			this.root().getAllParts().forEach(ModelPart::resetPose);
+			this.animate(entity.animationState0, boyozoomsAnimation.SharkoZoomIdle, state.ageInTicks, 1f);
+			super.setupAnim(state);
 		}
 	}
 }

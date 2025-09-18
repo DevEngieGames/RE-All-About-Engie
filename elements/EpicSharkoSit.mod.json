@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "livingentity",
   "definition": {
-    "mobName": "[Tamed] Epic Sharko (Laying)",
+    "mobName": "Epic Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyositnew",
     "mobModelTexture": "epicsharkonewtamed.png",
@@ -130,7 +130,7 @@
     },
     "entityDataEntries": [],
     "onRightClickedOn": {
-      "name": "EpicSharkoLayRC"
+      "name": "EpicSharkoTameRC2"
     },
     "onMobTickUpdate": {
       "name": "SharkoChanceForLay"
@@ -166,6 +166,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

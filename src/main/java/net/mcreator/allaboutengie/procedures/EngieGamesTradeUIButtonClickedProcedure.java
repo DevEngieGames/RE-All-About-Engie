@@ -5,17 +5,20 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
 
 import net.mcreator.allaboutengie.init.AllaboutengieModMenus;
 import net.mcreator.allaboutengie.init.AllaboutengieModItems;
-import net.mcreator.allaboutengie.init.AllaboutengieModEnchantments;
 import net.mcreator.allaboutengie.AllaboutengieMod;
 
 public class EngieGamesTradeUIButtonClickedProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu0 ? _menu0.getSlots().get(3).getItem() : ItemStack.EMPTY).getItem() == AllaboutengieModItems.ENGIE_CRUCIFIX.get()) {
+		if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu0 ? _menu0.getSlots().get(3).getItem() : ItemStack.EMPTY).getItem() == AllaboutengieModItems.ENGIE_GAMES_CRUCIFIX
+				.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(64);
 				_player.containerMenu.broadcastChanges();
@@ -34,15 +37,16 @@ public class EngieGamesTradeUIButtonClickedProcedure {
 			}
 			AllaboutengieMod.queueServerWork(1, () -> {
 				if (entity instanceof Player _player && _player.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu) {
-					ItemStack _setstack = new ItemStack(AllaboutengieModItems.ENGIE_CRUCIFIX.get()).copy();
+					ItemStack _setstack = new ItemStack(AllaboutengieModItems.ENGIE_GAMES_CRUCIFIX.get()).copy();
 					_setstack.setCount(1);
 					_menu.getSlots().get(4).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
 				AllaboutengieMod.queueServerWork(1, () -> {
 					(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu7 ? _menu7.getSlots().get(4).getItem() : ItemStack.EMPTY)
-							.enchant(AllaboutengieModEnchantments.ENGIES_BLESSING.get(), 10);
-					(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu9 ? _menu9.getSlots().get(4).getItem() : ItemStack.EMPTY).enchant(Enchantments.MENDING, 1);
+							.enchant(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("allaboutengie:engies_blessing"))), 10);
+					(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu9 ? _menu9.getSlots().get(4).getItem() : ItemStack.EMPTY)
+							.enchant(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.MENDING), 1);
 				});
 			});
 		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof AllaboutengieModMenus.MenuAccessor _menu13 ? _menu13.getSlots().get(3).getItem() : ItemStack.EMPTY).getItem() == AllaboutengieModItems.ENGIEGAMES_SWORD

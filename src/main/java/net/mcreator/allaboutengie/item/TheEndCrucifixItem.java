@@ -4,7 +4,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
 public class TheEndCrucifixItem extends Item {
-	public TheEndCrucifixItem() {
-		super(new Item.Properties().durability(125).rarity(Rarity.EPIC));
+	public TheEndCrucifixItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.EPIC).durability(125).enchantable(22));
 	}
 }

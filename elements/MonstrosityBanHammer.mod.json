@@ -9,7 +9,7 @@
     "customModelName": "ban_hammer_monstrosity:default",
     "blockingModelName": "Normal blocking",
     "guiTexture": "monstrositypixel",
-    "name": "A Monstrosity Ban Hammer",
+    "name": "Monstrosity Ban Hammer",
     "specialInformation": {
       "fixedValue": [
         "You could say this ban hammer is a Monstrosity.. Heh? Alright I know that was a terrible joke anyway."

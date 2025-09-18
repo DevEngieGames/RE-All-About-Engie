@@ -1,50 +1,32 @@
 package net.mcreator.allaboutengie.item;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.tags.TagKey;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-
-import net.mcreator.allaboutengie.init.AllaboutengieModItems;
+import net.minecraft.core.registries.Registries;
 
 import java.util.List;
 
 public class TheEndAxeItem extends AxeItem {
-	public TheEndAxeItem() {
-		super(new Tier() {
-			public int getUses() {
-				return 7000;
-			}
+	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 7000, 39f, 0, 13, TagKey.create(Registries.ITEM, ResourceLocation.parse("allaboutengie:the_end_axe_repair_items")));
 
-			public float getSpeed() {
-				return 39f;
-			}
-
-			public float getAttackDamageBonus() {
-				return 348f;
-			}
-
-			public int getLevel() {
-				return 4;
-			}
-
-			public int getEnchantmentValue() {
-				return 13;
-			}
-
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(AllaboutengieModItems.THE_END_COIN.get()));
-			}
-		}, 1, 0.2f, new Item.Properties());
+	public TheEndAxeItem(Item.Properties properties) {
+		super(TOOL_MATERIAL, 349f, 0.2f, properties);
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, level, list, flag);
+	@OnlyIn(Dist.CLIENT)
+	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, context, list, flag);
 		list.add(Component.translatable("item.allaboutengie.the_end_axe.description_0"));
 	}
 }

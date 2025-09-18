@@ -1,41 +1,40 @@
 package net.mcreator.allaboutengie.network;
 
-import net.minecraftforge.network.PacketDistributor;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.AttachCapabilitiesEvent;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.common.util.FakePlayer;
-import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
-import net.minecraftforge.common.capabilities.ICapabilitySerializable;
-import net.minecraftforge.common.capabilities.CapabilityToken;
-import net.minecraftforge.common.capabilities.CapabilityManager;
-import net.minecraftforge.common.capabilities.Capability;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.common.util.INBTSerializable;
+import net.neoforged.neoforge.attachment.AttachmentType;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.nbt.Tag;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.network.protocol.PacketFlow;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.core.Direction;
-import net.minecraft.client.Minecraft;
+import net.minecraft.core.HolderLookup;
 
 import net.mcreator.allaboutengie.AllaboutengieMod;
 
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class AllaboutengieModVariables {
+	public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.ATTACHMENT_TYPES, AllaboutengieMod.MODID);
+	public static final Supplier<AttachmentType<PlayerVariables>> PLAYER_VARIABLES = ATTACHMENT_TYPES.register("player_variables", () -> AttachmentType.serializable(() -> new PlayerVariables()).build());
 	public static boolean decembercodeblock = true;
 	public static boolean seasonautumn = false;
 	public static boolean seasonspring = false;
@@ -44,44 +43,37 @@ public class AllaboutengieModVariables {
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
-		AllaboutengieMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new, SavedDataSyncMessage::handler);
-		AllaboutengieMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handler);
+		AllaboutengieMod.addNetworkMessage(SavedDataSyncMessage.TYPE, SavedDataSyncMessage.STREAM_CODEC, SavedDataSyncMessage::handleData);
+		AllaboutengieMod.addNetworkMessage(PlayerVariablesSyncMessage.TYPE, PlayerVariablesSyncMessage.STREAM_CODEC, PlayerVariablesSyncMessage::handleData);
 	}
 
-	@SubscribeEvent
-	public static void init(RegisterCapabilitiesEvent event) {
-		event.register(PlayerVariables.class);
-	}
-
-	@Mod.EventBusSubscriber
+	@EventBusSubscriber
 	public static class EventBusVariableHandlers {
 		@SubscribeEvent
 		public static void onPlayerLoggedInSyncPlayerVariables(PlayerEvent.PlayerLoggedInEvent event) {
-			if (!event.getEntity().level().isClientSide())
-				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
+			if (event.getEntity() instanceof ServerPlayer player)
+				player.getData(PLAYER_VARIABLES).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerRespawnedSyncPlayerVariables(PlayerEvent.PlayerRespawnEvent event) {
-			if (!event.getEntity().level().isClientSide())
-				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
+			if (event.getEntity() instanceof ServerPlayer player)
+				player.getData(PLAYER_VARIABLES).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerChangedDimensionSyncPlayerVariables(PlayerEvent.PlayerChangedDimensionEvent event) {
-			if (!event.getEntity().level().isClientSide())
-				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
+			if (event.getEntity() instanceof ServerPlayer player)
+				player.getData(PLAYER_VARIABLES).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void clonePlayer(PlayerEvent.Clone event) {
-			event.getOriginal().revive();
-			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
-			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+			PlayerVariables original = event.getOriginal().getData(PLAYER_VARIABLES);
+			PlayerVariables clone = new PlayerVariables();
 			clone.BlockDeathAliveCOunt = original.BlockDeathAliveCOunt;
 			clone.coderedeemblock = original.coderedeemblock;
 			clone.detecstart = original.detecstart;
-			clone.EntitySetsAttackTarget = original.EntitySetsAttackTarget;
 			clone.GoodLuck = original.GoodLuck;
 			clone.healthreductiondday = original.healthreductiondday;
 			clone.multiplayertrophyobtained = original.multiplayertrophyobtained;
@@ -90,15 +82,10 @@ public class AllaboutengieModVariables {
 			clone.SharkoRideToggle = original.SharkoRideToggle;
 			clone.ShowObjectiveOverlay = original.ShowObjectiveOverlay;
 			clone.solotrophyobtained = original.solotrophyobtained;
-			clone.TBHbantoggle = original.TBHbantoggle;
-			clone.TBHdamagetoggle = original.TBHdamagetoggle;
-			clone.TBHkicktoggle = original.TBHkicktoggle;
-			clone.TBHNotoggle = original.TBHNotoggle;
 			clone.timeoverlaytoggle = original.timeoverlaytoggle;
 			clone.AngryEngieKillCount = original.AngryEngieKillCount;
 			clone.browniescount = original.browniescount;
 			clone.cheeseballcount = original.cheeseballcount;
-			clone.coincount = original.coincount;
 			clone.EnragedEngieKillCount = original.EnragedEngieKillCount;
 			clone.HHGLookX = original.HHGLookX;
 			clone.HHGLookY = original.HHGLookY;
@@ -113,16 +100,11 @@ public class AllaboutengieModVariables {
 			clone.RiftY = original.RiftY;
 			clone.RiftZ = original.RiftZ;
 			clone.TrueHardcoreLifeCount = original.TrueHardcoreLifeCount;
-			clone.playerjoinedonce = original.playerjoinedonce;
-			clone.dooropened = original.dooropened;
-			clone.doorclosed = original.doorclosed;
-			clone.doorwait25ticks = original.doorwait25ticks;
 			clone.MonstrosityEngieKillCount = original.MonstrosityEngieKillCount;
 			clone.PureInsanityKillCount = original.PureInsanityKillCount;
 			clone.crucifixsavedentity = original.crucifixsavedentity;
 			clone.WelcomeBackToggle = original.WelcomeBackToggle;
 			clone.MaxPercentGiveOptionToDoHardestMobDiff = original.MaxPercentGiveOptionToDoHardestMobDiff;
-			clone.sharkoownerdisplayname = original.sharkoownerdisplayname;
 			clone.playerstunnedmobs = original.playerstunnedmobs;
 			clone.playerstunoffcooldown = original.playerstunoffcooldown;
 			clone.gainedmadengieplush = original.gainedmadengieplush;
@@ -150,6 +132,8 @@ public class AllaboutengieModVariables {
 			clone.gainedpureinsanityengieplush = original.gainedpureinsanityengieplush;
 			clone.DoomsdayTrackToggle = original.DoomsdayTrackToggle;
 			clone.DoomsdayRiskTrackToggle = original.DoomsdayRiskTrackToggle;
+			clone.sharkolayingstate = original.sharkolayingstate;
+			clone.difficultyoverlaytoggle = original.difficultyoverlaytoggle;
 			if (!event.isWasDeath()) {
 				clone.DoomsdayAlive = original.DoomsdayAlive;
 				clone.firstplay = original.firstplay;
@@ -158,26 +142,27 @@ public class AllaboutengieModVariables {
 				clone.pageNumber = original.pageNumber;
 				clone.pageNumberText = original.pageNumberText;
 			}
+			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
 
 		@SubscribeEvent
 		public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-			if (!event.getEntity().level().isClientSide()) {
+			if (event.getEntity() instanceof ServerPlayer player) {
 				SavedData mapdata = MapVariables.get(event.getEntity().level());
 				SavedData worlddata = WorldVariables.get(event.getEntity().level());
 				if (mapdata != null)
-					AllaboutengieMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(0, mapdata));
+					PacketDistributor.sendToPlayer(player, new SavedDataSyncMessage(0, mapdata));
 				if (worlddata != null)
-					AllaboutengieMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
+					PacketDistributor.sendToPlayer(player, new SavedDataSyncMessage(1, worlddata));
 			}
 		}
 
 		@SubscribeEvent
 		public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
-			if (!event.getEntity().level().isClientSide()) {
+			if (event.getEntity() instanceof ServerPlayer player) {
 				SavedData worlddata = WorldVariables.get(event.getEntity().level());
 				if (worlddata != null)
-					AllaboutengieMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
+					PacketDistributor.sendToPlayer(player, new SavedDataSyncMessage(1, worlddata));
 			}
 		}
 	}
@@ -186,33 +171,33 @@ public class AllaboutengieModVariables {
 		public static final String DATA_NAME = "allaboutengie_worldvars";
 		public boolean yeah = false;
 
-		public static WorldVariables load(CompoundTag tag) {
+		public static WorldVariables load(CompoundTag tag, HolderLookup.Provider lookupProvider) {
 			WorldVariables data = new WorldVariables();
-			data.read(tag);
+			data.read(tag, lookupProvider);
 			return data;
 		}
 
-		public void read(CompoundTag nbt) {
+		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			yeah = nbt.getBoolean("yeah");
 		}
 
 		@Override
-		public CompoundTag save(CompoundTag nbt) {
+		public CompoundTag save(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			nbt.putBoolean("yeah", yeah);
 			return nbt;
 		}
 
 		public void syncData(LevelAccessor world) {
 			this.setDirty();
-			if (world instanceof Level level && !level.isClientSide())
-				AllaboutengieMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(level::dimension), new SavedDataSyncMessage(1, this));
+			if (world instanceof ServerLevel level)
+				PacketDistributor.sendToPlayersInDimension(level, new SavedDataSyncMessage(1, this));
 		}
 
 		static WorldVariables clientSide = new WorldVariables();
 
 		public static WorldVariables get(LevelAccessor world) {
 			if (world instanceof ServerLevel level) {
-				return level.getDataStorage().computeIfAbsent(e -> WorldVariables.load(e), WorldVariables::new, DATA_NAME);
+				return level.getDataStorage().computeIfAbsent(new SavedData.Factory<>(WorldVariables::new, WorldVariables::load), DATA_NAME);
 			} else {
 				return clientSide;
 			}
@@ -238,7 +223,6 @@ public class AllaboutengieModVariables {
 		public boolean DoomsdayEeriePlayOnce = false;
 		public boolean doomsdaymainsongstart = false;
 		public boolean DoomsDayStart = false;
-		public boolean EngieCoinSpawn = true;
 		public boolean GOODBYE = false;
 		public boolean hewhowatches = false;
 		public boolean HHGkilledtoggle = false;
@@ -274,7 +258,6 @@ public class AllaboutengieModVariables {
 		public boolean timecheckstop = false;
 		public boolean waittildoomsday = false;
 		public boolean waittilsdoomsday = false;
-		public boolean WELCOMETOINSANITY = false;
 		public double challengeplayerreadyupcount = 0.0;
 		public double DoomsDayAliveCount = 0.0;
 		public double DoomsdayDeathCount = 0.0;
@@ -284,7 +267,6 @@ public class AllaboutengieModVariables {
 		public double nightmare = 0.0;
 		public double PlayerWorldCount = 0;
 		public double Risk = 0.0;
-		public double risknumberattempts = 0.0;
 		public double timebeforespecial = 0.0;
 		public double SharkoKilledByPlayersCount = 0;
 		public double playersaidyestotrymaxdiff = 0;
@@ -305,14 +287,32 @@ public class AllaboutengieModVariables {
 		public boolean SharkoSitCD = true;
 		public boolean antimatterdropcheck = false;
 		public double getdamage2 = 0;
+		public double playerobtainedantimatterregularcount = 0;
+		public double playerobtainedantimatterbigcount = 0;
+		public double playerobtainedantimatterlargecount = 0;
+		public double playerobtainedantimatterhugecount = 0;
+		public double playerobtainedantimatterenormouscount = 0;
+		public double playerobtainedantimattergiganticcount = 0;
+		public double playerobtainedantimattermassivecount = 0;
+		public double playerobtainedantimatterbiblicallycount = 0;
+		public double playerobtainedantimattermonstrositycount = 0;
+		public double playerobtainedantimatterdoomsdaycount = 0;
+		public double playerobtainedantimattersuperdoomsdaycount = 0;
+		public double playerobtainedantimattertheendcount = 0;
+		public double playerobtainedantimatterengiecount = 0;
+		public double playerobtainedengiegamesswordcount = 0;
+		public double playerobtainedantimatterengiegamessword = 0;
+		public double playerobtainedantimatterminicount = 0;
+		public boolean CosmicEngieGamesSpawnLock = true;
+		public boolean CosmicEngieGamesDespawnLock = true;
 
-		public static MapVariables load(CompoundTag tag) {
+		public static MapVariables load(CompoundTag tag, HolderLookup.Provider lookupProvider) {
 			MapVariables data = new MapVariables();
-			data.read(tag);
+			data.read(tag, lookupProvider);
 			return data;
 		}
 
-		public void read(CompoundTag nbt) {
+		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			Birthday = nbt.getBoolean("Birthday");
 			birthdaystart = nbt.getBoolean("birthdaystart");
 			BYEBYE = nbt.getBoolean("BYEBYE");
@@ -330,7 +330,6 @@ public class AllaboutengieModVariables {
 			DoomsdayEeriePlayOnce = nbt.getBoolean("DoomsdayEeriePlayOnce");
 			doomsdaymainsongstart = nbt.getBoolean("doomsdaymainsongstart");
 			DoomsDayStart = nbt.getBoolean("DoomsDayStart");
-			EngieCoinSpawn = nbt.getBoolean("EngieCoinSpawn");
 			GOODBYE = nbt.getBoolean("GOODBYE");
 			hewhowatches = nbt.getBoolean("hewhowatches");
 			HHGkilledtoggle = nbt.getBoolean("HHGkilledtoggle");
@@ -366,7 +365,6 @@ public class AllaboutengieModVariables {
 			timecheckstop = nbt.getBoolean("timecheckstop");
 			waittildoomsday = nbt.getBoolean("waittildoomsday");
 			waittilsdoomsday = nbt.getBoolean("waittilsdoomsday");
-			WELCOMETOINSANITY = nbt.getBoolean("WELCOMETOINSANITY");
 			challengeplayerreadyupcount = nbt.getDouble("challengeplayerreadyupcount");
 			DoomsDayAliveCount = nbt.getDouble("DoomsDayAliveCount");
 			DoomsdayDeathCount = nbt.getDouble("DoomsdayDeathCount");
@@ -376,7 +374,6 @@ public class AllaboutengieModVariables {
 			nightmare = nbt.getDouble("nightmare");
 			PlayerWorldCount = nbt.getDouble("PlayerWorldCount");
 			Risk = nbt.getDouble("Risk");
-			risknumberattempts = nbt.getDouble("risknumberattempts");
 			timebeforespecial = nbt.getDouble("timebeforespecial");
 			SharkoKilledByPlayersCount = nbt.getDouble("SharkoKilledByPlayersCount");
 			playersaidyestotrymaxdiff = nbt.getDouble("playersaidyestotrymaxdiff");
@@ -397,10 +394,28 @@ public class AllaboutengieModVariables {
 			SharkoSitCD = nbt.getBoolean("SharkoSitCD");
 			antimatterdropcheck = nbt.getBoolean("antimatterdropcheck");
 			getdamage2 = nbt.getDouble("getdamage2");
+			playerobtainedantimatterregularcount = nbt.getDouble("playerobtainedantimatterregularcount");
+			playerobtainedantimatterbigcount = nbt.getDouble("playerobtainedantimatterbigcount");
+			playerobtainedantimatterlargecount = nbt.getDouble("playerobtainedantimatterlargecount");
+			playerobtainedantimatterhugecount = nbt.getDouble("playerobtainedantimatterhugecount");
+			playerobtainedantimatterenormouscount = nbt.getDouble("playerobtainedantimatterenormouscount");
+			playerobtainedantimattergiganticcount = nbt.getDouble("playerobtainedantimattergiganticcount");
+			playerobtainedantimattermassivecount = nbt.getDouble("playerobtainedantimattermassivecount");
+			playerobtainedantimatterbiblicallycount = nbt.getDouble("playerobtainedantimatterbiblicallycount");
+			playerobtainedantimattermonstrositycount = nbt.getDouble("playerobtainedantimattermonstrositycount");
+			playerobtainedantimatterdoomsdaycount = nbt.getDouble("playerobtainedantimatterdoomsdaycount");
+			playerobtainedantimattersuperdoomsdaycount = nbt.getDouble("playerobtainedantimattersuperdoomsdaycount");
+			playerobtainedantimattertheendcount = nbt.getDouble("playerobtainedantimattertheendcount");
+			playerobtainedantimatterengiecount = nbt.getDouble("playerobtainedantimatterengiecount");
+			playerobtainedengiegamesswordcount = nbt.getDouble("playerobtainedengiegamesswordcount");
+			playerobtainedantimatterengiegamessword = nbt.getDouble("playerobtainedantimatterengiegamessword");
+			playerobtainedantimatterminicount = nbt.getDouble("playerobtainedantimatterminicount");
+			CosmicEngieGamesSpawnLock = nbt.getBoolean("CosmicEngieGamesSpawnLock");
+			CosmicEngieGamesDespawnLock = nbt.getBoolean("CosmicEngieGamesDespawnLock");
 		}
 
 		@Override
-		public CompoundTag save(CompoundTag nbt) {
+		public CompoundTag save(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			nbt.putBoolean("Birthday", Birthday);
 			nbt.putBoolean("birthdaystart", birthdaystart);
 			nbt.putBoolean("BYEBYE", BYEBYE);
@@ -418,7 +433,6 @@ public class AllaboutengieModVariables {
 			nbt.putBoolean("DoomsdayEeriePlayOnce", DoomsdayEeriePlayOnce);
 			nbt.putBoolean("doomsdaymainsongstart", doomsdaymainsongstart);
 			nbt.putBoolean("DoomsDayStart", DoomsDayStart);
-			nbt.putBoolean("EngieCoinSpawn", EngieCoinSpawn);
 			nbt.putBoolean("GOODBYE", GOODBYE);
 			nbt.putBoolean("hewhowatches", hewhowatches);
 			nbt.putBoolean("HHGkilledtoggle", HHGkilledtoggle);
@@ -454,7 +468,6 @@ public class AllaboutengieModVariables {
 			nbt.putBoolean("timecheckstop", timecheckstop);
 			nbt.putBoolean("waittildoomsday", waittildoomsday);
 			nbt.putBoolean("waittilsdoomsday", waittilsdoomsday);
-			nbt.putBoolean("WELCOMETOINSANITY", WELCOMETOINSANITY);
 			nbt.putDouble("challengeplayerreadyupcount", challengeplayerreadyupcount);
 			nbt.putDouble("DoomsDayAliveCount", DoomsDayAliveCount);
 			nbt.putDouble("DoomsdayDeathCount", DoomsdayDeathCount);
@@ -464,7 +477,6 @@ public class AllaboutengieModVariables {
 			nbt.putDouble("nightmare", nightmare);
 			nbt.putDouble("PlayerWorldCount", PlayerWorldCount);
 			nbt.putDouble("Risk", Risk);
-			nbt.putDouble("risknumberattempts", risknumberattempts);
 			nbt.putDouble("timebeforespecial", timebeforespecial);
 			nbt.putDouble("SharkoKilledByPlayersCount", SharkoKilledByPlayersCount);
 			nbt.putDouble("playersaidyestotrymaxdiff", playersaidyestotrymaxdiff);
@@ -485,103 +497,89 @@ public class AllaboutengieModVariables {
 			nbt.putBoolean("SharkoSitCD", SharkoSitCD);
 			nbt.putBoolean("antimatterdropcheck", antimatterdropcheck);
 			nbt.putDouble("getdamage2", getdamage2);
+			nbt.putDouble("playerobtainedantimatterregularcount", playerobtainedantimatterregularcount);
+			nbt.putDouble("playerobtainedantimatterbigcount", playerobtainedantimatterbigcount);
+			nbt.putDouble("playerobtainedantimatterlargecount", playerobtainedantimatterlargecount);
+			nbt.putDouble("playerobtainedantimatterhugecount", playerobtainedantimatterhugecount);
+			nbt.putDouble("playerobtainedantimatterenormouscount", playerobtainedantimatterenormouscount);
+			nbt.putDouble("playerobtainedantimattergiganticcount", playerobtainedantimattergiganticcount);
+			nbt.putDouble("playerobtainedantimattermassivecount", playerobtainedantimattermassivecount);
+			nbt.putDouble("playerobtainedantimatterbiblicallycount", playerobtainedantimatterbiblicallycount);
+			nbt.putDouble("playerobtainedantimattermonstrositycount", playerobtainedantimattermonstrositycount);
+			nbt.putDouble("playerobtainedantimatterdoomsdaycount", playerobtainedantimatterdoomsdaycount);
+			nbt.putDouble("playerobtainedantimattersuperdoomsdaycount", playerobtainedantimattersuperdoomsdaycount);
+			nbt.putDouble("playerobtainedantimattertheendcount", playerobtainedantimattertheendcount);
+			nbt.putDouble("playerobtainedantimatterengiecount", playerobtainedantimatterengiecount);
+			nbt.putDouble("playerobtainedengiegamesswordcount", playerobtainedengiegamesswordcount);
+			nbt.putDouble("playerobtainedantimatterengiegamessword", playerobtainedantimatterengiegamessword);
+			nbt.putDouble("playerobtainedantimatterminicount", playerobtainedantimatterminicount);
+			nbt.putBoolean("CosmicEngieGamesSpawnLock", CosmicEngieGamesSpawnLock);
+			nbt.putBoolean("CosmicEngieGamesDespawnLock", CosmicEngieGamesDespawnLock);
 			return nbt;
 		}
 
 		public void syncData(LevelAccessor world) {
 			this.setDirty();
 			if (world instanceof Level && !world.isClientSide())
-				AllaboutengieMod.PACKET_HANDLER.send(PacketDistributor.ALL.noArg(), new SavedDataSyncMessage(0, this));
+				PacketDistributor.sendToAllPlayers(new SavedDataSyncMessage(0, this));
 		}
 
 		static MapVariables clientSide = new MapVariables();
 
 		public static MapVariables get(LevelAccessor world) {
 			if (world instanceof ServerLevelAccessor serverLevelAcc) {
-				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(e -> MapVariables.load(e), MapVariables::new, DATA_NAME);
+				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(new SavedData.Factory<>(MapVariables::new, MapVariables::load), DATA_NAME);
 			} else {
 				return clientSide;
 			}
 		}
 	}
 
-	public static class SavedDataSyncMessage {
-		private final int type;
-		private SavedData data;
-
-		public SavedDataSyncMessage(FriendlyByteBuf buffer) {
-			this.type = buffer.readInt();
+	public record SavedDataSyncMessage(int dataType, SavedData data) implements CustomPacketPayload {
+		public static final Type<SavedDataSyncMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(AllaboutengieMod.MODID, "saved_data_sync"));
+		public static final StreamCodec<RegistryFriendlyByteBuf, SavedDataSyncMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, SavedDataSyncMessage message) -> {
+			buffer.writeInt(message.dataType);
+			if (message.data != null)
+				buffer.writeNbt(message.data.save(new CompoundTag(), buffer.registryAccess()));
+		}, (RegistryFriendlyByteBuf buffer) -> {
+			int dataType = buffer.readInt();
 			CompoundTag nbt = buffer.readNbt();
+			SavedData data = null;
 			if (nbt != null) {
-				this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
-				if (this.data instanceof MapVariables mapVariables)
-					mapVariables.read(nbt);
-				else if (this.data instanceof WorldVariables worldVariables)
-					worldVariables.read(nbt);
+				data = dataType == 0 ? new MapVariables() : new WorldVariables();
+				if (data instanceof MapVariables mapVariables)
+					mapVariables.read(nbt, buffer.registryAccess());
+				else if (data instanceof WorldVariables worldVariables)
+					worldVariables.read(nbt, buffer.registryAccess());
+			}
+			return new SavedDataSyncMessage(dataType, data);
+		});
+
+		@Override
+		public Type<SavedDataSyncMessage> type() {
+			return TYPE;
+		}
+
+		public static void handleData(final SavedDataSyncMessage message, final IPayloadContext context) {
+			if (context.flow() == PacketFlow.CLIENTBOUND && message.data != null) {
+				context.enqueueWork(() -> {
+					if (message.dataType == 0)
+						MapVariables.clientSide.read(message.data.save(new CompoundTag(), context.player().registryAccess()), context.player().registryAccess());
+					else
+						WorldVariables.clientSide.read(message.data.save(new CompoundTag(), context.player().registryAccess()), context.player().registryAccess());
+				}).exceptionally(e -> {
+					context.connection().disconnect(Component.literal(e.getMessage()));
+					return null;
+				});
 			}
 		}
-
-		public SavedDataSyncMessage(int type, SavedData data) {
-			this.type = type;
-			this.data = data;
-		}
-
-		public static void buffer(SavedDataSyncMessage message, FriendlyByteBuf buffer) {
-			buffer.writeInt(message.type);
-			if (message.data != null)
-				buffer.writeNbt(message.data.save(new CompoundTag()));
-		}
-
-		public static void handler(SavedDataSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
-			NetworkEvent.Context context = contextSupplier.get();
-			context.enqueueWork(() -> {
-				if (!context.getDirection().getReceptionSide().isServer() && message.data != null) {
-					if (message.type == 0)
-						MapVariables.clientSide = (MapVariables) message.data;
-					else
-						WorldVariables.clientSide = (WorldVariables) message.data;
-				}
-			});
-			context.setPacketHandled(true);
-		}
 	}
 
-	public static final Capability<PlayerVariables> PLAYER_VARIABLES_CAPABILITY = CapabilityManager.get(new CapabilityToken<PlayerVariables>() {
-	});
-
-	@Mod.EventBusSubscriber
-	private static class PlayerVariablesProvider implements ICapabilitySerializable<Tag> {
-		@SubscribeEvent
-		public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
-			if (event.getObject() instanceof Player && !(event.getObject() instanceof FakePlayer))
-				event.addCapability(ResourceLocation.fromNamespaceAndPath("allaboutengie", "player_variables"), new PlayerVariablesProvider());
-		}
-
-		private final PlayerVariables playerVariables = new PlayerVariables();
-		private final LazyOptional<PlayerVariables> instance = LazyOptional.of(() -> playerVariables);
-
-		@Override
-		public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
-			return cap == PLAYER_VARIABLES_CAPABILITY ? instance.cast() : LazyOptional.empty();
-		}
-
-		@Override
-		public Tag serializeNBT() {
-			return playerVariables.writeNBT();
-		}
-
-		@Override
-		public void deserializeNBT(Tag nbt) {
-			playerVariables.readNBT(nbt);
-		}
-	}
-
-	public static class PlayerVariables {
+	public static class PlayerVariables implements INBTSerializable<CompoundTag> {
 		public boolean BlockDeathAliveCOunt = false;
 		public boolean coderedeemblock = false;
 		public boolean detecstart = false;
 		public boolean DoomsdayAlive = false;
-		public boolean EntitySetsAttackTarget = false;
 		public boolean firstplay = false;
 		public boolean GoodLuck = false;
 		public boolean healthreductiondday = false;
@@ -593,15 +591,10 @@ public class AllaboutengieModVariables {
 		public boolean SharkoRideToggle = false;
 		public boolean ShowObjectiveOverlay = false;
 		public boolean solotrophyobtained = false;
-		public boolean TBHbantoggle = false;
-		public boolean TBHdamagetoggle = false;
-		public boolean TBHkicktoggle = false;
-		public boolean TBHNotoggle = true;
 		public boolean timeoverlaytoggle = false;
 		public double AngryEngieKillCount = 0.0;
 		public double browniescount = 0.0;
 		public double cheeseballcount = 0.0;
-		public double coincount = 0.0;
 		public double EnragedEngieKillCount = 0.0;
 		public double HHGLookX = 525.0;
 		public double HHGLookY = 525.0;
@@ -618,16 +611,11 @@ public class AllaboutengieModVariables {
 		public double RiftZ = 0;
 		public double TrueHardcoreLifeCount = 10.0;
 		public String pageNumberText = "";
-		public boolean playerjoinedonce = false;
-		public boolean dooropened = false;
-		public boolean doorclosed = false;
-		public boolean doorwait25ticks = false;
 		public double MonstrosityEngieKillCount = 0;
 		public double PureInsanityKillCount = 0;
 		public boolean crucifixsavedentity = false;
 		public boolean WelcomeBackToggle = false;
 		public boolean MaxPercentGiveOptionToDoHardestMobDiff = false;
-		public String sharkoownerdisplayname = "None";
 		public boolean playerstunnedmobs = false;
 		public boolean playerstunoffcooldown = false;
 		public boolean gainedmadengieplush = false;
@@ -655,19 +643,16 @@ public class AllaboutengieModVariables {
 		public boolean gainedpureinsanityengieplush = false;
 		public boolean DoomsdayTrackToggle = false;
 		public boolean DoomsdayRiskTrackToggle = false;
+		public boolean sharkolayingstate = false;
+		public boolean difficultyoverlaytoggle = true;
 
-		public void syncPlayerVariables(Entity entity) {
-			if (entity instanceof ServerPlayer serverPlayer)
-				AllaboutengieMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> serverPlayer), new PlayerVariablesSyncMessage(this));
-		}
-
-		public Tag writeNBT() {
+		@Override
+		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
 			CompoundTag nbt = new CompoundTag();
 			nbt.putBoolean("BlockDeathAliveCOunt", BlockDeathAliveCOunt);
 			nbt.putBoolean("coderedeemblock", coderedeemblock);
 			nbt.putBoolean("detecstart", detecstart);
 			nbt.putBoolean("DoomsdayAlive", DoomsdayAlive);
-			nbt.putBoolean("EntitySetsAttackTarget", EntitySetsAttackTarget);
 			nbt.putBoolean("firstplay", firstplay);
 			nbt.putBoolean("GoodLuck", GoodLuck);
 			nbt.putBoolean("healthreductiondday", healthreductiondday);
@@ -679,15 +664,10 @@ public class AllaboutengieModVariables {
 			nbt.putBoolean("SharkoRideToggle", SharkoRideToggle);
 			nbt.putBoolean("ShowObjectiveOverlay", ShowObjectiveOverlay);
 			nbt.putBoolean("solotrophyobtained", solotrophyobtained);
-			nbt.putBoolean("TBHbantoggle", TBHbantoggle);
-			nbt.putBoolean("TBHdamagetoggle", TBHdamagetoggle);
-			nbt.putBoolean("TBHkicktoggle", TBHkicktoggle);
-			nbt.putBoolean("TBHNotoggle", TBHNotoggle);
 			nbt.putBoolean("timeoverlaytoggle", timeoverlaytoggle);
 			nbt.putDouble("AngryEngieKillCount", AngryEngieKillCount);
 			nbt.putDouble("browniescount", browniescount);
 			nbt.putDouble("cheeseballcount", cheeseballcount);
-			nbt.putDouble("coincount", coincount);
 			nbt.putDouble("EnragedEngieKillCount", EnragedEngieKillCount);
 			nbt.putDouble("HHGLookX", HHGLookX);
 			nbt.putDouble("HHGLookY", HHGLookY);
@@ -704,16 +684,11 @@ public class AllaboutengieModVariables {
 			nbt.putDouble("RiftZ", RiftZ);
 			nbt.putDouble("TrueHardcoreLifeCount", TrueHardcoreLifeCount);
 			nbt.putString("pageNumberText", pageNumberText);
-			nbt.putBoolean("playerjoinedonce", playerjoinedonce);
-			nbt.putBoolean("dooropened", dooropened);
-			nbt.putBoolean("doorclosed", doorclosed);
-			nbt.putBoolean("doorwait25ticks", doorwait25ticks);
 			nbt.putDouble("MonstrosityEngieKillCount", MonstrosityEngieKillCount);
 			nbt.putDouble("PureInsanityKillCount", PureInsanityKillCount);
 			nbt.putBoolean("crucifixsavedentity", crucifixsavedentity);
 			nbt.putBoolean("WelcomeBackToggle", WelcomeBackToggle);
 			nbt.putBoolean("MaxPercentGiveOptionToDoHardestMobDiff", MaxPercentGiveOptionToDoHardestMobDiff);
-			nbt.putString("sharkoownerdisplayname", sharkoownerdisplayname);
 			nbt.putBoolean("playerstunnedmobs", playerstunnedmobs);
 			nbt.putBoolean("playerstunoffcooldown", playerstunoffcooldown);
 			nbt.putBoolean("gainedmadengieplush", gainedmadengieplush);
@@ -741,16 +716,17 @@ public class AllaboutengieModVariables {
 			nbt.putBoolean("gainedpureinsanityengieplush", gainedpureinsanityengieplush);
 			nbt.putBoolean("DoomsdayTrackToggle", DoomsdayTrackToggle);
 			nbt.putBoolean("DoomsdayRiskTrackToggle", DoomsdayRiskTrackToggle);
+			nbt.putBoolean("sharkolayingstate", sharkolayingstate);
+			nbt.putBoolean("difficultyoverlaytoggle", difficultyoverlaytoggle);
 			return nbt;
 		}
 
-		public void readNBT(Tag tag) {
-			CompoundTag nbt = (CompoundTag) tag;
+		@Override
+		public void deserializeNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
 			BlockDeathAliveCOunt = nbt.getBoolean("BlockDeathAliveCOunt");
 			coderedeemblock = nbt.getBoolean("coderedeemblock");
 			detecstart = nbt.getBoolean("detecstart");
 			DoomsdayAlive = nbt.getBoolean("DoomsdayAlive");
-			EntitySetsAttackTarget = nbt.getBoolean("EntitySetsAttackTarget");
 			firstplay = nbt.getBoolean("firstplay");
 			GoodLuck = nbt.getBoolean("GoodLuck");
 			healthreductiondday = nbt.getBoolean("healthreductiondday");
@@ -762,15 +738,10 @@ public class AllaboutengieModVariables {
 			SharkoRideToggle = nbt.getBoolean("SharkoRideToggle");
 			ShowObjectiveOverlay = nbt.getBoolean("ShowObjectiveOverlay");
 			solotrophyobtained = nbt.getBoolean("solotrophyobtained");
-			TBHbantoggle = nbt.getBoolean("TBHbantoggle");
-			TBHdamagetoggle = nbt.getBoolean("TBHdamagetoggle");
-			TBHkicktoggle = nbt.getBoolean("TBHkicktoggle");
-			TBHNotoggle = nbt.getBoolean("TBHNotoggle");
 			timeoverlaytoggle = nbt.getBoolean("timeoverlaytoggle");
 			AngryEngieKillCount = nbt.getDouble("AngryEngieKillCount");
 			browniescount = nbt.getDouble("browniescount");
 			cheeseballcount = nbt.getDouble("cheeseballcount");
-			coincount = nbt.getDouble("coincount");
 			EnragedEngieKillCount = nbt.getDouble("EnragedEngieKillCount");
 			HHGLookX = nbt.getDouble("HHGLookX");
 			HHGLookY = nbt.getDouble("HHGLookY");
@@ -787,16 +758,11 @@ public class AllaboutengieModVariables {
 			RiftZ = nbt.getDouble("RiftZ");
 			TrueHardcoreLifeCount = nbt.getDouble("TrueHardcoreLifeCount");
 			pageNumberText = nbt.getString("pageNumberText");
-			playerjoinedonce = nbt.getBoolean("playerjoinedonce");
-			dooropened = nbt.getBoolean("dooropened");
-			doorclosed = nbt.getBoolean("doorclosed");
-			doorwait25ticks = nbt.getBoolean("doorwait25ticks");
 			MonstrosityEngieKillCount = nbt.getDouble("MonstrosityEngieKillCount");
 			PureInsanityKillCount = nbt.getDouble("PureInsanityKillCount");
 			crucifixsavedentity = nbt.getBoolean("crucifixsavedentity");
 			WelcomeBackToggle = nbt.getBoolean("WelcomeBackToggle");
 			MaxPercentGiveOptionToDoHardestMobDiff = nbt.getBoolean("MaxPercentGiveOptionToDoHardestMobDiff");
-			sharkoownerdisplayname = nbt.getString("sharkoownerdisplayname");
 			playerstunnedmobs = nbt.getBoolean("playerstunnedmobs");
 			playerstunoffcooldown = nbt.getBoolean("playerstunoffcooldown");
 			gainedmadengieplush = nbt.getBoolean("gainedmadengieplush");
@@ -824,111 +790,37 @@ public class AllaboutengieModVariables {
 			gainedpureinsanityengieplush = nbt.getBoolean("gainedpureinsanityengieplush");
 			DoomsdayTrackToggle = nbt.getBoolean("DoomsdayTrackToggle");
 			DoomsdayRiskTrackToggle = nbt.getBoolean("DoomsdayRiskTrackToggle");
+			sharkolayingstate = nbt.getBoolean("sharkolayingstate");
+			difficultyoverlaytoggle = nbt.getBoolean("difficultyoverlaytoggle");
+		}
+
+		public void syncPlayerVariables(Entity entity) {
+			if (entity instanceof ServerPlayer serverPlayer)
+				PacketDistributor.sendToPlayer(serverPlayer, new PlayerVariablesSyncMessage(this));
 		}
 	}
 
-	public static class PlayerVariablesSyncMessage {
-		private final PlayerVariables data;
+	public record PlayerVariablesSyncMessage(PlayerVariables data) implements CustomPacketPayload {
+		public static final Type<PlayerVariablesSyncMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(AllaboutengieMod.MODID, "player_variables_sync"));
+		public static final StreamCodec<RegistryFriendlyByteBuf, PlayerVariablesSyncMessage> STREAM_CODEC = StreamCodec
+				.of((RegistryFriendlyByteBuf buffer, PlayerVariablesSyncMessage message) -> buffer.writeNbt(message.data().serializeNBT(buffer.registryAccess())), (RegistryFriendlyByteBuf buffer) -> {
+					PlayerVariablesSyncMessage message = new PlayerVariablesSyncMessage(new PlayerVariables());
+					message.data.deserializeNBT(buffer.registryAccess(), buffer.readNbt());
+					return message;
+				});
 
-		public PlayerVariablesSyncMessage(FriendlyByteBuf buffer) {
-			this.data = new PlayerVariables();
-			this.data.readNBT(buffer.readNbt());
+		@Override
+		public Type<PlayerVariablesSyncMessage> type() {
+			return TYPE;
 		}
 
-		public PlayerVariablesSyncMessage(PlayerVariables data) {
-			this.data = data;
-		}
-
-		public static void buffer(PlayerVariablesSyncMessage message, FriendlyByteBuf buffer) {
-			buffer.writeNbt((CompoundTag) message.data.writeNBT());
-		}
-
-		public static void handler(PlayerVariablesSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
-			NetworkEvent.Context context = contextSupplier.get();
-			context.enqueueWork(() -> {
-				if (!context.getDirection().getReceptionSide().isServer()) {
-					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
-					variables.BlockDeathAliveCOunt = message.data.BlockDeathAliveCOunt;
-					variables.coderedeemblock = message.data.coderedeemblock;
-					variables.detecstart = message.data.detecstart;
-					variables.DoomsdayAlive = message.data.DoomsdayAlive;
-					variables.EntitySetsAttackTarget = message.data.EntitySetsAttackTarget;
-					variables.firstplay = message.data.firstplay;
-					variables.GoodLuck = message.data.GoodLuck;
-					variables.healthreductiondday = message.data.healthreductiondday;
-					variables.multiplayertrophyobtained = message.data.multiplayertrophyobtained;
-					variables.playerready = message.data.playerready;
-					variables.RespawnNormInstantHealth = message.data.RespawnNormInstantHealth;
-					variables.RespawnTrueHardcoreGraceStart = message.data.RespawnTrueHardcoreGraceStart;
-					variables.SharkoRetryState = message.data.SharkoRetryState;
-					variables.SharkoRideToggle = message.data.SharkoRideToggle;
-					variables.ShowObjectiveOverlay = message.data.ShowObjectiveOverlay;
-					variables.solotrophyobtained = message.data.solotrophyobtained;
-					variables.TBHbantoggle = message.data.TBHbantoggle;
-					variables.TBHdamagetoggle = message.data.TBHdamagetoggle;
-					variables.TBHkicktoggle = message.data.TBHkicktoggle;
-					variables.TBHNotoggle = message.data.TBHNotoggle;
-					variables.timeoverlaytoggle = message.data.timeoverlaytoggle;
-					variables.AngryEngieKillCount = message.data.AngryEngieKillCount;
-					variables.browniescount = message.data.browniescount;
-					variables.cheeseballcount = message.data.cheeseballcount;
-					variables.coincount = message.data.coincount;
-					variables.EnragedEngieKillCount = message.data.EnragedEngieKillCount;
-					variables.HHGLookX = message.data.HHGLookX;
-					variables.HHGLookY = message.data.HHGLookY;
-					variables.HHGLookZ = message.data.HHGLookZ;
-					variables.InsanityKillCount = message.data.InsanityKillCount;
-					variables.MadEngieKillCount = message.data.MadEngieKillCount;
-					variables.OutragedEngieKillCount = message.data.OutragedEngieKillCount;
-					variables.pageNumber = message.data.pageNumber;
-					variables.PlayerX = message.data.PlayerX;
-					variables.PlayerY = message.data.PlayerY;
-					variables.PlayerZ = message.data.PlayerZ;
-					variables.RiftX = message.data.RiftX;
-					variables.RiftY = message.data.RiftY;
-					variables.RiftZ = message.data.RiftZ;
-					variables.TrueHardcoreLifeCount = message.data.TrueHardcoreLifeCount;
-					variables.pageNumberText = message.data.pageNumberText;
-					variables.playerjoinedonce = message.data.playerjoinedonce;
-					variables.dooropened = message.data.dooropened;
-					variables.doorclosed = message.data.doorclosed;
-					variables.doorwait25ticks = message.data.doorwait25ticks;
-					variables.MonstrosityEngieKillCount = message.data.MonstrosityEngieKillCount;
-					variables.PureInsanityKillCount = message.data.PureInsanityKillCount;
-					variables.crucifixsavedentity = message.data.crucifixsavedentity;
-					variables.WelcomeBackToggle = message.data.WelcomeBackToggle;
-					variables.MaxPercentGiveOptionToDoHardestMobDiff = message.data.MaxPercentGiveOptionToDoHardestMobDiff;
-					variables.sharkoownerdisplayname = message.data.sharkoownerdisplayname;
-					variables.playerstunnedmobs = message.data.playerstunnedmobs;
-					variables.playerstunoffcooldown = message.data.playerstunoffcooldown;
-					variables.gainedmadengieplush = message.data.gainedmadengieplush;
-					variables.gainedangryengieplush1 = message.data.gainedangryengieplush1;
-					variables.gainedangryengieplush2 = message.data.gainedangryengieplush2;
-					variables.gainedangryengieplush3 = message.data.gainedangryengieplush3;
-					variables.gainedangryengieplush4 = message.data.gainedangryengieplush4;
-					variables.gainedenragedengieplush1 = message.data.gainedenragedengieplush1;
-					variables.gainedenragedengieplush2 = message.data.gainedenragedengieplush2;
-					variables.gainedenragedengieplush3 = message.data.gainedenragedengieplush3;
-					variables.gainedenragedengieplush4 = message.data.gainedenragedengieplush4;
-					variables.gainedoutragedengieplush1 = message.data.gainedoutragedengieplush1;
-					variables.gainedoutragedengieplush2 = message.data.gainedoutragedengieplush2;
-					variables.gainedoutragedengieplush3 = message.data.gainedoutragedengieplush3;
-					variables.gainedoutragedengieplush4 = message.data.gainedoutragedengieplush4;
-					variables.gainedmonstrosityengieplush1 = message.data.gainedmonstrosityengieplush1;
-					variables.gainedmonstrosityengieplush2 = message.data.gainedmonstrosityengieplush2;
-					variables.gainedmonstrosityengieplush3 = message.data.gainedmonstrosityengieplush3;
-					variables.gainedmonstrosityengieplush4 = message.data.gainedmonstrosityengieplush4;
-					variables.gainedinsanityengieplush1 = message.data.gainedinsanityengieplush1;
-					variables.gainedinsanityengieplush2 = message.data.gainedinsanityengieplush2;
-					variables.gainedinsanityengieplush3 = message.data.gainedinsanityengieplush3;
-					variables.gainedinsanityengieplush4 = message.data.gainedinsanityengieplush4;
-					variables.gainedinsanityengieplush5 = message.data.gainedinsanityengieplush5;
-					variables.gainedpureinsanityengieplush = message.data.gainedpureinsanityengieplush;
-					variables.DoomsdayTrackToggle = message.data.DoomsdayTrackToggle;
-					variables.DoomsdayRiskTrackToggle = message.data.DoomsdayRiskTrackToggle;
-				}
-			});
-			context.setPacketHandled(true);
+		public static void handleData(final PlayerVariablesSyncMessage message, final IPayloadContext context) {
+			if (context.flow() == PacketFlow.CLIENTBOUND && message.data != null) {
+				context.enqueueWork(() -> context.player().getData(PLAYER_VARIABLES).deserializeNBT(context.player().registryAccess(), message.data.serializeNBT(context.player().registryAccess()))).exceptionally(e -> {
+					context.connection().disconnect(Component.literal(e.getMessage()));
+					return null;
+				});
+			}
 		}
 	}
 }

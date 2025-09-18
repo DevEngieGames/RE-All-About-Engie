@@ -8,6 +8,7 @@
     "texture": "engiaxe",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "",
     "name": "Engie Axe",
     "specialInformation": {
       "fixedValue": []

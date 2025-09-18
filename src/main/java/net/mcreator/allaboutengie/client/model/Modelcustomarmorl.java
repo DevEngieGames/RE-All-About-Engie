@@ -1,8 +1,8 @@
 package net.mcreator.allaboutengie.client.model;
 
-import net.minecraft.world.entity.Entity;
 import net.minecraft.util.Mth;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -13,13 +13,10 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.EntityModel;
 
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.blaze3d.vertex.PoseStack;
-
 // Made with Blockbench 4.12.4
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
-public class Modelcustomarmorl<T extends Entity> extends EntityModel<T> {
+public class Modelcustomarmorl extends EntityModel<LivingEntityRenderState> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("allaboutengie", "modelcustomarmorl"), "main");
@@ -31,6 +28,7 @@ public class Modelcustomarmorl<T extends Entity> extends EntityModel<T> {
 	public final ModelPart ArmsR;
 
 	public Modelcustomarmorl(ModelPart root) {
+		super(root);
 		this.Helmet = root.getChild("Helmet");
 		this.Chestplate = root.getChild("Chestplate");
 		this.BootsL = root.getChild("BootsL");
@@ -86,17 +84,13 @@ public class Modelcustomarmorl<T extends Entity> extends EntityModel<T> {
 		return LayerDefinition.create(meshdefinition, 128, 128);
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		Helmet.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		Chestplate.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		BootsL.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		BootsR.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		ArmsL.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		ArmsR.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-	}
+	public void setupAnim(LivingEntityRenderState state) {
+		float limbSwing = state.walkAnimationPos;
+		float limbSwingAmount = state.walkAnimationSpeed;
+		float ageInTicks = state.ageInTicks;
+		float netHeadYaw = state.yRot;
+		float headPitch = state.xRot;
 
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.BootsR.xRot = Mth.cos(limbSwing * 1.0F) * 1.0F * limbSwingAmount;
 		this.ArmsR.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * limbSwingAmount;
 		this.Helmet.yRot = netHeadYaw / (180F / (float) Math.PI);

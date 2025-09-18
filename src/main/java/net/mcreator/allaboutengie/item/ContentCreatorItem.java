@@ -1,77 +1,78 @@
 package net.mcreator.allaboutengie.item;
 
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.equipment.EquipmentAssets;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.client.resources.model.EquipmentClientInfo;
 
 import net.mcreator.allaboutengie.procedures.DevContriLeggingsProcedure;
 import net.mcreator.allaboutengie.procedures.DevContriHelmetProcedure;
 import net.mcreator.allaboutengie.procedures.DevContriChestplateProcedure;
 import net.mcreator.allaboutengie.procedures.DevContriBootsProcedure;
+import net.mcreator.allaboutengie.init.AllaboutengieModItems;
+
+import java.util.Map;
 
 import com.google.common.collect.Iterables;
 
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public abstract class ContentCreatorItem extends ArmorItem {
-	public ContentCreatorItem(ArmorItem.Type type, Item.Properties properties) {
-		super(new ArmorMaterial() {
-			@Override
-			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 1024;
-			}
+	public static ArmorMaterial ARMOR_MATERIAL = new ArmorMaterial(1024, Map.of(ArmorType.BOOTS, 1024, ArmorType.LEGGINGS, 1024, ArmorType.CHESTPLATE, 1024, ArmorType.HELMET, 1024, ArmorType.BODY, 1024), 22,
+			BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.EMPTY), 10f, 4.2f, TagKey.create(Registries.ITEM, ResourceLocation.parse("allaboutengie:content_creator_repair_items")),
+			ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.parse("allaboutengie:content_creator")));
 
+	@SubscribeEvent
+	public static void registerItemExtensions(RegisterClientExtensionsEvent event) {
+		event.registerItem(new IClientItemExtensions() {
 			@Override
-			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{1024, 1024, 1024, 1024}[type.getSlot().getIndex()];
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/contentcreator_layer_1.png");
 			}
+		}, AllaboutengieModItems.CONTENT_CREATOR_HELMET.get());
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/contentcreator_layer_1.png");
+			}
+		}, AllaboutengieModItems.CONTENT_CREATOR_CHESTPLATE.get());
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/contentcreator_layer_2.png");
+			}
+		}, AllaboutengieModItems.CONTENT_CREATOR_LEGGINGS.get());
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
+				return ResourceLocation.parse("allaboutengie:textures/models/armor/contentcreator_layer_1.png");
+			}
+		}, AllaboutengieModItems.CONTENT_CREATOR_BOOTS.get());
+	}
 
-			@Override
-			public int getEnchantmentValue() {
-				return 22;
-			}
-
-			@Override
-			public SoundEvent getEquipSound() {
-				return SoundEvents.EMPTY;
-			}
-
-			@Override
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
-			}
-
-			@Override
-			public String getName() {
-				return "content_creator";
-			}
-
-			@Override
-			public float getToughness() {
-				return 10f;
-			}
-
-			@Override
-			public float getKnockbackResistance() {
-				return 4.2f;
-			}
-		}, type, properties);
+	private ContentCreatorItem(ArmorType type, Item.Properties properties) {
+		super(ARMOR_MATERIAL, type, properties);
 	}
 
 	public static class Helmet extends ContentCreatorItem {
-		public Helmet() {
-			super(ArmorItem.Type.HELMET, new Item.Properties());
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/contentcreator_layer_1.png";
+		public Helmet(Item.Properties properties) {
+			super(ArmorType.HELMET, properties);
 		}
 
 		@Override
@@ -84,13 +85,8 @@ public abstract class ContentCreatorItem extends ArmorItem {
 	}
 
 	public static class Chestplate extends ContentCreatorItem {
-		public Chestplate() {
-			super(ArmorItem.Type.CHESTPLATE, new Item.Properties());
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/contentcreator_layer_1.png";
+		public Chestplate(Item.Properties properties) {
+			super(ArmorType.CHESTPLATE, properties);
 		}
 
 		@Override
@@ -103,13 +99,8 @@ public abstract class ContentCreatorItem extends ArmorItem {
 	}
 
 	public static class Leggings extends ContentCreatorItem {
-		public Leggings() {
-			super(ArmorItem.Type.LEGGINGS, new Item.Properties());
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/contentcreator_layer_2.png";
+		public Leggings(Item.Properties properties) {
+			super(ArmorType.LEGGINGS, properties);
 		}
 
 		@Override
@@ -122,13 +113,8 @@ public abstract class ContentCreatorItem extends ArmorItem {
 	}
 
 	public static class Boots extends ContentCreatorItem {
-		public Boots() {
-			super(ArmorItem.Type.BOOTS, new Item.Properties());
-		}
-
-		@Override
-		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "allaboutengie:textures/models/armor/contentcreator_layer_1.png";
+		public Boots(Item.Properties properties) {
+			super(ArmorType.BOOTS, properties);
 		}
 
 		@Override
