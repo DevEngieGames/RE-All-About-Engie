@@ -28238,37 +28238,6 @@
       "path": "~/Mix of All/Structures"
     },
     {
-      "name": "EngieOreOnTickUpdate",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "engie_ore_on_tick_update",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/allaboutengie/procedures/EngieOreOnTickUpdateProcedure.java"
-        ]
-      },
-      "path": "~/Mix of All/Procedures"
-    },
-    {
       "name": "Damage",
       "type": "command",
       "compiles": true,
@@ -30941,68 +30910,6 @@
         "files": []
       },
       "path": "~/Mix of All/Gamerule"
-    },
-    {
-      "name": "AntimatterEngieOreOnTickUpdate",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "antimatter_engie_ore_on_tick_update",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/allaboutengie/procedures/AntimatterEngieOreOnTickUpdateProcedure.java"
-        ]
-      },
-      "path": "~/Mix of All/Procedures"
-    },
-    {
-      "name": "AntimatterDeepslateEngieOreOnTickUpdate",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "antimatter_deepslate_engie_ore_on_tick_update",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/allaboutengie/procedures/AntimatterDeepslateEngieOreOnTickUpdateProcedure.java"
-        ]
-      },
-      "path": "~/Mix of All/Procedures"
     },
     {
       "name": "ThrowbackAngryCreator",
@@ -34978,7 +34885,7 @@
           "src/main/java/net/mcreator/allaboutengie/procedures/TheRealEngieGamesOnEntityTickUpdateProcedure.java"
         ]
       },
-      "path": "~/Mix of All"
+      "path": "~/Mix of All/Procedures"
     },
     {
       "name": "CosmicEngieGamesOnEntityTickUpdate",
@@ -35001,7 +34908,7 @@
           "src/main/java/net/mcreator/allaboutengie/procedures/CosmicEngieGamesOnEntityTickUpdateProcedure.java"
         ]
       },
-      "path": "~/Mix of All"
+      "path": "~/Mix of All/Procedures"
     },
     {
       "name": "NOASCIIMCREATOR",
@@ -35044,6 +34951,206 @@
         ]
       },
       "path": "~/Mix of All/Procedures"
+    },
+    {
+      "name": "TechnobladeWouldBeProud",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "technoblade_would_be_proud",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/advancement/technoblade_would_be_proud.json"
+        ]
+      },
+      "path": "~/All About Engie/Advancements"
+    },
+    {
+      "name": "Mobskilledwithoutpickaxecheck",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mobskilledwithoutpickaxecheck",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/allaboutengie/procedures/MobskilledwithoutpickaxecheckProcedure.java"
+        ]
+      },
+      "path": "~/Mix of All/Procedures"
+    },
+    {
+      "name": "OkBro",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ok_bro",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/advancement/ok_bro.json"
+        ]
+      },
+      "path": "~/All About Engie/Advancements"
+    },
+    {
+      "name": "SecretsCompletedCheck",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "secrets_completed_check",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/allaboutengie/procedures/SecretsCompletedCheckProcedure.java"
+        ]
+      },
+      "path": "~/Mix of All/Procedures"
+    },
+    {
+      "name": "TechnobladePickaxeOnlyCheck",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "technoblade_pickaxe_only_check",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/allaboutengie/procedures/TechnobladePickaxeOnlyCheckProcedure.java"
+        ]
+      },
+      "path": "~/Mix of All/Procedures"
+    },
+    {
+      "name": "ThrowbackSmallBanHammer",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwback_small_ban_hammer",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/allaboutengie/models/item/throwback_small_ban_hammer.json",
+          "src/main/resources/assets/allaboutengie/models/item/throwback_small_ban_hammer_gui.json",
+          "src/main/java/net/mcreator/allaboutengie/item/ThrowbackSmallBanHammerItem.java",
+          "src/main/resources/assets/allaboutengie/items/throwback_small_ban_hammer.json"
+        ]
+      },
+      "path": "~/2023"
+    },
+    {
+      "name": "ThrowbackBanHammer",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwback_ban_hammer",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/allaboutengie/items/throwback_ban_hammer.json",
+          "src/main/java/net/mcreator/allaboutengie/item/ThrowbackBanHammerItem.java",
+          "src/main/resources/assets/allaboutengie/models/item/throwback_ban_hammer.json",
+          "src/main/resources/assets/allaboutengie/models/item/throwback_ban_hammer_gui.json"
+        ]
+      },
+      "path": "~/2023"
+    },
+    {
+      "name": "ThrowbackBigBanHammer",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwback_big_ban_hammer",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/allaboutengie/models/item/throwback_big_ban_hammer.json",
+          "src/main/resources/assets/allaboutengie/items/throwback_big_ban_hammer.json",
+          "src/main/resources/assets/allaboutengie/models/item/throwback_big_ban_hammer_gui.json",
+          "src/main/java/net/mcreator/allaboutengie/item/ThrowbackBigBanHammerItem.java"
+        ]
+      },
+      "path": "~/2023"
+    },
+    {
+      "name": "Yey",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yey",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/allaboutengie/procedures/YeyProcedure.java"
+        ]
+      },
+      "path": "~/Mix of All/Procedures"
+    },
+    {
+      "name": "Throwbacksmallcraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwbacksmallcraft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/recipe/throwbacksmallcraft.json",
+          "src/main/resources/data/allaboutengie/advancement/recipes/throwbacksmallcraft.json"
+        ]
+      },
+      "path": "~/2023"
+    },
+    {
+      "name": "Throwbacknormcraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwbacknormcraft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/advancement/recipes/throwbacknormcraft.json",
+          "src/main/resources/data/allaboutengie/recipe/throwbacknormcraft.json"
+        ]
+      },
+      "path": "~/2023"
+    },
+    {
+      "name": "Throwbackbigcraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwbackbigcraft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/allaboutengie/advancement/recipes/throwbackbigcraft.json",
+          "src/main/resources/data/allaboutengie/recipe/throwbackbigcraft.json"
+        ]
+      },
+      "path": "~/2023"
     }
   ],
   "variable_elements": [
@@ -36090,6 +36197,12 @@
       "type": "logic",
       "scope": "map",
       "value": "true"
+    },
+    {
+      "name": "playerkilledmobswithoutpickaxeonlycount",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -36568,6 +36681,9 @@
       "~CUSTOM:EngieAxe"
     ],
     "ITEMS:minecraft:swords": [
+      "~CUSTOM:ThrowbackBigBanHammer",
+      "~CUSTOM:ThrowbackBanHammer",
+      "~CUSTOM:ThrowbackSmallBanHammer",
       "~CUSTOM:CosmicEngieGamesSword",
       "~CUSTOM:StartersSword",
       "~CUSTOM:AntimatterEngieScythe",
@@ -37713,6 +37829,15 @@
     ],
     "ITEMS:allaboutengie:cosmic_engie_games_hoe_repair_items": [
       "~CUSTOM:AntimatterEngieCoin"
+    ],
+    "ITEMS:allaboutengie:throwback_small_ban_hammer_repair_items": [
+      "~CUSTOM:ThrowbackEngieGem"
+    ],
+    "ITEMS:allaboutengie:throwback_ban_hammer_repair_items": [
+      "~CUSTOM:ThrowbackEngieGem"
+    ],
+    "ITEMS:allaboutengie:throwback_big_ban_hammer_repair_items": [
+      "~CUSTOM:ThrowbackEngieGem"
     ]
   },
   "tab_element_order": {
@@ -38076,7 +38201,10 @@
       "AntimatterTheEndScythe",
       "AntimatterTheEndBanHammer",
       "AntimatterEngieScythe",
-      "AntimatterEngiesBanHammer"
+      "AntimatterEngiesBanHammer",
+      "ThrowbackSmallBanHammer",
+      "ThrowbackBanHammer",
+      "ThrowbackBigBanHammer"
     ],
     "CUSTOM:AAEItemsArmor": [
       "Engies",
@@ -40421,7 +40549,7 @@
       "item.allaboutengie.angry_engie_block": "Angry Engie Block",
       "item.allaboutengie.enraged_engie_block": "Enraged Engie Block",
       "item.allaboutengie.engie_ore": "Engie Ore",
-      "item.allaboutengie.deepslate_engie_ore": "Engie Ore",
+      "item.allaboutengie.deepslate_engie_ore": "Deepslate Engie Ore",
       "item.allaboutengie.metal_table": "Metal Chest",
       "item.allaboutengie.old_engie_ore": "Engi Ore",
       "item.allaboutengie.old_deepslate_engie_ore": "Deepslate Engi Ore",
@@ -40457,7 +40585,14 @@
       "item.allaboutengie.antimatter_biblically_accurate_block": "Antimatter Biblically Accurate Engie Block",
       "item.allaboutengie.antimatter_monstrosity_engie_block": "Antimatter Monstrosity Engie Block",
       "item.allaboutengie.antimatter_engie_ore": "Antimatter Engie Ore",
-      "item.allaboutengie.antimatter_deepslate_engie_ore": "Antimatter Deepslate Engie Ore"
+      "item.allaboutengie.antimatter_deepslate_engie_ore": "Antimatter Deepslate Engie Ore",
+      "advancements.technoblade_would_be_proud.descr": "101% All About Engie with ONLY PICKAXES as the tool to slay mobs.",
+      "advancements.technoblade_would_be_proud.title": "Even Technoblade would be proud of you.",
+      "advancements.ok_bro.descr": "100% All About Engie with ONLY PICKAXES as the tool to slay mobs.",
+      "advancements.ok_bro.title": "Take my respect bro. Good god...",
+      "item.allaboutengie.throwback_small_ban_hammer": "(THROWBACK) Small Ban Hammer",
+      "item.allaboutengie.throwback_ban_hammer": "(THROWBACK) Ban Hammer",
+      "item.allaboutengie.throwback_big_ban_hammer": "Big Ban Hammer"
     }
   },
   "metadata": {
@@ -40847,17 +40982,13 @@
             "children": []
           }
         ]
-      },
-      {
-        "name": "Splash Text",
-        "children": []
       }
     ]
   },
   "workspaceSettings": {
     "modid": "allaboutengie",
     "modName": "RE:All About Engie",
-    "version": "9.18.25",
+    "version": "9.19.25",
     "description": "A collection of all my other mods for my 5th year of making mods! If you find issues, report them on the GitHub page for the mod please.",
     "author": "EngieGames",
     "websiteURL": "https://modrinth.com/project/re-all-about-engie",

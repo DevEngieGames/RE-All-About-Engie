@@ -379,6 +379,9 @@ public class AllaboutengieModTabs {
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_THE_END_BAN_HAMMER.get());
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIE_SCYTHE.get());
 				tabData.accept(AllaboutengieModItems.ANTIMATTER_ENGIES_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.THROWBACK_SMALL_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.THROWBACK_BAN_HAMMER.get());
+				tabData.accept(AllaboutengieModItems.THROWBACK_BIG_BAN_HAMMER.get());
 			}).withTabsBefore(AAE_ITEMS_ITEMS.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AAE_ITEMS_ARMOR = REGISTRY.register("aae_items_armor",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.allaboutengie.aae_items_armor")).icon(() -> new ItemStack(AllaboutengieModItems.ENGIES_HELMET.get())).displayItems((parameters, tabData) -> {

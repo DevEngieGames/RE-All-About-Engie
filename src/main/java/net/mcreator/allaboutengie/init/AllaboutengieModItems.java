@@ -48,7 +48,10 @@ import net.mcreator.allaboutengie.item.UncommonPickaxeItem;
 import net.mcreator.allaboutengie.item.UncommonItem;
 import net.mcreator.allaboutengie.item.UncommonHoeItem;
 import net.mcreator.allaboutengie.item.UncommonAxeItem;
+import net.mcreator.allaboutengie.item.ThrowbackSmallBanHammerItem;
 import net.mcreator.allaboutengie.item.ThrowbackEngieGemItem;
+import net.mcreator.allaboutengie.item.ThrowbackBigBanHammerItem;
+import net.mcreator.allaboutengie.item.ThrowbackBanHammerItem;
 import net.mcreator.allaboutengie.item.TheRealEngieGamessItem;
 import net.mcreator.allaboutengie.item.TheEndsItem;
 import net.mcreator.allaboutengie.item.TheEndSwordItem;
@@ -1219,6 +1222,9 @@ public class AllaboutengieModItems {
 	public static final DeferredItem<Item> COSMIC_ENGIE_GAMES_CRUCIFIX = register("cosmic_engie_games_crucifix", CosmicEngieGamesCrucifixItem::new);
 	public static final DeferredItem<Item> BIBLICALLY_ACCURATE_ENGIE_COLD_SEASON_SPAWN_EGG = register("biblically_accurate_engie_cold_season_spawn_egg",
 			properties -> new SpawnEggItem(AllaboutengieModEntities.BIBLICALLY_ACCURATE_ENGIE_COLD_SEASON.get(), properties));
+	public static final DeferredItem<Item> THROWBACK_SMALL_BAN_HAMMER = register("throwback_small_ban_hammer", ThrowbackSmallBanHammerItem::new);
+	public static final DeferredItem<Item> THROWBACK_BAN_HAMMER = register("throwback_ban_hammer", ThrowbackBanHammerItem::new);
+	public static final DeferredItem<Item> THROWBACK_BIG_BAN_HAMMER = register("throwback_big_ban_hammer", ThrowbackBigBanHammerItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

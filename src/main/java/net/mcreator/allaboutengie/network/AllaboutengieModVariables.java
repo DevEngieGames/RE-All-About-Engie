@@ -134,6 +134,7 @@ public class AllaboutengieModVariables {
 			clone.DoomsdayRiskTrackToggle = original.DoomsdayRiskTrackToggle;
 			clone.sharkolayingstate = original.sharkolayingstate;
 			clone.difficultyoverlaytoggle = original.difficultyoverlaytoggle;
+			clone.playerkilledmobswithoutpickaxeonlycount = original.playerkilledmobswithoutpickaxeonlycount;
 			if (!event.isWasDeath()) {
 				clone.DoomsdayAlive = original.DoomsdayAlive;
 				clone.firstplay = original.firstplay;
@@ -645,6 +646,7 @@ public class AllaboutengieModVariables {
 		public boolean DoomsdayRiskTrackToggle = false;
 		public boolean sharkolayingstate = false;
 		public boolean difficultyoverlaytoggle = true;
+		public double playerkilledmobswithoutpickaxeonlycount = 0;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -718,6 +720,7 @@ public class AllaboutengieModVariables {
 			nbt.putBoolean("DoomsdayRiskTrackToggle", DoomsdayRiskTrackToggle);
 			nbt.putBoolean("sharkolayingstate", sharkolayingstate);
 			nbt.putBoolean("difficultyoverlaytoggle", difficultyoverlaytoggle);
+			nbt.putDouble("playerkilledmobswithoutpickaxeonlycount", playerkilledmobswithoutpickaxeonlycount);
 			return nbt;
 		}
 
@@ -792,6 +795,7 @@ public class AllaboutengieModVariables {
 			DoomsdayRiskTrackToggle = nbt.getBoolean("DoomsdayRiskTrackToggle");
 			sharkolayingstate = nbt.getBoolean("sharkolayingstate");
 			difficultyoverlaytoggle = nbt.getBoolean("difficultyoverlaytoggle");
+			playerkilledmobswithoutpickaxeonlycount = nbt.getDouble("playerkilledmobswithoutpickaxeonlycount");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

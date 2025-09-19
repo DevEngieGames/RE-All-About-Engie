@@ -1964,7 +1964,7 @@
   "item.allaboutengie.angry_engie_block": "Angry Engie Block",
   "item.allaboutengie.enraged_engie_block": "Enraged Engie Block",
   "item.allaboutengie.engie_ore": "Engie Ore",
-  "item.allaboutengie.deepslate_engie_ore": "Engie Ore",
+  "item.allaboutengie.deepslate_engie_ore": "Deepslate Engie Ore",
   "item.allaboutengie.metal_table": "Metal Chest",
   "item.allaboutengie.old_engie_ore": "Engi Ore",
   "item.allaboutengie.old_deepslate_engie_ore": "Deepslate Engi Ore",
@@ -2000,5 +2000,12 @@
   "item.allaboutengie.antimatter_biblically_accurate_block": "Antimatter Biblically Accurate Engie Block",
   "item.allaboutengie.antimatter_monstrosity_engie_block": "Antimatter Monstrosity Engie Block",
   "item.allaboutengie.antimatter_engie_ore": "Antimatter Engie Ore",
-  "item.allaboutengie.antimatter_deepslate_engie_ore": "Antimatter Deepslate Engie Ore"
+  "item.allaboutengie.antimatter_deepslate_engie_ore": "Antimatter Deepslate Engie Ore",
+  "advancements.technoblade_would_be_proud.descr": "101% All About Engie with ONLY PICKAXES as the tool to slay mobs.",
+  "advancements.technoblade_would_be_proud.title": "Even Technoblade would be proud of you.",
+  "advancements.ok_bro.descr": "100% All About Engie with ONLY PICKAXES as the tool to slay mobs.",
+  "advancements.ok_bro.title": "Take my respect bro. Good god...",
+  "item.allaboutengie.throwback_small_ban_hammer": "(THROWBACK) Small Ban Hammer",
+  "item.allaboutengie.throwback_ban_hammer": "(THROWBACK) Ban Hammer",
+  "item.allaboutengie.throwback_big_ban_hammer": "Big Ban Hammer"
 }
