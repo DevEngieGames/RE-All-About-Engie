@@ -1,0 +1,29 @@
+{
+  "display": {
+    "background": "allaboutengie:textures/screens/mainallaboutengieadvancementbg.png",
+    "icon": {
+      "id": "allaboutengie:all_about_engie_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.new_world.title"
+    },
+    "description": {
+      "translate": "advancements.new_world.descr"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "new_world_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "allaboutengie:sharko_cloth_craft"
+    ]
+  }
+}

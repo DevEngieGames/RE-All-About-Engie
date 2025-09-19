@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "misc",
+  "experience": 10,
+  "cookingtime": 100,
+  "ingredient": "allaboutengie:bagel_cheese",
+  "result": {
+    "id": "allaboutengie:bagel_cheese_cooked"
+  }
+}

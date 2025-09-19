@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/biblicallyaccuratescythe",
+  "textures": {
+    "0": "allaboutengie:block/biblicallyscythe",
+    "particle": "allaboutengie:item/antimatterbiblicallyaccuratescythe"
+  }
+}

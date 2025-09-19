@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/ban_hammer_superdoomsday",
+  "textures": {
+    "0": "allaboutengie:block/antimattersuperdoomsdaybanhammer",
+    "particle": "allaboutengie:item/antimattersuperdoomsdaybanpixel"
+  }
+}

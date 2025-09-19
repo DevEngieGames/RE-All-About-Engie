@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:all_about_engie_secret_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.netherite_outraged_engie_plush_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.netherite_outraged_engie_plush_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "netherite_outraged_engie_plush_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allaboutengie:netherite_outraged_engie_plush"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "allaboutengie:diamond_outraged_engie_plush_obtained"
+}

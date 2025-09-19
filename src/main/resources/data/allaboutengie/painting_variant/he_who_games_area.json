@@ -1,0 +1,11 @@
+{
+  "asset_id": "allaboutengie:he_who_games_area",
+  "height": 1,
+  "width": 2,
+  "title": {
+    "translate": "painting.allaboutengie.he_who_games_area.title"
+  },
+  "author": {
+    "translate": "painting.allaboutengie.he_who_games_area.author"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:monstrosity_ban_hammer"
+    },
+    "title": {
+      "translate": "advancements.antimatter_monstrosity_ban_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_monstrosity_ban_obtain.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_monstrosity_ban_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 50
+  },
+  "parent": "allaboutengie:antimatter_biblically_accurate_ban_obtain"
+}

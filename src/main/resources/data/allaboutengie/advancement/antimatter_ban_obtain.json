@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:antimatter_ban_hammer"
+    },
+    "title": {
+      "translate": "advancements.antimatter_ban_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_ban_obtain.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_ban_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "allaboutengie:antimatter_mini_ban_obtain"
+}

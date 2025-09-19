@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "engiehelmet",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "a a"
+  ],
+  "key": {
+    "a": "allaboutengie:engie_gem"
+  },
+  "result": {
+    "id": "allaboutengie:engies_helmet",
+    "count": 1
+  }
+}

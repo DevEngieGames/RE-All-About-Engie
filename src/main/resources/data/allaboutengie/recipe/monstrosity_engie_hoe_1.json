@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "monstrosityengiehoe",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    " b",
+    " b"
+  ],
+  "key": {
+    "a": "allaboutengie:monstrosity_engie_essence",
+    "b": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:monstrosity_engie_hoe",
+    "count": 1
+  }
+}

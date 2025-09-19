@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cyberbloodingot",
+  "category": "misc",
+  "ingredients": [
+    "allaboutengie:cyber_ingot",
+    "allaboutengie:blood_ingot"
+  ],
+  "result": {
+    "id": "allaboutengie:cyberblood_ingot",
+    "count": 1
+  }
+}

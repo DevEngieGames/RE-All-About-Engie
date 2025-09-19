@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:albino_sharko_cloth",
+  "addition": "minecraft:lapis_lazuli",
+  "result": {
+    "id": "allaboutengie:rare_sharko_cloth"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "asset_id": "allaboutengie:aae_sharkos",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.allaboutengie.aae_sharkos.title"
+  },
+  "author": {
+    "translate": "painting.allaboutengie.aae_sharkos.author"
+  }
+}

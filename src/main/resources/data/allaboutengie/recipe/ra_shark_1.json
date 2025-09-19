@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "raresharko",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": "allaboutengie:rare_sharko_cloth"
+  },
+  "result": {
+    "id": "allaboutengie:rare_shark_helmet",
+    "count": 1
+  }
+}

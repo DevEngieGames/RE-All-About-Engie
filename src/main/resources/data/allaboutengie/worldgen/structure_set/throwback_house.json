@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "allaboutengie:throwback_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 200,
+    "separation": 5,
+    "salt": 1202188509
+  }
+}

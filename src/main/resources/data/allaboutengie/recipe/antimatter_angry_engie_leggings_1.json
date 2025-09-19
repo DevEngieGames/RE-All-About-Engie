@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterangryengieleggings",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_angry_engie_essence"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_angry_engies_leggings",
+    "count": 1
+  }
+}

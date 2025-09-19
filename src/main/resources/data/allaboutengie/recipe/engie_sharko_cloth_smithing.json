@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:exotic_sharko_cloth",
+  "addition": "minecraft:netherite_ingot",
+  "result": {
+    "id": "allaboutengie:engie_sharko_cloth"
+  }
+}

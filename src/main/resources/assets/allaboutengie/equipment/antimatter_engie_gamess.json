@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "allaboutengie:antimatter_engie_gamess"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "allaboutengie:antimatter_engie_gamess"
+      }
+    ]
+  }
+}

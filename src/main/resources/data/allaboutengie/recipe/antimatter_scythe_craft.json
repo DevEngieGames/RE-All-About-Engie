@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterscythe",
+  "category": "misc",
+  "pattern": [
+    "ab",
+    "cd",
+    " e"
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_engie_gem",
+    "b": "minecraft:iron_ingot",
+    "c": "allaboutengie:antimatter_angry_engie_essence",
+    "d": "allaboutengie:antimatter_mini_scythe",
+    "e": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_scythe",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "cyberboots",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": "allaboutengie:cyber_ingot"
+  },
+  "result": {
+    "id": "allaboutengie:cyber_boots",
+    "count": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "allaboutengie:unobtainium"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "allaboutengie:unobtainium"
+      }
+    ]
+  }
+}

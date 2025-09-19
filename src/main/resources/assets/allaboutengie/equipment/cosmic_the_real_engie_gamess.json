@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "allaboutengie:cosmic_the_real_engie_gamess"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "allaboutengie:cosmic_the_real_engie_gamess"
+      }
+    ]
+  }
+}

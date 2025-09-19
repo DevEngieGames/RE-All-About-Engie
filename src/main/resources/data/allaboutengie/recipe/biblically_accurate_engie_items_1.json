@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "biblicallyaccurateengieblocktoitem",
+  "category": "misc",
+  "ingredients": [
+    "allaboutengie:biblically_accurate_block"
+  ],
+  "result": {
+    "id": "allaboutengie:biblically_accurate_engie_essence",
+    "count": 9
+  }
+}

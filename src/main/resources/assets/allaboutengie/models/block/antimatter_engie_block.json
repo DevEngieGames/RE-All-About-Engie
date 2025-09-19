@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "allaboutengie:block/antimatterengiegemblock",
+    "up": "allaboutengie:block/antimatterengiegemblock",
+    "north": "allaboutengie:block/antimatterengiegemblock",
+    "east": "allaboutengie:block/antimatterengiegemblock",
+    "south": "allaboutengie:block/antimatterengiegemblock",
+    "west": "allaboutengie:block/antimatterengiegemblock",
+    "particle": "allaboutengie:block/antimatterengiegemblock"
+  },
+  "render_type": "solid"
+}

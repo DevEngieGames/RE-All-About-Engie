@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT License"
+
+[[mods]]
+modId="allaboutengie"
+version="9.19.25"
+displayName="RE:All About Engie"
+updateJSONURL="https://raw.githubusercontent.com/EngieGames/All-About-Engie/refs/heads/master/ModUpdateCheck.json"
+displayURL="https://modrinth.com/project/re-all-about-engie"
+logoFile="logo.png"
+credits="DevEngie (Original Mod Creator)"
+authors="EngieGames"
+description="A collection of all my other mods for my 5th year of making mods! If you find issues, report them on the GitHub page for the mod please."
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+
+# Start of user code block custom mixins
+# End of user code block custom mixins
+
+[[dependencies.allaboutengie]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.4.137,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.allaboutengie]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.4]"
+    ordering="AFTER"
+    side="BOTH"
+
+
+
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration

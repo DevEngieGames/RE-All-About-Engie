@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "allaboutengie:exotic_shark"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "allaboutengie:exotic_shark"
+      }
+    ]
+  }
+}

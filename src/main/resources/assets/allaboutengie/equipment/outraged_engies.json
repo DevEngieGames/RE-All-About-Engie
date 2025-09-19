@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "allaboutengie:outraged_engies"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "allaboutengie:outraged_engies"
+      }
+    ]
+  }
+}

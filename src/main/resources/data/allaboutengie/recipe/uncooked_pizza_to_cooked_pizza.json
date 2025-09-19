@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "group": "smelting",
+  "category": "misc",
+  "experience": 25,
+  "cookingtime": 100,
+  "ingredient": "allaboutengie:uncooked_pizza",
+  "result": {
+    "id": "allaboutengie:cooked_pizza"
+  }
+}

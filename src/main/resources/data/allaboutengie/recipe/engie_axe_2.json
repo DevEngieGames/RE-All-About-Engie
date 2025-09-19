@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "ba",
+    "b "
+  ],
+  "key": {
+    "a": "allaboutengie:engie_gem",
+    "b": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:engie_axe",
+    "count": 1
+  }
+}

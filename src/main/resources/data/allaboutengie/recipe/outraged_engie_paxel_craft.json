@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "outragedengiepaxel",
+  "category": "misc",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": "allaboutengie:outraged_engie_axe",
+    "b": "allaboutengie:outraged_engie_pickaxe",
+    "c": "allaboutengie:outraged_engie_shovel",
+    "d": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:outraged_engie_paxel",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimattermonstrosityengiesword",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "a",
+    "b"
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_monstrosity_engie_essence",
+    "b": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_monstrosity_engie_sword",
+    "count": 1
+  }
+}

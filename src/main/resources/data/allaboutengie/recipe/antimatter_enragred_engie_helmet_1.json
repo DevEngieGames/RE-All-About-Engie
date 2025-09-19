@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterenragedengiehelmet",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_enraged_engie_essence"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_enraged_engies_helmet",
+    "count": 1
+  }
+}

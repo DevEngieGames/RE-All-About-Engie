@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "allaboutengie:rare"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "allaboutengie:rare"
+      }
+    ]
+  }
+}

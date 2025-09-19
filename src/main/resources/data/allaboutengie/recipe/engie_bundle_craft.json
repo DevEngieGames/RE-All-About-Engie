@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "engiebundle",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "dbd"
+  ],
+  "key": {
+    "a": "minecraft:string",
+    "b": "allaboutengie:engie_gem",
+    "c": "minecraft:red_dye",
+    "d": "minecraft:leather"
+  },
+  "result": {
+    "id": "allaboutengie:engie_bundle",
+    "count": 1
+  }
+}

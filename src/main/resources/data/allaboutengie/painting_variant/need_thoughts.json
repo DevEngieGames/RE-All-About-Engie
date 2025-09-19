@@ -1,0 +1,11 @@
+{
+  "asset_id": "allaboutengie:need_thoughts",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.allaboutengie.need_thoughts.title"
+  },
+  "author": {
+    "translate": "painting.allaboutengie.need_thoughts.author"
+  }
+}

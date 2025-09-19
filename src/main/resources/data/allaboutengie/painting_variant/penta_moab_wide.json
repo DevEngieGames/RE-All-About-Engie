@@ -1,0 +1,11 @@
+{
+  "asset_id": "allaboutengie:penta_moab_wide",
+  "height": 1,
+  "width": 2,
+  "title": {
+    "translate": "painting.allaboutengie.penta_moab_wide.title"
+  },
+  "author": {
+    "translate": "painting.allaboutengie.penta_moab_wide.author"
+  }
+}

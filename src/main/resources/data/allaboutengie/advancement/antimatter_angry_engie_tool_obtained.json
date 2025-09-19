@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:antimatter_angry_engie_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.antimatter_angry_engie_tool_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_angry_engie_tool_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "antimatter_angry_engie_tool_obtained_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 20
+  },
+  "parent": "allaboutengie:antimatter_angry_engie_essence_obtained"
+}

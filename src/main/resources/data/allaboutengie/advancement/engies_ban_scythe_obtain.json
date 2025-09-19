@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:engie_games_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.engies_ban_scythe_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.engies_ban_scythe_obtain.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "engies_ban_scythe_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 70
+  },
+  "parent": "allaboutengie:super_doomsday_ban_scythe_obtain"
+}

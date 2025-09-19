@@ -1,0 +1,11 @@
+{
+  "asset_id": "allaboutengie:aae_items",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.allaboutengie.aae_items.title"
+  },
+  "author": {
+    "translate": "painting.allaboutengie.aae_items.author"
+  }
+}

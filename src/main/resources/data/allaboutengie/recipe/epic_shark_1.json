@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "epicsharko",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": "allaboutengie:epic_sharko_cloth"
+  },
+  "result": {
+    "id": "allaboutengie:epic_shark_helmet",
+    "count": 1
+  }
+}

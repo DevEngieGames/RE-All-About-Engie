@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:antimatter_monstrosity_engie_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.antimatter_monstrosity_engie_tools_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_monstrosity_engie_tools_obtained.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_monstrosity_engie_tools_obtained_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 40
+  },
+  "parent": "allaboutengie:antimatter_monstrosity_engie_essence_obtained"
+}

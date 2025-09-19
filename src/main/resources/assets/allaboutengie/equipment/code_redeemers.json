@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "allaboutengie:code_redeemers"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "allaboutengie:code_redeemers"
+      }
+    ]
+  }
+}

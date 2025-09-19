@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:biblically_accurate_engies_leggings",
+  "addition": "allaboutengie:monstrosity_engie_block",
+  "result": {
+    "id": "allaboutengie:monstrosity_engies_leggings"
+  }
+}

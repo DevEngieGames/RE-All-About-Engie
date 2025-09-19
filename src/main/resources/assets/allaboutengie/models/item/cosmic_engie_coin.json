@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/cosmicengiecoin",
+  "textures": {
+    "0": "allaboutengie:block/cosmiccointexture",
+    "particle": "allaboutengie:item/cosmicengiebase"
+  }
+}

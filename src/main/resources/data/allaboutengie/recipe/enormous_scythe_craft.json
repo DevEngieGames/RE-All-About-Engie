@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "scythe",
+  "category": "misc",
+  "pattern": [
+    "ab",
+    "cd",
+    " e"
+  ],
+  "key": {
+    "a": "allaboutengie:enraged_engie_block",
+    "b": "allaboutengie:angry_engie_block",
+    "c": "allaboutengie:outraged_engie_essence",
+    "d": "allaboutengie:huge_scythe",
+    "e": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:enormous_scythe",
+    "count": 1
+  }
+}

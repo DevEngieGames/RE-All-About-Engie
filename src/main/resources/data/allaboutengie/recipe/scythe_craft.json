@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "scythe",
+  "category": "misc",
+  "pattern": [
+    "ab",
+    "cd",
+    " e"
+  ],
+  "key": {
+    "a": "allaboutengie:engie_gem",
+    "b": "minecraft:iron_ingot",
+    "c": "allaboutengie:angry_engie_essence",
+    "d": "allaboutengie:mini_scythe",
+    "e": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:scythe",
+    "count": 1
+  }
+}

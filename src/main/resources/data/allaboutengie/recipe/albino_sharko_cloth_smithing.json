@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:sharko_cloth",
+  "addition": "minecraft:white_dye",
+  "result": {
+    "id": "allaboutengie:albino_sharko_cloth"
+  }
+}

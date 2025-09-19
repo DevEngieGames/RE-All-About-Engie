@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:biblically_accurate_engie_axe",
+  "addition": "allaboutengie:monstrosity_engie_block",
+  "result": {
+    "id": "allaboutengie:monstrosity_engie_axe"
+  }
+}

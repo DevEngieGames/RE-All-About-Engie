@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/antimatterengiegames_sword_3d",
+  "textures": {
+    "0": "allaboutengie:block/antimatterengiegames_sword_3d",
+    "particle": "allaboutengie:item/antimatterengiegames_sword"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:any"
+  },
+  "spawners": {
+    "type": "allaboutengie:engie_sharko_rare",
+    "weight": 6,
+    "minCount": 1,
+    "maxCount": 8
+  }
+}

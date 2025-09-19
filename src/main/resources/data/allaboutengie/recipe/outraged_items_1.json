@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "outragedengieblocktoitem",
+  "category": "misc",
+  "ingredients": [
+    "allaboutengie:outraged_engie_block"
+  ],
+  "result": {
+    "id": "allaboutengie:outraged_engie_essence",
+    "count": 9
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "sharkocloth",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:leather",
+    "minecraft:blue_dye",
+    "minecraft:white_dye"
+  ],
+  "result": {
+    "id": "allaboutengie:sharko_cloth",
+    "count": 1
+  }
+}

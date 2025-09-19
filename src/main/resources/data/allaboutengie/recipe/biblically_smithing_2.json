@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:outraged_engie_pickaxe",
+  "addition": "allaboutengie:biblically_accurate_block",
+  "result": {
+    "id": "allaboutengie:biblically_accurate_engie_pickaxe"
+  }
+}

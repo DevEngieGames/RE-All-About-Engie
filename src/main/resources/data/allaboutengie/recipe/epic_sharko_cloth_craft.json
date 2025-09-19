@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "epicsharkocloth",
+  "category": "misc",
+  "ingredients": [
+    "allaboutengie:rare_sharko_cloth",
+    "minecraft:amethyst_shard",
+    "minecraft:amethyst_shard",
+    "minecraft:amethyst_shard"
+  ],
+  "result": {
+    "id": "allaboutengie:epic_sharko_cloth",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "enragedengieblocktoitem",
+  "category": "misc",
+  "ingredients": [
+    "allaboutengie:enraged_engie_block"
+  ],
+  "result": {
+    "id": "allaboutengie:enraged_engie_essence",
+    "count": 9
+  }
+}

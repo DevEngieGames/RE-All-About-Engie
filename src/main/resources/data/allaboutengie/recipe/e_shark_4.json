@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "engiesharko",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": "allaboutengie:engie_sharko_cloth"
+  },
+  "result": {
+    "id": "allaboutengie:engie_shark_boots",
+    "count": 1
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "exoticsharkocloth",
+  "category": "misc",
+  "ingredients": [
+    "allaboutengie:mythic_sharko_cloth",
+    "minecraft:diamond_block",
+    "minecraft:diamond",
+    "minecraft:diamond"
+  ],
+  "result": {
+    "id": "allaboutengie:exotic_sharko_cloth",
+    "count": 1
+  }
+}

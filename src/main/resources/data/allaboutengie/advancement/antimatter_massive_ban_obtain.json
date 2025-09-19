@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:antimatter_massive_ban_hammer"
+    },
+    "title": {
+      "translate": "advancements.antimatter_massive_ban_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_massive_ban_obtain.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_massive_ban_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 40
+  },
+  "parent": "allaboutengie:antimatter_gigantic_ban_obtain"
+}

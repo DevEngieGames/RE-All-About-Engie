@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "allaboutengie:antimatter_super_doomsdays"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "allaboutengie:antimatter_super_doomsdays"
+      }
+    ]
+  }
+}

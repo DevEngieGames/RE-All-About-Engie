@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:exotic_chestplate",
+  "addition": "allaboutengie:unobtanium",
+  "result": {
+    "id": "allaboutengie:unobtainium_chestplate"
+  }
+}

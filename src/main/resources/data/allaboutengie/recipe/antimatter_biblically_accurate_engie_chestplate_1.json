@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterbiblicallyaccurateengiechestplate",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_biblically_accurate_engie_essence"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_biblically_accurate_engies_chestplate",
+    "count": 1
+  }
+}

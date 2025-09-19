@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:mythic_sharko_cloth",
+  "addition": "minecraft:diamond",
+  "result": {
+    "id": "allaboutengie:exotic_sharko_cloth"
+  }
+}

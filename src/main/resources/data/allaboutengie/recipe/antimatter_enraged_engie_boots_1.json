@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterenragedengieboots",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_enraged_engie_essence"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_enraged_engies_boots",
+    "count": 1
+  }
+}

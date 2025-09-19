@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:mindscape_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.who_was_that.title"
+    },
+    "description": {
+      "translate": "advancements.who_was_that.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "who_was_that_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "allaboutengie:secret_advancements"
+}

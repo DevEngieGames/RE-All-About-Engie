@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterenragedengiechestplate",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_enraged_engie_essence"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_enraged_engies_chestplate",
+    "count": 1
+  }
+}

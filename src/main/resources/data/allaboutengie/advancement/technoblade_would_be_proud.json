@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:cosmic_engie_games_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.technoblade_would_be_proud.title"
+    },
+    "description": {
+      "translate": "advancements.technoblade_would_be_proud.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "technoblade_would_be_proud_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 23000
+  },
+  "parent": "allaboutengie:all_fully_done"
+}

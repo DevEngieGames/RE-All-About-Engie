@@ -1,0 +1,11 @@
+{
+  "criteria": {
+    "comically_massive_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 50
+  },
+  "parent": "allaboutengie:hi_dev_engie"
+}

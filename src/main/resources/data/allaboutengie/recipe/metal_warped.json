@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "crafting",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "bab",
+    "ccc"
+  ],
+  "key": {
+    "a": "minecraft:iron_ingot",
+    "b": "allaboutengie:engie_gem",
+    "c": "minecraft:warped_planks"
+  },
+  "result": {
+    "id": "allaboutengie:metal_chest_warped",
+    "count": 1
+  }
+}

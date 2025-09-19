@@ -1,0 +1,8 @@
+{
+  "parent": "allaboutengie:custom/cosmicshovel",
+  "textures": {
+    "0": "allaboutengie:block/toolmain",
+    "1": "allaboutengie:block/tooloutline",
+    "particle": "allaboutengie:item/cosmicengie_shovel"
+  }
+}

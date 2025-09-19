@@ -1,0 +1,11 @@
+{
+  "asset_id": "allaboutengie:playedbyengie",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.allaboutengie.playedbyengie.title"
+  },
+  "author": {
+    "translate": "painting.allaboutengie.playedbyengie.author"
+  }
+}

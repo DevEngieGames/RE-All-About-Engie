@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "outragedengiechestplate",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": "allaboutengie:outraged_engie_essence"
+  },
+  "result": {
+    "id": "allaboutengie:outraged_engies_chestplate",
+    "count": 1
+  }
+}

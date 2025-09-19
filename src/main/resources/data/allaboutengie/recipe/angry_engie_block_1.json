@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "angryengieitemtoblock",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": "allaboutengie:angry_engie_essence"
+  },
+  "result": {
+    "id": "allaboutengie:angry_engie_block",
+    "count": 1
+  }
+}

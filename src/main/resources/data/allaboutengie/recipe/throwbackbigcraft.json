@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "idontrememberthecraftsxd",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": "allaboutengie:throwback_engie_gem",
+    "b": "minecraft:diamond",
+    "c": "minecraft:netherite_ingot",
+    "d": "allaboutengie:throwback_ban_hammer",
+    "e": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:throwback_big_ban_hammer",
+    "count": 1
+  }
+}

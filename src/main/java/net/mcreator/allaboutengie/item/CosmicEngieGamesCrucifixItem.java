@@ -1,0 +1,35 @@
+package net.mcreator.allaboutengie.item;
+
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
+import net.minecraft.client.Minecraft;
+
+import net.mcreator.allaboutengie.procedures.CosmicTheRealEngieGamessSpecialInformationProcedure;
+
+import java.util.List;
+
+public class CosmicEngieGamesCrucifixItem extends Item {
+	public CosmicEngieGamesCrucifixItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.EPIC).durability(525).enchantable(22));
+	}
+
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, context, list, flag);
+		Entity entity = itemstack.getEntityRepresentation() != null ? itemstack.getEntityRepresentation() : Minecraft.getInstance().player;
+		String hoverText = CosmicTheRealEngieGamessSpecialInformationProcedure.execute();
+		if (hoverText != null) {
+			for (String line : hoverText.split("\n")) {
+				list.add(Component.literal(line));
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterbanhammer",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    " d "
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_enraged_engie_block",
+    "b": "allaboutengie:antimatter_angry_engie_block",
+    "c": "allaboutengie:antimatter_large_ban_hammer",
+    "d": "#minecraft:planks"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_huge_ban_hammer",
+    "count": 1
+  }
+}

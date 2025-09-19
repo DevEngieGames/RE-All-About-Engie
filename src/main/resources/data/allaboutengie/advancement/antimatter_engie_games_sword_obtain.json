@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "antimatter_engie_games_sword_obtain_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allaboutengie:antimatter_engie_games_sword"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "allaboutengie:antimatter_engies_ban_scythe_obtain"
+}

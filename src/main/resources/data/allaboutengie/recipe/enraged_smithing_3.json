@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:angry_engie_shovel",
+  "addition": "allaboutengie:enraged_engie_block",
+  "result": {
+    "id": "allaboutengie:enraged_engie_shovel"
+  }
+}

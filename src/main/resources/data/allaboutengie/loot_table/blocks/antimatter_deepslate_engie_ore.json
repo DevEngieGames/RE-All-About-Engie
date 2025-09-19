@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "allaboutengie:blocks/antimatter_deepslate_engie_ore",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "allaboutengie:antimatter_deepslate_engie_ore"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "allaboutengie:hwg"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "allaboutengie:hwg"
+      }
+    ]
+  }
+}

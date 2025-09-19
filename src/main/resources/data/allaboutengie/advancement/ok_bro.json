@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:antimatter_engie_games_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.ok_bro.title"
+    },
+    "description": {
+      "translate": "advancements.ok_bro.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "ok_bro_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 11500
+  },
+  "parent": "allaboutengie:all_done"
+}

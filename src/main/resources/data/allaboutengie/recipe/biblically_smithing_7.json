@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:outraged_engies_leggings",
+  "addition": "allaboutengie:biblically_accurate_block",
+  "result": {
+    "id": "allaboutengie:biblically_accurate_engies_leggings"
+  }
+}

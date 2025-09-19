@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/theendscythe",
+  "textures": {
+    "0": "allaboutengie:block/antimattertheendscythe",
+    "particle": "allaboutengie:item/antimattertheendscythe"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "asset_id": "allaboutengie:i_be_coding",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.allaboutengie.i_be_coding.title"
+  },
+  "author": {
+    "translate": "painting.allaboutengie.i_be_coding.author"
+  }
+}

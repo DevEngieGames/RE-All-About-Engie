@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterscythe",
+  "category": "misc",
+  "pattern": [
+    "ab",
+    "cd",
+    " e"
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_biblically_accurate_block",
+    "b": "allaboutengie:antimatter_outraged_engie_block",
+    "c": "allaboutengie:antimatter_monstrosity_engie_essence",
+    "d": "allaboutengie:biblically_accurate_engie_scythe",
+    "e": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:monstrosity_scythe",
+    "count": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/crucifixcosmicengiegamess",
+  "textures": {
+    "0": "allaboutengie:block/cosmicengiegamesscrucifix",
+    "particle": "allaboutengie:item/cosmicengiegamescrucifixpixel"
+  }
+}

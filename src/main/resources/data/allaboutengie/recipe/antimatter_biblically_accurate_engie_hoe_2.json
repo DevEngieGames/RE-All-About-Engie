@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "b ",
+    "b "
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_biblically_accurate_engie_essence",
+    "b": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_biblically_accurate_engie_hoe",
+    "count": 1
+  }
+}

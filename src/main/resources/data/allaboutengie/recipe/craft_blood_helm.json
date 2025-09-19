@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bloodhelmet",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "a a"
+  ],
+  "key": {
+    "a": "allaboutengie:blood_ingot"
+  },
+  "result": {
+    "id": "allaboutengie:blood_helmet",
+    "count": 1
+  }
+}

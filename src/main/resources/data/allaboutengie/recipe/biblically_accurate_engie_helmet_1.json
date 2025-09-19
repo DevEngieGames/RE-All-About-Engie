@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "biblicallyaccurateengiehelmet",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": "allaboutengie:biblically_accurate_engie_essence"
+  },
+  "result": {
+    "id": "allaboutengie:biblically_accurate_engies_helmet",
+    "count": 1
+  }
+}

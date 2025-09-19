@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "outragedengiehelmet",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": "allaboutengie:outraged_engie_essence"
+  },
+  "result": {
+    "id": "allaboutengie:outraged_engies_helmet",
+    "count": 1
+  }
+}

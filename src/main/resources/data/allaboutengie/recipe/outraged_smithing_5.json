@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "allaboutengie:enraged_engies_helmet",
+  "addition": "allaboutengie:outraged_engie_block",
+  "result": {
+    "id": "allaboutengie:outraged_engies_helmet"
+  }
+}

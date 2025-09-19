@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "banhammer",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": "allaboutengie:enraged_engie_block",
+    "b": "allaboutengie:angry_engie_block",
+    "c": "allaboutengie:outraged_engie_essence",
+    "d": "allaboutengie:huge_ban_hammer",
+    "e": "#minecraft:planks"
+  },
+  "result": {
+    "id": "allaboutengie:enormous_ban_hammer",
+    "count": 1
+  }
+}

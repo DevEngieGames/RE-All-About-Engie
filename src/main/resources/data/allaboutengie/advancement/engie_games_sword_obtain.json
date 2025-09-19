@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:engiegames_sword"
+    },
+    "title": {
+      "translate": "advancements.engie_games_sword_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.engie_games_sword_obtain.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "engie_games_sword_obtain_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allaboutengie:engiegames_sword"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 80
+  },
+  "parent": "allaboutengie:mindscape_ban_scythe_obtain"
+}

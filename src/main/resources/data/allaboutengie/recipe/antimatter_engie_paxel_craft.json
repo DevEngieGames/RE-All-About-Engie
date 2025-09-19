@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterengiepaxel",
+  "category": "misc",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": "allaboutengie:antimatter_engie_axe",
+    "b": "allaboutengie:antimatter_engie_pickaxe",
+    "c": "allaboutengie:antimatter_engie_shovel",
+    "d": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:antimatter_engie_paxel",
+    "count": 1
+  }
+}

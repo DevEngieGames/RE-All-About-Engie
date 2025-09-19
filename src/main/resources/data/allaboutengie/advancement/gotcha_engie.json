@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:all_about_engie_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.gotcha_engie.title"
+    },
+    "description": {
+      "translate": "advancements.gotcha_engie.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "gotcha_engie_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "allaboutengie:secret_advancements"
+}

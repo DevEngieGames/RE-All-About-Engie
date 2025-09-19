@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:dooms_day_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.doomsday_ban_scythe_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.doomsday_ban_scythe_obtain.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "doomsday_ban_scythe_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 55
+  },
+  "parent": "allaboutengie:monstrosity_ban_obtain"
+}

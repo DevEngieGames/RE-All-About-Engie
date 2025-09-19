@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "raresharkocloth",
+  "category": "misc",
+  "ingredients": [
+    "allaboutengie:albino_sharko_cloth",
+    "minecraft:lapis_lazuli",
+    "minecraft:lapis_lazuli",
+    "minecraft:lapis_lazuli"
+  ],
+  "result": {
+    "id": "allaboutengie:rare_sharko_cloth",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "asset_id": "allaboutengie:shovel_king",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.allaboutengie.shovel_king.title"
+  },
+  "author": {
+    "translate": "painting.allaboutengie.shovel_king.author"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#is_nether",
+  "features": "allaboutengie:blood_ore",
+  "step": "underground_ores"
+}

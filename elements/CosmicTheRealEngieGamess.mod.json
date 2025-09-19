@@ -1,0 +1,104 @@
+{
+  "_fv": 79,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "cosmicengiehelmetbase",
+    "enableBody": true,
+    "textureBody": "cosmicengiechestplatebase",
+    "enableLeggings": true,
+    "textureLeggings": "cosmicengieleggingsbase",
+    "enableBoots": true,
+    "textureBoots": "cosmicengiebootsbase",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsArmor"
+      }
+    ],
+    "armorTextureFile": "backup_",
+    "helmetName": "Cosmic EngieGames' Helmet",
+    "bodyName": "Cosmic EngieGames' Chestplate",
+    "leggingsName": "Cosmic EngieGames' Leggings",
+    "bootsName": "Cosmic EngieGames' Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "cosmicarmorlayer1.png",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "cosmicarmorlayer1.png",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "cosmicarmorlayer2.png",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "cosmicarmorlayer1.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": true,
+    "bodyImmuneToFire": true,
+    "leggingsImmuneToFire": true,
+    "bootsImmuneToFire": true,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 900,
+    "damageValueHelmet": 900,
+    "damageValueBody": 900,
+    "damageValueLeggings": 900,
+    "damageValueBoots": 900,
+    "enchantability": 22,
+    "toughness": 75.0,
+    "knockbackResistance": 2.1,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      }
+    ]
+  }
+}

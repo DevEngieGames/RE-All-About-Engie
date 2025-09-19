@@ -1,0 +1,58 @@
+{
+  "display": {
+    "icon": {
+      "id": "allaboutengie:antimatter_angry_engie_essence"
+    },
+    "title": {
+      "translate": "advancements.antimatter_angry_engie_essence_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_angry_engie_essence_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_angry_engie_essence_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allaboutengie:antimatter_angry_engie_essence"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 20,
+    "recipes": [
+      "allaboutengie:angry_engie_axe_1",
+      "allaboutengie:angry_engie_pickaxe_1",
+      "allaboutengie:angry_engie_shovel_1",
+      "allaboutengie:angry_engie_hoe_1",
+      "allaboutengie:angry_engie_helmet_1",
+      "allaboutengie:angry_engie_chestplate_1",
+      "allaboutengie:angry_engie_leggings_1",
+      "allaboutengie:angry_engie_boots_1",
+      "allaboutengie:mini_ban_craft",
+      "allaboutengie:ban_craft",
+      "allaboutengie:big_ban_craft",
+      "allaboutengie:large_ban_craft",
+      "allaboutengie:angry_engie_bundle_craft",
+      "allaboutengie:mini_scythe_craft",
+      "allaboutengie:scythe_craft",
+      "allaboutengie:big_scythe_craft",
+      "allaboutengie:large_scythe_craft"
+    ]
+  },
+  "parent": "allaboutengie:antimatter_engie_gem_obtained"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "metaltometalwood",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b"
+  ],
+  "key": {
+    "a": "allaboutengie:metal_chest",
+    "b": "minecraft:dark_oak_pressure_plate"
+  },
+  "result": {
+    "id": "allaboutengie:metal_chest_dark_oak",
+    "count": 1
+  }
+}

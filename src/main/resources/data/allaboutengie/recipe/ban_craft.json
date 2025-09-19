@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "banhammer",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": "allaboutengie:engie_gem",
+    "b": "minecraft:iron_ingot",
+    "c": "allaboutengie:angry_engie_essence",
+    "d": "allaboutengie:mini_ban_hammer",
+    "e": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:ban_hammer",
+    "count": 1
+  }
+}

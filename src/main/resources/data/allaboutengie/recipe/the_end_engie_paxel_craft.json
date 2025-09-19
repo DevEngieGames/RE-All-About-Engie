@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "theendengiepaxel",
+  "category": "misc",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": "allaboutengie:the_end_axe",
+    "b": "allaboutengie:the_end_pickaxe",
+    "c": "allaboutengie:the_end_shovel",
+    "d": "minecraft:stick"
+  },
+  "result": {
+    "id": "allaboutengie:the_end_paxel",
+    "count": 1
+  }
+}
