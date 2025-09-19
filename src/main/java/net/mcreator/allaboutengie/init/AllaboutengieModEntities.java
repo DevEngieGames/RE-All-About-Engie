@@ -515,7 +515,7 @@ public class AllaboutengieModEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<ProtogenEntity>> PROTOGEN = register("protogen",
 			EntityType.Builder.<ProtogenEntity>of(ProtogenEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.8f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<QuizzetEntity>> QUIZZET = register("quizzet",
 			EntityType.Builder.<QuizzetEntity>of(QuizzetEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
@@ -1705,7 +1705,7 @@ public class AllaboutengieModEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<ScorchedEntity>> SCORCHED = register("scorched",
 			EntityType.Builder.<ScorchedEntity>of(ScorchedEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.95f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.95f));
 	public static final DeferredHolder<EntityType<?>, EntityType<ThrowbackMadEngieEntity>> THROWBACK_MAD_ENGIE = register("throwback_mad_engie",
 			EntityType.Builder.<ThrowbackMadEngieEntity>of(ThrowbackMadEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
@@ -1725,23 +1725,21 @@ public class AllaboutengieModEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<MadEngieColdSeasonEntity>> MAD_ENGIE_COLD_SEASON = register("mad_engie_cold_season",
 			EntityType.Builder.<MadEngieColdSeasonEntity>of(MadEngieColdSeasonEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.95f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.95f));
 	public static final DeferredHolder<EntityType<?>, EntityType<AngryEngieColdSeasonEntity>> ANGRY_ENGIE_COLD_SEASON = register("angry_engie_cold_season",
 			EntityType.Builder.<AngryEngieColdSeasonEntity>of(AngryEngieColdSeasonEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.95f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.95f));
 	public static final DeferredHolder<EntityType<?>, EntityType<EnragedEngieColdSeasonEntity>> ENRAGED_ENGIE_COLD_SEASON = register("enraged_engie_cold_season",
 			EntityType.Builder.<EnragedEngieColdSeasonEntity>of(EnragedEngieColdSeasonEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.95f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.95f));
 	public static final DeferredHolder<EntityType<?>, EntityType<OutragedEngieColdSeasonEntity>> OUTRAGED_ENGIE_COLD_SEASON = register("outraged_engie_cold_season",
 			EntityType.Builder.<OutragedEngieColdSeasonEntity>of(OutragedEngieColdSeasonEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.8f));
-	public static final DeferredHolder<EntityType<?>, EntityType<MonstrosityEngieColdSeasonEntity>> MONSTROSITY_ENGIE_COLD_SEASON = register("monstrosity_engie_cold_season",
-			EntityType.Builder.<MonstrosityEngieColdSeasonEntity>of(MonstrosityEngieColdSeasonEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune()
-
-					.sized(0.6f, 1.8f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.8f));
+	public static final DeferredHolder<EntityType<?>, EntityType<MonstrosityEngieColdSeasonEntity>> MONSTROSITY_ENGIE_COLD_SEASON = register("monstrosity_engie_cold_season", EntityType.Builder
+			.<MonstrosityEngieColdSeasonEntity>of(MonstrosityEngieColdSeasonEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<ThrowbackEngiEntity>> THROWBACK_ENGI = register("throwback_engi",
 			EntityType.Builder.<ThrowbackEngiEntity>of(ThrowbackEngiEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
@@ -1759,27 +1757,25 @@ public class AllaboutengieModEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<ThrowbackSharkoEntity>> THROWBACK_SHARKO = register("throwback_sharko",
 			EntityType.Builder.<ThrowbackSharkoEntity>of(ThrowbackSharkoEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.7f, 0.9f));
+					.ridingOffset(-0.6f).sized(0.7f, 0.9f));
 	public static final DeferredHolder<EntityType<?>, EntityType<TonyEntity>> TONY = register("tony",
 			EntityType.Builder.<TonyEntity>of(TonyEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.7f, 0.9f));
+					.ridingOffset(-0.6f).sized(0.7f, 0.9f));
 	public static final DeferredHolder<EntityType<?>, EntityType<TonyLayEntity>> TONY_LAY = register("tony_lay",
 			EntityType.Builder.<TonyLayEntity>of(TonyLayEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.7f, 0.6f));
+					.ridingOffset(-0.6f).sized(0.7f, 0.6f));
 	public static final DeferredHolder<EntityType<?>, EntityType<TonySleepEntity>> TONY_SLEEP = register("tony_sleep",
 			EntityType.Builder.<TonySleepEntity>of(TonySleepEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.8f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.8f));
 	public static final DeferredHolder<EntityType<?>, EntityType<WormholeEngieEntity>> WORMHOLE_ENGIE = register("wormhole_engie",
-			EntityType.Builder.<WormholeEngieEntity>of(WormholeEngieEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).fireImmune()
-
-					.sized(0.6f, 1.95f));
+			EntityType.Builder.<WormholeEngieEntity>of(WormholeEngieEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).fireImmune().ridingOffset(-0.6f).sized(0.6f, 1.95f));
 	public static final DeferredHolder<EntityType<?>, EntityType<BiblicallyAccurateEngieColdSeasonEntity>> BIBLICALLY_ACCURATE_ENGIE_COLD_SEASON = register("biblically_accurate_engie_cold_season",
 			EntityType.Builder.<BiblicallyAccurateEngieColdSeasonEntity>of(BiblicallyAccurateEngieColdSeasonEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.95f));
+					.ridingOffset(-0.6f).sized(0.6f, 1.95f));
 	public static final DeferredHolder<EntityType<?>, EntityType<CosmicEngieGamesEntity>> COSMIC_ENGIE_GAMES = register("cosmic_engie_games",
 			EntityType.Builder.<CosmicEngieGamesEntity>of(CosmicEngieGamesEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
