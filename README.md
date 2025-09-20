@@ -65,5 +65,5 @@ I have been given permission by the original owner (AKA [DevEngie](https://modri
   - ### Idea Giver, [All About Engie Dimensions](https://modrinth.com/mod/all-about-engie-dimensions).
 - ## Cocachuu
   - ### Idea Giver, helped name Item House XXL.
-- ## My younger sister.
+- ## Starclaw
   - ### Idea Giver, helped build Item House XXL.
