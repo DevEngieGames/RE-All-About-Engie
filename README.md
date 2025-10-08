@@ -18,7 +18,7 @@ You could also call this a Fork of [All About Engie](https://modrinth.com/mod/al
 - **There is references to real life species. (i.e. Foxes, Sharks, and Cats.)**
 - **There will be a WIKI later down the line.**
 - **This mods in game ID is the same as the original(AKA "allaboutengie" or "All About Engie").**
-- **This mod can run without [AttributeFix](https://modrinth.com/mod/attributefix) but please do install it for versions 1.21.1 and below.**
+- **This mod can run without [AttributeFix](https://modrinth.com/mod/attributefix) but please do install it for any version, the mod works much better with it installed. (Thanks to the [AttributeFix](https://modrinth.com/mod/attributefix) [developer](https://modrinth.com/user/Darkhax) for the 1.21.4 port.)**
 
 ![About the mod.](https://cdn.modrinth.com/data/cached_images/c0e86859a7baf2a5aab8e90cfd52645be7806692.png)
 
