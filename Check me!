@@ -1,11 +1,16 @@
 # Heya! This is for anyone who wants to check on the current minecraft versions I'm able to work on!
 ## Versions:
 - ### [✅] NeoForge 1.21.4
+  - ### Hasn't been down recently.
 - ### [✅] NeoForge 1.21.1
-- ### [❌] NeoForge 1.20.6
-  - ### Currently down and out due to the maven being completely broken a fix isn't possible at the current moment, the generator has been removed until this is fixed. The error can be found in the other file in this Branch, If anyone can find the fix for me PLEASE create an issue that resolves this. I'd really appreciate it if anyone can find the fix for this.
-- ### [❌] NeoForge 1.20.4
-  - ### Currently down and out due to the maven being completely broken a fix isn't possible at the current moment, the generator has been removed until this is fixed. The error can be found in the other file in this Branch, If anyone can find the fix for me PLEASE create an issue that resolves this. I'd really appreciate it if anyone can find the fix for this.
+  - ### Hasn't been down recently.
+- ### [✅] NeoForge 1.20.6
+  - ### Was down last night, the xml page is back up and working again. Thanks to whoever or whatever fixed it. :\
+- ### [✅] NeoForge 1.20.4
+  - ### Was down last night, the xml page is back up and working again. Thanks to whoever or whatever fixed it. :\
 - ### [✅] Forge 1.20.1
+  - ### Hasn't been down recently.
 - ### [✅] Forge 1.19.4
+  - ### Hasn't been down recently.
 - ### [✅] Forge 1.19.2
+  - ### Hasn't been down recently.
